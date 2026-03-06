@@ -1,0 +1,67 @@
+{
+  "rows": [
+    {
+      "N": "N1",
+      "paper_obj_inc_pct": 0.66,
+      "project_obj_inc_pct": 0.055777281830543965,
+      "obj_diff_pct_point": -0.604222718169456,
+      "paper_cpu_dec_pct": 0.26,
+      "project_cpu_dec_pct": 5.75705948400232,
+      "cpu_diff_pct_point": 5.49705948400232
+    },
+    {
+      "N": "N2",
+      "paper_obj_inc_pct": 0.62,
+      "project_obj_inc_pct": 5.638330680077362,
+      "obj_diff_pct_point": 5.018330680077362,
+      "paper_cpu_dec_pct": -1.05,
+      "project_cpu_dec_pct": 34.65257976779692,
+      "cpu_diff_pct_point": 35.70257976779692
+    },
+    {
+      "N": "N3",
+      "paper_obj_inc_pct": 0.71,
+      "project_obj_inc_pct": 14.233313919122988,
+      "obj_diff_pct_point": 13.523313919122987,
+      "paper_cpu_dec_pct": 4.87,
+      "project_cpu_dec_pct": 78.09896310583244,
+      "cpu_diff_pct_point": 73.22896310583243
+    },
+    {
+      "N": "N4",
+      "paper_obj_inc_pct": 3.24,
+      "project_obj_inc_pct": 14.20240303305761,
+      "obj_diff_pct_point": 10.96240303305761,
+      "paper_cpu_dec_pct": 6.84,
+      "project_cpu_dec_pct": 82.53386851403576,
+      "cpu_diff_pct_point": 75.69386851403576
+    },
+    {
+      "N": "N5",
+      "paper_obj_inc_pct": 1.03,
+      "project_obj_inc_pct": 20.9028750353989,
+      "obj_diff_pct_point": 19.8728750353989,
+      "paper_cpu_dec_pct": 0.13,
+      "project_cpu_dec_pct": 83.07831327019113,
+      "cpu_diff_pct_point": 82.94831327019114
+    },
+    {
+      "N": "N6",
+      "paper_obj_inc_pct": 0.83,
+      "project_obj_inc_pct": 33.45959865933322,
+      "obj_diff_pct_point": 32.62959865933322,
+      "paper_cpu_dec_pct": -1.29,
+      "project_cpu_dec_pct": 95.51131458746066,
+      "cpu_diff_pct_point": 96.80131458746067
+    },
+    {
+      "N": "N7",
+      "paper_obj_inc_pct": 5.66,
+      "project_obj_inc_pct": 70.76435680826205,
+      "obj_diff_pct_point": 65.10435680826205,
+      "paper_cpu_dec_pct": 5.66,
+      "project_cpu_dec_pct": 98.29304205773757,
+      "cpu_diff_pct_point": 92.63304205773757
+    }
+  ]
+}

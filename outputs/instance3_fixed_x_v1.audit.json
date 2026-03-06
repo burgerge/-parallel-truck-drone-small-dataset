@@ -1,0 +1,31 @@
+{
+  "report_path": "outputs/instance3_fixed_x_v1.json",
+  "mode": "fixed-x",
+  "checks": [
+    {
+      "name": "expected_obj_a3 matches weighted sum",
+      "ok": true,
+      "detail": "calc=19.9600000000, report=19.9600000000"
+    },
+    {
+      "name": "expected_obj_a5 matches weighted sum",
+      "ok": true,
+      "detail": "calc=13.8200000000, report=13.8200000000"
+    },
+    {
+      "name": "report improved flag consistent",
+      "ok": true,
+      "detail": "implied=True, report=True"
+    }
+  ],
+  "summary": {
+    "scenario_count": 10,
+    "valid_count": 10,
+    "improved_count": 10,
+    "valid_rate": 1.0,
+    "improved_rate": 1.0
+  },
+  "recompute_summary": {},
+  "passed_checks": 3,
+  "failed_checks": 0
+}

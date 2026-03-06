@@ -1,0 +1,399 @@
+{
+  "matches_with": 8,
+  "matches_without": 4,
+  "rows": [
+    {
+      "instance": "Instance1",
+      "W": [
+        0,
+        2,
+        5,
+        11,
+        13
+      ],
+      "with_base": [
+        0,
+        5
+      ],
+      "with_idx": [
+        0,
+        2
+      ],
+      "paper_with_idx": [
+        0,
+        2
+      ],
+      "with_match": true,
+      "wo_base": [
+        5,
+        11
+      ],
+      "wo_idx": [
+        2,
+        3
+      ],
+      "paper_wo_idx": [
+        2,
+        3
+      ],
+      "wo_match": true,
+      "with_runtime_sec": 3.881844600000477,
+      "wo_runtime_sec": 0.008009800003492273,
+      "gap_wo_vs_with_pct": 28.305142188125814
+    },
+    {
+      "instance": "Instance2",
+      "W": [
+        1,
+        3,
+        4,
+        6,
+        12
+      ],
+      "with_base": [
+        1,
+        12
+      ],
+      "with_idx": [
+        0,
+        4
+      ],
+      "paper_with_idx": [
+        0,
+        1
+      ],
+      "with_match": false,
+      "wo_base": [
+        1,
+        12
+      ],
+      "wo_idx": [
+        0,
+        4
+      ],
+      "paper_wo_idx": [
+        3,
+        4
+      ],
+      "wo_match": false,
+      "with_runtime_sec": 7.790379400001257,
+      "wo_runtime_sec": 0.00797479999891948,
+      "gap_wo_vs_with_pct": 47.48774509803923
+    },
+    {
+      "instance": "Instance3",
+      "W": [
+        5,
+        6,
+        7,
+        8,
+        14
+      ],
+      "with_base": [
+        5,
+        8
+      ],
+      "with_idx": [
+        0,
+        3
+      ],
+      "paper_with_idx": [
+        0,
+        3
+      ],
+      "with_match": true,
+      "wo_base": [
+        5,
+        14
+      ],
+      "wo_idx": [
+        0,
+        4
+      ],
+      "paper_wo_idx": [
+        3,
+        4
+      ],
+      "wo_match": false,
+      "with_runtime_sec": 7.829284199993708,
+      "wo_runtime_sec": 0.007707799995841924,
+      "gap_wo_vs_with_pct": 36.602658788773994
+    },
+    {
+      "instance": "Instance4",
+      "W": [
+        1,
+        5,
+        10,
+        12,
+        14
+      ],
+      "with_base": [
+        5,
+        10
+      ],
+      "with_idx": [
+        1,
+        2
+      ],
+      "paper_with_idx": [
+        1,
+        2
+      ],
+      "with_match": true,
+      "wo_base": [
+        10,
+        14
+      ],
+      "wo_idx": [
+        2,
+        4
+      ],
+      "paper_wo_idx": [
+        2,
+        4
+      ],
+      "wo_match": true,
+      "with_runtime_sec": 7.272875599999679,
+      "wo_runtime_sec": 0.007913399997050874,
+      "gap_wo_vs_with_pct": 60.15625000000002
+    },
+    {
+      "instance": "Instance5",
+      "W": [
+        3,
+        4,
+        5,
+        8,
+        10
+      ],
+      "with_base": [
+        4,
+        10
+      ],
+      "with_idx": [
+        1,
+        4
+      ],
+      "paper_with_idx": [
+        2,
+        4
+      ],
+      "with_match": false,
+      "wo_base": [
+        3,
+        4
+      ],
+      "wo_idx": [
+        0,
+        1
+      ],
+      "paper_wo_idx": [
+        1,
+        4
+      ],
+      "wo_match": false,
+      "with_runtime_sec": 10.705994900003134,
+      "wo_runtime_sec": 0.007970300001034047,
+      "gap_wo_vs_with_pct": 48.56081708449397
+    },
+    {
+      "instance": "Instance6",
+      "W": [
+        3,
+        7,
+        8,
+        10,
+        12
+      ],
+      "with_base": [
+        3,
+        7
+      ],
+      "with_idx": [
+        0,
+        1
+      ],
+      "paper_with_idx": [
+        0,
+        1
+      ],
+      "with_match": true,
+      "wo_base": [
+        3,
+        8
+      ],
+      "wo_idx": [
+        0,
+        2
+      ],
+      "paper_wo_idx": [
+        1,
+        3
+      ],
+      "wo_match": false,
+      "with_runtime_sec": 7.875713800000085,
+      "wo_runtime_sec": 0.004260599998815451,
+      "gap_wo_vs_with_pct": 247.7992806987498
+    },
+    {
+      "instance": "Instance7",
+      "W": [
+        1,
+        5,
+        7,
+        8,
+        11
+      ],
+      "with_base": [
+        5,
+        8
+      ],
+      "with_idx": [
+        1,
+        3
+      ],
+      "paper_with_idx": [
+        1,
+        3
+      ],
+      "with_match": true,
+      "wo_base": [
+        1,
+        5
+      ],
+      "wo_idx": [
+        0,
+        1
+      ],
+      "paper_wo_idx": [
+        0,
+        1
+      ],
+      "wo_match": true,
+      "with_runtime_sec": 11.608737399998063,
+      "wo_runtime_sec": 0.0084220999997342,
+      "gap_wo_vs_with_pct": 63.15505908552134
+    },
+    {
+      "instance": "Instance8",
+      "W": [
+        1,
+        7,
+        8,
+        12,
+        14
+      ],
+      "with_base": [
+        1,
+        14
+      ],
+      "with_idx": [
+        0,
+        4
+      ],
+      "paper_with_idx": [
+        0,
+        4
+      ],
+      "with_match": true,
+      "wo_base": [
+        8,
+        12
+      ],
+      "wo_idx": [
+        2,
+        3
+      ],
+      "paper_wo_idx": [
+        2,
+        3
+      ],
+      "wo_match": true,
+      "with_runtime_sec": 8.073539299999538,
+      "wo_runtime_sec": 0.007859299999836367,
+      "gap_wo_vs_with_pct": 79.9207397622193
+    },
+    {
+      "instance": "Instance9",
+      "W": [
+        2,
+        4,
+        6,
+        8,
+        13
+      ],
+      "with_base": [
+        6,
+        13
+      ],
+      "with_idx": [
+        2,
+        4
+      ],
+      "paper_with_idx": [
+        2,
+        4
+      ],
+      "with_match": true,
+      "wo_base": [
+        6,
+        8
+      ],
+      "wo_idx": [
+        2,
+        3
+      ],
+      "paper_wo_idx": [
+        2,
+        4
+      ],
+      "wo_match": false,
+      "with_runtime_sec": 7.195164500000828,
+      "wo_runtime_sec": 0.008362000000488479,
+      "gap_wo_vs_with_pct": 40.16124031007753
+    },
+    {
+      "instance": "Instance10",
+      "W": [
+        1,
+        2,
+        4,
+        6,
+        14
+      ],
+      "with_base": [
+        4,
+        14
+      ],
+      "with_idx": [
+        2,
+        4
+      ],
+      "paper_with_idx": [
+        2,
+        4
+      ],
+      "with_match": true,
+      "wo_base": [
+        6,
+        14
+      ],
+      "wo_idx": [
+        3,
+        4
+      ],
+      "paper_wo_idx": [
+        1,
+        4
+      ],
+      "wo_match": false,
+      "with_runtime_sec": 7.256997299999057,
+      "wo_runtime_sec": 0.011239699997531716,
+      "gap_wo_vs_with_pct": 55.494635066619495
+    }
+  ],
+  "avg_with_runtime": 7.949053099999583,
+  "avg_wo_runtime": 0.007971979999274481,
+  "avg_gap_wo_vs_with": 70.76435680826205
+}

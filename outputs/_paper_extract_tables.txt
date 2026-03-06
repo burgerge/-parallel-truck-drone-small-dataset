@@ -1,0 +1,589 @@
+pages=18
+
+--- page 2 ---
+H. Tureci-Isik et al.
+Despite their advantages in improving accessibility in disrupted 
+networks, drones are also limited in their range and battery life. Conse-
+quently, most humanitarian aid delivery involving drones is performed 
+in conjunction with ground vehicles, particularly trucks. A growing 
+body of literature on routing trucks and drones for last-mile deliveries 
+in both for-profit and humanitarian applications has considered various 
+ways in which such operations can be performed, such as independent 
+deliveries by both vehicles from depots, synchronised operations where 
+the drone travels on the truck and both perform deliveries, and one ve-
+hicle supporting the delivery operations carried out by the other (Otto 
+et al., 2018). On the other hand, there is limited research on optimising 
+parallel delivery of humanitarian aid by trucks and drones, despite their 
+widespread use in practice.
+The efficiency and effectiveness of truck–drone delivery operations 
+rely heavily on the supporting transportation network. Depots play a 
+crucial role in this support by storing relief items, acting as a base for 
+launching and recharging drones, loading and unloading trucks, and 
+coordinating the deliveries by trucks and drones. In designing the net-
+work, the decision of where to locate these depots is an important one 
+due to its direct influence the timeliness of aid deliveries. Pre-disaster 
+location decisions save time for subsequent relief delivery by enabling 
+immediate dispatch of vehicles, compared to making such decisions 
+during the response stage. However, these pre-disaster decisions must 
+also account for disaster-related uncertainties, such as the impact on 
+the transportation network, as the type, location, and magnitude of the 
+disaster are not known in advance.
+In this paper, we address the decisions of pre-disaster depot location 
+and post-disaster relief aid delivery by trucks and drones that operate 
+independently, where the post-disaster travel times on the road net-
+work are uncertain. Contrary to the literature on truck–drone routing 
+where the main objective is to minimise makespan or operational costs, 
+we prioritise the timeliness of deliveries by considering an objective 
+that aims to minimise the expected average arrival time to all benefi-
+ciaries. The objective reflects the cumulative urgency of aid delivery 
+across multiple communities, especially in the immediate aftermath 
+of a disaster where early access to relief can prevent deterioration of 
+health and safety. To the best of our knowledge, this is the first study 
+that considers such a latency-based objective in a stochastic location-
+routing problem involving the parallel use of trucks and drones for 
+last-mile humanitarian aid delivery. Our problem definition and the 
+network structure lead to a novel two-stage mixed integer stochas-
+tic programming model that can only solve small-sized instances to 
+optimality using commercial solvers. To overcome this challenge, we 
+propose a variable neighbourhood search heuristic, which produces 
+high-quality solutions for larger instances within reasonable time limits. 
+We use a case study from the 2011 Van Earthquake in Turkiye to 
+understand the structure of resulting tours, as well as to compare 
+our approach to benchmarks involving only trucks, no assessment on 
+road network damage, and separate location and routing decisions. 
+The computational results underline the potential effectiveness of our 
+approach and present insights that can be of benefit to decision makers.
+The remainder of the paper is organised as follows: Section 2 
+presents a literature review on truck–drone delivery models and stoch-
+astic location-routing problems in humanitarian operations. Section 3 
+outlines the problem definition and provides the two-stage stochas-
+tic mixed integer programming model. In Section 4, we introduce 
+a problem-tailored variable neighbourhood search heuristic to solve 
+the instances of practical size. Section 5 details the computational 
+experiments and provides the managerial insights from our findings. 
+Concluding remarks and further research directions are presented in 
+Section 6.
+2. Literature review
+This paper is positioned at the intersection of truck–drone delivery 
+problems, location-routing problems with heterogeneous fleets and 
+multiple vehicle types, and stochastic location-routing problems in 
+humanitarian operations. In this section, we present an overview of 
+these three streams and the contributions of our work to the literature.
+2.1. Truck–drone delivery problems
+Due to the increase in application areas and technological advances 
+for using drones in last-mile delivery, there is increased interest on 
+truck–drone operations in the extant literature. An extensive review 
+to date on the combined operations of drones with other vehicles 
+in the non-military context is provided in Otto et al. (2018). Other 
+reviews that discuss truck–drone combined operations include Chung 
+et al. (2020) on optimisation methods, Macrina et al. (2020) on par-
+cel delivery, Rojas Viloria et al. (2021) on relevant vehicle routing 
+problems, Moshref-Javadi and Winkenbach (2021) on general logistics 
+applications, and Yucesoy et al. (2024) on their use in disaster response. 
+In their review of facility location for drone delivery, Dukkanci et al. 
+(2023) point out that 95% of the literature on facility location for 
+truck–drone deliveries considers commercial applications, with only 
+one paper (Chowdhury et al., 2017) in humanitarian response. Our 
+paper aims to bridge this gap in the literature.
+The literature on truck–drone delivery can be divided into three 
+categories in terms of the delivery structure.
+Models in the first category consider a primary vehicle type (truck 
+or drone) that makes the deliveries, while the other vehicle type 
+supports the operations. In Ferrandez et al. (2016), drones make the 
+deliveries, while trucks serve as launching stations, so that the effective 
+coverage area of drones is expanded. Scott and Scott (2019) propose a 
+structure in which drones make the last-mile deliveries, whereas trucks 
+supply the humanitarian aid to drone stations from a warehouse. They 
+formulate a location-routing problem to determine the locations of the 
+warehouse and drone nests. Zhou et al. (2023) study a similar structure, 
+locating drone stations in 2-D space. They model the problem as a 
+constrained nonlinear optimisation, and present a solution approach 
+based on particle swarm optimisation with a subordinate dynamic pro-
+gramme, using healthcare delivery as a case study. Variations of such 
+structure are previously studied by Kim and Moon (2018) and Schermer 
+et al. (2019) to extend the drone service range. McCunney and Cauwen-
+berghe (2019) and Dayarian et al. (2020) propose drone-supported 
+truck deliveries, with the drones resupplying the trucks directly or 
+supplying the depots within a same-day delivery framework.
+The second group of delivery structures involves a synchronised 
+truck–drone delivery model where the drone travels with the truck and 
+both vehicles perform deliveries. The routing problem corresponding 
+to this version of truck–drone tandem delivery is more commonly 
+known as the Flying Sidekick Travelling Salesman Problem (Murray 
+& Chu, 2015) or the TSP with Drones (Agatz et al., 2018). In this 
+case, the drone travels with a truck to extend its service area, launches 
+from the truck, delivers the items, and lands back on the truck again. 
+Meanwhile, after the drone takes off, the truck continues its tour and 
+visits the next demand location, and the two vehicles meet at one of 
+the demand locations. Moshref-Javadi and Lee (2017) consider tandem 
+deliveries for situations such as disaster relief and emergencies, using 
+a latency-based objective. Although their setting is humanitarian, their 
+model does not incorporate any uncertainties and focuses solely on the 
+routing problem. Yin et al. (2023) also address the routing problem in 
+humanitarian operations under demand and travel time uncertainties. 
+They develop a robust optimisation model using a budgeted uncertainty 
+set and propose a branch-and-price-and-cut algorithm, applying it to 
+a real earthquake case study. Mirzapour Al-e Hashem et al. (2024) 
+apply tandem delivery to a postal delivery system, considering weather-
+related uncertainties. They model the problem as a robust optimisation 
+and develop a hybrid metaheuristic solution approach. Kang and Lee 
+(2021) utilise heterogeneous drones with different limitations and de-
+velop an exact algorithm for the routing problem using logic-based 
+Bender decomposition. Morim et al. (2024) extend truck–drone tandem 
+routing by incorporating robot deliveries. When a truck visits a robot 
+station, it activates the station, and pre-positioned robots then perform 
+return deliveries. Gómez-Lagos et al. (2021) introduce a variant of 
+European Journal of Operational Research 331 (2026) 242–259 
+243 
+
+--- page 10 ---
+H. Tureci-Isik et al.
+Algorithm 3 Initial truck tour and drone schedule construction 
+heuristic
+Function InitialConstruction(𝑋, 𝜉)
+1: 𝑈𝑘, 𝑇 𝑇𝑘, 𝐷𝐿𝑘, 𝐷𝑆𝑘 ← {}
+2: for all 𝑖 ∈ 𝐷 do
+3:  Set 𝑘 as the closest open depot to demand node 𝑖
+4:  𝑈𝑘 ← 𝑈𝑘 ∪ {𝑖} ⊳ Assign node to unvisited nodes list of depot
+5: end for
+6: for all 𝑘 ∈ 𝑋 do
+7:  𝑐𝑢𝑟𝑟𝑒𝑛𝑡 ← 𝑘 ⊳  Assign depot as current node
+8:  𝑇 𝑇𝑘 ← 𝑇 𝑇𝑘 ∪ {𝑐𝑢𝑟𝑟𝑒𝑛𝑡}
+9:  while |𝑈𝑘| > 0 do
+10:  𝑖𝑚𝑚𝑒𝑑𝑖𝑎𝑡𝑒𝐶𝑜𝑛𝑛𝑒𝑐𝑡𝑖𝑜𝑛 ← 𝐹 𝑎𝑙𝑠𝑒
+11:  for all 𝑗 ∈ 𝑈𝑘 do
+12:  if (𝑐𝑢𝑟𝑟𝑒𝑛𝑡, 𝑗) ∈ 𝐸 then
+13:  𝑖𝑚𝑚𝑒𝑑𝑖𝑎𝑡𝑒𝐶𝑜𝑛𝑛𝑒𝑐𝑡𝑖𝑜𝑛 ← 𝑇 𝑟𝑢𝑒
+14:  Break ⊳ There is at least one unvisited node truck can 
+immediately visit
+15:  end if
+16:  end for
+17:  if 𝑖𝑚𝑚𝑒𝑑𝑖𝑎𝑡𝑒𝐶𝑜𝑛𝑛𝑒𝑐𝑡𝑖𝑜𝑛 then 
+18:  𝑛𝑜𝑑𝑒 ← arg min𝑗∈𝑈𝑘,(𝑐𝑢𝑟𝑟𝑒𝑛𝑡,𝑗 )∈𝐸 {𝑡𝑐𝑢𝑟𝑟𝑒𝑛𝑡,𝑗 (𝜉)}
+19:  Move 𝑛𝑜𝑑𝑒 from 𝑈𝑘 to 𝑇 𝑇𝑘
+20:  𝑐𝑢𝑟𝑟𝑒𝑛𝑡 ← 𝑛𝑜𝑑𝑒
+21:  else ⊳ Find a node to backtrack
+22:  𝑇 ← 𝑇 𝑇𝑘 ⧵ {last element in 𝑇 𝑇𝑘} ⊳ Copy truck tour until the 
+current node
+23:  𝑆𝑡𝑜𝑝𝐹 𝑙𝑎𝑔 ← 0
+24:  while |𝑇 | > 0 do
+25:  𝐵𝑎𝑐𝑘𝑁𝑜𝑑𝑒 ← last element in 𝑇
+26:  for all 𝑗 ∈ 𝑈𝑘 do
+27:  if (𝐵𝑎𝑐𝑘𝑁𝑜𝑑𝑒, 𝑗) ∈ 𝐸 then
+28:  Apply Algorithm 4 and find the backtracking route 𝐵𝑘
+29:  𝑇 𝑇𝑘 ← 𝑇 𝑇𝑘 ∪ 𝐵𝑘
+30:  𝑛𝑜𝑑𝑒 ← arg min𝑗∈𝑈𝑘,(𝐵𝑎𝑐𝑘𝑁𝑜𝑑𝑒,𝑗 )∈𝐸 {𝑡𝐵𝑎𝑐𝑘𝑁𝑜𝑑𝑒,𝑗 (𝜉)}
+31:  Move 𝑛𝑜𝑑𝑒 from 𝑈𝑘 to 𝑇 𝑇𝑘
+32:  Set 𝑐𝑢𝑟𝑟𝑒𝑛𝑡 ← 𝑛𝑜𝑑𝑒 and 𝑆𝑡𝑜𝑝𝐹 𝑙𝑎𝑔 ← 1
+33:  Break ⊳ Truck can visit unvisited node if it 
+backtracks to 𝐵𝑎𝑐𝑘𝑁𝑜𝑑𝑒
+34:  end if
+35:  end for
+36:  if 𝑆𝑡𝑜𝑝𝐹 𝑙𝑎𝑔 = 0 then
+37:  𝑇 ← 𝑇 ⧵ {𝐵𝑎𝑐𝑘𝑁𝑜𝑑𝑒}
+38:  if |𝑇 | = 1 then ⊳ Truck faces a dead-end and no 
+backtrack node is found
+39:  𝐷𝐿𝑘 ← 𝑈𝑘 ⊳ Assign all unvisited nodes to drone list
+40:  𝑈𝑘 ← {}
+41:  end if
+42:  end if
+43:  end while
+44:  end if
+45:  end while
+46:  for all 𝑗 ∈ 𝐷𝑘 do
+47:  if 𝑗 ∈ 𝐷𝐿𝑘 then
+48:  𝐷𝑆𝑘 ← 𝐷𝑆𝑘 ∪ {𝑗} ⊳ Construct drone schedule
+49:  end if
+50:  end for
+51:  for all 𝑗 ∈ 𝐷𝐿𝑘 do
+52:  if 𝑗 ∉ 𝐷𝑘 then
+53:  𝐷𝑆𝑘 ← 𝐷𝑆𝑘 ∪ {𝑗} ⊳ Add infeasible drone assignments to the 
+drone schedule
+54:  end if
+55:  end for
+56: end for
+return 𝑅(𝑋, 𝜉)
+5. Computational experiments
+In this section, we evaluate the performance of our solution ap-
+proach by comparing the results of our heuristic with those obtained 
+Algorithm 4 Process of finding the shortest backtracking route
+Step 1. Extracting the partial tour
+1: Extract the exact tour from the point of backtrack until the current node. 
+Step 2. Simplifying the partial tour
+2: if there are revisited nodes then
+3:  while there are revisited nodes do
+4:  Remove the tour segment between the first and the last visit to the 
+revisited node.
+5:  end while
+6: end if
+Step 3. Finding the shortest route
+7: for each node in the simplified tour do
+8:  if there is direct connection between the node and current node then
+9:  Truck continues to the node and follows the simplified tour 
+backwards until reaching the backtrack node.
+10:  Break for
+11:  end if
+12: end for
+13: Truck follows the simplified tour backwards from the current node until 
+reaching the point of backtrack.
+Algorithm 5 Truck tour and drone schedule improvement heuristic
+Function Improvement(𝑅, 𝑘𝑚𝑎𝑥, 𝑙𝑚𝑎𝑥, 𝑖𝑚𝑎𝑥)
+1: 𝑖 ← 0
+2: while 𝑖 ≤ 𝑖𝑚𝑎𝑥 do
+3:  𝑘 ← 1 ⊳ Initialise shake neighbourhood
+4:  while 𝑘 < 𝑘 𝑚𝑎𝑥 do
+5:  𝑤 ← ⌊1 + 𝑟𝑎𝑛𝑑(0, 1) × |𝑁𝑘(𝑅)|⌋
+6:  𝑅′ ← 𝑁𝑘(𝑅)[𝑤] ⊳ Updated to 𝑤𝑡ℎ element of the neighbourhood 
+7:  𝑙 ← 1 ⊳ Initialise local search neighbourhood
+8:  while 𝑙 ≤ 𝑙𝑚𝑎𝑥 do 
+9:  while ℎ(𝑅′) < ℎ(𝑅′′) do
+10:  𝑅′′ ← 𝑅′
+11:  𝑅′ ← arg min𝑅∈𝑁𝑙 (𝑅′′){ℎ(𝑅)}
+12:  end while
+13:  if 𝑓 (𝑅′′) ≤ ℎ(𝑅′) then 
+14:  𝑅′ ← 𝑅′′
+15:  𝑙 ← 1
+16:  else
+17:  𝑙 ← 𝑙 + 1
+18:  end if
+19:  end while ⊳ Until all local search neighbourhoods are used
+20:  if 𝑓 (𝑅′) ≤ ℎ(𝑅) then 
+21:  𝑅 ← 𝑅′
+22:  𝑘 ← 1
+23:  else
+24:  𝑘 ← 𝑘 + 1
+25:  end if
+26:  end while ⊳ Until all shake neighbourhoods are used
+27:  𝑖 ← 𝑖 + 1
+28: end while ⊳ Until maximum iteration is reached
+return 𝑅
+from Gurobi on small-sized instances. We also apply the heuristic to a 
+case study derived from the 2011 Van Earthquake in Turkiye to draw 
+managerial insights, perform sensitivity analysis, and assess the value 
+of incorporating stochasticity into our approach. In the first part of this 
+section, we explain the problem instances used in the computational 
+experiments. Then, we provide the results of our heuristic comparison 
+with Gurobi, and those of the case study based on the Van Earthquake.
+The mathematical models in our experiments are solved using 
+Gurobi 11.0.3 through the Python API. The heuristic algorithm is 
+implemented in C++ using Visual Studio 2022. All computational 
+experiments are performed on a Windows 10 PC equipped with an 
+Intel(R) Core(TM) i7-10510U CPU @ 2.30 GHz and 16 GB of RAM.
+European Journal of Operational Research 331 (2026) 242–259 
+251 
+
+--- page 11 ---
+H. Tureci-Isik et al.
+Fig. 3. Damage intensity areas around disaster epicentre.
+5.1. Problem instances
+In the following sections, we explain how we generate the small-
+sized instances and develop the case study.
+5.1.1. Small-sized instances
+For our first set of experiments, we generate 10 instances consisting 
+of 15 demand nodes and 5 candidate depots. For these instances, we 
+locate two depots and consider 10 different disaster scenarios.
+Demand nodes were randomly placed in a 5, 000×5 , 000 unit square, 
+with Euclidean distances and equal speeds for both vehicle types, 
+ignoring drone travel time limits for simplicity. Each node is connected 
+to each of its two closest neighbours with a probability of 0.7 each. In 
+case no connection is formed in this way, the node is connected to its 
+nearest neighbour. It is also connected to its third, fourth, and fifth 
+closest neighbours with a probability of 0.1 for each. Candidate depot 
+nodes are selected randomly from the demand nodes.
+Disaster epicentres are randomly located, with two circular regions 
+around them as described by Noyan et al. (2016). The radii of one-
+tenth and one-fifth of the square’s side length around the epicentre, 
+adjusted by a random multiplier U(0.8,1.6) to account for varying-
+sized disasters, define destructive and damaging regions, respectively. 
+The remaining area is considered to have strong intensity. Damage 
+intensity of each edge is determined by the highest intensity of its two 
+end nodes, depending on their location. Travel times are inflated by 
+random factors: U(1.6,2.5) for destructive, U(1.25,1.6) for damaging, 
+and U(1.0,1.25) for strong intensities. An illustration for this is given in 
+Fig.  3. Here, the end nodes of edge AB are both in the damaging region, 
+so it is marked as having damaging intensity. On the other hand, edges 
+BC and CD are classified under destructive intensity, as C is situated 
+in the destructive zone. All small-sized instances used in this study 
+are publicly available at https://github.com/hannantureciisik/parallel-
+truck-drone-small-instances.
+5.1.2. Case study instances
+We use a case study based on the earthquake which occurred in 
+Van, Turkiye on October 23, 2011, at a magnitude of 7.2, followed 
+by an aftershock of magnitude 5.6 on November 9, 2011. These re-
+sulted in more than 600 people losing their lives and 2500 injured or 
+hospitalised (IFRC, 2012).
+We obtain the coordinates of the 94 demand locations from Noyan 
+et al. (2016) and the truck travel times from Google Maps (Google, 
+2024a). We create symmetric truck travel times by taking the maximum 
+of the travel times between each pair of locations in both directions. 
+For drone travel times, we calculate the geodesic distances between 
+locations first by using the ‘geodesic’ function in the ‘geopy’ library 
+in Python and divide the distances by drone speed. We double the 
+resulting time to obtain the return flight time. Following (Murray & 
+Chu, 2015), we use 25 mph (approximately 40 km/h) as drone speed 
+and 30 min as drone endurance. We elaborate further on additional 
+values in the sensitivity analysis.
+We generate the road network as follows: The driving path between 
+each pair of demand points are found by using Google Maps Directions 
+API (Google, 2024b). If any of the intermediate points on the path 
+between a pair of demand locations is within 0.01 units of latitude and 
+longitude difference of any other demand location, we do not form an 
+immediate edge between the given pair. Otherwise, we create a direct 
+edge between these two demand locations if their geodesic distance is 
+less than 10 km.
+We generate 10 case study instances with 15 candidate depot loca-
+tions, selected as a subset of the demand nodes. The candidate locations 
+are chosen such that none of them share an edge with each other. We 
+aim to locate 5 depots, considering 50 disaster scenarios.
+To generate representative earthquake scenarios, we select six loca-
+tions along the Van and Yenikosk fault lines. These are the two active 
+fault lines lying between Van Lake and Ercek Lake in the area (MTA, 
+2024) (see Online Appendix for the map representation). For each 
+scenario, we randomly choose a location and generate the epicentre 
+coordinates within a 5 km radius. To account for disasters of different 
+sizes, we define two radii as a basis, 5 km and 10 km, to represent 
+the same areas and increment these radii using a multiplier from 
+a uniform distribution U(0.8,3). Additionally, we adjust truck travel 
+times based on the edge classification. Edges within the highest de-
+structive region based on their endpoints have travel times increased by 
+multipliers from U(3,5), while those in damaging and strong categories 
+see increases by multipliers from U(1.5,3) and U(1,1.5), respectively.
+5.2. Computational results for smaller instances
+Our smaller instances serve the purpose of evaluating the quality 
+of heuristic solutions by comparison to the commercial solver Gurobi, 
+for which we impose a 3-hour computational time limit. However, 
+given the heavy computational burden to solve the two-stage stochastic 
+mixed integer programming model, Gurobi is unable to close the MIP 
+gap within the time limit to find the optimal solutions. To obtain the 
+optimal solutions, we also run Gurobi by enumerating all possible sets 
+of open depots and solving the resulting problem for each combination, 
+where the open depot set with the minimum expected objective value 
+provides the optimal solution.
+In Table  3, we report the results of our experiments on smaller 
+instances. These include the open depots, the integrality gap (denoted 
+by % MIPGap), and the optimality gap (denoted by % Gap) of the 
+Gurobi solutions after the 3-hour limit; the open depots and total CPU 
+times (in seconds) for the Gurobi runs for the routing problem that yield 
+the optimal solutions; and open depots, % Gap values, and CPU times 
+for the heuristic with and without VNS improvement.
+From Table  3, we observe that the heuristic consistently opens the 
+optimal set of depots. Moreover, the average optimality gap of 0.3% 
+indicates that the heuristic finds near-optimal truck routes and drone 
+schedules under all scenarios. In five out of ten problem instances, the 
+heuristic also finds the optimal truck–drone routes under all scenarios. 
+The highest optimality gap among the remaining instances is 1.1%. 
+European Journal of Operational Research 331 (2026) 242–259 
+252 
+
+--- page 12 ---
+H. Tureci-Isik et al.
+Table 3
+Set of open depots, optimality gaps (where applicable), and CPU times (in seconds) of Gurobi results and those of the heuristic with and without VNS improvement.
+ Instance Gurobi after 3-hour limit Gurobi for routing Heuristic - with improvement Heuristic - without improvement
+ Open Depots % MIPGap % Gap Open Depots CPU timea Open Depots % Gap CPU time Open Depots % Gap CPU time  
+ 1 {0,2} 32.0 < 0.1 {0,2} 475.2 {0,2} 0.9 7.4 {2,3} 43.3 0.1  
+ 2 {0,2} 35.9 8.8 {0,1} 409.2 {0,1} 1.1 8.5 {3,4} 36.8 0.2  
+ 3 {3,4} 38.8 3.6 {0,3} 135.9 {0,3} 0.5 4.6 {3,4} 27.3 0.1  
+ 4 {0,1} 35.2 6.3 {1,2} 1,058.2 {1,2} 0.0 10.2 {2,4} 71.1 0.1  
+ 5 {2,4} 27.4 < 0.1 {2,4} 231.2 {2,4} 0.0 7.9 {1,4} 25.5 0.1  
+ 6 {0,1} 43.5 0.5 {0,1} 1,303.4 {0,1} 0.3 6.7 {1,3} 205.3 0.1  
+ 7 {1,2} 39.2 9.3 {1,3} 1,050.1 {1,3} 0.0 7.5 {0,1} 70.3 0.1  
+ 8 {0,3} 35.7 6.5 {0,4} 828.4 {0,4} 0.0 9.8 {2,3} 51.6 0.1  
+ 9 {1,3} 29.9 5.0 {2,4} 322.9 {2,4} 0.5 5.2 {2,4} 15.5 0.1  
+ 10 {0,3} 44.1 11.4 {2,4} 2,093.2 {2,4} 0.0 7.9 {1,4} 39.3 0.1  
+ Average 36.2 5.1 790.8 0.3 7.6 58.6 0.1  
+a Total CPU time to enumerate all open depot combinations.
+Table 4
+Averages and 95% confidence intervals for percent increase in objective value and percent decrease in CPU time when each neighbourhood is excluded.
+ 𝑁1 𝑁2 𝑁3 𝑁4 𝑁5 𝑁6 𝑁7  
+ % increase in Avg 0.66 0.62 0.71 3.24 1.03 0.83 5.66  
+ objective value 95% CI (0.19, 1.13) (0.28, 0.96) (0.08, 1.34) (1.67, 4.81) (0.36, 1.70) (0.32, 1.34) (3.17, 8.15)  
+ % decrease in Avg 0.26 −1.05 4.87 6.84 0.13 −3.29 5.66  
+ CPU time 95% CI (−14.45, 14.98) (−16.30, 14.20) (−6.86, 16.60) (0.71, 12.97) (−10.60, 10.86) (−18.05, 11.48) (−2.79, 14.11) 
+The small interval of the optimality gap suggests the heuristic is robust 
+in generating high-quality solutions. Furthermore, while the heuristic 
+solves the instances within an average CPU time of only 3.6 s, We also 
+observe that Gurobi cannot reduce the MIP Gap to less than 27.4% 
+in any of the instances within 3-hour limit and takes an average of 
+790.8 s to solve the routing problem for all possible sets of open depots. 
+In all, these underline the efficiency and effectiveness of the proposed 
+heuristic, as it not only outperforms the commercial solver within the 
+time limit in terms of the solution quality and computational times, but 
+it also obtains near-optimal solutions.
+We also run the heuristic without the VNS improvement step, such 
+that Algorithm 2 remains unchanged except for the exclusion of line 
+3. The results are presented under ‘Heuristic without improvement’ in 
+Table  3. While the average computing time decreases substantially, an 
+optimality gap of 58.6% is observed without the improvement step. In 
+particular, for instance 6, optimality gap is observed as 205%. These 
+highlight the importance of the VNS-based improvement heuristic in 
+the construction of vehicle routes.
+We also use our smaller instances to analyse the effect of including 
+each neighbourhood structure in the heuristic approach. Table  4 shows 
+the averages and 95% confidence intervals for percent increase in 
+objective value and percent decrease in CPU time when each of the 
+7 neighbourhoods is excluded. Among these, 𝑁7 (complete reconstruc-
+tion of a truck tour) is most influential, with a loss of 5.66% in the 
+objective value in its absence. This underlines the importance of the 
+shaking step of the VNS, as this neighbourhood is only used for shaking. 
+𝑁4 (drone to truck reassignment for the same depot) is also quite 
+effective as it improves the objective value by an average of 3.24%. 
+As expected, all remaining neighbourhoods have a positive but small 
+effect on solution quality. From the 95% confidence intervals on CPU 
+time changes, we observe that for all but one of the neighbourhoods, 
+the change is statistically insignificant. The only exception is 𝑁4, where 
+a positive CPU time decrease is almost certain in its absence. On the 
+other hand, given its significant improvement to the objective function, 
+we retain this neighbourhood in the heuristic, as we do all other 
+neighbourhoods, for the remainder of our experiments.
+5.3. Computational results with case study instances
+In this section, we implement the heuristic on 10 case study in-
+stances to analyse the structure of the heuristic solutions, compare 
+our approach to various benchmarks, perform sensitivity analysis on 
+important parameters, and evaluate the value of using a stochastic 
+approach.
+5.3.1. Analysis of heuristic results
+Table  5 displays the set of open depots, arrival times (in hours), 
+and CPU times (in seconds) for the case study experiments. From 
+the CPU times, we observe that the heuristic can find solutions to 
+these instances within an average and maximum of 40 and 65 min, 
+respectively. Given that these models are run in the pre-disaster stage, 
+these computing times are acceptable for this context. On average, 
+beneficiaries receive aid within 1.5 h of the start of operations, while 
+the average makespan is 8 h over all instances. The table also provides 
+the expected average arrival time at demand nodes visited by trucks 
+or drones. In all instances, demand nodes served by drones have better 
+expected average response times (1 h on average) compared to those 
+visited by trucks (an average of 1.8 h). However, drone endurance poses 
+a limitation to a better distribution of demand nodes between both 
+vehicles.
+Fig.  4 illustrates the heuristic result for Instance 10, while the 
+road network and the candidate depot locations for this instance are 
+shown in Fig.  5a. We note that the results for this instance are rep-
+resentative of those for other instances as well. The most frequently 
+served demand nodes are indicated with the coverage area for each 
+open depot across all scenarios. Demand locations are marked by their 
+most frequently serving vehicle, and the shading of the vehicle further 
+indicates the frequency of the assignment across the scenarios. Demand 
+nodes that are further away from their allocated depot tend to be 
+assigned to trucks. Conversely, the majority of the demand locations 
+closer to their assigned depot are assigned to drones. Allocating further 
+locations to truck is expected because of endurance and single visit 
+constraints of drone. Furthermore, if we draw the smallest convex 
+polygon encapsulating all open depots, demand locations within that 
+region are mostly assigned to drones as most of these locations are 
+drone eligible. Note that the circle around one of the open depots shows 
+the approximate range for drone visits based on the endurance limit. 
+The results for Instance 10 in Table  5 indicate that the expected average 
+arrival time for trucks is higher than that for drones. This imbalance 
+highlights the impact of drone flight endurance on vehicle allocation 
+of demand nodes. Thus, increased endurance may result in more drone 
+assignments and reduced waiting times.
+European Journal of Operational Research 331 (2026) 242–259 
+253 
+
+--- page 16 ---
+H. Tureci-Isik et al.
+Fig. 6. Relationship between the average objective value and varying (a) number of open depots, (b) drone endurance, and (c) drone speed.
+is to minimise the expected average waiting times of the demand 
+locations. Our experiments show that Gurobi cannot solve the problem 
+within a reasonable time limits even on small-sized problems. Thus, we 
+develop a problem-tailored heuristic based on local search and VNS for 
+location and routing decisions, respectively. Optimality gaps are shown 
+to be very small on small-sized problems, and the proposed heuristic 
+can solve large instances within reasonable times. Our experiments on 
+a case study indicate that drones can significantly reduce the response 
+times compared to a truck-only system, with the expected average 
+arrival time decreasing from 3.3 h to 1.5 h, marking an improvement 
+of approximately 55%. The proposed approach can potentially help 
+humanitarian agencies make strategic decisions such as location and 
+pre-positioning of relief items, equipment, and vehicles, and evalu-
+ate the effect of integrating drones into their fleet on disaster-prone 
+regions.
+In this paper, we consider parallel truck and drone deliveries from 
+depots. This structure is mainly reasonable when most of the demand 
+locations are drone-eligible such that drones can provide rapid de-
+liveries from depots within the endurance limit. However, if most of 
+the demand locations are not eligible, the extension of the current 
+stochastic location-routing problem with a synchronised truck–drone 
+delivery model must be considered to expand the drone service area. 
+This would allow drone utilisation in that scenario and provide more 
+flexibility even on the current considered problem environments and 
+improve the response times further. Furthermore, comparison of differ-
+ent truck–drone structures on different problem instances can provide 
+further managerial insights. Different uncertainties other than the road 
+vulnerability can also be incorporated into the network design problem 
+such as uncertain demand requests from demand locations or demand 
+quantities. Another practical extension is the use of multiple vehicles 
+of the same type in each depot. Introduction of such properties would 
+make the problem even more complex and necessitate efficient and 
+effective solution approaches.
+CRediT authorship contribution statement
+Hannan Tureci-Isik: Writing – original draft, Visualization, Val-
+idation, Software, Methodology, Investigation, Formal analysis, Con-
+ceptualization. Melih Çelik: Writing – review & editing, Validation, 
+Supervision, Project administration, Methodology, Investigation, Con-
+ceptualization. Ece Sanci: Writing – review & editing, Supervision, 
+Project administration, Methodology, Conceptualization.
+Appendix A. Supplementary data
+Supplementary material related to this article can be found online 
+at https://doi.org/10.1016/j.ejor.2025.08.057.
+References
+Agatz, N., Bouman, P., & Schmidt, M. (2018). Optimization approaches for the traveling 
+salesman problem with drone. Transportation Science, 52(4), 965–981.
+Ahmadi, M., Seifi, A., & Tootooni, B. (2015). A humanitarian logistics model for disaster 
+relief operation considering network failure and standard relief time: A case study 
+on san francisco district. Transportation Research Part E: Logistics and Transportation 
+Review, 75, 145–163.
+Albareda-Sambola, M., & Rodríguez-Pereira, J. (2019). Location-routing and location-
+arc routing. In G. Laporte, S. Nickel, & F. S. da Gama (Eds.), Location science (pp. 
+431–451). Cham: Springer International Publishing.
+Amazon (2023). Amazon is launching ultra-fast drone deliveries in Italy, the UK, 
+and a third location in the U.S. https://www.aboutamazon.com/news/operations/
+amazon-prime-air-drone-delivery-updates. (Accessed 26 March 2024).
+Amiri, M., Amin, S. H., & Tavakkoli-Moghaddam, R. (2019). A Lagrangean decompo-
+sition approach for a novel two-echelon node-based location-routing problem in 
+an offshore oil and gas supply chain. Transportation Research Part E: Logistics and 
+Transportation Review, 128, 96–114.
+Aslan, E., & Çelik, M. (2019). Pre-positioning of relief items under road/facility 
+vulnerability with concurrent restoration and relief transportation. IISE Transactions, 
+51(8), 847–868.
+Blazewicz, J., Ecker, K., Pesch, E., Schmidt, G., & Weglarz, J. (2019). Handbook on 
+scheduling. Springer.
+Bozorgi-Amiri, A., & Khorsi, M. (2016). A dynamic multi-objective location–routing 
+model for relief logistic planning under uncertainty on demand, travel time, and 
+cost parameters. International Journal of Advanced Manufacturing Technology, 85, 
+1633–1648.
+Çalık, H., Oulamara, A., Prodhon, C., & Salhi, S. (2021). The electric location-
+routing problem with heterogeneous fleet: Formulation and benders decomposition 
+approach. Computers & Operations Research, 131, Article 105251.
+Canbilen Sütiçen, T., Batun, S., & Çelik, M. (2023). Integrated reinforcement and repair 
+of interdependent infrastructure networks under disaster-related uncertainties. 
+European Journal of Operational Research, 308(1), 369–384.
+Carlsson, J. G., & Song, S. (2018). Coordinated logistics with a truck and a drone. 
+Management Science, 64(9), 4052–4069.
+Caunhye, A. M., Zhang, Y., Li, M., & Nie, X. (2016). A location-routing model for 
+prepositioning and distributing emergency supplies. Transportation Research Part E: 
+Logistics and Transportation Review, 90, 161–176.
+Celik, M. (2016). Network restoration and recovery in humanitarian operations: Frame-
+work, literature review, and research directions. Surveys in Operations Research and 
+Management Science, 21(2), 47–61.
+Chang, K., Zhou, H., Chen, G., & Chen, H. (2017). Multiobjective location routing 
+problem considering uncertain data after disasters. Discrete Dynamics in Nature and 
+Society, 2017(1), Article 1703608.
+Chowdhury, S., Emelogu, A., Marufuzzaman, M., Nurre, S. G., & Bian, L. (2017). Drones 
+for disaster response and relief operations: A continuous approximation model. 
+International Journal of Production Economics, 188, 167–184.
+Chung, S. H., Sah, B., & Lee, J. (2020). Optimization for drone and drone-truck 
+combined operations: A review of the state of the art and future directions. 
+Computers & Operations Research, 123, Article 105004.
+Cokyasar, T., Dong, W., Jin, M., & Verbas, İ. Ö. (2021). Designing a drone delivery 
+network with automated battery swapping machines. Computers & Operations 
+Research, 129, Article 105177.
+Dayarian, I., Savelsbergh, M., & Clarke, J. P. (2020). Same-day delivery with drone 
+resupply. Transportation Science, 54(1), 229–249.
+De Maio, A., Musmanno, R., & Vocaturo, F. (2023). Unbiased decision making in 
+location-routing problems with uncertain customer demands. Soft Computing, 27(1), 
+12883–12893.
+European Journal of Operational Research 331 (2026) 242–259 
+257 

@@ -1,0 +1,681 @@
+{
+  "config": {
+    "instances": [
+      "Instance1",
+      "Instance2",
+      "Instance3",
+      "Instance4",
+      "Instance5",
+      "Instance6",
+      "Instance7",
+      "Instance8",
+      "Instance9",
+      "Instance10"
+    ],
+    "p": 2,
+    "seed": 123,
+    "k_max": 7,
+    "l_max": 6,
+    "i_max": 5
+  },
+  "table4_like": {
+    "N1": {
+      "avg_pct_increase_objective": 0.055777281830543965,
+      "ci95_objective": [
+        -0.8788292887249891,
+        0.9903838523860771
+      ],
+      "avg_pct_decrease_cpu": 4.695407423149454,
+      "ci95_cpu": [
+        -9.725475594175407,
+        19.116290440474316
+      ],
+      "rows": [
+        {
+          "instance": "Instance1",
+          "excluded_neighborhood": 1,
+          "expected_obj": 109.53666666666668,
+          "runtime_sec": 6.405786899995292,
+          "pct_obj_increase_vs_baseline": 1.2447237883969535,
+          "pct_cpu_decrease_vs_baseline": -63.75816005968403
+        },
+        {
+          "instance": "Instance2",
+          "excluded_neighborhood": 1,
+          "expected_obj": 10.783333333333333,
+          "runtime_sec": 7.452355099994747,
+          "pct_obj_increase_vs_baseline": -0.8884803921568547,
+          "pct_cpu_decrease_vs_baseline": 7.2825651766253285
+        },
+        {
+          "instance": "Instance3",
+          "excluded_neighborhood": 1,
+          "expected_obj": 11.436666666666664,
+          "runtime_sec": 7.424784800001362,
+          "pct_obj_increase_vs_baseline": 1.358936484490375,
+          "pct_cpu_decrease_vs_baseline": 13.224756300301069
+        },
+        {
+          "instance": "Instance4",
+          "excluded_neighborhood": 1,
+          "expected_obj": 9.4,
+          "runtime_sec": 7.028260899998713,
+          "pct_obj_increase_vs_baseline": 0.14204545454545783,
+          "pct_cpu_decrease_vs_baseline": 5.449985800576862
+        },
+        {
+          "instance": "Instance5",
+          "excluded_neighborhood": 1,
+          "expected_obj": 10.766666666666667,
+          "runtime_sec": 9.84418139999616,
+          "pct_obj_increase_vs_baseline": -0.030950170225924587,
+          "pct_cpu_decrease_vs_baseline": 9.832020534403958
+        },
+        {
+          "instance": "Instance6",
+          "excluded_neighborhood": 1,
+          "expected_obj": 19.66,
+          "runtime_sec": 6.50689710000006,
+          "pct_obj_increase_vs_baseline": 1.0104469943483594,
+          "pct_cpu_decrease_vs_baseline": 18.825723857515943
+        },
+        {
+          "instance": "Instance7",
+          "excluded_neighborhood": 1,
+          "expected_obj": 92.14666666666668,
+          "runtime_sec": 10.412205400003586,
+          "pct_obj_increase_vs_baseline": -0.7075895262382812,
+          "pct_cpu_decrease_vs_baseline": 12.402801796472124
+        },
+        {
+          "instance": "Instance8",
+          "excluded_neighborhood": 1,
+          "expected_obj": 7.723333333333334,
+          "runtime_sec": 7.450133699996513,
+          "pct_obj_increase_vs_baseline": 2.0255394099515627,
+          "pct_cpu_decrease_vs_baseline": 9.602149454868952
+        },
+        {
+          "instance": "Instance9",
+          "excluded_neighborhood": 1,
+          "expected_obj": 103.63333333333333,
+          "runtime_sec": 7.046172100002877,
+          "pct_obj_increase_vs_baseline": -3.5968992248062084,
+          "pct_cpu_decrease_vs_baseline": 21.102215439592683
+        },
+        {
+          "instance": "Instance10",
+          "excluded_neighborhood": 1,
+          "expected_obj": 113.08000000000001,
+          "runtime_sec": 6.8360057000027155,
+          "pct_obj_increase_vs_baseline": 0.0,
+          "pct_cpu_decrease_vs_baseline": 12.990015930821643
+        }
+      ]
+    },
+    "N2": {
+      "avg_pct_increase_objective": 5.206853705392376,
+      "ci95_objective": [
+        2.197753061824879,
+        8.215954348959873
+      ],
+      "avg_pct_decrease_cpu": 29.683630931706,
+      "ci95_cpu": [
+        20.971879077092765,
+        38.39538278631923
+      ],
+      "rows": [
+        {
+          "instance": "Instance1",
+          "excluded_neighborhood": 2,
+          "expected_obj": 112.97999999999999,
+          "runtime_sec": 2.7837490999954753,
+          "pct_obj_increase_vs_baseline": 4.4273962473426165,
+          "pct_cpu_decrease_vs_baseline": 28.835966946793768
+        },
+        {
+          "instance": "Instance2",
+          "excluded_neighborhood": 2,
+          "expected_obj": 10.959999999999999,
+          "runtime_sec": 5.637959400002728,
+          "pct_obj_increase_vs_baseline": 0.7352941176470595,
+          "pct_cpu_decrease_vs_baseline": 29.856115792582944
+        },
+        {
+          "instance": "Instance3",
+          "excluded_neighborhood": 2,
+          "expected_obj": 11.123333333333333,
+          "runtime_sec": 5.70847700000013,
+          "pct_obj_increase_vs_baseline": -1.4180206794682435,
+          "pct_cpu_decrease_vs_baseline": 33.28365788742501
+        },
+        {
+          "instance": "Instance4",
+          "excluded_neighborhood": 2,
+          "expected_obj": 10.879999999999999,
+          "runtime_sec": 5.157853899996553,
+          "pct_obj_increase_vs_baseline": 15.909090909090898,
+          "pct_cpu_decrease_vs_baseline": 30.612257225210097
+        },
+        {
+          "instance": "Instance5",
+          "excluded_neighborhood": 2,
+          "expected_obj": 11.546666666666667,
+          "runtime_sec": 5.389492799993604,
+          "pct_obj_increase_vs_baseline": 7.21138966264315,
+          "pct_cpu_decrease_vs_baseline": 50.63483123949843
+        },
+        {
+          "instance": "Instance6",
+          "excluded_neighborhood": 2,
+          "expected_obj": 20.109999999999996,
+          "runtime_sec": 6.3144566000046325,
+          "pct_obj_increase_vs_baseline": 3.3224867271793017,
+          "pct_cpu_decrease_vs_baseline": 21.22644082714904
+        },
+        {
+          "instance": "Instance7",
+          "excluded_neighborhood": 2,
+          "expected_obj": 101.76999999999998,
+          "runtime_sec": 7.242145900003379,
+          "pct_obj_increase_vs_baseline": 9.662009266908486,
+          "pct_cpu_decrease_vs_baseline": 39.07230356584741
+        },
+        {
+          "instance": "Instance8",
+          "excluded_neighborhood": 2,
+          "expected_obj": 8.183333333333334,
+          "runtime_sec": 5.765475400003197,
+          "pct_obj_increase_vs_baseline": 8.10215763980625,
+          "pct_cpu_decrease_vs_baseline": 30.043324788740023
+        },
+        {
+          "instance": "Instance9",
+          "excluded_neighborhood": 2,
+          "expected_obj": 110.49000000000001,
+          "runtime_sec": 5.426458400004776,
+          "pct_obj_increase_vs_baseline": 2.7813953488372176,
+          "pct_cpu_decrease_vs_baseline": 39.23856248566302
+        },
+        {
+          "instance": "Instance10",
+          "excluded_neighborhood": 2,
+          "expected_obj": 114.59,
+          "runtime_sec": 8.325389999998151,
+          "pct_obj_increase_vs_baseline": 1.3353378139370276,
+          "pct_cpu_decrease_vs_baseline": -5.967151441849762
+        }
+      ]
+    },
+    "N3": {
+      "avg_pct_increase_objective": 0.18299397006561866,
+      "ci95_objective": [
+        -0.5687085917268496,
+        0.934696531858087
+      ],
+      "avg_pct_decrease_cpu": 28.000126760594192,
+      "ci95_cpu": [
+        17.150032171470436,
+        38.85022134971795
+      ],
+      "rows": [
+        {
+          "instance": "Instance1",
+          "excluded_neighborhood": 3,
+          "expected_obj": 108.26666666666668,
+          "runtime_sec": 4.7901863000006415,
+          "pct_obj_increase_vs_baseline": 0.07086298795329327,
+          "pct_cpu_decrease_vs_baseline": -22.456789006169913
+        },
+        {
+          "instance": "Instance2",
+          "excluded_neighborhood": 3,
+          "expected_obj": 10.879999999999999,
+          "runtime_sec": 5.50632079999923,
+          "pct_obj_increase_vs_baseline": 0.0,
+          "pct_cpu_decrease_vs_baseline": 31.493879043568292
+        },
+        {
+          "instance": "Instance3",
+          "excluded_neighborhood": 3,
+          "expected_obj": 11.339999999999998,
+          "runtime_sec": 4.922962299999199,
+          "pct_obj_increase_vs_baseline": 0.5022156573116532,
+          "pct_cpu_decrease_vs_baseline": 42.464156899633984
+        },
+        {
+          "instance": "Instance4",
+          "excluded_neighborhood": 3,
+          "expected_obj": 9.319999999999999,
+          "runtime_sec": 4.922742099995958,
+          "pct_obj_increase_vs_baseline": -0.7102272727272891,
+          "pct_cpu_decrease_vs_baseline": 33.77517680728086
+        },
+        {
+          "instance": "Instance5",
+          "excluded_neighborhood": 3,
+          "expected_obj": 10.503333333333334,
+          "runtime_sec": 8.073352599996724,
+          "pct_obj_increase_vs_baseline": -2.476013618074891,
+          "pct_cpu_decrease_vs_baseline": 26.051962892993313
+        },
+        {
+          "instance": "Instance6",
+          "excluded_neighborhood": 3,
+          "expected_obj": 19.759999999999998,
+          "runtime_sec": 5.601449399997364,
+          "pct_obj_increase_vs_baseline": 1.5242336016441183,
+          "pct_cpu_decrease_vs_baseline": 30.121286166714782
+        },
+        {
+          "instance": "Instance7",
+          "excluded_neighborhood": 3,
+          "expected_obj": 94.56666666666669,
+          "runtime_sec": 7.993682100001024,
+          "pct_obj_increase_vs_baseline": 1.9000754283251493,
+          "pct_cpu_decrease_vs_baseline": 32.74967901713296
+        },
+        {
+          "instance": "Instance8",
+          "excluded_neighborhood": 3,
+          "expected_obj": 7.68,
+          "runtime_sec": 5.65630819999933,
+          "pct_obj_increase_vs_baseline": 1.4531043593130704,
+          "pct_cpu_decrease_vs_baseline": 31.36792923582325
+        },
+        {
+          "instance": "Instance9",
+          "excluded_neighborhood": 3,
+          "expected_obj": 107.35,
+          "runtime_sec": 5.152914799997234,
+          "pct_obj_increase_vs_baseline": -0.13953488372093553,
+          "pct_cpu_decrease_vs_baseline": 42.301499881311436
+        },
+        {
+          "instance": "Instance10",
+          "excluded_neighborhood": 3,
+          "expected_obj": 112.7466666666667,
+          "runtime_sec": 5.332062900000892,
+          "pct_obj_increase_vs_baseline": -0.29477655936798225,
+          "pct_cpu_decrease_vs_baseline": 32.13248666765297
+        }
+      ]
+    },
+    "N4": {
+      "avg_pct_increase_objective": 0.6267777623892017,
+      "ci95_objective": [
+        -0.3580051367733933,
+        1.6115606615517968
+      ],
+      "avg_pct_decrease_cpu": 12.8741627523847,
+      "ci95_cpu": [
+        0.13922320663411192,
+        25.60910229813529
+      ],
+      "rows": [
+        {
+          "instance": "Instance1",
+          "excluded_neighborhood": 4,
+          "expected_obj": 109.53666666666668,
+          "runtime_sec": 5.746242900000652,
+          "pct_obj_increase_vs_baseline": 1.2447237883969535,
+          "pct_cpu_decrease_vs_baseline": -46.89751302229885
+        },
+        {
+          "instance": "Instance2",
+          "excluded_neighborhood": 4,
+          "expected_obj": 10.783333333333333,
+          "runtime_sec": 5.810142000002088,
+          "pct_obj_increase_vs_baseline": -0.8884803921568547,
+          "pct_cpu_decrease_vs_baseline": 27.71393002996797
+        },
+        {
+          "instance": "Instance3",
+          "excluded_neighborhood": 4,
+          "expected_obj": 11.476666666666668,
+          "runtime_sec": 7.3329435999985435,
+          "pct_obj_increase_vs_baseline": 1.7134416543574753,
+          "pct_cpu_decrease_vs_baseline": 14.298126468809642
+        },
+        {
+          "instance": "Instance4",
+          "excluded_neighborhood": 4,
+          "expected_obj": 9.606666666666666,
+          "runtime_sec": 5.6428627999994205,
+          "pct_obj_increase_vs_baseline": 2.343749999999988,
+          "pct_cpu_decrease_vs_baseline": 24.087513901847398
+        },
+        {
+          "instance": "Instance5",
+          "excluded_neighborhood": 4,
+          "expected_obj": 10.633333333333333,
+          "runtime_sec": 9.029919900000095,
+          "pct_obj_increase_vs_baseline": -1.2689569792633864,
+          "pct_cpu_decrease_vs_baseline": 17.290265281021405
+        },
+        {
+          "instance": "Instance6",
+          "excluded_neighborhood": 4,
+          "expected_obj": 19.46666666666667,
+          "runtime_sec": 6.19695249999495,
+          "pct_obj_increase_vs_baseline": 0.01712622024321326,
+          "pct_cpu_decrease_vs_baseline": 22.692317744437307
+        },
+        {
+          "instance": "Instance7",
+          "excluded_neighborhood": 4,
+          "expected_obj": 92.95333333333335,
+          "runtime_sec": 10.16508579999936,
+          "pct_obj_increase_vs_baseline": 0.16163212528286233,
+          "pct_cpu_decrease_vs_baseline": 14.481802714139308
+        },
+        {
+          "instance": "Instance8",
+          "excluded_neighborhood": 4,
+          "expected_obj": 7.873333333333333,
+          "runtime_sec": 7.372479400000884,
+          "pct_obj_increase_vs_baseline": 4.00704535446939,
+          "pct_cpu_decrease_vs_baseline": 10.544385136517851
+        },
+        {
+          "instance": "Instance9",
+          "excluded_neighborhood": 4,
+          "expected_obj": 106.63666666666668,
+          "runtime_sec": 6.889295700006187,
+          "pct_obj_increase_vs_baseline": -0.8031007751937819,
+          "pct_cpu_decrease_vs_baseline": 22.85880046673758
+        },
+        {
+          "instance": "Instance10",
+          "excluded_neighborhood": 4,
+          "expected_obj": 112.78666666666668,
+          "runtime_sec": 6.153899100005219,
+          "pct_obj_increase_vs_baseline": -0.25940337224384197,
+          "pct_cpu_decrease_vs_baseline": 21.671998802667403
+        }
+      ]
+    },
+    "N5": {
+      "avg_pct_increase_objective": 0.0851679858687563,
+      "ci95_objective": [
+        -0.4749437826664019,
+        0.6452797544039145
+      ],
+      "avg_pct_decrease_cpu": 11.840648609500983,
+      "ci95_cpu": [
+        0.23533133369442183,
+        23.445965885307544
+      ],
+      "rows": [
+        {
+          "instance": "Instance1",
+          "excluded_neighborhood": 5,
+          "expected_obj": 107.70666666666666,
+          "runtime_sec": 5.565646499999275,
+          "pct_obj_increase_vs_baseline": -0.44674492405337685,
+          "pct_cpu_decrease_vs_baseline": -42.2807290675204
+        },
+        {
+          "instance": "Instance2",
+          "excluded_neighborhood": 5,
+          "expected_obj": 10.823333333333334,
+          "runtime_sec": 6.760225199999695,
+          "pct_obj_increase_vs_baseline": -0.5208333333333168,
+          "pct_cpu_decrease_vs_baseline": 15.89360263136837
+        },
+        {
+          "instance": "Instance3",
+          "excluded_neighborhood": 5,
+          "expected_obj": 11.229999999999999,
+          "runtime_sec": 6.450315399997635,
+          "pct_obj_increase_vs_baseline": -0.4726735598227583,
+          "pct_cpu_decrease_vs_baseline": 24.613614286219704
+        },
+        {
+          "instance": "Instance4",
+          "excluded_neighborhood": 5,
+          "expected_obj": 9.319999999999999,
+          "runtime_sec": 6.644084799998382,
+          "pct_obj_increase_vs_baseline": -0.7102272727272891,
+          "pct_cpu_decrease_vs_baseline": 10.618242390214423
+        },
+        {
+          "instance": "Instance5",
+          "excluded_neighborhood": 5,
+          "expected_obj": 10.77,
+          "runtime_sec": 9.457067499999539,
+          "pct_obj_increase_vs_baseline": 0.0,
+          "pct_cpu_decrease_vs_baseline": 13.377798163588617
+        },
+        {
+          "instance": "Instance6",
+          "excluded_neighborhood": 5,
+          "expected_obj": 19.376666666666665,
+          "runtime_sec": 6.50039580000157,
+          "pct_obj_increase_vs_baseline": -0.4452817263229971,
+          "pct_cpu_decrease_vs_baseline": 18.906828309185013
+        },
+        {
+          "instance": "Instance7",
+          "excluded_neighborhood": 5,
+          "expected_obj": 92.80333333333334,
+          "runtime_sec": 9.913154699999723,
+          "pct_obj_increase_vs_baseline": 0.0,
+          "pct_cpu_decrease_vs_baseline": 16.601282464346067
+        },
+        {
+          "instance": "Instance8",
+          "excluded_neighborhood": 5,
+          "expected_obj": 7.76,
+          "runtime_sec": 6.653076100003091,
+          "pct_obj_increase_vs_baseline": 2.5099075297225824,
+          "pct_cpu_decrease_vs_baseline": 19.273424723405405
+        },
+        {
+          "instance": "Instance9",
+          "excluded_neighborhood": 5,
+          "expected_obj": 107.75999999999999,
+          "runtime_sec": 6.424182399998244,
+          "pct_obj_increase_vs_baseline": 0.24186046511627063,
+          "pct_cpu_decrease_vs_baseline": 28.066792610470735
+        },
+        {
+          "instance": "Instance10",
+          "excluded_neighborhood": 5,
+          "expected_obj": 113.86666666666665,
+          "runtime_sec": 6.808852300004219,
+          "pct_obj_increase_vs_baseline": 0.6956726801084483,
+          "pct_cpu_decrease_vs_baseline": 13.335629583731892
+        }
+      ]
+    },
+    "N6": {
+      "avg_pct_increase_objective": 1.8573906423200914,
+      "ci95_objective": [
+        -0.09685755669257823,
+        3.811638841332761
+      ],
+      "avg_pct_decrease_cpu": 33.50585509266339,
+      "ci95_cpu": [
+        29.099912517018495,
+        37.91179766830828
+      ],
+      "rows": [
+        {
+          "instance": "Instance1",
+          "excluded_neighborhood": 6,
+          "expected_obj": 108.62333333333333,
+          "runtime_sec": 2.663616199999524,
+          "pct_obj_increase_vs_baseline": 0.40052993190990194,
+          "pct_cpu_decrease_vs_baseline": 31.90705609994457
+        },
+        {
+          "instance": "Instance2",
+          "excluded_neighborhood": 6,
+          "expected_obj": 10.879999999999999,
+          "runtime_sec": 5.767645200001425,
+          "pct_obj_increase_vs_baseline": 0.0,
+          "pct_cpu_decrease_vs_baseline": 28.242648030035657
+        },
+        {
+          "instance": "Instance3",
+          "excluded_neighborhood": 6,
+          "expected_obj": 11.87,
+          "runtime_sec": 5.3685991000020294,
+          "pct_obj_increase_vs_baseline": 5.199409158050216,
+          "pct_cpu_decrease_vs_baseline": 37.255892557508865
+        },
+        {
+          "instance": "Instance4",
+          "excluded_neighborhood": 6,
+          "expected_obj": 9.276666666666667,
+          "runtime_sec": 5.23517179999908,
+          "pct_obj_increase_vs_baseline": -1.171874999999994,
+          "pct_cpu_decrease_vs_baseline": 29.57211249422696
+        },
+        {
+          "instance": "Instance5",
+          "excluded_neighborhood": 6,
+          "expected_obj": 11.013333333333332,
+          "runtime_sec": 5.470463400000881,
+          "pct_obj_increase_vs_baseline": 2.259362426493336,
+          "pct_cpu_decrease_vs_baseline": 49.89317938424351
+        },
+        {
+          "instance": "Instance6",
+          "excluded_neighborhood": 6,
+          "expected_obj": 21.29333333333333,
+          "runtime_sec": 5.08389139999781,
+          "pct_obj_increase_vs_baseline": 9.402294913512579,
+          "pct_cpu_decrease_vs_baseline": 36.57788066422346
+        },
+        {
+          "instance": "Instance7",
+          "excluded_neighborhood": 6,
+          "expected_obj": 92.42666666666668,
+          "runtime_sec": 8.744471100006194,
+          "pct_obj_increase_vs_baseline": -0.4058762257102817,
+          "pct_cpu_decrease_vs_baseline": 26.43334061273895
+        },
+        {
+          "instance": "Instance8",
+          "excluded_neighborhood": 6,
+          "expected_obj": 7.806666666666667,
+          "runtime_sec": 6.190746799999033,
+          "pct_obj_increase_vs_baseline": 3.1263760457948,
+          "pct_cpu_decrease_vs_baseline": 24.883199882799044
+        },
+        {
+          "instance": "Instance9",
+          "excluded_neighborhood": 6,
+          "expected_obj": 106.33333333333333,
+          "runtime_sec": 5.403706299999612,
+          "pct_obj_increase_vs_baseline": -1.0852713178294617,
+          "pct_cpu_decrease_vs_baseline": 39.49332354727596
+        },
+        {
+          "instance": "Instance10",
+          "excluded_neighborhood": 6,
+          "expected_obj": 114.03999999999999,
+          "runtime_sec": 5.436757200004649,
+          "pct_obj_increase_vs_baseline": 0.8489564909798192,
+          "pct_cpu_decrease_vs_baseline": 30.79991765363693
+        }
+      ]
+    },
+    "N7": {
+      "avg_pct_increase_objective": 0.1587765655378427,
+      "ci95_objective": [
+        -0.760163567767324,
+        1.0777166988430094
+      ],
+      "avg_pct_decrease_cpu": 13.911477812381609,
+      "ci95_cpu": [
+        10.682016785364825,
+        17.140938839398395
+      ],
+      "rows": [
+        {
+          "instance": "Instance1",
+          "excluded_neighborhood": 7,
+          "expected_obj": 108.77333333333334,
+          "runtime_sec": 3.463466299996071,
+          "pct_obj_increase_vs_baseline": 0.5391749083402612,
+          "pct_cpu_decrease_vs_baseline": 11.459610260139138
+        },
+        {
+          "instance": "Instance2",
+          "excluded_neighborhood": 7,
+          "expected_obj": 10.879999999999999,
+          "runtime_sec": 6.972269000005326,
+          "pct_obj_increase_vs_baseline": 0.0,
+          "pct_cpu_decrease_vs_baseline": 13.255489317801675
+        },
+        {
+          "instance": "Instance3",
+          "excluded_neighborhood": 7,
+          "expected_obj": 11.55,
+          "runtime_sec": 6.57471830000577,
+          "pct_obj_increase_vs_baseline": 2.3633677991137447,
+          "pct_cpu_decrease_vs_baseline": 23.159687707074507
+        },
+        {
+          "instance": "Instance4",
+          "excluded_neighborhood": 7,
+          "expected_obj": 9.116666666666665,
+          "runtime_sec": 6.622674900005222,
+          "pct_obj_increase_vs_baseline": -2.876420454545469,
+          "pct_cpu_decrease_vs_baseline": 10.906266181186925
+        },
+        {
+          "instance": "Instance5",
+          "excluded_neighborhood": 7,
+          "expected_obj": 10.559999999999999,
+          "runtime_sec": 9.802982100001827,
+          "pct_obj_increase_vs_baseline": -1.9498607242339914,
+          "pct_cpu_decrease_vs_baseline": 10.209386359447302
+        },
+        {
+          "instance": "Instance6",
+          "excluded_neighborhood": 7,
+          "expected_obj": 19.62666666666667,
+          "runtime_sec": 7.190698500002327,
+          "pct_obj_increase_vs_baseline": 0.8391847919164457,
+          "pct_cpu_decrease_vs_baseline": 10.295224171206058
+        },
+        {
+          "instance": "Instance7",
+          "excluded_neighborhood": 7,
+          "expected_obj": 92.80333333333334,
+          "runtime_sec": 10.709220099997765,
+          "pct_obj_increase_vs_baseline": 0.0,
+          "pct_cpu_decrease_vs_baseline": 9.904036689058614
+        },
+        {
+          "instance": "Instance8",
+          "excluded_neighborhood": 7,
+          "expected_obj": 7.666666666666667,
+          "runtime_sec": 7.333784299997205,
+          "pct_obj_increase_vs_baseline": 1.2769704975781595,
+          "pct_cpu_decrease_vs_baseline": 11.013900719434584
+        },
+        {
+          "instance": "Instance9",
+          "excluded_neighborhood": 7,
+          "expected_obj": 108.99999999999997,
+          "runtime_sec": 6.7132425000017975,
+          "pct_obj_increase_vs_baseline": 1.395348837209276,
+          "pct_cpu_decrease_vs_baseline": 24.830113010339936
+        },
+        {
+          "instance": "Instance10",
+          "excluded_neighborhood": 7,
+          "expected_obj": 113.08000000000001,
+          "runtime_sec": 6.750286700000288,
+          "pct_obj_increase_vs_baseline": 0.0,
+          "pct_cpu_decrease_vs_baseline": 14.08106370812735
+        }
+      ]
+    }
+  }
+}

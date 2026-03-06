@@ -1,0 +1,47 @@
+{
+  "config": {
+    "instances": [
+      "Instance3"
+    ],
+    "p": 2,
+    "seed": 123,
+    "k_max": 7,
+    "l_max": 6,
+    "i_max": 1
+  },
+  "table3_like": {
+    "rows": [
+      {
+        "instance": "Instance3",
+        "with_improvement": {
+          "instance": "Instance3",
+          "best_x_open": [
+            15,
+            18
+          ],
+          "expected_obj": 11.463333333333333,
+          "runtime_sec": 3.5291739999993297
+        },
+        "without_improvement": {
+          "instance": "Instance3",
+          "best_x_open": [
+            15,
+            19
+          ],
+          "expected_obj": 15.413333333333332,
+          "runtime_sec": 0.00784650000059628
+        },
+        "pct_gap_wo_vs_with": 34.45769118929921,
+        "pct_cpu_decrease_wo_vs_with": 99.77766752218514
+      }
+    ],
+    "average": {
+      "with_improvement_expected_obj": 11.463333333333333,
+      "with_improvement_runtime_sec": 3.5291739999993297,
+      "without_improvement_expected_obj": 15.413333333333332,
+      "without_improvement_runtime_sec": 0.00784650000059628,
+      "avg_pct_gap_wo_vs_with": 34.45769118929921,
+      "avg_pct_cpu_decrease_wo_vs_with": 99.77766752218514
+    }
+  }
+}

@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+.vscode/
+.idea/
+
+*.tmp
+*.temp
+~$*
