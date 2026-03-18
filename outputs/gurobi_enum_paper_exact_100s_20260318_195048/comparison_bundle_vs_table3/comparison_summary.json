@@ -1,0 +1,425 @@
+{
+  "rows": [
+    {
+      "instance": "Instance1",
+      "table3_combo_internal": [
+        16,
+        17
+      ],
+      "table3_combo_idx": [
+        1,
+        2
+      ],
+      "table3_combo_base": [
+        2,
+        5
+      ],
+      "table3_arrival_obj_reference": 107.13666666666668,
+      "paper_obj_table3_path_fixed": 107.13666666666666,
+      "paper_status_table3_path_fixed": "OPTIMAL",
+      "gurobi_best_combo_internal": [
+        15,
+        17
+      ],
+      "gurobi_best_combo_idx": [
+        0,
+        2
+      ],
+      "gurobi_best_combo_base": [
+        0,
+        5
+      ],
+      "paper_obj_gurobi_best_combo_opt": 104.01333120934271,
+      "gurobi_best_status": "TIME_LIMIT",
+      "gurobi_best_runtime_sec": 100.26699995994568,
+      "gurobi_best_bound": 78.34451110622358,
+      "gurobi_best_achieved_mip_gap_pct": 24.678394398749436,
+      "instance_optimal_combo_count": 2,
+      "instance_time_limit_combo_count": 8,
+      "gap_table3_path_minus_gurobi_best_combo_opt": 3.1233354573239467,
+      "match_table3_combo_vs_gurobi_best_combo": false,
+      "table3_json": "outputs/routes_bundle_10instances\\Instance1_table3_fixedx_combo_16_17.json",
+      "table3_repaired_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance1_table3_fixedx_combo_16_17_paper_exact_repaired.json",
+      "gurobi_best_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance1_gurobi_best_combo_15_17.json"
+    },
+    {
+      "instance": "Instance2",
+      "table3_combo_internal": [
+        15,
+        16
+      ],
+      "table3_combo_idx": [
+        0,
+        1
+      ],
+      "table3_combo_base": [
+        1,
+        3
+      ],
+      "table3_arrival_obj_reference": 10.313333333333334,
+      "paper_obj_table3_path_fixed": 10.313333333333334,
+      "paper_status_table3_path_fixed": "OPTIMAL",
+      "gurobi_best_combo_internal": [
+        15,
+        16
+      ],
+      "gurobi_best_combo_idx": [
+        0,
+        1
+      ],
+      "gurobi_best_combo_base": [
+        1,
+        3
+      ],
+      "paper_obj_gurobi_best_combo_opt": 10.306666657700694,
+      "gurobi_best_status": "TIME_LIMIT",
+      "gurobi_best_runtime_sec": 100.36500000953674,
+      "gurobi_best_bound": 8.226666666307958,
+      "gurobi_best_achieved_mip_gap_pct": 20.18111248255662,
+      "instance_optimal_combo_count": 2,
+      "instance_time_limit_combo_count": 8,
+      "gap_table3_path_minus_gurobi_best_combo_opt": 0.006666675632640562,
+      "match_table3_combo_vs_gurobi_best_combo": true,
+      "table3_json": "outputs/routes_bundle_10instances\\Instance2_table3_fixedx_combo_15_16.json",
+      "table3_repaired_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance2_table3_fixedx_combo_15_16_paper_exact_repaired.json",
+      "gurobi_best_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance2_gurobi_best_combo_15_16.json"
+    },
+    {
+      "instance": "Instance3",
+      "table3_combo_internal": [
+        15,
+        18
+      ],
+      "table3_combo_idx": [
+        0,
+        3
+      ],
+      "table3_combo_base": [
+        5,
+        8
+      ],
+      "table3_arrival_obj_reference": 10.919999999999998,
+      "paper_obj_table3_path_fixed": 10.92,
+      "paper_status_table3_path_fixed": "OPTIMAL",
+      "gurobi_best_combo_internal": [
+        15,
+        18
+      ],
+      "gurobi_best_combo_idx": [
+        0,
+        3
+      ],
+      "gurobi_best_combo_base": [
+        5,
+        8
+      ],
+      "paper_obj_gurobi_best_combo_opt": 10.506666666666666,
+      "gurobi_best_status": "TIME_LIMIT",
+      "gurobi_best_runtime_sec": 100.22100019454956,
+      "gurobi_best_bound": 9.082785705833457,
+      "gurobi_best_achieved_mip_gap_pct": 13.552166505392218,
+      "instance_optimal_combo_count": 8,
+      "instance_time_limit_combo_count": 2,
+      "gap_table3_path_minus_gurobi_best_combo_opt": 0.413333333333334,
+      "match_table3_combo_vs_gurobi_best_combo": true,
+      "table3_json": "outputs/routes_bundle_10instances\\Instance3_table3_fixedx_combo_15_18.json",
+      "table3_repaired_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance3_table3_fixedx_combo_15_18_paper_exact_repaired.json",
+      "gurobi_best_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance3_gurobi_best_combo_15_18.json"
+    },
+    {
+      "instance": "Instance4",
+      "table3_combo_internal": [
+        16,
+        17
+      ],
+      "table3_combo_idx": [
+        1,
+        2
+      ],
+      "table3_combo_base": [
+        5,
+        10
+      ],
+      "table3_arrival_obj_reference": 9.386666666666667,
+      "paper_obj_table3_path_fixed": 9.386666666666668,
+      "paper_status_table3_path_fixed": "OPTIMAL",
+      "gurobi_best_combo_internal": [
+        16,
+        17
+      ],
+      "gurobi_best_combo_idx": [
+        1,
+        2
+      ],
+      "gurobi_best_combo_base": [
+        5,
+        10
+      ],
+      "paper_obj_gurobi_best_combo_opt": 8.909999985890655,
+      "gurobi_best_status": "TIME_LIMIT",
+      "gurobi_best_runtime_sec": 100.42700004577637,
+      "gurobi_best_bound": 6.754487905329292,
+      "gurobi_best_achieved_mip_gap_pct": 24.192054814530913,
+      "instance_optimal_combo_count": 4,
+      "instance_time_limit_combo_count": 6,
+      "gap_table3_path_minus_gurobi_best_combo_opt": 0.47666668077601315,
+      "match_table3_combo_vs_gurobi_best_combo": true,
+      "table3_json": "outputs/routes_bundle_10instances\\Instance4_table3_fixedx_combo_16_17.json",
+      "table3_repaired_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance4_table3_fixedx_combo_16_17_paper_exact_repaired.json",
+      "gurobi_best_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance4_gurobi_best_combo_16_17.json"
+    },
+    {
+      "instance": "Instance5",
+      "table3_combo_internal": [
+        17,
+        19
+      ],
+      "table3_combo_idx": [
+        2,
+        4
+      ],
+      "table3_combo_base": [
+        5,
+        10
+      ],
+      "table3_arrival_obj_reference": 10.383333333333333,
+      "paper_obj_table3_path_fixed": 10.383333333333335,
+      "paper_status_table3_path_fixed": "OPTIMAL",
+      "gurobi_best_combo_internal": [
+        17,
+        19
+      ],
+      "gurobi_best_combo_idx": [
+        2,
+        4
+      ],
+      "gurobi_best_combo_base": [
+        5,
+        10
+      ],
+      "paper_obj_gurobi_best_combo_opt": 9.876666401027084,
+      "gurobi_best_status": "TIME_LIMIT",
+      "gurobi_best_runtime_sec": 100.31900000572205,
+      "gurobi_best_bound": 7.024227255745725,
+      "gurobi_best_achieved_mip_gap_pct": 28.88058611541979,
+      "instance_optimal_combo_count": 6,
+      "instance_time_limit_combo_count": 4,
+      "gap_table3_path_minus_gurobi_best_combo_opt": 0.5066669323062509,
+      "match_table3_combo_vs_gurobi_best_combo": true,
+      "table3_json": "outputs/routes_bundle_10instances\\Instance5_table3_fixedx_combo_17_19.json",
+      "table3_repaired_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance5_table3_fixedx_combo_17_19_paper_exact_repaired.json",
+      "gurobi_best_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance5_gurobi_best_combo_17_19.json"
+    },
+    {
+      "instance": "Instance6",
+      "table3_combo_internal": [
+        15,
+        16
+      ],
+      "table3_combo_idx": [
+        0,
+        1
+      ],
+      "table3_combo_base": [
+        3,
+        7
+      ],
+      "table3_arrival_obj_reference": 18.093333333333334,
+      "paper_obj_table3_path_fixed": 18.093333333333334,
+      "paper_status_table3_path_fixed": "OPTIMAL",
+      "gurobi_best_combo_internal": [
+        15,
+        16
+      ],
+      "gurobi_best_combo_idx": [
+        0,
+        1
+      ],
+      "gurobi_best_combo_base": [
+        3,
+        7
+      ],
+      "paper_obj_gurobi_best_combo_opt": 18.186666416400804,
+      "gurobi_best_status": "TIME_LIMIT",
+      "gurobi_best_runtime_sec": 100.13600015640259,
+      "gurobi_best_bound": 14.300841581876721,
+      "gurobi_best_achieved_mip_gap_pct": 21.36633919353044,
+      "instance_optimal_combo_count": 1,
+      "instance_time_limit_combo_count": 9,
+      "gap_table3_path_minus_gurobi_best_combo_opt": -0.09333308306747057,
+      "match_table3_combo_vs_gurobi_best_combo": true,
+      "table3_json": "outputs/routes_bundle_10instances\\Instance6_table3_fixedx_combo_15_16.json",
+      "table3_repaired_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance6_table3_fixedx_combo_15_16_paper_exact_repaired.json",
+      "gurobi_best_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance6_gurobi_best_combo_15_16.json"
+    },
+    {
+      "instance": "Instance7",
+      "table3_combo_internal": [
+        16,
+        18
+      ],
+      "table3_combo_idx": [
+        1,
+        3
+      ],
+      "table3_combo_base": [
+        5,
+        8
+      ],
+      "table3_arrival_obj_reference": 88.95333333333332,
+      "paper_obj_table3_path_fixed": 88.95333333333333,
+      "paper_status_table3_path_fixed": "OPTIMAL",
+      "gurobi_best_combo_internal": [
+        16,
+        18
+      ],
+      "gurobi_best_combo_idx": [
+        1,
+        3
+      ],
+      "gurobi_best_combo_base": [
+        5,
+        8
+      ],
+      "paper_obj_gurobi_best_combo_opt": 88.95666381701703,
+      "gurobi_best_status": "TIME_LIMIT",
+      "gurobi_best_runtime_sec": 100.20600008964539,
+      "gurobi_best_bound": 66.81480098146123,
+      "gurobi_best_achieved_mip_gap_pct": 24.890617392196035,
+      "instance_optimal_combo_count": 0,
+      "instance_time_limit_combo_count": 10,
+      "gap_table3_path_minus_gurobi_best_combo_opt": -0.0033304836836975937,
+      "match_table3_combo_vs_gurobi_best_combo": true,
+      "table3_json": "outputs/routes_bundle_10instances\\Instance7_table3_fixedx_combo_16_18.json",
+      "table3_repaired_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance7_table3_fixedx_combo_16_18_paper_exact_repaired.json",
+      "gurobi_best_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance7_gurobi_best_combo_16_18.json"
+    },
+    {
+      "instance": "Instance8",
+      "table3_combo_internal": [
+        15,
+        19
+      ],
+      "table3_combo_idx": [
+        0,
+        4
+      ],
+      "table3_combo_base": [
+        1,
+        14
+      ],
+      "table3_arrival_obj_reference": 7.460000000000002,
+      "paper_obj_table3_path_fixed": 7.460000000000001,
+      "paper_status_table3_path_fixed": "OPTIMAL",
+      "gurobi_best_combo_internal": [
+        15,
+        19
+      ],
+      "gurobi_best_combo_idx": [
+        0,
+        4
+      ],
+      "gurobi_best_combo_base": [
+        1,
+        14
+      ],
+      "paper_obj_gurobi_best_combo_opt": 7.4233332041922555,
+      "gurobi_best_status": "TIME_LIMIT",
+      "gurobi_best_runtime_sec": 100.65000009536743,
+      "gurobi_best_bound": 5.943417898377185,
+      "gurobi_best_achieved_mip_gap_pct": 19.93599458770492,
+      "instance_optimal_combo_count": 1,
+      "instance_time_limit_combo_count": 9,
+      "gap_table3_path_minus_gurobi_best_combo_opt": 0.036666795807745345,
+      "match_table3_combo_vs_gurobi_best_combo": true,
+      "table3_json": "outputs/routes_bundle_10instances\\Instance8_table3_fixedx_combo_15_19.json",
+      "table3_repaired_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance8_table3_fixedx_combo_15_19_paper_exact_repaired.json",
+      "gurobi_best_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance8_gurobi_best_combo_15_19.json"
+    },
+    {
+      "instance": "Instance9",
+      "table3_combo_internal": [
+        17,
+        19
+      ],
+      "table3_combo_idx": [
+        2,
+        4
+      ],
+      "table3_combo_base": [
+        6,
+        13
+      ],
+      "table3_arrival_obj_reference": 101.69666666666666,
+      "paper_obj_table3_path_fixed": 101.69666666666669,
+      "paper_status_table3_path_fixed": "OPTIMAL",
+      "gurobi_best_combo_internal": [
+        17,
+        19
+      ],
+      "gurobi_best_combo_idx": [
+        2,
+        4
+      ],
+      "gurobi_best_combo_base": [
+        6,
+        13
+      ],
+      "paper_obj_gurobi_best_combo_opt": 101.44666624462798,
+      "gurobi_best_status": "TIME_LIMIT",
+      "gurobi_best_runtime_sec": 100.22099995613098,
+      "gurobi_best_bound": 80.42185261517137,
+      "gurobi_best_achieved_mip_gap_pct": 20.724992163623664,
+      "instance_optimal_combo_count": 3,
+      "instance_time_limit_combo_count": 7,
+      "gap_table3_path_minus_gurobi_best_combo_opt": 0.25000042203870976,
+      "match_table3_combo_vs_gurobi_best_combo": true,
+      "table3_json": "outputs/routes_bundle_10instances\\Instance9_table3_fixedx_combo_17_19.json",
+      "table3_repaired_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance9_table3_fixedx_combo_17_19_paper_exact_repaired.json",
+      "gurobi_best_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance9_gurobi_best_combo_17_19.json"
+    },
+    {
+      "instance": "Instance10",
+      "table3_combo_internal": [
+        17,
+        19
+      ],
+      "table3_combo_idx": [
+        2,
+        4
+      ],
+      "table3_combo_base": [
+        4,
+        14
+      ],
+      "table3_arrival_obj_reference": 112.62666666666667,
+      "paper_obj_table3_path_fixed": 112.68,
+      "paper_status_table3_path_fixed": "OPTIMAL",
+      "gurobi_best_combo_internal": [
+        17,
+        19
+      ],
+      "gurobi_best_combo_idx": [
+        2,
+        4
+      ],
+      "gurobi_best_combo_base": [
+        4,
+        14
+      ],
+      "paper_obj_gurobi_best_combo_opt": 112.18,
+      "gurobi_best_status": "TIME_LIMIT",
+      "gurobi_best_runtime_sec": 100.28400015830994,
+      "gurobi_best_bound": 77.24859480949313,
+      "gurobi_best_achieved_mip_gap_pct": 31.138710278576287,
+      "instance_optimal_combo_count": 0,
+      "instance_time_limit_combo_count": 10,
+      "gap_table3_path_minus_gurobi_best_combo_opt": 0.5,
+      "match_table3_combo_vs_gurobi_best_combo": true,
+      "table3_json": "outputs/routes_bundle_10instances\\Instance10_table3_fixedx_combo_17_19.json",
+      "table3_repaired_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance10_table3_fixedx_combo_17_19_paper_exact_repaired.json",
+      "gurobi_best_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance10_gurobi_best_combo_17_19.json"
+    }
+  ],
+  "count": 10
+}

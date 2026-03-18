@@ -9,3 +9,10 @@ __pycache__/
 *.tmp
 *.temp
 ~$*
+
+# Generated experiment artifacts
+outputs/_tmp_*
+outputs/_smoke_*
+outputs/gurobi_instance*_1800s*
+outputs/gurobi_i2_i5_1800s*
+outputs/*_i10*

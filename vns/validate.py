@@ -4,6 +4,17 @@ from vns.types import Solution, ValidationResult
 
 
 def validate_solution(sol: Solution, instance) -> ValidationResult:
+    """
+    校验解的可行性与一致性。
+
+    检查项：
+    - 每条卡车路径是否以对应 depot 开始；
+    - 卡车边是否可行；
+    - 无人机任务是否在可达集合内；
+    - 每个需求点是否“恰好服务一次”（不重复、不遗漏）。
+
+    返回 ValidationResult，供 repair 与审计脚本复用。
+    """
     demand_set = set(instance.demand_nodes)
     counts = {i: 0 for i in demand_set}
     errors = []

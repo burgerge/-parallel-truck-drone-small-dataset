@@ -1,0 +1,11 @@
+instance,best_objective,best_arrival_rescore_objective,selection_metric,best_open_depots,best_open_depots_base,best_open_depots_idx,feasible_count,optimal_count,time_limit_count,error_count
+Instance1,104.01333120934271,,paper_objective,"[15, 17]","[0, 5]","[0, 2]",10,2,8,0
+Instance2,10.306666657700694,,paper_objective,"[15, 16]","[1, 3]","[0, 1]",10,2,8,0
+Instance3,10.506666666666666,,paper_objective,"[15, 18]","[5, 8]","[0, 3]",10,8,2,0
+Instance4,8.909999985890655,,paper_objective,"[16, 17]","[5, 10]","[1, 2]",10,4,6,0
+Instance5,9.876666401027084,,paper_objective,"[17, 19]","[5, 10]","[2, 4]",10,6,4,0
+Instance6,18.186666416400804,,paper_objective,"[15, 16]","[3, 7]","[0, 1]",10,1,9,0
+Instance7,88.95666381701703,,paper_objective,"[16, 18]","[5, 8]","[1, 3]",10,0,10,0
+Instance8,7.4233332041922555,,paper_objective,"[15, 19]","[1, 14]","[0, 4]",10,1,9,0
+Instance9,101.44666624462798,,paper_objective,"[17, 19]","[6, 13]","[2, 4]",10,3,7,0
+Instance10,112.18,,paper_objective,"[17, 19]","[4, 14]","[2, 4]",10,0,10,0

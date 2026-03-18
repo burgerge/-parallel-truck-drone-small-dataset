@@ -1,0 +1,302 @@
+[
+  {
+    "instance": "Instance1",
+    "table3_combo_internal": [
+      16,
+      17
+    ],
+    "gurobi_same_combo_internal": [
+      16,
+      17
+    ],
+    "gurobi_best_combo_internal": [
+      15,
+      17
+    ],
+    "combo_match_t3_vs_gurobi_same": true,
+    "combo_match_t3_vs_gurobi_best": false,
+    "table3_obj_arrival_a5": 107.13666666666668,
+    "gurobi_obj_same_combo_paper": 97.28,
+    "gurobi_obj_best_combo_paper": 94.63333333333334,
+    "diff_t3_arrival_minus_gurobi_same_paper": 9.856666666666683,
+    "diff_gurobi_same_minus_gurobi_best": 2.646666666666661,
+    "path_pairs_total_scenario_depot": 20,
+    "truck_walk_exact_pairs": 0,
+    "drone_seq_exact_pairs": 14,
+    "both_truck_drone_exact_pairs": 0,
+    "truck_walk_exact_ratio": 0.0,
+    "drone_seq_exact_ratio": 0.7,
+    "both_exact_ratio": 0.0,
+    "scenario_any_mismatch_count": 10
+  },
+  {
+    "instance": "Instance2",
+    "table3_combo_internal": [
+      15,
+      16
+    ],
+    "gurobi_same_combo_internal": [
+      15,
+      16
+    ],
+    "gurobi_best_combo_internal": [
+      15,
+      16
+    ],
+    "combo_match_t3_vs_gurobi_same": true,
+    "combo_match_t3_vs_gurobi_best": true,
+    "table3_obj_arrival_a5": 10.313333333333334,
+    "gurobi_obj_same_combo_paper": 9.62,
+    "gurobi_obj_best_combo_paper": 9.62,
+    "diff_t3_arrival_minus_gurobi_same_paper": 0.6933333333333351,
+    "diff_gurobi_same_minus_gurobi_best": 0.0,
+    "path_pairs_total_scenario_depot": 20,
+    "truck_walk_exact_pairs": 0,
+    "drone_seq_exact_pairs": 8,
+    "both_truck_drone_exact_pairs": 0,
+    "truck_walk_exact_ratio": 0.0,
+    "drone_seq_exact_ratio": 0.4,
+    "both_exact_ratio": 0.0,
+    "scenario_any_mismatch_count": 10
+  },
+  {
+    "instance": "Instance3",
+    "table3_combo_internal": [
+      15,
+      18
+    ],
+    "gurobi_same_combo_internal": [
+      15,
+      18
+    ],
+    "gurobi_best_combo_internal": [
+      15,
+      18
+    ],
+    "combo_match_t3_vs_gurobi_same": true,
+    "combo_match_t3_vs_gurobi_best": true,
+    "table3_obj_arrival_a5": 10.919999999999998,
+    "gurobi_obj_same_combo_paper": 10.036666666666667,
+    "gurobi_obj_best_combo_paper": 10.036666666666667,
+    "diff_t3_arrival_minus_gurobi_same_paper": 0.8833333333333311,
+    "diff_gurobi_same_minus_gurobi_best": 0.0,
+    "path_pairs_total_scenario_depot": 20,
+    "truck_walk_exact_pairs": 0,
+    "drone_seq_exact_pairs": 4,
+    "both_truck_drone_exact_pairs": 0,
+    "truck_walk_exact_ratio": 0.0,
+    "drone_seq_exact_ratio": 0.2,
+    "both_exact_ratio": 0.0,
+    "scenario_any_mismatch_count": 10
+  },
+  {
+    "instance": "Instance4",
+    "table3_combo_internal": [
+      16,
+      17
+    ],
+    "gurobi_same_combo_internal": [
+      16,
+      17
+    ],
+    "gurobi_best_combo_internal": [
+      16,
+      17
+    ],
+    "combo_match_t3_vs_gurobi_same": true,
+    "combo_match_t3_vs_gurobi_best": true,
+    "table3_obj_arrival_a5": 9.386666666666667,
+    "gurobi_obj_same_combo_paper": 7.369999745047008,
+    "gurobi_obj_best_combo_paper": 7.369999745047008,
+    "diff_t3_arrival_minus_gurobi_same_paper": 2.0166669216196587,
+    "diff_gurobi_same_minus_gurobi_best": 0.0,
+    "path_pairs_total_scenario_depot": 20,
+    "truck_walk_exact_pairs": 0,
+    "drone_seq_exact_pairs": 5,
+    "both_truck_drone_exact_pairs": 0,
+    "truck_walk_exact_ratio": 0.0,
+    "drone_seq_exact_ratio": 0.25,
+    "both_exact_ratio": 0.0,
+    "scenario_any_mismatch_count": 10
+  },
+  {
+    "instance": "Instance5",
+    "table3_combo_internal": [
+      17,
+      19
+    ],
+    "gurobi_same_combo_internal": [
+      17,
+      19
+    ],
+    "gurobi_best_combo_internal": [
+      17,
+      19
+    ],
+    "combo_match_t3_vs_gurobi_same": true,
+    "combo_match_t3_vs_gurobi_best": true,
+    "table3_obj_arrival_a5": 10.383333333333333,
+    "gurobi_obj_same_combo_paper": 8.843333333333335,
+    "gurobi_obj_best_combo_paper": 8.843333333333335,
+    "diff_t3_arrival_minus_gurobi_same_paper": 1.5399999999999974,
+    "diff_gurobi_same_minus_gurobi_best": 0.0,
+    "path_pairs_total_scenario_depot": 20,
+    "truck_walk_exact_pairs": 0,
+    "drone_seq_exact_pairs": 0,
+    "both_truck_drone_exact_pairs": 0,
+    "truck_walk_exact_ratio": 0.0,
+    "drone_seq_exact_ratio": 0.0,
+    "both_exact_ratio": 0.0,
+    "scenario_any_mismatch_count": 10
+  },
+  {
+    "instance": "Instance6",
+    "table3_combo_internal": [
+      15,
+      16
+    ],
+    "gurobi_same_combo_internal": [
+      15,
+      16
+    ],
+    "gurobi_best_combo_internal": [
+      15,
+      16
+    ],
+    "combo_match_t3_vs_gurobi_same": true,
+    "combo_match_t3_vs_gurobi_best": true,
+    "table3_obj_arrival_a5": 18.093333333333334,
+    "gurobi_obj_same_combo_paper": 13.526665054220857,
+    "gurobi_obj_best_combo_paper": 13.526665054220857,
+    "diff_t3_arrival_minus_gurobi_same_paper": 4.566668279112477,
+    "diff_gurobi_same_minus_gurobi_best": 0.0,
+    "path_pairs_total_scenario_depot": 20,
+    "truck_walk_exact_pairs": 0,
+    "drone_seq_exact_pairs": 4,
+    "both_truck_drone_exact_pairs": 0,
+    "truck_walk_exact_ratio": 0.0,
+    "drone_seq_exact_ratio": 0.2,
+    "both_exact_ratio": 0.0,
+    "scenario_any_mismatch_count": 10
+  },
+  {
+    "instance": "Instance7",
+    "table3_combo_internal": [
+      16,
+      18
+    ],
+    "gurobi_same_combo_internal": [
+      16,
+      18
+    ],
+    "gurobi_best_combo_internal": [
+      16,
+      18
+    ],
+    "combo_match_t3_vs_gurobi_same": true,
+    "combo_match_t3_vs_gurobi_best": true,
+    "table3_obj_arrival_a5": 88.95333333333332,
+    "gurobi_obj_same_combo_paper": 81.23333142295746,
+    "gurobi_obj_best_combo_paper": 81.23333142295746,
+    "diff_t3_arrival_minus_gurobi_same_paper": 7.720001910375856,
+    "diff_gurobi_same_minus_gurobi_best": 0.0,
+    "path_pairs_total_scenario_depot": 20,
+    "truck_walk_exact_pairs": 0,
+    "drone_seq_exact_pairs": 11,
+    "both_truck_drone_exact_pairs": 0,
+    "truck_walk_exact_ratio": 0.0,
+    "drone_seq_exact_ratio": 0.55,
+    "both_exact_ratio": 0.0,
+    "scenario_any_mismatch_count": 10
+  },
+  {
+    "instance": "Instance8",
+    "table3_combo_internal": [
+      15,
+      19
+    ],
+    "gurobi_same_combo_internal": [
+      15,
+      19
+    ],
+    "gurobi_best_combo_internal": [
+      15,
+      19
+    ],
+    "combo_match_t3_vs_gurobi_same": true,
+    "combo_match_t3_vs_gurobi_best": true,
+    "table3_obj_arrival_a5": 7.460000000000002,
+    "gurobi_obj_same_combo_paper": 6.543332842652998,
+    "gurobi_obj_best_combo_paper": 6.543332842652998,
+    "diff_t3_arrival_minus_gurobi_same_paper": 0.9166671573470033,
+    "diff_gurobi_same_minus_gurobi_best": 0.0,
+    "path_pairs_total_scenario_depot": 20,
+    "truck_walk_exact_pairs": 0,
+    "drone_seq_exact_pairs": 10,
+    "both_truck_drone_exact_pairs": 0,
+    "truck_walk_exact_ratio": 0.0,
+    "drone_seq_exact_ratio": 0.5,
+    "both_exact_ratio": 0.0,
+    "scenario_any_mismatch_count": 10
+  },
+  {
+    "instance": "Instance9",
+    "table3_combo_internal": [
+      17,
+      19
+    ],
+    "gurobi_same_combo_internal": [
+      17,
+      19
+    ],
+    "gurobi_best_combo_internal": [
+      15,
+      18
+    ],
+    "combo_match_t3_vs_gurobi_same": true,
+    "combo_match_t3_vs_gurobi_best": false,
+    "table3_obj_arrival_a5": 101.69666666666666,
+    "gurobi_obj_same_combo_paper": 92.43332989367985,
+    "gurobi_obj_best_combo_paper": 90.75,
+    "diff_t3_arrival_minus_gurobi_same_paper": 9.263336772986804,
+    "diff_gurobi_same_minus_gurobi_best": 1.6833298936798542,
+    "path_pairs_total_scenario_depot": 20,
+    "truck_walk_exact_pairs": 0,
+    "drone_seq_exact_pairs": 8,
+    "both_truck_drone_exact_pairs": 0,
+    "truck_walk_exact_ratio": 0.0,
+    "drone_seq_exact_ratio": 0.4,
+    "both_exact_ratio": 0.0,
+    "scenario_any_mismatch_count": 10
+  },
+  {
+    "instance": "Instance10",
+    "table3_combo_internal": [
+      17,
+      19
+    ],
+    "gurobi_same_combo_internal": [
+      17,
+      19
+    ],
+    "gurobi_best_combo_internal": [
+      17,
+      19
+    ],
+    "combo_match_t3_vs_gurobi_same": true,
+    "combo_match_t3_vs_gurobi_best": true,
+    "table3_obj_arrival_a5": 112.62666666666667,
+    "gurobi_obj_same_combo_paper": 108.42332958092017,
+    "gurobi_obj_best_combo_paper": 108.42332958092017,
+    "diff_t3_arrival_minus_gurobi_same_paper": 4.203337085746497,
+    "diff_gurobi_same_minus_gurobi_best": 0.0,
+    "path_pairs_total_scenario_depot": 20,
+    "truck_walk_exact_pairs": 0,
+    "drone_seq_exact_pairs": 2,
+    "both_truck_drone_exact_pairs": 0,
+    "truck_walk_exact_ratio": 0.0,
+    "drone_seq_exact_ratio": 0.1,
+    "both_exact_ratio": 0.0,
+    "scenario_any_mismatch_count": 10
+  }
+]

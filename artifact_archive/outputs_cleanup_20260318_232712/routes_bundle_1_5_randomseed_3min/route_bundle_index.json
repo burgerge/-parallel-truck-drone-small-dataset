@@ -1,0 +1,95 @@
+{
+  "rows": [
+    {
+      "instance": "Instance1",
+      "table3_combo_idx": [
+        1,
+        2
+      ],
+      "gurobi_best_combo_idx": [
+        0,
+        2
+      ],
+      "gurobi_same_as_table3_combo_idx": [
+        1,
+        2
+      ],
+      "table3_paths_json": "outputs/routes_bundle_1_5_randomseed_3min\\Instance1_table3_fixedx_combo_16_17.json",
+      "gurobi_best_paths_json": "outputs/routes_bundle_1_5_randomseed_3min\\Instance1_gurobi_best_combo_15_17.json",
+      "gurobi_same_as_table3_paths_json": "outputs/routes_bundle_1_5_randomseed_3min\\Instance1_gurobi_same_as_table3_combo_16_17.json"
+    },
+    {
+      "instance": "Instance2",
+      "table3_combo_idx": [
+        0,
+        1
+      ],
+      "gurobi_best_combo_idx": [
+        0,
+        1
+      ],
+      "gurobi_same_as_table3_combo_idx": [
+        0,
+        1
+      ],
+      "table3_paths_json": "outputs/routes_bundle_1_5_randomseed_3min\\Instance2_table3_fixedx_combo_15_16.json",
+      "gurobi_best_paths_json": "outputs/routes_bundle_1_5_randomseed_3min\\Instance2_gurobi_best_combo_15_16.json",
+      "gurobi_same_as_table3_paths_json": "outputs/routes_bundle_1_5_randomseed_3min\\Instance2_gurobi_same_as_table3_combo_15_16.json"
+    },
+    {
+      "instance": "Instance3",
+      "table3_combo_idx": [
+        0,
+        3
+      ],
+      "gurobi_best_combo_idx": [
+        0,
+        3
+      ],
+      "gurobi_same_as_table3_combo_idx": [
+        0,
+        3
+      ],
+      "table3_paths_json": "outputs/routes_bundle_1_5_randomseed_3min\\Instance3_table3_fixedx_combo_15_18.json",
+      "gurobi_best_paths_json": "outputs/routes_bundle_1_5_randomseed_3min\\Instance3_gurobi_best_combo_15_18.json",
+      "gurobi_same_as_table3_paths_json": "outputs/routes_bundle_1_5_randomseed_3min\\Instance3_gurobi_same_as_table3_combo_15_18.json"
+    },
+    {
+      "instance": "Instance4",
+      "table3_combo_idx": [
+        1,
+        2
+      ],
+      "gurobi_best_combo_idx": [
+        1,
+        2
+      ],
+      "gurobi_same_as_table3_combo_idx": [
+        1,
+        2
+      ],
+      "table3_paths_json": "outputs/routes_bundle_1_5_randomseed_3min\\Instance4_table3_fixedx_combo_16_17.json",
+      "gurobi_best_paths_json": "outputs/routes_bundle_1_5_randomseed_3min\\Instance4_gurobi_best_combo_16_17.json",
+      "gurobi_same_as_table3_paths_json": "outputs/routes_bundle_1_5_randomseed_3min\\Instance4_gurobi_same_as_table3_combo_16_17.json"
+    },
+    {
+      "instance": "Instance5",
+      "table3_combo_idx": [
+        2,
+        4
+      ],
+      "gurobi_best_combo_idx": [
+        2,
+        4
+      ],
+      "gurobi_same_as_table3_combo_idx": [
+        2,
+        4
+      ],
+      "table3_paths_json": "outputs/routes_bundle_1_5_randomseed_3min\\Instance5_table3_fixedx_combo_17_19.json",
+      "gurobi_best_paths_json": "outputs/routes_bundle_1_5_randomseed_3min\\Instance5_gurobi_best_combo_17_19.json",
+      "gurobi_same_as_table3_paths_json": "outputs/routes_bundle_1_5_randomseed_3min\\Instance5_gurobi_same_as_table3_combo_17_19.json"
+    }
+  ],
+  "count": 5
+}

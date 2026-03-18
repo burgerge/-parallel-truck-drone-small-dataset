@@ -1,0 +1,30 @@
+{
+  "instance": "Instance1",
+  "source_gurobi_file": "outputs/routes_bundle_10instances/Instance1_gurobi_best_combo_15_17.json",
+  "open_depots_internal": [
+    15,
+    17
+  ],
+  "method_paper_exact_fixed": {
+    "status": "OPTIMAL",
+    "objective": 94.63333333333333
+  },
+  "method_arrival_sim": {
+    "objective": 105.76,
+    "scenario_values": [
+      108.1,
+      101.23333333333333,
+      103.83333333333333,
+      110.9,
+      100.16666666666667,
+      98.3,
+      104.96666666666667,
+      104.1,
+      107.56666666666666,
+      118.43333333333334
+    ]
+  },
+  "gurobi_original_objective_from_file": 94.63333333333334,
+  "gap_arrival_minus_paper": 11.12666666666668,
+  "gap_paper_minus_arrival": -11.12666666666668
+}

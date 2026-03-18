@@ -1,0 +1,5100 @@
+{
+  "runs": [
+    {
+      "instance": "Instance1",
+      "p": 2,
+      "num_demands": 15,
+      "num_scenarios": 10,
+      "candidate_depots": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "depot_base_map": {
+        "15": 0,
+        "16": 2,
+        "17": 5,
+        "18": 11,
+        "19": 13
+      },
+      "solver_params": {
+        "time_limit_sec_per_combination": 1800.0,
+        "target_mip_gap": 0.0,
+        "target_mip_gap_abs": null,
+        "threads": 0,
+        "truck_model": "paper_exact",
+        "max_scenarios": 0,
+        "max_demands": 0,
+        "mip_focus": -1,
+        "heuristics": -1.0,
+        "presolve": -1,
+        "cuts": -1,
+        "symmetry": -1,
+        "drone_order_rule": "SPT_fixed_by_roundtrip_time"
+      },
+      "summary": {
+        "instance": "Instance1",
+        "num_combinations": 10,
+        "feasible_count": 10,
+        "optimal_count": 10,
+        "time_limit_count": 0,
+        "error_count": 0,
+        "avg_runtime_sec": 27.938199973106386,
+        "best_objective": 94.63333333333333,
+        "best_open_depots": [
+          15,
+          17
+        ],
+        "best_open_depots_base": [
+          0,
+          5
+        ],
+        "best_open_depots_idx": [
+          0,
+          2
+        ]
+      },
+      "combination_results": [
+        {
+          "open_depots": [
+            15,
+            17
+          ],
+          "open_depots_base": [
+            0,
+            5
+          ],
+          "open_depots_idx": [
+            0,
+            2
+          ],
+          "is_best": 1,
+          "rank_by_objective": 1,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 94.63333333333333,
+          "best_bound": 94.63333333333333,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 34.324000120162964,
+          "model_stats": {
+            "big_m_time": 5264.0,
+            "truck_horizon": 2775.0,
+            "drone_horizon": 4935.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 860,
+              "w": 790,
+              "a_last": 790,
+              "b": 1390,
+              "f": 670,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            17
+          ],
+          "open_depots_base": [
+            2,
+            5
+          ],
+          "open_depots_idx": [
+            1,
+            2
+          ],
+          "is_best": 0,
+          "rank_by_objective": 2,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 97.28,
+          "best_bound": 97.28,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 31.715999841690063,
+          "model_stats": {
+            "big_m_time": 4000.0,
+            "truck_horizon": 2775.0,
+            "drone_horizon": 3750.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 860,
+              "w": 790,
+              "a_last": 790,
+              "b": 1390,
+              "f": 670,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            19
+          ],
+          "open_depots_base": [
+            0,
+            13
+          ],
+          "open_depots_idx": [
+            0,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 3,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 105.60000000000001,
+          "best_bound": 105.60000000000001,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 31.430999994277954,
+          "model_stats": {
+            "big_m_time": 6096.0,
+            "truck_horizon": 2775.0,
+            "drone_horizon": 5715.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 860,
+              "w": 790,
+              "a_last": 790,
+              "b": 1390,
+              "f": 670,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            17,
+            18
+          ],
+          "open_depots_base": [
+            5,
+            11
+          ],
+          "open_depots_idx": [
+            2,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 4,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 106.81,
+          "best_bound": 106.81,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 27.082000017166138,
+          "model_stats": {
+            "big_m_time": 5440.0,
+            "truck_horizon": 2775.0,
+            "drone_horizon": 5100.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 860,
+              "w": 790,
+              "a_last": 790,
+              "b": 1430,
+              "f": 670,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            19
+          ],
+          "open_depots_base": [
+            2,
+            13
+          ],
+          "open_depots_idx": [
+            1,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 5,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 109.19666666666666,
+          "best_bound": 109.19666666666666,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 22.213000059127808,
+          "model_stats": {
+            "big_m_time": 6096.0,
+            "truck_horizon": 2775.0,
+            "drone_horizon": 5715.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 860,
+              "w": 790,
+              "a_last": 790,
+              "b": 1390,
+              "f": 670,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            17,
+            19
+          ],
+          "open_depots_base": [
+            5,
+            13
+          ],
+          "open_depots_idx": [
+            2,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 6,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 116.11999999999999,
+          "best_bound": 116.11999999999999,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 14.860999822616577,
+          "model_stats": {
+            "big_m_time": 6096.0,
+            "truck_horizon": 2775.0,
+            "drone_horizon": 5715.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 840,
+              "w": 780,
+              "a_last": 780,
+              "b": 1340,
+              "f": 650,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            18,
+            19
+          ],
+          "open_depots_base": [
+            11,
+            13
+          ],
+          "open_depots_idx": [
+            3,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 7,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 125.57,
+          "best_bound": 125.57,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 21.973999977111816,
+          "model_stats": {
+            "big_m_time": 6096.0,
+            "truck_horizon": 2775.0,
+            "drone_horizon": 5715.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 860,
+              "w": 790,
+              "a_last": 790,
+              "b": 1430,
+              "f": 670,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            18
+          ],
+          "open_depots_base": [
+            0,
+            11
+          ],
+          "open_depots_idx": [
+            0,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 8,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 137.34666666666666,
+          "best_bound": 137.34666666666666,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 38.53999996185303,
+          "model_stats": {
+            "big_m_time": 5440.0,
+            "truck_horizon": 2775.0,
+            "drone_horizon": 5100.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 880,
+              "w": 800,
+              "a_last": 800,
+              "b": 1500,
+              "f": 690,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            18
+          ],
+          "open_depots_base": [
+            2,
+            11
+          ],
+          "open_depots_idx": [
+            1,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 9,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 137.78333333333333,
+          "best_bound": 137.78333333333333,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 26.560999870300293,
+          "model_stats": {
+            "big_m_time": 5440.0,
+            "truck_horizon": 2775.0,
+            "drone_horizon": 5100.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 880,
+              "w": 800,
+              "a_last": 800,
+              "b": 1540,
+              "f": 690,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            16
+          ],
+          "open_depots_base": [
+            0,
+            2
+          ],
+          "open_depots_idx": [
+            0,
+            1
+          ],
+          "is_best": 0,
+          "rank_by_objective": 10,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 146.67666666666665,
+          "best_bound": 146.67666666666665,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 30.680000066757202,
+          "model_stats": {
+            "big_m_time": 5264.0,
+            "truck_horizon": 2775.0,
+            "drone_horizon": 4935.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 880,
+              "w": 800,
+              "a_last": 800,
+              "b": 1500,
+              "f": 690,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        }
+      ]
+    },
+    {
+      "instance": "Instance2",
+      "p": 2,
+      "num_demands": 15,
+      "num_scenarios": 10,
+      "candidate_depots": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "depot_base_map": {
+        "15": 1,
+        "16": 3,
+        "17": 4,
+        "18": 6,
+        "19": 12
+      },
+      "solver_params": {
+        "time_limit_sec_per_combination": 1800.0,
+        "target_mip_gap": 0.0,
+        "target_mip_gap_abs": null,
+        "threads": 0,
+        "truck_model": "paper_exact",
+        "max_scenarios": 0,
+        "max_demands": 0,
+        "mip_focus": -1,
+        "heuristics": -1.0,
+        "presolve": -1,
+        "cuts": -1,
+        "symmetry": -1,
+        "drone_order_rule": "SPT_fixed_by_roundtrip_time"
+      },
+      "summary": {
+        "instance": "Instance2",
+        "num_combinations": 10,
+        "feasible_count": 10,
+        "optimal_count": 10,
+        "time_limit_count": 0,
+        "error_count": 0,
+        "avg_runtime_sec": 40.991000056266785,
+        "best_objective": 9.62,
+        "best_open_depots": [
+          15,
+          16
+        ],
+        "best_open_depots_base": [
+          1,
+          3
+        ],
+        "best_open_depots_idx": [
+          0,
+          1
+        ]
+      },
+      "combination_results": [
+        {
+          "open_depots": [
+            15,
+            16
+          ],
+          "open_depots_base": [
+            1,
+            3
+          ],
+          "open_depots_idx": [
+            0,
+            1
+          ],
+          "is_best": 1,
+          "rank_by_objective": 1,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 9.62,
+          "best_bound": 9.62,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 61.38000011444092,
+          "model_stats": {
+            "big_m_time": 656.0,
+            "truck_horizon": 330.0,
+            "drone_horizon": 615.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 860,
+              "w": 790,
+              "a_last": 790,
+              "b": 1430,
+              "f": 670,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            19
+          ],
+          "open_depots_base": [
+            1,
+            12
+          ],
+          "open_depots_idx": [
+            0,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 2,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 9.77,
+          "best_bound": 9.77,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 50.42300009727478,
+          "model_stats": {
+            "big_m_time": 656.0,
+            "truck_horizon": 330.0,
+            "drone_horizon": 615.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 860,
+              "w": 790,
+              "a_last": 790,
+              "b": 1470,
+              "f": 670,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            18,
+            19
+          ],
+          "open_depots_base": [
+            6,
+            12
+          ],
+          "open_depots_idx": [
+            3,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 3,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 10.306666666666668,
+          "best_bound": 10.306666666666668,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 64.63100004196167,
+          "model_stats": {
+            "big_m_time": 640.0,
+            "truck_horizon": 330.0,
+            "drone_horizon": 600.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 860,
+              "w": 790,
+              "a_last": 790,
+              "b": 1490,
+              "f": 670,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            18
+          ],
+          "open_depots_base": [
+            3,
+            6
+          ],
+          "open_depots_idx": [
+            1,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 4,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 10.353333333333332,
+          "best_bound": 10.353333333333332,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 68.61600017547607,
+          "model_stats": {
+            "big_m_time": 640.0,
+            "truck_horizon": 330.0,
+            "drone_horizon": 600.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 860,
+              "w": 790,
+              "a_last": 790,
+              "b": 1450,
+              "f": 670,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            17
+          ],
+          "open_depots_base": [
+            1,
+            4
+          ],
+          "open_depots_idx": [
+            0,
+            2
+          ],
+          "is_best": 0,
+          "rank_by_objective": 5,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 10.49,
+          "best_bound": 10.49,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 19.01699995994568,
+          "model_stats": {
+            "big_m_time": 656.0,
+            "truck_horizon": 330.0,
+            "drone_horizon": 615.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 860,
+              "w": 790,
+              "a_last": 790,
+              "b": 1450,
+              "f": 670,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            17,
+            18
+          ],
+          "open_depots_base": [
+            4,
+            6
+          ],
+          "open_depots_idx": [
+            2,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 6,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 10.87,
+          "best_bound": 10.87,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 34.39900016784668,
+          "model_stats": {
+            "big_m_time": 640.0,
+            "truck_horizon": 330.0,
+            "drone_horizon": 600.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 860,
+              "w": 790,
+              "a_last": 790,
+              "b": 1470,
+              "f": 670,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            17
+          ],
+          "open_depots_base": [
+            3,
+            4
+          ],
+          "open_depots_idx": [
+            1,
+            2
+          ],
+          "is_best": 0,
+          "rank_by_objective": 7,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 10.940000000000001,
+          "best_bound": 10.94,
+          "achieved_mip_gap": 1.623726544241545e-16,
+          "achieved_mip_gap_pct": 1.623726544241545e-14,
+          "runtime_sec": 29.58799982070923,
+          "model_stats": {
+            "big_m_time": 640.0,
+            "truck_horizon": 330.0,
+            "drone_horizon": 600.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 840,
+              "w": 780,
+              "a_last": 780,
+              "b": 1400,
+              "f": 650,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            17,
+            19
+          ],
+          "open_depots_base": [
+            4,
+            12
+          ],
+          "open_depots_idx": [
+            2,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 8,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 12.403333333333334,
+          "best_bound": 12.403333333333334,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 35.30900001525879,
+          "model_stats": {
+            "big_m_time": 576.0,
+            "truck_horizon": 330.0,
+            "drone_horizon": 540.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 840,
+              "w": 780,
+              "a_last": 780,
+              "b": 1460,
+              "f": 650,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            18
+          ],
+          "open_depots_base": [
+            1,
+            6
+          ],
+          "open_depots_idx": [
+            0,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 9,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 12.886666666666667,
+          "best_bound": 12.886666666666665,
+          "achieved_mip_gap": 1.378445555664964e-16,
+          "achieved_mip_gap_pct": 1.378445555664964e-14,
+          "runtime_sec": 24.222000122070312,
+          "model_stats": {
+            "big_m_time": 656.0,
+            "truck_horizon": 330.0,
+            "drone_horizon": 615.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 880,
+              "w": 800,
+              "a_last": 800,
+              "b": 1560,
+              "f": 690,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            19
+          ],
+          "open_depots_base": [
+            3,
+            12
+          ],
+          "open_depots_idx": [
+            1,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 10,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 13.956666666666667,
+          "best_bound": 13.956666666666667,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 22.325000047683716,
+          "model_stats": {
+            "big_m_time": 640.0,
+            "truck_horizon": 330.0,
+            "drone_horizon": 600.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 840,
+              "w": 780,
+              "a_last": 780,
+              "b": 1440,
+              "f": 650,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        }
+      ]
+    },
+    {
+      "instance": "Instance3",
+      "p": 2,
+      "num_demands": 15,
+      "num_scenarios": 10,
+      "candidate_depots": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "depot_base_map": {
+        "15": 5,
+        "16": 6,
+        "17": 7,
+        "18": 8,
+        "19": 14
+      },
+      "solver_params": {
+        "time_limit_sec_per_combination": 1800.0,
+        "target_mip_gap": 0.0,
+        "target_mip_gap_abs": null,
+        "threads": 0,
+        "truck_model": "paper_exact",
+        "max_scenarios": 0,
+        "max_demands": 0,
+        "mip_focus": -1,
+        "heuristics": -1.0,
+        "presolve": -1,
+        "cuts": -1,
+        "symmetry": -1,
+        "drone_order_rule": "SPT_fixed_by_roundtrip_time"
+      },
+      "summary": {
+        "instance": "Instance3",
+        "num_combinations": 10,
+        "feasible_count": 10,
+        "optimal_count": 10,
+        "time_limit_count": 0,
+        "error_count": 0,
+        "avg_runtime_sec": 16.85820002555847,
+        "best_objective": 10.036666666666669,
+        "best_open_depots": [
+          15,
+          18
+        ],
+        "best_open_depots_base": [
+          5,
+          8
+        ],
+        "best_open_depots_idx": [
+          0,
+          3
+        ]
+      },
+      "combination_results": [
+        {
+          "open_depots": [
+            15,
+            18
+          ],
+          "open_depots_base": [
+            5,
+            8
+          ],
+          "open_depots_idx": [
+            0,
+            3
+          ],
+          "is_best": 1,
+          "rank_by_objective": 1,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 10.036666666666669,
+          "best_bound": 10.036666666666667,
+          "achieved_mip_gap": 1.7698673258720526e-16,
+          "achieved_mip_gap_pct": 1.7698673258720526e-14,
+          "runtime_sec": 23.072999954223633,
+          "model_stats": {
+            "big_m_time": 576.0,
+            "truck_horizon": 240.0,
+            "drone_horizon": 540.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 720,
+              "w": 660,
+              "a_last": 660,
+              "b": 960,
+              "f": 590,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            18,
+            19
+          ],
+          "open_depots_base": [
+            8,
+            14
+          ],
+          "open_depots_idx": [
+            3,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 2,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 10.123333333333333,
+          "best_bound": 10.123333333333333,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 21.094000101089478,
+          "model_stats": {
+            "big_m_time": 576.0,
+            "truck_horizon": 240.0,
+            "drone_horizon": 540.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 720,
+              "w": 660,
+              "a_last": 660,
+              "b": 940,
+              "f": 590,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            17,
+            18
+          ],
+          "open_depots_base": [
+            7,
+            8
+          ],
+          "open_depots_idx": [
+            2,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 3,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 10.376666666666669,
+          "best_bound": 10.376666666666667,
+          "achieved_mip_gap": 1.7118761703182623e-16,
+          "achieved_mip_gap_pct": 1.7118761703182624e-14,
+          "runtime_sec": 25.424999952316284,
+          "model_stats": {
+            "big_m_time": 576.0,
+            "truck_horizon": 240.0,
+            "drone_horizon": 540.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 720,
+              "w": 660,
+              "a_last": 660,
+              "b": 960,
+              "f": 590,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            17
+          ],
+          "open_depots_base": [
+            5,
+            7
+          ],
+          "open_depots_idx": [
+            0,
+            2
+          ],
+          "is_best": 0,
+          "rank_by_objective": 4,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 10.379999999999999,
+          "best_bound": 10.379999999999999,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 18.16200017929077,
+          "model_stats": {
+            "big_m_time": 576.0,
+            "truck_horizon": 240.0,
+            "drone_horizon": 540.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 720,
+              "w": 660,
+              "a_last": 660,
+              "b": 980,
+              "f": 590,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            19
+          ],
+          "open_depots_base": [
+            5,
+            14
+          ],
+          "open_depots_idx": [
+            0,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 5,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 10.49,
+          "best_bound": 10.49,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 15.341000080108643,
+          "model_stats": {
+            "big_m_time": 544.0,
+            "truck_horizon": 240.0,
+            "drone_horizon": 510.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 720,
+              "w": 660,
+              "a_last": 660,
+              "b": 960,
+              "f": 590,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            16
+          ],
+          "open_depots_base": [
+            5,
+            6
+          ],
+          "open_depots_idx": [
+            0,
+            1
+          ],
+          "is_best": 0,
+          "rank_by_objective": 6,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 10.843333333333334,
+          "best_bound": 10.843333333333332,
+          "achieved_mip_gap": 1.6382018193054876e-16,
+          "achieved_mip_gap_pct": 1.6382018193054876e-14,
+          "runtime_sec": 16.835000038146973,
+          "model_stats": {
+            "big_m_time": 544.0,
+            "truck_horizon": 240.0,
+            "drone_horizon": 510.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 700,
+              "w": 650,
+              "a_last": 650,
+              "b": 890,
+              "f": 570,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            18
+          ],
+          "open_depots_base": [
+            6,
+            8
+          ],
+          "open_depots_idx": [
+            1,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 7,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 11.01,
+          "best_bound": 11.009999999999998,
+          "achieved_mip_gap": 1.6134031238876025e-16,
+          "achieved_mip_gap_pct": 1.6134031238876024e-14,
+          "runtime_sec": 11.336999893188477,
+          "model_stats": {
+            "big_m_time": 576.0,
+            "truck_horizon": 240.0,
+            "drone_horizon": 540.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 700,
+              "w": 650,
+              "a_last": 650,
+              "b": 870,
+              "f": 570,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            19
+          ],
+          "open_depots_base": [
+            6,
+            14
+          ],
+          "open_depots_idx": [
+            1,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 8,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 11.553333333333333,
+          "best_bound": 11.553333333333331,
+          "achieved_mip_gap": 1.537527558626876e-16,
+          "achieved_mip_gap_pct": 1.537527558626876e-14,
+          "runtime_sec": 11.660000085830688,
+          "model_stats": {
+            "big_m_time": 544.0,
+            "truck_horizon": 240.0,
+            "drone_horizon": 510.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 700,
+              "w": 650,
+              "a_last": 650,
+              "b": 870,
+              "f": 570,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            17,
+            19
+          ],
+          "open_depots_base": [
+            7,
+            14
+          ],
+          "open_depots_idx": [
+            2,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 9,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 11.713333333333335,
+          "best_bound": 11.713333333333333,
+          "achieved_mip_gap": 1.5165254747298664e-16,
+          "achieved_mip_gap_pct": 1.5165254747298663e-14,
+          "runtime_sec": 14.157999992370605,
+          "model_stats": {
+            "big_m_time": 576.0,
+            "truck_horizon": 240.0,
+            "drone_horizon": 540.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 720,
+              "w": 660,
+              "a_last": 660,
+              "b": 960,
+              "f": 590,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            17
+          ],
+          "open_depots_base": [
+            6,
+            7
+          ],
+          "open_depots_idx": [
+            1,
+            2
+          ],
+          "is_best": 0,
+          "rank_by_objective": 10,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 16.91333333333333,
+          "best_bound": 16.91333333333333,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 11.496999979019165,
+          "model_stats": {
+            "big_m_time": 576.0,
+            "truck_horizon": 240.0,
+            "drone_horizon": 540.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 700,
+              "w": 650,
+              "a_last": 650,
+              "b": 910,
+              "f": 570,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        }
+      ]
+    },
+    {
+      "instance": "Instance4",
+      "p": 2,
+      "num_demands": 15,
+      "num_scenarios": 10,
+      "candidate_depots": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "depot_base_map": {
+        "15": 1,
+        "16": 5,
+        "17": 10,
+        "18": 12,
+        "19": 14
+      },
+      "solver_params": {
+        "time_limit_sec_per_combination": 1800.0,
+        "target_mip_gap": 0.0,
+        "target_mip_gap_abs": null,
+        "threads": 0,
+        "truck_model": "paper_exact",
+        "max_scenarios": 0,
+        "max_demands": 0,
+        "mip_focus": -1,
+        "heuristics": -1.0,
+        "presolve": -1,
+        "cuts": -1,
+        "symmetry": -1,
+        "drone_order_rule": "SPT_fixed_by_roundtrip_time"
+      },
+      "summary": {
+        "instance": "Instance4",
+        "num_combinations": 10,
+        "feasible_count": 10,
+        "optimal_count": 10,
+        "time_limit_count": 0,
+        "error_count": 0,
+        "avg_runtime_sec": 42.03000004291535,
+        "best_objective": 7.37,
+        "best_open_depots": [
+          16,
+          17
+        ],
+        "best_open_depots_base": [
+          5,
+          10
+        ],
+        "best_open_depots_idx": [
+          1,
+          2
+        ]
+      },
+      "combination_results": [
+        {
+          "open_depots": [
+            16,
+            17
+          ],
+          "open_depots_base": [
+            5,
+            10
+          ],
+          "open_depots_idx": [
+            1,
+            2
+          ],
+          "is_best": 1,
+          "rank_by_objective": 1,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 7.37,
+          "best_bound": 7.37,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 40.24799990653992,
+          "model_stats": {
+            "big_m_time": 512.0,
+            "truck_horizon": 360.0,
+            "drone_horizon": 480.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 980,
+              "w": 890,
+              "a_last": 890,
+              "b": 1850,
+              "f": 750,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            17,
+            19
+          ],
+          "open_depots_base": [
+            10,
+            14
+          ],
+          "open_depots_idx": [
+            2,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 2,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 7.966666666666667,
+          "best_bound": 7.966666666666667,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 61.05399990081787,
+          "model_stats": {
+            "big_m_time": 512.0,
+            "truck_horizon": 360.0,
+            "drone_horizon": 480.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 960,
+              "w": 880,
+              "a_last": 880,
+              "b": 1780,
+              "f": 730,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            16
+          ],
+          "open_depots_base": [
+            1,
+            5
+          ],
+          "open_depots_idx": [
+            0,
+            1
+          ],
+          "is_best": 0,
+          "rank_by_objective": 3,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 8.446666666666667,
+          "best_bound": 8.446666666666667,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 37.93899989128113,
+          "model_stats": {
+            "big_m_time": 528.0,
+            "truck_horizon": 360.0,
+            "drone_horizon": 495.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 940,
+              "w": 870,
+              "a_last": 870,
+              "b": 1690,
+              "f": 710,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            19
+          ],
+          "open_depots_base": [
+            1,
+            14
+          ],
+          "open_depots_idx": [
+            0,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 4,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 9.106666666666667,
+          "best_bound": 9.106666666666666,
+          "achieved_mip_gap": 1.9506114634702602e-16,
+          "achieved_mip_gap_pct": 1.9506114634702603e-14,
+          "runtime_sec": 50.44700002670288,
+          "model_stats": {
+            "big_m_time": 528.0,
+            "truck_horizon": 360.0,
+            "drone_horizon": 495.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 920,
+              "w": 860,
+              "a_last": 860,
+              "b": 1620,
+              "f": 690,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            17,
+            18
+          ],
+          "open_depots_base": [
+            10,
+            12
+          ],
+          "open_depots_idx": [
+            2,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 5,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 10.613333333333333,
+          "best_bound": 10.613333333333333,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 77.66800022125244,
+          "model_stats": {
+            "big_m_time": 720.0,
+            "truck_horizon": 360.0,
+            "drone_horizon": 675.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 960,
+              "w": 880,
+              "a_last": 880,
+              "b": 1720,
+              "f": 730,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            18
+          ],
+          "open_depots_base": [
+            5,
+            12
+          ],
+          "open_depots_idx": [
+            1,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 6,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 10.679999999999998,
+          "best_bound": 10.679999999999998,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 26.294000148773193,
+          "model_stats": {
+            "big_m_time": 720.0,
+            "truck_horizon": 360.0,
+            "drone_horizon": 675.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 940,
+              "w": 870,
+              "a_last": 870,
+              "b": 1670,
+              "f": 710,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            18,
+            19
+          ],
+          "open_depots_base": [
+            12,
+            14
+          ],
+          "open_depots_idx": [
+            3,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 7,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 10.85,
+          "best_bound": 10.85,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 26.905999898910522,
+          "model_stats": {
+            "big_m_time": 720.0,
+            "truck_horizon": 360.0,
+            "drone_horizon": 675.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 920,
+              "w": 860,
+              "a_last": 860,
+              "b": 1600,
+              "f": 690,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            18
+          ],
+          "open_depots_base": [
+            1,
+            12
+          ],
+          "open_depots_idx": [
+            0,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 8,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 11.25,
+          "best_bound": 11.249999999999998,
+          "achieved_mip_gap": 1.5789838572446671e-16,
+          "achieved_mip_gap_pct": 1.578983857244667e-14,
+          "runtime_sec": 57.35700011253357,
+          "model_stats": {
+            "big_m_time": 720.0,
+            "truck_horizon": 360.0,
+            "drone_horizon": 675.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 920,
+              "w": 860,
+              "a_last": 860,
+              "b": 1560,
+              "f": 690,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            17
+          ],
+          "open_depots_base": [
+            1,
+            10
+          ],
+          "open_depots_idx": [
+            0,
+            2
+          ],
+          "is_best": 0,
+          "rank_by_objective": 9,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 15.966666666666667,
+          "best_bound": 15.966666666666667,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 18.801000118255615,
+          "model_stats": {
+            "big_m_time": 528.0,
+            "truck_horizon": 360.0,
+            "drone_horizon": 495.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 960,
+              "w": 880,
+              "a_last": 880,
+              "b": 1780,
+              "f": 730,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            19
+          ],
+          "open_depots_base": [
+            5,
+            14
+          ],
+          "open_depots_idx": [
+            1,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 10,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 16.213333333333335,
+          "best_bound": 16.21333333333333,
+          "achieved_mip_gap": 2.1912296538654404e-16,
+          "achieved_mip_gap_pct": 2.1912296538654403e-14,
+          "runtime_sec": 23.586000204086304,
+          "model_stats": {
+            "big_m_time": 448.0,
+            "truck_horizon": 360.0,
+            "drone_horizon": 420.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 940,
+              "w": 870,
+              "a_last": 870,
+              "b": 1790,
+              "f": 710,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        }
+      ]
+    },
+    {
+      "instance": "Instance5",
+      "p": 2,
+      "num_demands": 15,
+      "num_scenarios": 10,
+      "candidate_depots": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "depot_base_map": {
+        "15": 3,
+        "16": 4,
+        "17": 5,
+        "18": 8,
+        "19": 10
+      },
+      "solver_params": {
+        "time_limit_sec_per_combination": 1800.0,
+        "target_mip_gap": 0.0,
+        "target_mip_gap_abs": null,
+        "threads": 0,
+        "truck_model": "paper_exact",
+        "max_scenarios": 0,
+        "max_demands": 0,
+        "mip_focus": -1,
+        "heuristics": -1.0,
+        "presolve": -1,
+        "cuts": -1,
+        "symmetry": -1,
+        "drone_order_rule": "SPT_fixed_by_roundtrip_time"
+      },
+      "summary": {
+        "instance": "Instance5",
+        "num_combinations": 10,
+        "feasible_count": 10,
+        "optimal_count": 10,
+        "time_limit_count": 0,
+        "error_count": 0,
+        "avg_runtime_sec": 24.903600001335143,
+        "best_objective": 8.843333333333335,
+        "best_open_depots": [
+          17,
+          19
+        ],
+        "best_open_depots_base": [
+          5,
+          10
+        ],
+        "best_open_depots_idx": [
+          2,
+          4
+        ]
+      },
+      "combination_results": [
+        {
+          "open_depots": [
+            17,
+            19
+          ],
+          "open_depots_base": [
+            5,
+            10
+          ],
+          "open_depots_idx": [
+            2,
+            4
+          ],
+          "is_best": 1,
+          "rank_by_objective": 1,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 8.843333333333335,
+          "best_bound": 8.843333333333334,
+          "achieved_mip_gap": 2.0086960113836222e-16,
+          "achieved_mip_gap_pct": 2.0086960113836224e-14,
+          "runtime_sec": 36.98299980163574,
+          "model_stats": {
+            "big_m_time": 704.0,
+            "truck_horizon": 330.0,
+            "drone_horizon": 660.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 820,
+              "w": 750,
+              "a_last": 750,
+              "b": 1270,
+              "f": 650,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            19
+          ],
+          "open_depots_base": [
+            4,
+            10
+          ],
+          "open_depots_idx": [
+            1,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 2,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 9.913333333333336,
+          "best_bound": 9.913333333333334,
+          "achieved_mip_gap": 1.7918865225960828e-16,
+          "achieved_mip_gap_pct": 1.791886522596083e-14,
+          "runtime_sec": 42.585999965667725,
+          "model_stats": {
+            "big_m_time": 736.0,
+            "truck_horizon": 330.0,
+            "drone_horizon": 690.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 800,
+              "w": 740,
+              "a_last": 740,
+              "b": 1200,
+              "f": 630,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            17
+          ],
+          "open_depots_base": [
+            3,
+            5
+          ],
+          "open_depots_idx": [
+            0,
+            2
+          ],
+          "is_best": 0,
+          "rank_by_objective": 3,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 10.836666666666668,
+          "best_bound": 10.836666666666666,
+          "achieved_mip_gap": 1.6392096334053372e-16,
+          "achieved_mip_gap_pct": 1.6392096334053372e-14,
+          "runtime_sec": 18.007000207901,
+          "model_stats": {
+            "big_m_time": 736.0,
+            "truck_horizon": 330.0,
+            "drone_horizon": 690.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 800,
+              "w": 740,
+              "a_last": 740,
+              "b": 1200,
+              "f": 630,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            18,
+            19
+          ],
+          "open_depots_base": [
+            8,
+            10
+          ],
+          "open_depots_idx": [
+            3,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 4,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 11.003333333333334,
+          "best_bound": 11.003333333333334,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 51.79899978637695,
+          "model_stats": {
+            "big_m_time": 704.0,
+            "truck_horizon": 330.0,
+            "drone_horizon": 660.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 820,
+              "w": 750,
+              "a_last": 750,
+              "b": 1290,
+              "f": 650,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            16
+          ],
+          "open_depots_base": [
+            3,
+            4
+          ],
+          "open_depots_idx": [
+            0,
+            1
+          ],
+          "is_best": 0,
+          "rank_by_objective": 5,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 11.826666666666666,
+          "best_bound": 11.826666666666666,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 19.353000164031982,
+          "model_stats": {
+            "big_m_time": 736.0,
+            "truck_horizon": 330.0,
+            "drone_horizon": 690.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 780,
+              "w": 730,
+              "a_last": 730,
+              "b": 1130,
+              "f": 610,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            18
+          ],
+          "open_depots_base": [
+            3,
+            8
+          ],
+          "open_depots_idx": [
+            0,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 6,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 13.703333333333337,
+          "best_bound": 13.703333333333333,
+          "achieved_mip_gap": 2.592590862661518e-16,
+          "achieved_mip_gap_pct": 2.592590862661518e-14,
+          "runtime_sec": 21.558000087738037,
+          "model_stats": {
+            "big_m_time": 736.0,
+            "truck_horizon": 330.0,
+            "drone_horizon": 690.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 800,
+              "w": 740,
+              "a_last": 740,
+              "b": 1220,
+              "f": 630,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            19
+          ],
+          "open_depots_base": [
+            3,
+            10
+          ],
+          "open_depots_idx": [
+            0,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 7,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 14.160000000000002,
+          "best_bound": 14.16,
+          "achieved_mip_gap": 1.2544892933617586e-16,
+          "achieved_mip_gap_pct": 1.2544892933617586e-14,
+          "runtime_sec": 9.000999927520752,
+          "model_stats": {
+            "big_m_time": 736.0,
+            "truck_horizon": 330.0,
+            "drone_horizon": 690.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 780,
+              "w": 730,
+              "a_last": 730,
+              "b": 1090,
+              "f": 610,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            17,
+            18
+          ],
+          "open_depots_base": [
+            5,
+            8
+          ],
+          "open_depots_idx": [
+            2,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 8,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 16.893333333333338,
+          "best_bound": 16.893333333333334,
+          "achieved_mip_gap": 2.1030270395425218e-16,
+          "achieved_mip_gap_pct": 2.1030270395425217e-14,
+          "runtime_sec": 20.774999856948853,
+          "model_stats": {
+            "big_m_time": 688.0,
+            "truck_horizon": 330.0,
+            "drone_horizon": 645.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 840,
+              "w": 760,
+              "a_last": 760,
+              "b": 1440,
+              "f": 670,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            18
+          ],
+          "open_depots_base": [
+            4,
+            8
+          ],
+          "open_depots_idx": [
+            1,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 9,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 17.51666666666667,
+          "best_bound": 17.516666666666666,
+          "achieved_mip_gap": 2.0281904921791628e-16,
+          "achieved_mip_gap_pct": 2.0281904921791627e-14,
+          "runtime_sec": 17.48900008201599,
+          "model_stats": {
+            "big_m_time": 736.0,
+            "truck_horizon": 330.0,
+            "drone_horizon": 690.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 820,
+              "w": 750,
+              "a_last": 750,
+              "b": 1350,
+              "f": 650,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            17
+          ],
+          "open_depots_base": [
+            4,
+            5
+          ],
+          "open_depots_idx": [
+            1,
+            2
+          ],
+          "is_best": 0,
+          "rank_by_objective": 10,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 19.166666666666664,
+          "best_bound": 19.166666666666664,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 11.485000133514404,
+          "model_stats": {
+            "big_m_time": 736.0,
+            "truck_horizon": 330.0,
+            "drone_horizon": 690.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 820,
+              "w": 750,
+              "a_last": 750,
+              "b": 1370,
+              "f": 650,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        }
+      ]
+    },
+    {
+      "instance": "Instance6",
+      "p": 2,
+      "num_demands": 15,
+      "num_scenarios": 10,
+      "candidate_depots": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "depot_base_map": {
+        "15": 3,
+        "16": 7,
+        "17": 8,
+        "18": 10,
+        "19": 12
+      },
+      "solver_params": {
+        "time_limit_sec_per_combination": 1800.0,
+        "target_mip_gap": 0.0,
+        "target_mip_gap_abs": null,
+        "threads": 0,
+        "truck_model": "paper_exact",
+        "max_scenarios": 0,
+        "max_demands": 0,
+        "mip_focus": -1,
+        "heuristics": -1.0,
+        "presolve": -1,
+        "cuts": -1,
+        "symmetry": -1,
+        "drone_order_rule": "SPT_fixed_by_roundtrip_time"
+      },
+      "summary": {
+        "instance": "Instance6",
+        "num_combinations": 10,
+        "feasible_count": 10,
+        "optimal_count": 10,
+        "time_limit_count": 0,
+        "error_count": 0,
+        "avg_runtime_sec": 56.95820000171661,
+        "best_objective": 13.526666666666669,
+        "best_open_depots": [
+          15,
+          16
+        ],
+        "best_open_depots_base": [
+          3,
+          7
+        ],
+        "best_open_depots_idx": [
+          0,
+          1
+        ]
+      },
+      "combination_results": [
+        {
+          "open_depots": [
+            15,
+            16
+          ],
+          "open_depots_base": [
+            3,
+            7
+          ],
+          "open_depots_idx": [
+            0,
+            1
+          ],
+          "is_best": 1,
+          "rank_by_objective": 1,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 13.526666666666669,
+          "best_bound": 13.526666666666666,
+          "achieved_mip_gap": 2.626451709315303e-16,
+          "achieved_mip_gap_pct": 2.6264517093153032e-14,
+          "runtime_sec": 94.45600008964539,
+          "model_stats": {
+            "big_m_time": 3472.0,
+            "truck_horizon": 3255.0,
+            "drone_horizon": 630.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 1120,
+              "w": 1020,
+              "a_last": 1020,
+              "b": 2320,
+              "f": 830,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            19
+          ],
+          "open_depots_base": [
+            7,
+            12
+          ],
+          "open_depots_idx": [
+            1,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 2,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 14.803333333333338,
+          "best_bound": 14.803333333333333,
+          "achieved_mip_gap": 3.5999125319978044e-16,
+          "achieved_mip_gap_pct": 3.599912531997804e-14,
+          "runtime_sec": 70.50599980354309,
+          "model_stats": {
+            "big_m_time": 3472.0,
+            "truck_horizon": 3255.0,
+            "drone_horizon": 675.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 1080,
+              "w": 1000,
+              "a_last": 1000,
+              "b": 2160,
+              "f": 790,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            17
+          ],
+          "open_depots_base": [
+            7,
+            8
+          ],
+          "open_depots_idx": [
+            1,
+            2
+          ],
+          "is_best": 0,
+          "rank_by_objective": 3,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 15.090000000000003,
+          "best_bound": 15.09,
+          "achieved_mip_gap": 2.354349687740557e-16,
+          "achieved_mip_gap_pct": 2.3543496877405567e-14,
+          "runtime_sec": 74.30800008773804,
+          "model_stats": {
+            "big_m_time": 3472.0,
+            "truck_horizon": 3255.0,
+            "drone_horizon": 630.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 1100,
+              "w": 1010,
+              "a_last": 1010,
+              "b": 2210,
+              "f": 810,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            18
+          ],
+          "open_depots_base": [
+            3,
+            10
+          ],
+          "open_depots_idx": [
+            0,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 4,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 15.603333333333333,
+          "best_bound": 15.603333333333332,
+          "achieved_mip_gap": 1.1384470237557682e-16,
+          "achieved_mip_gap_pct": 1.1384470237557683e-14,
+          "runtime_sec": 75.00200009346008,
+          "model_stats": {
+            "big_m_time": 3472.0,
+            "truck_horizon": 3255.0,
+            "drone_horizon": 510.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 1120,
+              "w": 1020,
+              "a_last": 1020,
+              "b": 2300,
+              "f": 830,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            18,
+            19
+          ],
+          "open_depots_base": [
+            10,
+            12
+          ],
+          "open_depots_idx": [
+            3,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 5,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 17.00666666666667,
+          "best_bound": 17.006666666666668,
+          "achieved_mip_gap": 2.0890123552335357e-16,
+          "achieved_mip_gap_pct": 2.0890123552335358e-14,
+          "runtime_sec": 62.41599988937378,
+          "model_stats": {
+            "big_m_time": 3472.0,
+            "truck_horizon": 3255.0,
+            "drone_horizon": 675.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 1080,
+              "w": 1000,
+              "a_last": 1000,
+              "b": 2140,
+              "f": 790,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            17,
+            18
+          ],
+          "open_depots_base": [
+            8,
+            10
+          ],
+          "open_depots_idx": [
+            2,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 6,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 17.296666666666667,
+          "best_bound": 17.296666666666667,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 69.58000016212463,
+          "model_stats": {
+            "big_m_time": 3472.0,
+            "truck_horizon": 3255.0,
+            "drone_horizon": 525.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 1100,
+              "w": 1010,
+              "a_last": 1010,
+              "b": 2190,
+              "f": 810,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            18
+          ],
+          "open_depots_base": [
+            7,
+            10
+          ],
+          "open_depots_idx": [
+            1,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 7,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 23.346666666666668,
+          "best_bound": 23.346666666666668,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 35.60599994659424,
+          "model_stats": {
+            "big_m_time": 3472.0,
+            "truck_horizon": 3255.0,
+            "drone_horizon": 630.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 1120,
+              "w": 1020,
+              "a_last": 1020,
+              "b": 2400,
+              "f": 830,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            17
+          ],
+          "open_depots_base": [
+            3,
+            8
+          ],
+          "open_depots_idx": [
+            0,
+            2
+          ],
+          "is_best": 0,
+          "rank_by_objective": 8,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 25.89666666666667,
+          "best_bound": 25.89666666666666,
+          "achieved_mip_gap": 2.7437613686192565e-16,
+          "achieved_mip_gap_pct": 2.7437613686192566e-14,
+          "runtime_sec": 38.46399998664856,
+          "model_stats": {
+            "big_m_time": 3472.0,
+            "truck_horizon": 3255.0,
+            "drone_horizon": 525.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 1100,
+              "w": 1010,
+              "a_last": 1010,
+              "b": 2210,
+              "f": 810,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            19
+          ],
+          "open_depots_base": [
+            3,
+            12
+          ],
+          "open_depots_idx": [
+            0,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 9,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 28.113333333333333,
+          "best_bound": 28.113333333333333,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 28.822999954223633,
+          "model_stats": {
+            "big_m_time": 3472.0,
+            "truck_horizon": 3255.0,
+            "drone_horizon": 675.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 1080,
+              "w": 1000,
+              "a_last": 1000,
+              "b": 2140,
+              "f": 790,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            17,
+            19
+          ],
+          "open_depots_base": [
+            8,
+            12
+          ],
+          "open_depots_idx": [
+            2,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 10,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 34.153333333333336,
+          "best_bound": 34.153333333333286,
+          "achieved_mip_gap": 1.4563144105955596e-15,
+          "achieved_mip_gap_pct": 1.4563144105955596e-13,
+          "runtime_sec": 20.421000003814697,
+          "model_stats": {
+            "big_m_time": 3472.0,
+            "truck_horizon": 3255.0,
+            "drone_horizon": 675.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 1060,
+              "w": 990,
+              "a_last": 990,
+              "b": 2070,
+              "f": 770,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        }
+      ]
+    },
+    {
+      "instance": "Instance7",
+      "p": 2,
+      "num_demands": 15,
+      "num_scenarios": 10,
+      "candidate_depots": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "depot_base_map": {
+        "15": 1,
+        "16": 5,
+        "17": 7,
+        "18": 8,
+        "19": 11
+      },
+      "solver_params": {
+        "time_limit_sec_per_combination": 1800.0,
+        "target_mip_gap": 0.0,
+        "target_mip_gap_abs": null,
+        "threads": 0,
+        "truck_model": "paper_exact",
+        "max_scenarios": 0,
+        "max_demands": 0,
+        "mip_focus": -1,
+        "heuristics": -1.0,
+        "presolve": -1,
+        "cuts": -1,
+        "symmetry": -1,
+        "drone_order_rule": "SPT_fixed_by_roundtrip_time"
+      },
+      "summary": {
+        "instance": "Instance7",
+        "num_combinations": 10,
+        "feasible_count": 10,
+        "optimal_count": 10,
+        "time_limit_count": 0,
+        "error_count": 0,
+        "avg_runtime_sec": 91.87699999809266,
+        "best_objective": 81.23333333333333,
+        "best_open_depots": [
+          16,
+          18
+        ],
+        "best_open_depots_base": [
+          5,
+          8
+        ],
+        "best_open_depots_idx": [
+          1,
+          3
+        ]
+      },
+      "combination_results": [
+        {
+          "open_depots": [
+            16,
+            18
+          ],
+          "open_depots_base": [
+            5,
+            8
+          ],
+          "open_depots_idx": [
+            1,
+            3
+          ],
+          "is_best": 1,
+          "rank_by_objective": 1,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 81.23333333333333,
+          "best_bound": 81.23333333333333,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 102.73199987411499,
+          "model_stats": {
+            "big_m_time": 6128.0,
+            "truck_horizon": 2580.0,
+            "drone_horizon": 5745.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 960,
+              "w": 880,
+              "a_last": 880,
+              "b": 1880,
+              "f": 730,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            19
+          ],
+          "open_depots_base": [
+            5,
+            11
+          ],
+          "open_depots_idx": [
+            1,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 2,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 83.70000000000002,
+          "best_bound": 83.7,
+          "achieved_mip_gap": 1.6978321045641577e-16,
+          "achieved_mip_gap_pct": 1.6978321045641577e-14,
+          "runtime_sec": 230.4340000152588,
+          "model_stats": {
+            "big_m_time": 6128.0,
+            "truck_horizon": 2580.0,
+            "drone_horizon": 5745.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 1000,
+              "w": 900,
+              "a_last": 900,
+              "b": 1940,
+              "f": 770,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            16
+          ],
+          "open_depots_base": [
+            1,
+            5
+          ],
+          "open_depots_idx": [
+            0,
+            1
+          ],
+          "is_best": 0,
+          "rank_by_objective": 3,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 84.7,
+          "best_bound": 84.7,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 125.9539999961853,
+          "model_stats": {
+            "big_m_time": 6128.0,
+            "truck_horizon": 2580.0,
+            "drone_horizon": 5745.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 980,
+              "w": 890,
+              "a_last": 890,
+              "b": 1990,
+              "f": 750,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            17
+          ],
+          "open_depots_base": [
+            5,
+            7
+          ],
+          "open_depots_idx": [
+            1,
+            2
+          ],
+          "is_best": 0,
+          "rank_by_objective": 4,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 85.87,
+          "best_bound": 85.86999999999999,
+          "achieved_mip_gap": 1.6549266001166885e-16,
+          "achieved_mip_gap_pct": 1.6549266001166885e-14,
+          "runtime_sec": 168.88899993896484,
+          "model_stats": {
+            "big_m_time": 6128.0,
+            "truck_horizon": 2580.0,
+            "drone_horizon": 5745.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 940,
+              "w": 870,
+              "a_last": 870,
+              "b": 1770,
+              "f": 710,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            18,
+            19
+          ],
+          "open_depots_base": [
+            8,
+            11
+          ],
+          "open_depots_idx": [
+            3,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 5,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 106.18333333333334,
+          "best_bound": 106.18333333333334,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 50.7260000705719,
+          "model_stats": {
+            "big_m_time": 4848.0,
+            "truck_horizon": 2580.0,
+            "drone_horizon": 4545.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 960,
+              "w": 880,
+              "a_last": 880,
+              "b": 1820,
+              "f": 730,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            17,
+            18
+          ],
+          "open_depots_base": [
+            7,
+            8
+          ],
+          "open_depots_idx": [
+            2,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 6,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 110.50333333333334,
+          "best_bound": 110.50333333333333,
+          "achieved_mip_gap": 1.2860114067631747e-16,
+          "achieved_mip_gap_pct": 1.2860114067631748e-14,
+          "runtime_sec": 30.08299994468689,
+          "model_stats": {
+            "big_m_time": 4848.0,
+            "truck_horizon": 2580.0,
+            "drone_horizon": 4545.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 900,
+              "w": 850,
+              "a_last": 850,
+              "b": 1630,
+              "f": 670,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            19
+          ],
+          "open_depots_base": [
+            1,
+            11
+          ],
+          "open_depots_idx": [
+            0,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 7,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 115.28333333333335,
+          "best_bound": 115.28333333333332,
+          "achieved_mip_gap": 2.4653788720894035e-16,
+          "achieved_mip_gap_pct": 2.4653788720894035e-14,
+          "runtime_sec": 73.86999988555908,
+          "model_stats": {
+            "big_m_time": 5760.0,
+            "truck_horizon": 2580.0,
+            "drone_horizon": 5400.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 980,
+              "w": 890,
+              "a_last": 890,
+              "b": 1910,
+              "f": 750,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            17
+          ],
+          "open_depots_base": [
+            1,
+            7
+          ],
+          "open_depots_idx": [
+            0,
+            2
+          ],
+          "is_best": 0,
+          "rank_by_objective": 8,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 119.38,
+          "best_bound": 119.38,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 41.1010000705719,
+          "model_stats": {
+            "big_m_time": 5760.0,
+            "truck_horizon": 2580.0,
+            "drone_horizon": 5400.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 920,
+              "w": 860,
+              "a_last": 860,
+              "b": 1720,
+              "f": 690,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            18
+          ],
+          "open_depots_base": [
+            1,
+            8
+          ],
+          "open_depots_idx": [
+            0,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 9,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 139.1,
+          "best_bound": 139.1,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 57.75600004196167,
+          "model_stats": {
+            "big_m_time": 5760.0,
+            "truck_horizon": 2580.0,
+            "drone_horizon": 5400.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 940,
+              "w": 870,
+              "a_last": 870,
+              "b": 1890,
+              "f": 710,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            17,
+            19
+          ],
+          "open_depots_base": [
+            7,
+            11
+          ],
+          "open_depots_idx": [
+            2,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 10,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 146.4,
+          "best_bound": 146.4,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 37.22500014305115,
+          "model_stats": {
+            "big_m_time": 4720.0,
+            "truck_horizon": 2580.0,
+            "drone_horizon": 4425.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 940,
+              "w": 870,
+              "a_last": 870,
+              "b": 1730,
+              "f": 710,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        }
+      ]
+    },
+    {
+      "instance": "Instance8",
+      "p": 2,
+      "num_demands": 15,
+      "num_scenarios": 10,
+      "candidate_depots": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "depot_base_map": {
+        "15": 1,
+        "16": 7,
+        "17": 8,
+        "18": 12,
+        "19": 14
+      },
+      "solver_params": {
+        "time_limit_sec_per_combination": 1800.0,
+        "target_mip_gap": 0.0,
+        "target_mip_gap_abs": null,
+        "threads": 0,
+        "truck_model": "paper_exact",
+        "max_scenarios": 0,
+        "max_demands": 0,
+        "mip_focus": -1,
+        "heuristics": -1.0,
+        "presolve": -1,
+        "cuts": -1,
+        "symmetry": -1,
+        "drone_order_rule": "SPT_fixed_by_roundtrip_time"
+      },
+      "summary": {
+        "instance": "Instance8",
+        "num_combinations": 10,
+        "feasible_count": 10,
+        "optimal_count": 10,
+        "time_limit_count": 0,
+        "error_count": 0,
+        "avg_runtime_sec": 45.88729999065399,
+        "best_objective": 6.543333333333334,
+        "best_open_depots": [
+          15,
+          19
+        ],
+        "best_open_depots_base": [
+          1,
+          14
+        ],
+        "best_open_depots_idx": [
+          0,
+          4
+        ]
+      },
+      "combination_results": [
+        {
+          "open_depots": [
+            15,
+            19
+          ],
+          "open_depots_base": [
+            1,
+            14
+          ],
+          "open_depots_idx": [
+            0,
+            4
+          ],
+          "is_best": 1,
+          "rank_by_objective": 1,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 6.543333333333334,
+          "best_bound": 6.543333333333334,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 51.00999999046326,
+          "model_stats": {
+            "big_m_time": 576.0,
+            "truck_horizon": 195.0,
+            "drone_horizon": 540.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 960,
+              "w": 880,
+              "a_last": 880,
+              "b": 1700,
+              "f": 730,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            17,
+            19
+          ],
+          "open_depots_base": [
+            8,
+            14
+          ],
+          "open_depots_idx": [
+            2,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 2,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 7.113333333333333,
+          "best_bound": 7.113333333333333,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 28.818000078201294,
+          "model_stats": {
+            "big_m_time": 624.0,
+            "truck_horizon": 195.0,
+            "drone_horizon": 585.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 940,
+              "w": 870,
+              "a_last": 870,
+              "b": 1610,
+              "f": 710,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            18
+          ],
+          "open_depots_base": [
+            1,
+            12
+          ],
+          "open_depots_idx": [
+            0,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 3,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 7.256666666666667,
+          "best_bound": 7.256666666666667,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 103.9449999332428,
+          "model_stats": {
+            "big_m_time": 576.0,
+            "truck_horizon": 195.0,
+            "drone_horizon": 540.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 960,
+              "w": 880,
+              "a_last": 880,
+              "b": 1720,
+              "f": 730,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            17,
+            18
+          ],
+          "open_depots_base": [
+            8,
+            12
+          ],
+          "open_depots_idx": [
+            2,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 4,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 8.003333333333334,
+          "best_bound": 8.003333333333334,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 63.145999908447266,
+          "model_stats": {
+            "big_m_time": 624.0,
+            "truck_horizon": 195.0,
+            "drone_horizon": 585.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 940,
+              "w": 870,
+              "a_last": 870,
+              "b": 1630,
+              "f": 710,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            16
+          ],
+          "open_depots_base": [
+            1,
+            7
+          ],
+          "open_depots_idx": [
+            0,
+            1
+          ],
+          "is_best": 0,
+          "rank_by_objective": 5,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 8.200000000000001,
+          "best_bound": 8.2,
+          "achieved_mip_gap": 2.1662888285368905e-16,
+          "achieved_mip_gap_pct": 2.1662888285368905e-14,
+          "runtime_sec": 70.82999992370605,
+          "model_stats": {
+            "big_m_time": 592.0,
+            "truck_horizon": 195.0,
+            "drone_horizon": 555.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 960,
+              "w": 880,
+              "a_last": 880,
+              "b": 1740,
+              "f": 730,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            17
+          ],
+          "open_depots_base": [
+            7,
+            8
+          ],
+          "open_depots_idx": [
+            1,
+            2
+          ],
+          "is_best": 0,
+          "rank_by_objective": 6,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 8.786666666666669,
+          "best_bound": 8.786666666666667,
+          "achieved_mip_gap": 2.021650424203623e-16,
+          "achieved_mip_gap_pct": 2.021650424203623e-14,
+          "runtime_sec": 30.388999938964844,
+          "model_stats": {
+            "big_m_time": 624.0,
+            "truck_horizon": 195.0,
+            "drone_horizon": 585.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 940,
+              "w": 870,
+              "a_last": 870,
+              "b": 1650,
+              "f": 710,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            19
+          ],
+          "open_depots_base": [
+            7,
+            14
+          ],
+          "open_depots_idx": [
+            1,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 7,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 9.793333333333335,
+          "best_bound": 9.793333332857516,
+          "achieved_mip_gap": 4.85859593991249e-11,
+          "achieved_mip_gap_pct": 4.8585959399124895e-09,
+          "runtime_sec": 23.47699999809265,
+          "model_stats": {
+            "big_m_time": 592.0,
+            "truck_horizon": 195.0,
+            "drone_horizon": 555.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 960,
+              "w": 880,
+              "a_last": 880,
+              "b": 1740,
+              "f": 730,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            18
+          ],
+          "open_depots_base": [
+            7,
+            12
+          ],
+          "open_depots_idx": [
+            1,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 8,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 10.520000000000001,
+          "best_bound": 10.520000000000001,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 41.08899998664856,
+          "model_stats": {
+            "big_m_time": 592.0,
+            "truck_horizon": 195.0,
+            "drone_horizon": 555.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 960,
+              "w": 880,
+              "a_last": 880,
+              "b": 1780,
+              "f": 730,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            18,
+            19
+          ],
+          "open_depots_base": [
+            12,
+            14
+          ],
+          "open_depots_idx": [
+            3,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 9,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 15.21,
+          "best_bound": 15.209999999999997,
+          "achieved_mip_gap": 2.335774936752466e-16,
+          "achieved_mip_gap_pct": 2.335774936752466e-14,
+          "runtime_sec": 25.930000066757202,
+          "model_stats": {
+            "big_m_time": 576.0,
+            "truck_horizon": 195.0,
+            "drone_horizon": 540.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 960,
+              "w": 880,
+              "a_last": 880,
+              "b": 1760,
+              "f": 730,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            17
+          ],
+          "open_depots_base": [
+            1,
+            8
+          ],
+          "open_depots_idx": [
+            0,
+            2
+          ],
+          "is_best": 0,
+          "rank_by_objective": 10,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 15.716666666666665,
+          "best_bound": 15.716666666666665,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 20.23900008201599,
+          "model_stats": {
+            "big_m_time": 624.0,
+            "truck_horizon": 195.0,
+            "drone_horizon": 585.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 940,
+              "w": 870,
+              "a_last": 870,
+              "b": 1650,
+              "f": 710,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        }
+      ]
+    },
+    {
+      "instance": "Instance9",
+      "p": 2,
+      "num_demands": 15,
+      "num_scenarios": 10,
+      "candidate_depots": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "depot_base_map": {
+        "15": 2,
+        "16": 4,
+        "17": 6,
+        "18": 8,
+        "19": 13
+      },
+      "solver_params": {
+        "time_limit_sec_per_combination": 1800.0,
+        "target_mip_gap": 0.0,
+        "target_mip_gap_abs": null,
+        "threads": 0,
+        "truck_model": "paper_exact",
+        "max_scenarios": 0,
+        "max_demands": 0,
+        "mip_focus": -1,
+        "heuristics": -1.0,
+        "presolve": -1,
+        "cuts": -1,
+        "symmetry": -1,
+        "drone_order_rule": "SPT_fixed_by_roundtrip_time"
+      },
+      "summary": {
+        "instance": "Instance9",
+        "num_combinations": 10,
+        "feasible_count": 10,
+        "optimal_count": 10,
+        "time_limit_count": 0,
+        "error_count": 0,
+        "avg_runtime_sec": 22.184099984169006,
+        "best_objective": 90.63333333333334,
+        "best_open_depots": [
+          15,
+          18
+        ],
+        "best_open_depots_base": [
+          2,
+          8
+        ],
+        "best_open_depots_idx": [
+          0,
+          3
+        ]
+      },
+      "combination_results": [
+        {
+          "open_depots": [
+            15,
+            18
+          ],
+          "open_depots_base": [
+            2,
+            8
+          ],
+          "open_depots_idx": [
+            0,
+            3
+          ],
+          "is_best": 1,
+          "rank_by_objective": 1,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 90.63333333333334,
+          "best_bound": 90.63333333333334,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 34.801000118255615,
+          "model_stats": {
+            "big_m_time": 6672.0,
+            "truck_horizon": 2775.0,
+            "drone_horizon": 6255.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 900,
+              "w": 830,
+              "a_last": 830,
+              "b": 1550,
+              "f": 690,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            17,
+            19
+          ],
+          "open_depots_base": [
+            6,
+            13
+          ],
+          "open_depots_idx": [
+            2,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 2,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 92.43333333333334,
+          "best_bound": 92.43333333333332,
+          "achieved_mip_gap": 1.5374166659071766e-16,
+          "achieved_mip_gap_pct": 1.5374166659071766e-14,
+          "runtime_sec": 29.96299982070923,
+          "model_stats": {
+            "big_m_time": 5216.0,
+            "truck_horizon": 2775.0,
+            "drone_horizon": 4890.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 880,
+              "w": 820,
+              "a_last": 820,
+              "b": 1460,
+              "f": 670,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            17,
+            18
+          ],
+          "open_depots_base": [
+            6,
+            8
+          ],
+          "open_depots_idx": [
+            2,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 3,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 92.47000000000001,
+          "best_bound": 92.47,
+          "achieved_mip_gap": 1.5368070417651132e-16,
+          "achieved_mip_gap_pct": 1.536807041765113e-14,
+          "runtime_sec": 23.33400011062622,
+          "model_stats": {
+            "big_m_time": 6672.0,
+            "truck_horizon": 2775.0,
+            "drone_horizon": 6255.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 920,
+              "w": 840,
+              "a_last": 840,
+              "b": 1640,
+              "f": 710,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            18
+          ],
+          "open_depots_base": [
+            4,
+            8
+          ],
+          "open_depots_idx": [
+            1,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 4,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 94.5,
+          "best_bound": 94.5,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 23.10800004005432,
+          "model_stats": {
+            "big_m_time": 6672.0,
+            "truck_horizon": 2775.0,
+            "drone_horizon": 6255.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 880,
+              "w": 820,
+              "a_last": 820,
+              "b": 1460,
+              "f": 670,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            19
+          ],
+          "open_depots_base": [
+            2,
+            13
+          ],
+          "open_depots_idx": [
+            0,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 5,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 100.13666666666668,
+          "best_bound": 100.13666666666666,
+          "achieved_mip_gap": 2.838291944050198e-16,
+          "achieved_mip_gap_pct": 2.8382919440501983e-14,
+          "runtime_sec": 18.55299997329712,
+          "model_stats": {
+            "big_m_time": 5440.0,
+            "truck_horizon": 2775.0,
+            "drone_horizon": 5100.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 860,
+              "w": 810,
+              "a_last": 810,
+              "b": 1390,
+              "f": 650,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            19
+          ],
+          "open_depots_base": [
+            4,
+            13
+          ],
+          "open_depots_idx": [
+            1,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 6,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 105.50666666666669,
+          "best_bound": 105.50666666666666,
+          "achieved_mip_gap": 2.6938306676106407e-16,
+          "achieved_mip_gap_pct": 2.693830667610641e-14,
+          "runtime_sec": 10.944000005722046,
+          "model_stats": {
+            "big_m_time": 5648.0,
+            "truck_horizon": 2775.0,
+            "drone_horizon": 5295.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 840,
+              "w": 800,
+              "a_last": 800,
+              "b": 1300,
+              "f": 630,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            17
+          ],
+          "open_depots_base": [
+            2,
+            6
+          ],
+          "open_depots_idx": [
+            0,
+            2
+          ],
+          "is_best": 0,
+          "rank_by_objective": 7,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 109.63333333333335,
+          "best_bound": 109.63333333333335,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 29.24899983406067,
+          "model_stats": {
+            "big_m_time": 5440.0,
+            "truck_horizon": 2775.0,
+            "drone_horizon": 5100.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 900,
+              "w": 830,
+              "a_last": 830,
+              "b": 1530,
+              "f": 690,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            18,
+            19
+          ],
+          "open_depots_base": [
+            8,
+            13
+          ],
+          "open_depots_idx": [
+            3,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 8,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 110.28999999999999,
+          "best_bound": 110.28999999999998,
+          "achieved_mip_gap": 1.2884989314717568e-16,
+          "achieved_mip_gap_pct": 1.2884989314717567e-14,
+          "runtime_sec": 19.710999965667725,
+          "model_stats": {
+            "big_m_time": 6672.0,
+            "truck_horizon": 2775.0,
+            "drone_horizon": 6255.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 880,
+              "w": 820,
+              "a_last": 820,
+              "b": 1480,
+              "f": 670,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            17
+          ],
+          "open_depots_base": [
+            4,
+            6
+          ],
+          "open_depots_idx": [
+            1,
+            2
+          ],
+          "is_best": 0,
+          "rank_by_objective": 9,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 111.22666666666667,
+          "best_bound": 111.22666666666666,
+          "achieved_mip_gap": 1.2776481702710984e-16,
+          "achieved_mip_gap_pct": 1.2776481702710983e-14,
+          "runtime_sec": 20.039999961853027,
+          "model_stats": {
+            "big_m_time": 5648.0,
+            "truck_horizon": 2775.0,
+            "drone_horizon": 5295.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 880,
+              "w": 820,
+              "a_last": 820,
+              "b": 1440,
+              "f": 670,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            16
+          ],
+          "open_depots_base": [
+            2,
+            4
+          ],
+          "open_depots_idx": [
+            0,
+            1
+          ],
+          "is_best": 0,
+          "rank_by_objective": 10,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 200.00333333333333,
+          "best_bound": 200.00333333333333,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 12.138000011444092,
+          "model_stats": {
+            "big_m_time": 5648.0,
+            "truck_horizon": 2775.0,
+            "drone_horizon": 5295.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 860,
+              "w": 810,
+              "a_last": 810,
+              "b": 1390,
+              "f": 650,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        }
+      ]
+    },
+    {
+      "instance": "Instance10",
+      "p": 2,
+      "num_demands": 15,
+      "num_scenarios": 10,
+      "candidate_depots": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ],
+      "depot_base_map": {
+        "15": 1,
+        "16": 2,
+        "17": 4,
+        "18": 6,
+        "19": 14
+      },
+      "solver_params": {
+        "time_limit_sec_per_combination": 1800.0,
+        "target_mip_gap": 0.0,
+        "target_mip_gap_abs": null,
+        "threads": 0,
+        "truck_model": "paper_exact",
+        "max_scenarios": 0,
+        "max_demands": 0,
+        "mip_focus": -1,
+        "heuristics": -1.0,
+        "presolve": -1,
+        "cuts": -1,
+        "symmetry": -1,
+        "drone_order_rule": "SPT_fixed_by_roundtrip_time"
+      },
+      "summary": {
+        "instance": "Instance10",
+        "num_combinations": 10,
+        "feasible_count": 10,
+        "optimal_count": 10,
+        "time_limit_count": 0,
+        "error_count": 0,
+        "avg_runtime_sec": 195.29539999961852,
+        "best_objective": 105.17666666666668,
+        "best_open_depots": [
+          17,
+          19
+        ],
+        "best_open_depots_base": [
+          4,
+          14
+        ],
+        "best_open_depots_idx": [
+          2,
+          4
+        ]
+      },
+      "combination_results": [
+        {
+          "open_depots": [
+            17,
+            19
+          ],
+          "open_depots_base": [
+            4,
+            14
+          ],
+          "open_depots_idx": [
+            2,
+            4
+          ],
+          "is_best": 1,
+          "rank_by_objective": 1,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 105.17666666666668,
+          "best_bound": 105.17666666666666,
+          "achieved_mip_gap": 1.3511413857828417e-16,
+          "achieved_mip_gap_pct": 1.3511413857828417e-14,
+          "runtime_sec": 450.1949999332428,
+          "model_stats": {
+            "big_m_time": 6448.0,
+            "truck_horizon": 3510.0,
+            "drone_horizon": 6045.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 1000,
+              "w": 920,
+              "a_last": 920,
+              "b": 1940,
+              "f": 750,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            18,
+            19
+          ],
+          "open_depots_base": [
+            6,
+            14
+          ],
+          "open_depots_idx": [
+            3,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 2,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 106.17333333333333,
+          "best_bound": 106.17333333333333,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 666.0610001087189,
+          "model_stats": {
+            "big_m_time": 5632.0,
+            "truck_horizon": 3510.0,
+            "drone_horizon": 5280.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 1000,
+              "w": 920,
+              "a_last": 920,
+              "b": 1940,
+              "f": 750,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            18
+          ],
+          "open_depots_base": [
+            2,
+            6
+          ],
+          "open_depots_idx": [
+            1,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 3,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 109.55000000000003,
+          "best_bound": 109.55000000000001,
+          "achieved_mip_gap": 1.2972026211959837e-16,
+          "achieved_mip_gap_pct": 1.2972026211959837e-14,
+          "runtime_sec": 74.45700001716614,
+          "model_stats": {
+            "big_m_time": 6368.0,
+            "truck_horizon": 3510.0,
+            "drone_horizon": 5970.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 1000,
+              "w": 920,
+              "a_last": 920,
+              "b": 1960,
+              "f": 750,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            17
+          ],
+          "open_depots_base": [
+            2,
+            4
+          ],
+          "open_depots_idx": [
+            1,
+            2
+          ],
+          "is_best": 0,
+          "rank_by_objective": 4,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 110.37,
+          "best_bound": 110.36999999999999,
+          "achieved_mip_gap": 1.2875649828034795e-16,
+          "achieved_mip_gap_pct": 1.2875649828034795e-14,
+          "runtime_sec": 68.1489999294281,
+          "model_stats": {
+            "big_m_time": 6448.0,
+            "truck_horizon": 3510.0,
+            "drone_horizon": 6045.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 1000,
+              "w": 920,
+              "a_last": 920,
+              "b": 1960,
+              "f": 750,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            17
+          ],
+          "open_depots_base": [
+            1,
+            4
+          ],
+          "open_depots_idx": [
+            0,
+            2
+          ],
+          "is_best": 0,
+          "rank_by_objective": 5,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 112.13333333333333,
+          "best_bound": 112.13333333333333,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 126.51899981498718,
+          "model_stats": {
+            "big_m_time": 6608.0,
+            "truck_horizon": 3510.0,
+            "drone_horizon": 6195.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 960,
+              "w": 900,
+              "a_last": 900,
+              "b": 1760,
+              "f": 710,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            18
+          ],
+          "open_depots_base": [
+            1,
+            6
+          ],
+          "open_depots_idx": [
+            0,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 6,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 112.18333333333331,
+          "best_bound": 112.18333333333331,
+          "achieved_mip_gap": 0.0,
+          "achieved_mip_gap_pct": 0.0,
+          "runtime_sec": 125.18300008773804,
+          "model_stats": {
+            "big_m_time": 6608.0,
+            "truck_horizon": 3510.0,
+            "drone_horizon": 6195.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 960,
+              "w": 900,
+              "a_last": 900,
+              "b": 1760,
+              "f": 710,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            16,
+            19
+          ],
+          "open_depots_base": [
+            2,
+            14
+          ],
+          "open_depots_idx": [
+            1,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 7,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 115.02000000000002,
+          "best_bound": 115.02,
+          "achieved_mip_gap": 2.4710232507741263e-16,
+          "achieved_mip_gap_pct": 2.4710232507741264e-14,
+          "runtime_sec": 215.20900011062622,
+          "model_stats": {
+            "big_m_time": 6368.0,
+            "truck_horizon": 3510.0,
+            "drone_horizon": 5970.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 1040,
+              "w": 940,
+              "a_last": 940,
+              "b": 2200,
+              "f": 790,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            19
+          ],
+          "open_depots_base": [
+            1,
+            14
+          ],
+          "open_depots_idx": [
+            0,
+            4
+          ],
+          "is_best": 0,
+          "rank_by_objective": 8,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 123.74000000000002,
+          "best_bound": 123.73999999999998,
+          "achieved_mip_gap": 3.4453340993701313e-16,
+          "achieved_mip_gap_pct": 3.445334099370131e-14,
+          "runtime_sec": 118.36800003051758,
+          "model_stats": {
+            "big_m_time": 6608.0,
+            "truck_horizon": 3510.0,
+            "drone_horizon": 6195.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 1000,
+              "w": 920,
+              "a_last": 920,
+              "b": 2040,
+              "f": 750,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            15,
+            16
+          ],
+          "open_depots_base": [
+            1,
+            2
+          ],
+          "open_depots_idx": [
+            0,
+            1
+          ],
+          "is_best": 0,
+          "rank_by_objective": 9,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 132.70000000000002,
+          "best_bound": 132.7,
+          "achieved_mip_gap": 2.1418017656672196e-16,
+          "achieved_mip_gap_pct": 2.1418017656672196e-14,
+          "runtime_sec": 68.04500007629395,
+          "model_stats": {
+            "big_m_time": 6608.0,
+            "truck_horizon": 3510.0,
+            "drone_horizon": 6195.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 1000,
+              "w": 920,
+              "a_last": 920,
+              "b": 2000,
+              "f": 750,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        },
+        {
+          "open_depots": [
+            17,
+            18
+          ],
+          "open_depots_base": [
+            4,
+            6
+          ],
+          "open_depots_idx": [
+            2,
+            3
+          ],
+          "is_best": 0,
+          "rank_by_objective": 10,
+          "error": "",
+          "status": 2,
+          "status_name": "OPTIMAL",
+          "objective": 179.89333333333337,
+          "best_bound": 179.89333333333332,
+          "achieved_mip_gap": 3.1598402123929735e-16,
+          "achieved_mip_gap_pct": 3.1598402123929736e-14,
+          "runtime_sec": 40.76799988746643,
+          "model_stats": {
+            "big_m_time": 6448.0,
+            "truck_horizon": 3510.0,
+            "drone_horizon": 6045.0,
+            "truck_model": "paper_exact",
+            "var_counts": {
+              "c": 300,
+              "z": 300,
+              "y": 960,
+              "w": 900,
+              "a_last": 900,
+              "b": 1760,
+              "f": 710,
+              "p": 150,
+              "phi": 150,
+              "psi": 150,
+              "sigma": 150,
+              "u_vis": 300,
+              "h": 300
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "instance_count": 10,
+    "solved_count": 10,
+    "error_count": 0,
+    "avg_best_objective": 42.76166666666667
+  }
+}

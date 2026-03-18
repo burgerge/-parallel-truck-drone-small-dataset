@@ -1,14 +1,17 @@
 import random
 from typing import Callable, List
 
-from vns.drone_ops import drone_rt
+from vns.drone_ops import drone_rt, sort_drone_seq
 from vns.truck_ops import best_insertion_position, insert_at, remove_first_occurrence
 from vns.types import Solution
 
+# 邻域函数统一签名：
+# 输入 (当前解, 实例数据, 配置, 随机数生成器)，输出候选解列表。
 NeighborhoodFn = Callable[[Solution, object, object, random.Random], List[Solution]]
 
 
 def _copy_solution(sol: Solution) -> Solution:
+    """深拷贝解对象（仅复制 TT/DS 的列表结构）。"""
     return Solution(
         tt={k: list(v) for k, v in sol.tt.items()},
         ds={k: list(v) for k, v in sol.ds.items()},
@@ -16,12 +19,14 @@ def _copy_solution(sol: Solution) -> Solution:
 
 
 def _signature(sol: Solution) -> str:
+    """生成解签名，用于邻域去重。"""
     tt = tuple((k, tuple(v)) for k, v in sorted(sol.tt.items()))
     ds = tuple((k, tuple(v)) for k, v in sorted(sol.ds.items()))
     return str((tt, ds))
 
 
 def _collect(raw: Solution, instance, cfg, out: List[Solution], seen: set) -> None:
+    """将候选解加入结果集（自动去重）。"""
     sig = _signature(raw)
     if sig in seen:
         return
@@ -30,14 +35,23 @@ def _collect(raw: Solution, instance, cfg, out: List[Solution], seen: set) -> No
 
 
 def _all_depots(sol: Solution) -> List[int]:
+    """获取当前解中活跃的 depot 列表（保持首次出现顺序）。"""
     return list(dict.fromkeys(list(sol.tt.keys()) + list(sol.ds.keys())))
 
 
 def _closest_drone_depot(instance, depots: List[int], node: int) -> int:
+    """按无人机往返时间选择 node 的最近 depot。"""
     return min(depots, key=lambda k: drone_rt(instance, k, node))
 
 
 def n1_truck_to_truck_reassign(sol: Solution, instance, cfg, rng: random.Random) -> List[Solution]:
+    """
+    N1：Truck -> Truck（跨 depot 重分配）。
+
+    操作：
+    - 从某个 depot 的卡车路径取一个需求点；
+    - 尝试插入另一个 depot 的卡车路径最优位置。
+    """
     out: List[Solution] = []
     seen = set()
     demand_set = set(instance.demand_nodes)
@@ -65,6 +79,12 @@ def n1_truck_to_truck_reassign(sol: Solution, instance, cfg, rng: random.Random)
 
 
 def n2_truck_to_drone_same_depot(sol: Solution, instance, cfg, rng: random.Random) -> List[Solution]:
+    """
+    N2：Truck -> Drone（同 depot）。
+
+    操作：
+    - 将卡车路径中的需求点移到同 depot 的无人机序列。
+    """
     out: List[Solution] = []
     seen = set()
     demand_set = set(instance.demand_nodes)
@@ -73,11 +93,19 @@ def n2_truck_to_drone_same_depot(sol: Solution, instance, cfg, rng: random.Rando
             cand = _copy_solution(sol)
             cand.tt[k] = remove_first_occurrence(cand.tt[k], node)
             cand.ds.setdefault(k, []).append(node)
+            cand.ds[k] = sort_drone_seq(instance, k, cand.ds[k])
             _collect(cand, instance, cfg, out, seen)
     return out
 
 
 def n3_truck_to_drone_cross_depot(sol: Solution, instance, cfg, rng: random.Random) -> List[Solution]:
+    """
+    N3：Truck -> Drone（跨 depot）。
+
+    操作：
+    - 从 depot a 的卡车路径移除需求点；
+    - 加入 depot b 的无人机序列（b != a）。
+    """
     out: List[Solution] = []
     seen = set()
     demand_set = set(instance.demand_nodes)
@@ -90,11 +118,18 @@ def n3_truck_to_drone_cross_depot(sol: Solution, instance, cfg, rng: random.Rand
                 cand = _copy_solution(sol)
                 cand.tt[a] = remove_first_occurrence(cand.tt[a], node)
                 cand.ds.setdefault(b, []).append(node)
+                cand.ds[b] = sort_drone_seq(instance, b, cand.ds[b])
                 _collect(cand, instance, cfg, out, seen)
     return out
 
 
 def n4_drone_to_truck_same_depot(sol: Solution, instance, cfg, rng: random.Random) -> List[Solution]:
+    """
+    N4：Drone -> Truck（同 depot）。
+
+    操作：
+    - 将无人机序列中的需求点插回同 depot 的卡车路径最优位置。
+    """
     out: List[Solution] = []
     seen = set()
     for k, seq in sol.ds.items():
@@ -112,6 +147,13 @@ def n4_drone_to_truck_same_depot(sol: Solution, instance, cfg, rng: random.Rando
 
 
 def n5_drone_to_truck_cross_depot(sol: Solution, instance, cfg, rng: random.Random) -> List[Solution]:
+    """
+    N5：Drone -> Truck（跨 depot）。
+
+    操作：
+    - 从 depot a 的无人机序列移除需求点；
+    - 插入 depot b 的卡车路径最优位置（b != a）。
+    """
     out: List[Solution] = []
     seen = set()
     depots = _all_depots(sol)
@@ -133,6 +175,12 @@ def n5_drone_to_truck_cross_depot(sol: Solution, instance, cfg, rng: random.Rand
 
 
 def n6_drone_to_drone_reassign(sol: Solution, instance, cfg, rng: random.Random) -> List[Solution]:
+    """
+    N6：Drone -> Drone（跨 depot 重分配）。
+
+    操作：
+    - 将需求点从 depot a 的无人机序列移动到 depot b 的无人机序列。
+    """
     out: List[Solution] = []
     seen = set()
     depots = _all_depots(sol)
@@ -144,11 +192,22 @@ def n6_drone_to_drone_reassign(sol: Solution, instance, cfg, rng: random.Random)
                 cand = _copy_solution(sol)
                 cand.ds[a].remove(node)
                 cand.ds.setdefault(b, []).append(node)
+                cand.ds[b] = sort_drone_seq(instance, b, cand.ds[b])
                 _collect(cand, instance, cfg, out, seen)
     return out
 
 
 def n7_shaking_reconstruct_truck(sol: Solution, instance, cfg, rng: random.Random) -> List[Solution]:
+    """
+    N7：重构单条卡车路线（主要用于 shaking）。
+
+    思路：
+    - 固定某个 depot 的旧卡车访问点集合；
+    - 从不同起点重建一条贪心可行路径；
+    - 重建失败后剩余点转移到最近 depot 的无人机序列。
+
+    该邻域扰动幅度大，通常用于跳出局部最优。
+    """
     out: List[Solution] = []
     seen = set()
     demand_set = set(instance.demand_nodes)
@@ -181,6 +240,7 @@ def n7_shaking_reconstruct_truck(sol: Solution, instance, cfg, rng: random.Rando
             for node in leftovers:
                 target_depot = _closest_drone_depot(instance, depots, node)
                 cand.ds.setdefault(target_depot, []).append(node)
+                cand.ds[target_depot] = sort_drone_seq(instance, target_depot, cand.ds[target_depot])
 
             _collect(cand, instance, cfg, out, seen)
     return out
@@ -195,3 +255,5 @@ NEIGHBORHOODS = {
     6: n6_drone_to_drone_reassign,
     7: n7_shaking_reconstruct_truck,
 }
+
+# 编号到函数的映射就是 A5 中 Nk / Nl 的实现来源。

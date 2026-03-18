@@ -43,6 +43,7 @@ def build_cfg(
     l_max: int,
     i_max: int,
     num_scenarios: int = 10,
+    strict_feasibility: bool = False,
 ) -> alg.HeuristicConfig:
     return alg.HeuristicConfig(
         num_depots_to_open=p,
@@ -53,6 +54,7 @@ def build_cfg(
         i_max=i_max,
         drone_time_is_roundtrip=True,
         normalize_by_num_demands=True,
+        strict_feasibility=bool(strict_feasibility),
     )
 
 
@@ -103,6 +105,7 @@ def run_full_a1(
     if not scenarios:
         raise ValueError(f"No scenarios loaded for {instance_name}")
     depot_base_map = dict(getattr(base_instance, "depot_base_map", {}))
+    candidate_order = [int(k) for k in list(getattr(base_instance, "candidate_depots", []))]
 
     t0 = time.perf_counter()
     if disable_improvement:
@@ -113,13 +116,17 @@ def run_full_a1(
     elapsed = time.perf_counter() - t0
     best_x_sorted = sorted(best_x)
     best_x_base = [depot_base_map.get(k, k) for k in best_x_sorted]
+    pos = {int(k): i for i, k in enumerate(candidate_order)}
+    best_x_idx = sorted(pos[int(k)] for k in best_x_sorted if int(k) in pos)
 
     return {
         "instance": instance_name,
         "best_x_open": best_x_sorted,
+        "best_x_open_idx": best_x_idx,
         "best_x_open_base": best_x_base,
         "expected_obj": float(best_obj),
         "runtime_sec": float(elapsed),
+        "candidate_depots": candidate_order,
         "depot_base_map": depot_base_map,
     }
 

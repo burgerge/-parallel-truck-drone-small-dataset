@@ -1,0 +1,1343 @@
+                                                          European Journal of Operational Research xxx (xxxx) xxx
+
+
+                                                                  Contents lists available at ScienceDirect
+
+
+                                              European Journal of Operational Research
+                                                           journal homepage: www.elsevier.com/locate/eor
+
+
+Innovative applications of O.R.
+
+The stochastic location-routing problem with parallel truck–drone
+operations for humanitarian aid delivery
+Hannan Tureci-Isik a                 ,∗, Melih Çelik a          , Ece Sanci b
+a
+    School of Management, University of Bath, Convocation Avenue, Claverton Down, Bath, BA2 7AY, United Kingdom
+b
+    Amazon Logistics, 1 Principal Place, Worship Street, London, EC2A 2FA, United Kingdom
+
+
+
+ARTICLE                 INFO                             ABSTRACT
+
+Keywords:                                                Timely response in the aftermath of a disaster is crucial to alleviate loss of life and suffering. Timeliness of
+Humanitarian logistics                                   relief may be hampered by road network disruptions caused by the disaster, such as damage to road segments
+Truck–drone routing                                      or debris covering the roads. The use of drones simultaneously with trucks can potentially help overcome issues
+Location-routing problem
+                                                         around network disruptions and achieve more timely delivery of post-disaster aid. In an effort to shed more
+Stochastic programming
+                                                         light into this potential, we address the problem of network design for parallel truck–drone operations by depot
+Variable neighbourhood search
+                                                         location prior to the disaster and routing of the vehicles in its aftermath. We incorporate the uncertainty on
+                                                         network disruption by modelling this problem as a two-stage stochastic program, which proves computationally
+                                                         challenging to solve to optimality for real-life disaster scenarios. Consequently, we propose a tailored heuristic
+                                                         based on variable neighbourhood search to find high-quality solutions efficiently. Our computational results
+                                                         on randomly generated instances and a case study from the 2011 Van Earthquake in Turkiye demonstrate
+                                                         the effectiveness of the heuristic, the benefits of employing both trucks and drones, and the significance of
+                                                         accounting for uncertainties in pre-disaster planning.
+
+
+
+1. Introduction                                                                             use due to privacy, security and operational concerns, enhancements in
+                                                                                            technology and familiarity with their potential have meant that these
+    In the aftermath of large-scale disasters (e.g., earthquakes, hurri-                    restrictions are being gradually relaxed over the recent years (Young,
+canes, terrorist attacks), timely response to the needs of the benefi-                      2024). In the United States, the Federal Aviation Administration has
+ciaries is crucial. Logistics accounts for 80 percent of disaster relief                    authorised companies including UPS, uAvionics, and Zipline to operate
+efforts (Kovács & Spens, 2007), with infrastructure networks including                      beyond visual line of sight and use the collected data in their ongoing
+roads, power, and telecommunications playing a vital role in disaster                       policy making activities for drones (FAA, 2023a, 2023b). In the United
+response by facilitating search-and-rescue operations, evacuation, and
+                                                                                            Kingdom, the Civil Aviation Authority has recently put forward similar
+distribution of relief items. However, these networks are also vul-
+                                                                                            measures to expand drone use for commercial and non-commercial
+nerable to the effects of disasters. Road networks, in particular, can
+                                                                                            activities. (The Guardian, 2024).
+be compromised by collapsed segments and bridges, blockage due to
+                                                                                                Drones are also being increasingly used in humanitarian relief. For
+debris, and damage to critical facilities. As ground vehicles are the
+primary means of transportation for humanitarian aid, such disrup-                          example, as one of the earliest adopters in the humanitarian sector,
+tions can isolate beneficiary locations from relief aid vehicles (Celik,                    The United Nations World Food Programme uses drones for food aid
+2016). Originally designed for military purposes, unmanned air vehi-                        delivery in areas with significant access limitations (World Food Pro-
+cles (UAVs) offer significant potential to overcome these challenges by                     gramme, 2023). The Uganda Ministry of Health, in collaboration with
+being able to reach isolated areas in a timely manner.                                      other non-governmental organisations, uses drones to send HIV/AIDS
+    UAVs (or drones) have already found a wide range of applica-                            medicines to island communities with high HIV prevalence around
+tions outside humanitarian aid such as terrain mapping, agricultural                        Lake Victoria (The Guardian, 2021). The drone company Matternet
+spraying, wildlife monitoring and conservation (Otto et al., 2018). In                      transports biomedical supplies between hospitals in Zurich, and lab
+the field of logistics, many companies have started carrying out part                       samples in Berlin, and has launched operations for medical supply
+of their last-mile delivery operations using drones (Amazon, 2023;                          delivery between facilities in Abu Dhabi (Matternet, 2024).
+Walmart, 2024). Despite the initially restrictive regulations on UAV
+
+
+     ∗ Corresponding author.
+       E-mail address: ht631@bath.ac.uk (H. Tureci-Isik).
+
+https://doi.org/10.1016/j.ejor.2025.08.057
+Received 26 July 2024; Accepted 28 August 2025
+Available online 2 September 2025
+0377-2217/© 2025 The Authors. Published by Elsevier B.V. This is an open access article under the CC BY license (http://creativecommons.org/licenses/by/4.0/).
+
+
+
+    Please cite this article as: Hannan Tureci-Isik et al., European Journal of Operational Research, https://doi.org/10.1016/j.ejor.2025.08.057
+H. Tureci-Isik et al.                                                                                       European Journal of Operational Research xxx (xxxx) xxx
+
+
+    Despite their advantages in improving accessibility in disrupted             2.1. Truck–drone delivery problems
+networks, drones are also limited in their range and battery life. Conse-
+quently, most humanitarian aid delivery involving drones is performed                Due to the increase in application areas and technological advances
+in conjunction with ground vehicles, particularly trucks. A growing              for using drones in last-mile delivery, there is increased interest on
+body of literature on routing trucks and drones for last-mile deliveries         truck–drone operations in the extant literature. An extensive review
+in both for-profit and humanitarian applications has considered various          to date on the combined operations of drones with other vehicles
+ways in which such operations can be performed, such as independent
+                                                                                 in the non-military context is provided in Otto et al. (2018). Other
+deliveries by both vehicles from depots, synchronised operations where
+                                                                                 reviews that discuss truck–drone combined operations include Chung
+the drone travels on the truck and both perform deliveries, and one ve-
+                                                                                 et al. (2020) on optimisation methods, Macrina et al. (2020) on par-
+hicle supporting the delivery operations carried out by the other (Otto
+                                                                                 cel delivery, Rojas Viloria et al. (2021) on relevant vehicle routing
+et al., 2018). On the other hand, there is limited research on optimising
+parallel delivery of humanitarian aid by trucks and drones, despite their        problems, Moshref-Javadi and Winkenbach (2021) on general logistics
+widespread use in practice.                                                      applications, and Yucesoy et al. (2024) on their use in disaster response.
+    The efficiency and effectiveness of truck–drone delivery operations          In their review of facility location for drone delivery, Dukkanci et al.
+rely heavily on the supporting transportation network. Depots play a             (2023) point out that 95% of the literature on facility location for
+crucial role in this support by storing relief items, acting as a base for       truck–drone deliveries considers commercial applications, with only
+launching and recharging drones, loading and unloading trucks, and               one paper (Chowdhury et al., 2017) in humanitarian response. Our
+coordinating the deliveries by trucks and drones. In designing the net-          paper aims to bridge this gap in the literature.
+work, the decision of where to locate these depots is an important one               The literature on truck–drone delivery can be divided into three
+due to its direct influence the timeliness of aid deliveries. Pre-disaster       categories in terms of the delivery structure.
+location decisions save time for subsequent relief delivery by enabling              Models in the first category consider a primary vehicle type (truck
+immediate dispatch of vehicles, compared to making such decisions                or drone) that makes the deliveries, while the other vehicle type
+during the response stage. However, these pre-disaster decisions must            supports the operations. In Ferrandez et al. (2016), drones make the
+also account for disaster-related uncertainties, such as the impact on           deliveries, while trucks serve as launching stations, so that the effective
+the transportation network, as the type, location, and magnitude of the
+                                                                                 coverage area of drones is expanded. Scott and Scott (2019) propose a
+disaster are not known in advance.
+                                                                                 structure in which drones make the last-mile deliveries, whereas trucks
+    In this paper, we address the decisions of pre-disaster depot location
+                                                                                 supply the humanitarian aid to drone stations from a warehouse. They
+and post-disaster relief aid delivery by trucks and drones that operate
+                                                                                 formulate a location-routing problem to determine the locations of the
+independently, where the post-disaster travel times on the road net-
+work are uncertain. Contrary to the literature on truck–drone routing            warehouse and drone nests. Zhou et al. (2023) study a similar structure,
+where the main objective is to minimise makespan or operational costs,           locating drone stations in 2-D space. They model the problem as a
+we prioritise the timeliness of deliveries by considering an objective           constrained nonlinear optimisation, and present a solution approach
+that aims to minimise the expected average arrival time to all benefi-           based on particle swarm optimisation with a subordinate dynamic pro-
+ciaries. The objective reflects the cumulative urgency of aid delivery           gramme, using healthcare delivery as a case study. Variations of such
+across multiple communities, especially in the immediate aftermath               structure are previously studied by Kim and Moon (2018) and Schermer
+of a disaster where early access to relief can prevent deterioration of          et al. (2019) to extend the drone service range. McCunney and Cauwen-
+health and safety. To the best of our knowledge, this is the first study         berghe (2019) and Dayarian et al. (2020) propose drone-supported
+that considers such a latency-based objective in a stochastic location-          truck deliveries, with the drones resupplying the trucks directly or
+routing problem involving the parallel use of trucks and drones for              supplying the depots within a same-day delivery framework.
+last-mile humanitarian aid delivery. Our problem definition and the                  The second group of delivery structures involves a synchronised
+network structure lead to a novel two-stage mixed integer stochas-               truck–drone delivery model where the drone travels with the truck and
+tic programming model that can only solve small-sized instances to               both vehicles perform deliveries. The routing problem corresponding
+optimality using commercial solvers. To overcome this challenge, we
+                                                                                 to this version of truck–drone tandem delivery is more commonly
+propose a variable neighbourhood search heuristic, which produces
+                                                                                 known as the Flying Sidekick Travelling Salesman Problem (Murray
+high-quality solutions for larger instances within reasonable time limits.
+                                                                                 & Chu, 2015) or the TSP with Drones (Agatz et al., 2018). In this
+We use a case study from the 2011 Van Earthquake in Turkiye to
+                                                                                 case, the drone travels with a truck to extend its service area, launches
+understand the structure of resulting tours, as well as to compare
+our approach to benchmarks involving only trucks, no assessment on               from the truck, delivers the items, and lands back on the truck again.
+road network damage, and separate location and routing decisions.                Meanwhile, after the drone takes off, the truck continues its tour and
+The computational results underline the potential effectiveness of our           visits the next demand location, and the two vehicles meet at one of
+approach and present insights that can be of benefit to decision makers.         the demand locations. Moshref-Javadi and Lee (2017) consider tandem
+    The remainder of the paper is organised as follows: Section 2                deliveries for situations such as disaster relief and emergencies, using
+presents a literature review on truck–drone delivery models and stoch-           a latency-based objective. Although their setting is humanitarian, their
+astic location-routing problems in humanitarian operations. Section 3            model does not incorporate any uncertainties and focuses solely on the
+outlines the problem definition and provides the two-stage stochas-              routing problem. Yin et al. (2023) also address the routing problem in
+tic mixed integer programming model. In Section 4, we introduce                  humanitarian operations under demand and travel time uncertainties.
+a problem-tailored variable neighbourhood search heuristic to solve              They develop a robust optimisation model using a budgeted uncertainty
+the instances of practical size. Section 5 details the computational             set and propose a branch-and-price-and-cut algorithm, applying it to
+experiments and provides the managerial insights from our findings.              a real earthquake case study. Mirzapour Al-e Hashem et al. (2024)
+Concluding remarks and further research directions are presented in              apply tandem delivery to a postal delivery system, considering weather-
+Section 6.                                                                       related uncertainties. They model the problem as a robust optimisation
+2. Literature review                                                             and develop a hybrid metaheuristic solution approach. Kang and Lee
+                                                                                 (2021) utilise heterogeneous drones with different limitations and de-
+   This paper is positioned at the intersection of truck–drone delivery          velop an exact algorithm for the routing problem using logic-based
+problems, location-routing problems with heterogeneous fleets and                Bender decomposition. Morim et al. (2024) extend truck–drone tandem
+multiple vehicle types, and stochastic location-routing problems in              routing by incorporating robot deliveries. When a truck visits a robot
+humanitarian operations. In this section, we present an overview of              station, it activates the station, and pre-positioned robots then perform
+these three streams and the contributions of our work to the literature.         return deliveries. Gómez-Lagos et al. (2021) introduce a variant of
+
+                                                                             2
+H. Tureci-Isik et al.                                                                                        European Journal of Operational Research xxx (xxxx) xxx
+
+
+truck–drone tandem delivery, where the truck can park at a non-                   the inherent complexity of solving the problem to optimality, heuris-
+customer location during its tour, allowing drones to make return trips           tic and metaheuristic approaches are more commonly used. Among
+from either demand nodes or parking lots. They apply a GRASP meta-                these, Koç et al. (2016) use an evolutionary algorithm for the problem
+heuristic to minimise makespan, incorporating truck routing, drone                involving time windows, Zhao et al. (2018) propose a cooperative
+trips, and parking lot selection in the procedure. Similarly, Montaña             approximation approach, Amiri et al. (2019) use Lagrangean decom-
+et al. (2022) allow drone launches from truck but only when the truck             position for a multi-echelon application in offshore oil and gas supply
+is at a parking lot, and also include parking lot selection in their model.       chains, and Wang et al. (2019) employ multiple neighbourhood search
+There is substantial literature on synchronised models; the interested            algorithms for a multiobjective version of the problem.
+reader is referred to Moshref-Javadi et al. (2021) for a comprehensive                The LRP with multiple vehicle types is relevant to the problem
+literature review to date, and to Dukkanci et al. (2024) for facility             addressed in this paper due to the involvement of multiple networks
+location considerations.                                                          for vehicle routing. Klibi et al. (2010) consider a multiperiod version
+    Our study belongs to the third category of truck–drone delivery               of the Stochastic LRP where customers can be served by full or less-
+operations, where trucks and drones perform deliveries in parallel from           than-truckload shipments, using a tabu search heuristic to find efficient
+the depots. Murray and Chu (2015) first formalise this problem as                 solutions. Snoeck et al. (2018) make network design and fleet planning
+                                                                                  decisions for Coca Cola in Bogota using a linear approximation of
+the Parallel Drone Scheduling Travelling Salesman Problem (PDSTSP).
+                                                                                  the resulting mathematical model. Zhou et al. (2019) use a hybrid
+They formulate a mixed integer program and develop a two-phase
+                                                                                  genetic algorithm and simulated annealing approach on a variant with
+heuristic to solve it for large-sized instances. For a single pair of
+                                                                                  simultaneous home delivery and customer pickup. De Maio et al.
+truck and drone, Mbiadou Saleu et al. (2018) develop an iterative
+                                                                                  (2023) focus on an application in the dairy industry with stochastic
+two-step heuristic and Dell’Amico et al. (2020) propose matheuristic
+                                                                                  demands and make use of an indifference zoning approach to solve the
+methods. Nguyen et al. (2022) extend the PDSTSP to involve multiple
+                                                                                  problem. Ozyavas et al. (2025) consider a parcel locker delivery system
+trucks and drones and propose a heuristic algorithm. Kloster et al.
+                                                                                  with trucks at the upstream and bike deliveries at the downstream of
+(2023) consider a variant of parallel operations where trucks make                the chain, solving the problem using a branch-and-price algorithm.
+deliveries along their tours, and when a truck visits a pre-positioned
+robot station, the station is activated to enable return-trip deliveries          2.3. Stochastic location-routing problems in humanitarian operations
+by drones or robots. Some of the earlier studies categorised under the
+first category of truck–drone operations, those using drone nests or                  In this section, we provide an overview of relevant applications
+stations (e.g., Kim & Moon, 2018; Schermer et al., 2019; Scott & Scott,           of the Stochastic Location-Routing Problem in humanitarian opera-
+2019; Zhou et al., 2023), can also be interpreted as variants of the              tions. Interested reader can also refer to Temiz et al. (2025) for a
+PDSTSP. In these models, trucks support drone operations by transport-            recent review on stochastic location-routing problems, addressing both
+ing packages to drone stations, from which drones conduct last-mile               humanitarian and other application areas.
+deliveries to extend their range. While these studies involve location-               Most studies on the Stochastic Location-Routing Problem in humani-
+routing decisions due to the inclusion of station location choices, they          tarian operations involves selection of pre-defined routes in the second-
+do not incorporate uncertainty in their models.                                   stage, rather than explicit routing. Ukkusuri and Yushimito (2008) ad-
+    Only a few studies on the PDSTSP variants address uncertain-                  dress a location-routing problem with inventory pre-positioning under
+ties. Rezaei Kallaj et al. (2023) tackle blood delivery by trucks and             route failures, selecting reliable routes based on failure probabilities,
+drones in disaster scenarios, accounting for supply and demand uncer-             and using the set of reliable routes to make location decisions. Mete
+tainties using a two-stage stochastic model and particle swarm opti-              and Zabinsky (2010) study depot location with pre-positioning to serve
+misation for its solution. Van Steenbergen et al. (2023) address travel           hospitals in case of a disaster, using a two-stage stochastic program to
+time uncertainties in post-disaster relief with a stochastic dynamic pro-         handle demand and travel time uncertainties. Bozorgi-Amiri and Khorsi
+gram and deep reinforcement learning. Studies incorporating network               (2016) define a multi-period multi-objective problem with demand,
+design into PDSTSP are also scarce. Cokyasar et al. (2021) address                travel time and cost uncertainties. Aslan and Çelik (2019) consider
+the decision of locating automated battery swapping machines in a                 another version of the Stochastic Location-Routing Problem with pre-
+commercial delivery setting and solve the problem with a derivative-              positioning under a latency-based objective in the second-stage, solving
+supported cutting-plane method. Chowdhury et al. (2017) uniquely                  the problem to optimality using valid inequalities. Chang et al. (2017)
+integrate network design and uncertainty, using drones when trucks                formulate a robust optimisation model for a variant of the problem with
+                                                                                  demand and travel speed uncertainty. Although this study explicitly
+are unavailable and employing a probabilistic approach to road access,
+                                                                                  considers construction of tours, it does so only for the worst-case
+with routes determined through a continuous approximation method.
+                                                                                  scenario. In a different vein, Ahmadi et al. (2015) incorporate route
+                                                                                  construction into the first-stage decisions considering the road fail-
+2.2. Location-routing problems with heterogeneous fleets and multiple vehi-
+                                                                                  ures and inflated travel times (via decreased travel speed), while the
+cle types
+                                                                                  second-stage calculates constraint violations for relief times for each
+                                                                                  scenario.
+    A significant amount of literature exists on the Location-Routing
+                                                                                      Although the use of pre-defined routes increases the tractability of
+Problem (LRP). Comprehensive reviews on the problem are given                     the resulting Stochastic Location-Routing Problem, it also decreases
+in the survey papers by Nagy and Salhi (2007), Prodhon and Prins                  the effectiveness of relief transportation by limiting the potential set
+(2014), Drexl and Schneider (2015), Schneider and Drexl (2017),                   of routes that can be used. Only a limited number of studies in the
+Albareda-Sambola and Rodríguez-Pereira (2019), and Mara et al.                    literature for the Stochastic Location-Routing Problem in humanitarian
+(2021). The work in this paper is a special case of the LRP with                  operations explicitly construct routes after uncertainty realisations.
+heterogeneous fleets and multiple vehicle types. For the sake of brevity,         Among these, Caunhye et al. (2016) address pre-positioning and rout-
+we focus our attention to the papers in this stream of literature.                ing of emergency supplies under demand and travel time uncertainties,
+    Due to its practical applicability, the LRP with heterogeneous ve-            and use robust optimisation by minimising the cost of setting up
+hicles has gained significant attention in the literature. Among the              depots and the worst-case results among damage scenarios. Sabouhi
+recent exact approaches to tackle the problem, Çalık et al. (2021)                et al. (2021) also construct the routes in the second-stage considering
+use a Benders decomposition approach to solve the resulting mixed                 demand uncertainty and road failure. Zhong et al. (2020) consider
+integer program, whereas (Wang et al., 2025) devise a branch-and-                 demand uncertainty and decision maker’s risk attitude. They implement
+price-and-cut algorithm using bidirectional labelling for a variant of            a genetic algorithm for the resulting bi-objective problem, using cost
+the problem that minimises emission and operational costs. Due to                 and the summation of arrival times at demand nodes as objectives.
+
+                                                                              3
+H. Tureci-Isik et al.                                                                                         European Journal of Operational Research xxx (xxxx) xxx
+
+
+2.4. Contributions of this study                                                     In the aftermath of a disaster, damaged infrastructure leads to
+                                                                                 blocked roads or longer traversal time on some of the road segments.
+    The work in this paper makes important contributions to the metho-           As the structural impact of the potential disaster on the road network
+dology by means of a novel modelling and solution approach. It also              is uncertain, pre-disaster network design decisions need to be made
+contributes to the practice through the managerial insights it drives            with this uncertainty in mind. The potential effects of different disaster
+through the computational experiments.                                           scenarios can be estimated using structural engineering models, such
+    From a methodological perspective, this study introduces a novel             as HAZUS in the US (FEMA, 2022). Once the disaster hits, damage
+mathematical formulation for a stochastic location-routing problem               assessment on the ground transportation network is performed by
+with multiple vehicle types, latency-based objectives, and a sparse net-         a central decision maker to manage and coordinate timely search-
+work lacking triangle inequality. These problem characteristics deem             and-rescue operations and humanitarian aid delivery. Geographical
+impossible the use of classical decision variable definitions and subtour        information systems, when integrated with satellite imagery, higher
+elimination constraints typically used in the location-routing literature.       resolution drone images, and crowd-sourced data, can provide the road
+To address this, we propose a flow-based formulation that accom-                 infrastructure condition in the aftermath.
+modates multiple visits to nodes and develop a new set of subtour                    Post-disaster routing of drones and trucks, as well as decisions on
+elimination constraints tailored for this structure. Moreover, we de-            relief item distribution are carried out by a central authority, such as
+sign a variable neighbourhood search (VNS) metaheuristic that jointly            FEMA in the US and AFAD in Turkiye. These entities also coordinate the
+makes depot location and routing decisions across scenarios. Unlike              disaster response between local authorities, NGOs, and private parties.
+prior work, our approach determines scenario-specific routes directly,           The aim of the central decision maker is to provide a timely delivery
+without relying on adjustments of a single scenario-independent route.           of relief items to all beneficiaries by means of an effective routing and
+To the best of our knowledge, this is the first such application of VNS          scheduling of vehicles.
+in this context.
+    On the practical side, the study offers insights into the design of          3.2. Modelling assumptions
+post-disaster relief logistics using mixed fleets of trucks and drones
+under uncertainty. Our results demonstrate the value of integrating                  For the sake of simplicity, we assume that the central decision-
+these vehicle types, highlight the importance of scenario-dependent              maker locates a pre-determined number of depots. The existence of
+planning over static or rule-based strategies, and quantify the opera-           a fixed budget (instead of a fixed number of depots) can be easily
+tional impact of needs assessment. The findings also inform policy and           incorporated into our approach. We also assume that candidate depot
+design decisions by identifying feasible ranges for drone endurance and          locations coincide with those of demand locations. For simplicity, each
+speed, thereby supporting the effective deployment of hybrid delivery            open depot is assigned a single truck and a single drone. As in Murray
+systems in humanitarian settings.                                                and Chu (2015), trucks make a single tour from the depot, while drones
+                                                                                 can make multiple take-offs, with a single delivery each take-off. Truck
+                                                                                 and drone operations are in parallel; with trucks following a sequence
+3. Problem definition and mathematical model
+                                                                                 of demand points in a route and drones conducting separate deliveries
+                                                                                 directly from the depot. We also assume a drone cannot visit more
+   We start this section by describing the problem environment, fol-
+                                                                                 than one location per take-off due to operational constraints. Without
+lowed by our assumptions that result in the definition of a stochastic
+                                                                                 loss of generality, we assume negligible waiting times for activities
+location-routing problem with parallel truck and drone deliveries and
+                                                                                 such as battery swapping and package loading. If needed, these can
+travel time uncertainties. In the last part of this section, we provide a
+                                                                                 be incorporated into the travel times.
+two-stage stochastic mixed integer programming formulation for this
+                                                                                     We consider a set of relief supplies whose demand at each location
+problem.
+                                                                                 can be satisfied by a single delivery trip from either a truck or a drone.
+                                                                                 Examples of such commodities include the lightweight first-aid and
+3.1. Problem description                                                         sustenance packages of IFRC which weigh between 3–10 kilogrammes
+                                                                                 and can provide a sustenance package for a small to medium-sized
+    The problem at hand considers the decision of designing a relief             villages (International Federation of Red Cross and Red Crescent Soci-
+distribution network in preparation for a large-scale disaster. Prior            eties, 2018) and Interagency Emergency Health Kits of UNICEF, which
+to the disaster, local authorities (e.g., municipalities) or federal/na-         provide medical kits for up to 100 children, and weighs less than 10
+tional agencies make the decisions on where to locate humanitarian               kilogrammes (UNICEF, 2025). These are small enough to be carried in
+depots equipped with parking stations, charging areas, and landing               a single trip to each demand location (e.g., Wingcopter GmbH, 2022;
+pads, to serve as hubs for the emergency vehicles (trucks and drones).           Zipline, 2023), and thus payload is not a concern.
+These depots also serve as storage areas for relief items, which are                 Drones have many operational limitations, including performance
+generally pre-positioned before the disaster. Rather than building a             in bad weather, payload capacity, battery duration, motion restrictions,
+new facility, opening a depot generally implies converting an existing           etc. In line with previous studies (e.g., Agatz et al., 2018; Carlsson &
+public or private building, such as schools, town halls, sports halls, or        Song, 2018; Murray & Chu, 2015), we incorporate only endurance as
+warehouses (Aslan & Çelik, 2019). The decision of opening depots is              an explicit drone limitation in our model. Other operational limitations
+generally subject to a fixed budget.                                             are excluded for three main reasons. First, payload is not a binding
+    Our focus is on disasters where beneficiaries are located in smaller         factor due to the size of relief commodities. Second, some factors
+residential areas such as rural villages or districts. Demand of relief          such as weather-related performance or motion restrictions are harder
+items is served in central areas of demand locations, such as town               to estimate in advance. Lastly, our model addresses a strategic-level
+centres, and emergency assembly points such as schools and community             problem, and the effects of such factors can be implicitly captured by
+centres. Relief items are single commodities or bundles, which may               calibrating the endurance parameter. We also assume constant drone
+include medical supplies (first aid supplies, personal protective equip-         performance throughout its flight such that the flight duration between
+ment), weather protection (emergency foil blankets, rain ponchos), or            a depot and a demand location is symmetric.
+communication equipment (battery chargers, flashlights) (Noyan et al.,               In the literature, road network disruptions are modelled in two
+2016). In general, post-disaster demand amounts of such items are                alternative ways. Binary disruptions (e.g., Canbilen Sütiçen et al. 2023,
+known a priori, as such quantities are proportional to the population            Sabouhi et al. 2021, Salman and Yücel 2015) assume that once a road
+of each demand location.                                                         segment is disrupted, it is not traversable at all. Inflated travel times
+
+                                                                             4
+H. Tureci-Isik et al.                                                                                                         European Journal of Operational Research xxx (xxxx) xxx
+
+
+Table 1
+Notation used in the two-stage stochastic mixed integer programming model
+ Index Sets
+ 𝑁                          Nodes (except the sink node)
+ 𝑠                          Sink node
+ 𝑁′                         All nodes including the sink node
+ 𝐸                          Edges (excluding those incident to the sink node)
+ 𝐸′                         All edges including those incident to the sink node
+ 𝑊                          Candidate depot nodes
+ 𝐷                          Demand nodes
+ 𝑊𝑖                         Candidate depot nodes within the endurance limit for a return trip to the demand node 𝑖 ∈ 𝐷
+ 𝐷𝑘                         Demand nodes within the endurance limit for a return trip from depot 𝑘 ∈ 𝑊 , sorted in non-decreasing order of drone travel time to the depot
+ 𝑖𝑚                         Node index of the 𝑚th demand node in the ordered list 𝐷𝑘
+ 𝛺                          Disaster scenarios
+ Deterministic Parameters
+ 𝑣𝑖𝑘                        Round trip flight time of drone originating from depot 𝑘 ∈ 𝑊 to demand node 𝑖 ∈ 𝐷
+ 𝑛                          Number of depots to be opened
+ Stochastic Parameters
+ 𝑡𝑖𝑗 (𝜉)                    Truck travel time on edge (𝑖, 𝑗) ∈ 𝐸 under realisation 𝜉 ∈ 𝛺
+ First Stage Decision Variables
+                             {
+                                1, if a depot is located at candidate depot node 𝑘 ∈ 𝑊
+ 𝑥𝑘                        =
+                                0, otherwise
+ Second Stage Decision Variables
+                           {
+                              1,    if a truck travels on edge (𝑖, 𝑗) ∈ 𝐸 on a route originating from a depot 𝑘 ∈ 𝑊 under realisation 𝜉 ∈ 𝛺
+ 𝑦𝑖𝑗𝑘 (𝜉)                =
+                              0,    otherwise
+                           {
+                              1,    if demand node 𝑖 ∈ 𝐷 is assigned to a truck originating from a depot 𝑘 ∈ 𝑊 under realisation 𝜉 ∈ 𝛺
+ 𝑐𝑖𝑘 (𝜉)                 =
+                              0,    otherwise
+                             ⎧1, if a truck leaves demand node 𝑖 ∈ 𝐷 for the first time and travels on edge (𝑖, 𝑗) ∈ 𝐸 on a route originating from depot 𝑘 ∈ 𝑊 under realisation
+                             ⎪
+ 𝑤𝑖𝑗𝑘 (𝜉)                   =⎨   𝜉∈𝛺
+                             ⎪0, otherwise
+                             ⎩
+                             ⎧1, if a truck leaves demand node 𝑖 ∈ 𝐷 for the last time and travels on edge (𝑖, 𝑗) ∈ 𝐸 on a route originating from depot node 𝑘 ∈ 𝑊 under
+                             ⎪
+ 𝑎𝑖𝑗𝑘 (𝜉)                   =⎨   realisation 𝜉 ∈ 𝛺
+                             ⎪0, otherwise
+                             ⎩
+                              ⎧1, if a truck travels on edge (𝑗, 𝑙) ∈ 𝐸 right after edge (𝑖, 𝑗) ∈ 𝐸, and if it does not leave demand node 𝑗 ∈ 𝐷 for the first time and flow amount
+                              ⎪
+ 𝑏𝑖𝑗𝑙 (𝜉)                   =⎨     on edge (𝑖, 𝑗) ∈ 𝐸 is equal to the flow amount of edge (𝑗, 𝑙) ∈ 𝐸 under realisation 𝜉 ∈ 𝛺
+                              ⎪0, otherwise
+                              ⎩
+                              {
+                                1, if a drone visits demand node 𝑖 ∈ 𝐷 from depot node 𝑘 ∈ 𝑊𝑖 under realisation 𝜉 ∈ 𝛺
+ 𝑧𝑖𝑘 (𝜉)                    =
+                                0, otherwise
+ 𝑓𝑖𝑗 (𝜉)                    Commodity flow on edge (𝑖, 𝑗) ∈ 𝐸 ′ under realisation 𝜉 ∈ 𝛺
+ 𝑝𝑖 (𝜉)                     Drone arrival time at demand node 𝑖 ∈ 𝐷 under realisation 𝜉 ∈ 𝛺
+ 𝜙𝑖 (𝜉)                     Maximum flow into demand node 𝑖 ∈ 𝐷 under realisation 𝜉 ∈ 𝛺
+ 𝜓𝑖 (𝜉)                     Minimum flow into demand node 𝑖 ∈ 𝐷 under realisation 𝜉 ∈ 𝛺
+ 𝜎𝑖 (𝜉)                     Minimum flow out of demand node 𝑖 ∈ 𝐷 under realisation 𝜉 ∈ 𝛺
+ 𝑢𝑖𝑘 (𝜉)                    Number of times demand node 𝑖 ∈ 𝐷 is visited by truck originating from depot node 𝑘 ∈ 𝑊 under realisation 𝜉 ∈ 𝛺
+ ℎ𝑖𝑘 (𝜉)                    Number of times demand node 𝑖 ∈ 𝐷 is visited after the first visit by truck originating from depot node 𝑘 ∈ 𝑊 under realisation 𝜉 ∈ 𝛺
+
+
+
+(e.g., Caunhye et al. 2016, Hsueh et al. 2008, Mete and Zabinsky 2010),                        depot locations (represented by set 𝑊 ). Edges in 𝐸 correspond to direct
+on the other hand, imply an increase in the time required to traverse a                        road connections between any two locations in 𝑁. The pre-determined
+road segment, should it be disrupted. In this paper, we take the latter                        number of depots to open is denoted by 𝑛 and decision variables 𝑥𝑘
+approach and make use of a set of discrete disaster scenarios. In each                         indicate whether a candidate location 𝑘 ∈ 𝑊 is deployed as a depot.
+scenario, we consider different travel times due to the effects of the                             To minimise the average arrival time of a drone from a depot 𝑘 ∈ 𝑊
+disaster on each road segment.                                                                 to a given set of demand nodes, the visiting order should follow the
+                                                                                               non-decreasing order of the drone’s round trip flight time to demand
+3.3. A two-stage stochastic mixed integer programming model
+                                                                                               nodes (Blazewicz et al., 2019). The set 𝐷𝑘 denotes the ordered list of
+                                                                                               demand nodes that a drone can visit and return to the candidate depot
+    We formulate the problem as a two-stage stochastic mixed integer
+program with an objective of minimising the expected average arrival                           𝑘 ∈ 𝑊 within its endurance, arranged in non-decreasing order of travel
+time for timely delivery. The first-stage decisions involve the locations                      times. We define the set 𝑊𝑖 as the depots 𝑘 ∈ 𝑊 that are within the
+of depots and the second-stage decisions relate to the routing of trucks                       endurance limit for a return trip to the demand node 𝑖 ∈ 𝐷.
+and sequencing of drone visits. We list relevant notation in Table 1.                              We model uncertainty in travel times on the road network using
+    We model the problem on an undirected graph 𝐺 = (𝑁, 𝐸) where                               discrete scenarios 𝜉 ∈ 𝛺. In this context, the stochastic parameters 𝑡𝑖𝑗 (𝜉)
+vertices in 𝑁 are demand locations (denoted by set 𝐷), and candidate                           specify the truck travel time on edge (𝑖, 𝑗) ∈ 𝐸 for each scenario 𝜉 ∈ 𝛺.
+
+                                                                                           5
+H. Tureci-Isik et al.                                                                                                                                European Journal of Operational Research xxx (xxxx) xxx
+
+
+The decision variables 𝑦𝑖𝑗𝑘 (𝜉) denote whether the truck departing from                                  We also denote the decision variables representing the maximum
+a depot node 𝑘 ∈ 𝑊 travels on edge (𝑖, 𝑗) ∈ 𝐸, under scenario 𝜉 ∈ 𝛺.                                 flow into, minimum flow into, and minimum flow out of demand node
+Each demand node is assigned to a truck or drone dispatched from a                                   𝑖 ∈ 𝐷 by 𝜙𝑖 (𝜉), 𝜓𝑖 (𝜉), and 𝜎𝑖 (𝜉), respectively. These decision variables
+depot 𝑘 ∈ 𝑊 under scenario 𝜉 ∈ 𝛺, indicated by decision variables                                    are required to assign the commodity flow amounts on edges to ensure
+𝑐𝑖𝑘 (𝜉) and 𝑧𝑖𝑘 (𝜉), respectively. Drone arrival time at demand node 𝑖 ∈ 𝐷                           that the minimum flow out of a demand node happens at the time of
+under scenario 𝜉 ∈ 𝛺 is given by 𝑝𝑖 (𝜉).                                                             the last departure from that node and one unit of maximum incoming
+      We use a commodity flow formulation to model multiple truck visits                             flow into a node is left after the first departure from that node.
+to demand nodes in a non-complete network (Letchford et al., 2013).                                      Based on the described sets, parameters and decision variables, we
+                                                                                                     formulate the problem as a two-stage stochastic mixed integer program
+To do so, we add a dummy sink node 𝑠 to the node set to obtain the
+                                                                                                     as follows:
+augmented set 𝑁 ′ , and create dummy edges connecting all demand
+nodes to 𝑠 to form the expanded edge set 𝐸 ′ . The commodity flow                                    min      𝐸𝜉|𝑥 [𝑔(𝜉)]                                                                               (1)
+variable 𝑓𝑖𝑗 (𝜉) carries demand units on edge (𝑖, 𝑗) ∈ 𝐸 ′ to satisfy the
+                                                                                                              ∑
+remaining demands on the truck tour under scenario 𝜉 ∈ 𝛺. The truck                                  s.t.           𝑥𝑘 ≤ 𝑛                                                                              (2)
+delivers one unit in each first visit to a demand node, as well as one                                        𝑘∈𝑊
+unit of flow to 𝑠. From a modelling perspective, flow starts from an                                 𝑥𝑘 ∈ {0, 1}         ∀𝑘 ∈ 𝑊                                                                         (3)
+open depot and after demand nodes are visited, and concludes at the
+                                                                                                     where 𝑔(𝜉) is the optimal solution to the following second-stage model:
+sink node. However, it is important to note that the return of the truck                                  ∑                          ∑     ∑                          ∑
+to the depot is not a concern, as the objective function minimises the                                      (𝑖,𝑗)∈𝐸 𝑓𝑖𝑗 (𝜉)𝑡𝑖𝑗 (𝜉) −   𝑘∈𝑊  (𝑖,𝑗)∈𝐸 𝑦𝑖𝑗𝑘 (𝜉)𝑡𝑖𝑗 (𝜉) +   𝑖∈𝐷 𝑝𝑖 (𝜉)
+                                                                                                     min                                                                           (4)
+expected average arrival time to demand nodes. Although tours could                                                                        |𝐷|
+be modelled to terminate at the depots and this would still be valid,
+                                                                                                                             ∑
+it would require constructing the return path, which could result in                                 s.t.    𝑝𝑖𝑚 (𝜉) ≥              𝑧𝑖𝑗 𝑘 (𝜉)𝑣𝑖𝑗 𝑘
+unnecessarily lengthy tours. Therefore, using a single dummy node to                                                         𝑗<𝑚
+terminate all truck tours is a modelling choice made for simplification                                          𝑧𝑖𝑚 𝑘 (𝜉)𝑣𝑖𝑚 𝑘
+purposes.                                                                                                    +                        − 𝑀(1 − 𝑧𝑖𝑚 𝑘 (𝜉))               ∀𝑘 ∈ 𝑊 , ∀𝑖𝑚 ∈ 𝐷𝑘                (5)
+                                                                                                                         2
+      We exemplify the expansion of the network and values of commod-                                 ∑                      ∑
+                                                                                                             𝑐𝑗𝑘 (𝜉) +              𝑧𝑗𝑘 (𝜉) = 1                        ∀𝑗 ∈ 𝐷                           (6)
+ity flow variables on a simple network in Fig. 1, where Fig. 1(a) shows
+                                                                                                     𝑘∈𝑊                 𝑘∈𝑊𝑗
+the original network and Fig. 1(b) depicts the expanded network and                                  ∑
+an example truck tour that follows the route 1-2-3-2-4-𝑠. Commodity                                         (𝑦𝑖𝑗𝑘 (𝜉) + 𝑦𝑗𝑖𝑘 (𝜉)) ≤ 2|𝐷|𝑐𝑗𝑘 (𝜉)                        ∀𝑗 ∈ 𝐷, ∀𝑘 ∈ 𝑊                   (7)
+flow amounts are provided for each corresponding flow variable. The                                  𝑖∈𝑁
+                                                                                                      𝑖≠𝑗
+initial flow amount, 𝑓1,2 (𝜉), is set to 4, reflecting the total needs of
+three demand nodes and a sink node. Flow amounts decrease by one                                     𝑧𝑖𝑘 (𝜉) ≤ 𝑥𝑘                                                      ∀𝑖 ∈ 𝐷, ∀𝑘 ∈ 𝑊𝑖                  (8)
+unit on the first visits. However, when Node 2 is visited a second time,                             𝑦𝑖𝑗𝑘 (𝜉) ≤ 𝑥𝑘                                                     ∀(𝑖, 𝑗) ∈ 𝐸, ∀𝑘 ∈ 𝑊              (9)
+the incoming and the outgoing flow amounts become equal, such that                                   ∑
+𝑓3,2 (𝜉) = 𝑓2,4 (𝜉) = 2.                                                                                   𝑦𝑘𝑖𝑘 (𝜉) ≤ 𝑥𝑘                                               ∀𝑘 ∈ 𝑊                         (10)
+                                                                                                     𝑖∈𝐷
+      The definition of commodity flow variables also allows us to cal-                              𝑖≠𝑘
+
+culate the average arrival time to nodes visited by trucks. Using same                                ∑ ∑
+                                                                                                                  𝑦𝑘𝑖𝑗 (𝜉) = 0                                         ∀𝑘 ∈ 𝑊                         (11)
+route on Fig. 1(a), the arrival times at nodes 2, 3, and 4 are calculated                            𝑗∈𝑊 𝑖∈𝑁
+as 𝑡1,2 (𝜉), 𝑡1,2 (𝜉) + 𝑡2,3 (𝜉), and 𝑡1,2 (𝜉) + 𝑡2,3 (𝜉) + 𝑡3,2 (𝜉) + 𝑡2,4 (𝜉), respectively.        𝑗≠𝑘 𝑖≠𝑘
+                                                                                                     ∑                       ∑
+This yields the summation of arrival times as 3𝑡1,2 (𝜉) + 2𝑡2,3 (𝜉) + 𝑡3,2 (𝜉) +                            𝑦𝑖𝑗𝑘 (𝜉) =              𝑦𝑗𝑖𝑘 (𝜉)                           ∀𝑖 ∈ 𝑁, ∀𝑘 ∈ 𝑊                 (12)
+𝑡2,4 (𝜉), which is equivalent to 𝑓1,2 (𝜉)𝑡1,2 (𝜉) + 𝑓2,3 (𝜉)𝑡2,3 (𝜉) + 𝑓3,2 (𝜉)𝑡3,2 (𝜉) +            𝑗∈𝑁                     𝑗∈𝑁
+                                                                                                      𝑗≠𝑖                     𝑗≠𝑖
+𝑓2,4 (𝜉)𝑡2,4 (𝜉) − [𝑡1,2 (𝜉) + 𝑡2,3 (𝜉) + 𝑡3,2 (𝜉) + 𝑡2,4 (𝜉)]. More generally, the total
+                                                                                                     ∑
+arrival time to truck-visited nodes can be written as:                                                      𝑦𝑗𝑖𝑘 (𝜉) = 𝑢𝑖𝑘 (𝜉)                                         ∀𝑖 ∈ 𝐷, ∀𝑘 ∈ 𝑊                 (13)
+  ∑                       ∑ ∑                                                                        𝑗∈𝑁
+                                                                                                      𝑗≠𝑖
+        𝑓𝑖𝑗 (𝜉)𝑡𝑖𝑗 (𝜉) −               𝑦𝑖𝑗𝑘 (𝜉)𝑡𝑖𝑗 (𝜉).
+(𝑖,𝑗)∈𝐸                 𝑘∈𝑊 (𝑖,𝑗)∈𝐸                                                                  ℎ𝑖𝑘 (𝜉) ≥ 𝑢𝑖𝑘 (𝜉) − 1                                             ∀𝑖 ∈ 𝐷, ∀𝑘 ∈ 𝑊                 (14)
+     We define additional decision variables to ensure the commodity                                 ∑                ∑               ∑
+                                                                                                          𝑓𝑘𝑖 (𝜉) =        𝑦𝑖𝑗𝑘 (𝜉) −   ℎ𝑖𝑘 (𝜉)                        ∀𝑘 ∈ 𝑊                         (15)
+flows follow the aforementioned structure. Binary decision variables                                 𝑖∈𝑁                 (𝑖,𝑗)∈𝐸                     𝑖∈𝐷
+                                                                                                      𝑖≠𝑘
+𝑤𝑖𝑗𝑘 (𝜉) indicate the truck’s first departure from node 𝑖 when it travels on
+                                                                                                     ∑                   ∑                              ∑
+edge (𝑖, 𝑗) ∈ 𝐸. Decision variables 𝑎𝑖𝑗𝑘 (𝜉) mark the last departure of the                                 𝑓𝑗𝑖 (𝜉) −               𝑓𝑖𝑗 (𝜉) = 1 −            𝑧𝑖𝑘 (𝜉)   ∀𝑖 ∈ 𝐷                         (16)
+truck from node 𝑖 ∈ 𝐷 in the same way. Binary decision variables 𝑏𝑖𝑗𝑙 (𝜉)                            𝑗∈𝑁                 𝑗∈𝑁 ′                         𝑘∈𝑊
+                                                                                                      𝑗≠𝑖
+indicate whether the truck’s traversal of edge (𝑖, 𝑗) ∈ 𝐸 is immediately                             ∑                   ∑
+followed by that of edge (𝑗, 𝑙) ∈ 𝐸 and this is not the truck’s first                                       𝑓𝑖𝑠 (𝜉) =               𝑥𝑘                                                                (17)
+departure from node 𝑗 ∈ 𝐷. The number of times a demand node                                         𝑖∈𝑁                 𝑘∈𝑊
+                                                                                                                                    ∑
+𝑖 ∈ 𝐷 is visited by a truck from a depot node 𝑘 ∈ 𝑊 is denoted                                       𝑓𝑖𝑗 (𝜉) ≤ (|𝐷| + 1)                  𝑦𝑖𝑗𝑘 (𝜉)                     ∀(𝑖, 𝑗) ∈ 𝐸                    (18)
+by 𝑢𝑖𝑘 (𝜉) and the number of additional visits to a demand node after                                                               𝑘∈𝑊
+its demand is satisfied is indicated by ℎ𝑖𝑘 (𝜉). For example, Node 3 in                              𝑓𝑖𝑗 (𝜉) ≥ 𝑦𝑖𝑗𝑘 (𝜉)                                                ∀𝑗 ∈ 𝐷, ∀(𝑖, 𝑗) ∈ 𝐸, ∀𝑘 ∈ 𝑊
+Fig. 1(b) is visited once, so the first and the last departures happen
+                                                                                                                                                                                                      (19)
+on the same edge, leading to 𝑤3,2,1 (𝜉) = 𝑎3,2,1 (𝜉) = 1. However, Node                                           ∑
+2 is visited twice with first and last departures occurring on different                             𝑓𝑖𝑠 (𝜉) ≤           𝑦𝑖𝑘𝑘 (𝜉)                                      ∀𝑖 ∈ 𝑁                         (20)
+edges, resulting in 𝑤2,3,1 (𝜉) = 𝑎2,4,1 (𝜉) = 1. Since only Node 2 is visited                                     𝑘∈𝑊
+                                                                                                                   𝑘≠𝑖
+more than once, the only decision variable 𝑏𝑖𝑗𝑙 (𝜉) that takes a positive
+                                                                                                     𝑤𝑖𝑗𝑘 (𝜉) ≤ 𝑦𝑖𝑗𝑘 (𝜉)                                               ∀𝑖 ∈ 𝐷, ∀(𝑖, 𝑗) ∈ 𝐸, ∀𝑘 ∈ 𝑊
+value is 𝑏3,2,4 (𝜉) = 1, indicating the immediate route 3-2-4 on the second
+departure from Node 2. Furthermore, Nodes 3 and 4 are visited once,                                                                                                                                   (21)
+hence 𝑢3,1 (𝜉) = 𝑢4,1 (𝜉) = 1, whereas ℎ3,1 (𝜉) = ℎ4,1 (𝜉) = 0. Similarly,                           𝑎𝑖𝑗𝑘 (𝜉) ≤ 𝑦𝑖𝑗𝑘 (𝜉)                                               ∀𝑖 ∈ 𝐷, ∀(𝑖, 𝑗) ∈ 𝐸, ∀𝑘 ∈ 𝑊
+𝑢2,1 (𝜉) = 2 and ℎ2,1 (𝜉) = 1 as Node 2 is visited twice.                                                                                                                                             (22)
+
+                                                                                                 6
+H. Tureci-Isik et al.                                                                                                               European Journal of Operational Research xxx (xxxx) xxx
+
+
+
+
+                                          Fig. 1. Illustrative example for expansion of the network and values of commodity flow variables.
+
+ ∑ ∑                             ∑
+              𝑤𝑖𝑗𝑘 (𝜉) = 1 −           𝑧𝑖𝑘 (𝜉)         ∀𝑖 ∈ 𝐷                           (23)       𝑧𝑖𝑘 (𝜉) ∈ {0, 1}                                  ∀𝑖 ∈ 𝐷, ∀𝑘 ∈ 𝑊𝑖                 (41)
+𝑘∈𝑊 𝑗∈𝑁                          𝑘∈𝑊                                                                                                                               ′
+        𝑗≠𝑖                                                                                        𝑓𝑖𝑗 (𝜉) ≥ 0                                       ∀(𝑖, 𝑗) ∈ 𝐸                     (42)
+ ∑ ∑                             ∑
+              𝑎𝑖𝑗𝑘 (𝜉) = 1 −           𝑧𝑖𝑘 (𝜉)         ∀𝑖 ∈ 𝐷                           (24)       𝑝𝑖 (𝜉), 𝜙𝑖 (𝜉), 𝜓𝑖 (𝜉), 𝜎𝑖 (𝜉) ≥ 0                ∀𝑖 ∈ 𝐷                          (43)
+𝑘∈𝑊 𝑗∈𝑁                        𝑘∈𝑊
+        𝑗≠𝑖                                                                                        𝑢𝑖𝑘 (𝜉), ℎ𝑖𝑘 (𝜉) ≥ 0                              ∀𝑖 ∈ 𝐷, ∀𝑘 ∈ 𝑊                  (44)
+𝜎𝑖 (𝜉) ≥ 𝑓𝑖𝑗 (𝜉)
+                                                                                                        The objective function (1) minimises the expected objective value
+                           ∑
+   − (|𝐷| + 1)(1 −               𝑎𝑖𝑗𝑘 (𝜉))             ∀𝑖, 𝑗 ∈ 𝐷, ∀(𝑖, 𝑗) ∈ 𝐸           (25)       of the second stage problem. Constraint (2) ensures that at most 𝑛
+                           𝑘∈𝑊                                                                     depots are opened. Constraints (3) define the domain of the first stage
+𝜎𝑖 (𝜉) ≥ 𝑓𝑖𝑠 (𝜉)                                                                                   variables. Given the first stage decisions, the second stage problem
+                           ∑                                                                       objective (4) minimises the average arrival time to demand nodes under
+   − (|𝐷| + 1)(1 −               𝑎𝑖𝑘𝑘 (𝜉))             ∀𝑖 ∈ 𝐷                           (26)       the realisation 𝜉 ∈ 𝛺. The first two terms in the numerator of function
+                           𝑘∈𝑊
+                                                                                                   (4) calculate the total arrival time at nodes visited by trucks, while the
+𝜙𝑖 (𝜉) ≥ 𝑓𝑗𝑖 (𝜉)                                       ∀𝑖 ∈ 𝐷, ∀(𝑖, 𝑗) ∈ 𝐸              (27)       final part of the numerator of function (4) sums the arrival times at
+                                                                                                   nodes visited by drones. The total arrival time to all demand nodes is
+𝑓𝑖𝑗 (𝜉) ≥ 𝜙𝑖 (𝜉) − 1
+                                                                                                   then divided by the number of demand nodes to obtain the average
+                           ∑
+   − (|𝐷| + 1)(1 −               𝑤𝑖𝑗𝑘 (𝜉))             ∀𝑖, 𝑗 ∈ 𝐷, ∀(𝑖, 𝑗) ∈ 𝐸           (28)       arrival time.
+                           𝑘∈𝑊                                                                          Constraints (5) are employed to calculate the arrival time at each
+𝑓𝑖𝑠 (𝜉) ≥ 𝜙𝑖 (𝜉) − 1                                                                               demand node 𝑖 ∈ 𝐷 visited by a drone, denoted by 𝑝𝑖 (𝜉). As each drone
+                           ∑                                                                       is assumed to make a single delivery per trip and return to the depot
+   − (|𝐷| + 1)(1 −               𝑤𝑖𝑘𝑘 (𝜉))             ∀𝑖 ∈ 𝐷                           (29)       before the next launch, the first part of the constraint sums the round-
+                           𝑘∈𝑊
+                                                                                                   trip flight times to all nodes preceding 𝑖 in 𝐷𝑘 , i.e., demand nodes 𝑗 for
+𝜓𝑖 (𝜉) ≤ 𝑓𝑗𝑖 (𝜉)                                                                                   which the round trip from depot 𝑘 is no longer than that to 𝑖 that are
+                           ∑
+   + (|𝐷| + 1)(1 −               𝑦𝑗𝑖𝑘 (𝜉))             ∀𝑖 ∈ 𝐷, ∀(𝑖, 𝑗) ∈ 𝐸              (30)       visited from this depot. The second part of the constraint then adds the
+                           𝑘∈𝑊                                                                     one-way flight time from the depot to node 𝑖, representing the moment
+𝜎𝑖 (𝜉) ≤ 𝜓𝑖 (𝜉)                                        ∀𝑖 ∈ 𝐷                           (31)       the drone reaches the node.
+ ∑               ∑                                                                                      Constraints (6) guarantee that each demand node is assigned either
+      𝑏𝑖𝑗𝑙 (𝜉) ≤   𝑦𝑗𝑙𝑘 (𝜉)                            ∀𝑗 ∈ 𝐷, ∀(𝑖, 𝑗) ∈ 𝐸              (32)       to a drone or a truck. Constraints (7) maintain route consistency by
+𝑖∈𝑁
+ 𝑖≠𝑗
+                    𝑘∈𝑊                                                                            ensuring that a demand node 𝑗 ∈ 𝐷 is included in the truck tour
+∑                   ∑                                                                              originating from depot 𝑘 ∈ 𝑊 only if it is assigned to that truck.
+       𝑏𝑖𝑗𝑙 (𝜉) ≤         𝑦𝑖𝑗𝑘 (𝜉)                     ∀𝑗 ∈ 𝐷, ∀(𝑖, 𝑗) ∈ 𝐸              (33)       Constraints (8) limit drone flights to demand nodes from open depots
+𝑙∈𝑁                 𝑘∈𝑊
+ 𝑙≠𝑗                                                                                               that satisfy the endurance limit. However, the endurance limit is en-
+∑                   ∑                                                                              forced for all drone trips through the domain of the decision variable
+       𝑏𝑖𝑗𝑙 (𝜉) ≥         (𝑦𝑗𝑙𝑘 (𝜉) − 𝑤𝑗𝑙𝑘 (𝜉))        ∀𝑗 ∈ 𝐷, ∀(𝑗, 𝑙) ∈ 𝐸              (34)       𝑧𝑖𝑘 (𝜉), as defined in Constraints (41). The variable domain utilises the
+𝑖∈𝑁                 𝑘∈𝑊
+ 𝑖≠𝑗                                                                                               set 𝑊𝑖 to specify the depots from which a drone can make a return
+𝑓𝑗𝑙 (𝜉) ≥ 𝑓𝑖𝑗 (𝜉) − (|𝐷| + 1)(1 − 𝑏𝑖𝑗𝑙 (𝜉))            ∀𝑗, 𝑙 ∈ 𝐷, ∀(𝑖, 𝑗), (𝑗, 𝑙) ∈ 𝐸              trip to visit demand node 𝑖 within the endurance limit. Thus, by the
+                                                                                                   variable definition, only endurance-feasible drone trips are permitted
+                                                                                        (35)
+                                                                                                   in the model.
+𝑓𝑗𝑙 (𝜉) ≤ 𝑓𝑖𝑗 (𝜉) + (|𝐷| + 1)(1 − 𝑏𝑖𝑗𝑙 (𝜉))            ∀𝑗, 𝑙 ∈ 𝐷, ∀(𝑖, 𝑗), (𝑗, 𝑙) ∈ 𝐸                   Constraints (9) ensure that a truck can only travel on edge (𝑖, 𝑗) ∈
+                                                                                        (36)       𝐸 on a route originating from an open depot 𝑘 ∈ 𝑊 . Meanwhile,
+𝑓𝑗𝑠 (𝜉) ≥ 𝑓𝑖𝑗 (𝜉) − (|𝐷| + 1)(1 − 𝑏𝑖𝑗𝑘 (𝜉))            ∀𝑗 ∈ 𝐷, ∀(𝑖, 𝑗) ∈ 𝐸, ∀𝑘 ∈ 𝑊                 constraints (10) ensure that only one truck can leave an open depot.
+                                                                                                   Route consistency is maintained through constraints (11), which ensure
+                                                                                        (37)
+                                                                                                   that a truck tour starting from depot 𝑘 ∈ 𝑊 does not originate
+𝑓𝑗𝑠 (𝜉) ≤ 𝑓𝑖𝑗 (𝜉) + (|𝐷| + 1)(1 − 𝑏𝑖𝑗𝑘 (𝜉))            ∀𝑗 ∈ 𝐷, ∀(𝑖, 𝑗) ∈ 𝐸, ∀𝑘 ∈ 𝑊                 from another depot. Constraints (12) focus on truck flow balance such
+                                                                                        (38)       that for each node, the number of incoming and outgoing truck flows
+                                                                                                   are equal. Constraints (13) calculate the values of the 𝑢𝑖𝑘 variables.
+𝑦𝑖𝑗𝑘 (𝜉), 𝑤𝑖𝑗𝑘 (𝜉), 𝑎𝑖𝑗𝑘 (𝜉) ∈ {0, 1}                  ∀(𝑖, 𝑗) ∈ 𝐸, ∀𝑘 ∈ 𝑊              (39)
+                                                                                                   By subtracting one unit from each 𝑢𝑖𝑘 decision variable, constraints
+𝑏𝑖𝑗𝑙 (𝜉) ∈ {0, 1}                                      ∀𝑗 ∈ 𝐷, ∀(𝑖, 𝑙) ∈ 𝐸              (40)       (14) provide a lower bound for decision variables ℎ𝑖𝑘 , the number of
+
+                                                                                               7
+H. Tureci-Isik et al.                                                                                          European Journal of Operational Research xxx (xxxx) xxx
+
+
+additional visits a truck made to a demand node 𝑖 ∈ 𝐷 after its first             even very small instances of the problem cannot be solved to opti-
+visit.                                                                            mality by commercial solvers. Consequently, we propose a heuristic
+     Constraints (15) to (38) are commodity flow constraints. Constraints         approach based on variable neighbourhood search to solve practical-
+(15) ensure that the outgoing commodity flow from depot 𝑘 ∈ 𝑊 is                  sized instances of the problem, which is explained in detail in this
+equal to the number of demand nodes the truck is scheduled to visit,              section.
+plus an additional unit accounting for the sink node. If a demand node
+𝑖 ∈ 𝐷 is not visited by any drone, as indicated by the summation on the           4.1. Overview of the heuristic algorithm
+right-hand side of the constraint, it must be on a truck tour. Constraint
+(16) then ensures that one unit of flow is subtracted from the route after           Our proposed heuristic approach consists of two phases. In the first
+leaving node 𝑖. Thus, constraint (17) makes sure that the incoming flow           phase, we perform a local search for depot selection. Subsequently, the
+amounts to the sink node equal to the number of open depots. By doing             second phase evaluates open depot sets identified in the local search by
+so, constraints (17) force trucks to make a tour from an open depot.              constructing the truck routes and drone schedules. This phase consists
+Constraints (18) specify that if a truck does not traverse an edge, the           of the initial tour construction and variable neighbourhood search-
+associated commodity flow cannot be positive. Conversely, commodity               based improvement steps. Additional notation defined for the heuristic
+flows must be positive when a truck traverses an arc, dictated by                 algorithm is provided in Table 2.
+constraints (19). Constraints (20) link the commodity flow from node                 Algorithm 1 summarises our overall approach, which starts with a
+𝑖 ∈ 𝑁 to the sink node with the return of a truck from node 𝑖 ∈ 𝑁 to              random open depot set. Here, 𝑁𝑑𝑒𝑝𝑜𝑡 defines a swap neighbourhood,
+a depot, synchronising the movement of both trucks and commodities.               where we close one of the open depots and open one that is currently
+Constraints (21) and (22) prohibit decision variables 𝑤𝑖𝑗𝑘 (𝜉) and 𝑎𝑖𝑗𝑘 (𝜉)       closed. We evaluate all neighbouring open depot sets (in lines 6 to 11)
+from taking positive values if the truck from depot 𝑘 ∈ 𝑊 does not                and we move to the set that yields the best-expected latency. Each
+traverse the edge (𝑖, 𝑗) ∈ 𝐸. Constraints (23) and (24) guarantee that if         new set of open depots is evaluated in the second phase, which is
+a demand node 𝑖 ∈ 𝐷 is not assigned to any drone, it must be visited              summarised in the next section.
+by a truck. In that case, exactly one of the 𝑤𝑖𝑗𝑘 (𝜉) variables and exactly
+one of the 𝑎𝑖𝑗𝑘 (𝜉) variables takes a positive value.
+                                                                                  Algorithm 1 Overview of the heuristic algorithm
+     Constraints (25) and (26) define the minimum commodity flow
+                                                                                      Function StochasticLocationRouting(𝑁𝑑𝑒𝑝𝑜𝑡 , 𝛺, 𝑘𝑚𝑎𝑥 , 𝑙𝑚𝑎𝑥 , 𝑖𝑚𝑎𝑥 )
+outgoing from node 𝑖 ∈ 𝐷 by utilising the 𝑎𝑖𝑗𝑘 (𝜉) variables. These
+                                                                                   1: Initialise 𝑋 randomly
+constraints stipulate that the minimum flow happens at the time of the
+                                                                                   2: 𝑓𝑚𝑖𝑛 ← 𝐷𝑒𝑝𝑜𝑡𝐸𝑣𝑎𝑙𝑢𝑎𝑡𝑖𝑜𝑛(𝑋, 𝛺, 𝑘𝑚𝑎𝑥 , 𝑙𝑚𝑎𝑥 , 𝑖𝑚𝑎𝑥 )
+last departure from that node. In Fig. 1(b), Node 2 is visited twice and           3: 𝑓𝑛𝑒𝑤 ← 𝑓𝑚𝑖𝑛
+the outgoing flow amounts from that node are three and two as seen                 4: 𝑆𝑡𝑜𝑝𝐹 𝑙𝑎𝑔 ← 0
+on the network. Decision variable 𝑎2,4,1 (𝜉) = 1 indicates that the latest         5: while 𝑆𝑡𝑜𝑝𝐹 𝑙𝑎𝑔 = 0 do
+departure from Node 2 is on the edge (2, 4), therefore, the minimum                6:     for all 𝑌 ∈ 𝑁𝑑𝑒𝑝𝑜𝑡 (𝑋) do
+outgoing flow from Node 2 is bounded by the flow amount on the                     7:         if 𝐷𝑒𝑝𝑜𝑡𝐸𝑣𝑎𝑙𝑢𝑎𝑡𝑖𝑜𝑛(𝑌 , 𝛺, 𝑘𝑚𝑎𝑥 , 𝑙𝑚𝑎𝑥 , 𝑖𝑚𝑎𝑥 ) < 𝑓𝑛𝑒𝑤 then
+edge (2, 4). Constraints (27) assign the maximum flow into node 𝑖.                 8:             𝑋′ ← 𝑌
+Referring to the same example in Fig. 1(a), the maximum flow into                  9:             𝑓𝑛𝑒𝑤 ← 𝐷𝑒𝑝𝑜𝑡𝐸𝑣𝑎𝑙𝑢𝑎𝑡𝑖𝑜𝑛(𝑌 , 𝛺, 𝑘𝑚𝑎𝑥 , 𝑙𝑚𝑎𝑥 , 𝑖𝑚𝑎𝑥 )
+                                                                                  10:          end if
+Node 2 is set four as the incoming flow amounts are four and two. By
+                                                                                  11:      end for
+using maximum flow into node 𝑖 ∈ 𝐷, constraints (28) and (29) ensure
+                                                                                  12:      if 𝑓𝑛𝑒𝑤 = 𝑓𝑚𝑖𝑛 then
+that at the time of the first departure from node 𝑖, one unit is left at          13:          𝑆𝑡𝑜𝑝𝐹 𝑙𝑎𝑔 ← 1
+the node. On the illustrative example, outgoing flow amount after the             14:      else
+initial visit to Node 2 becomes three on edge (2, 3) as 𝑤2,3,1 embarks            15:          𝑋 ← 𝑋′
+the first departure from that node. Constraints (30) put an upper limit           16:          𝑓𝑚𝑖𝑛 ← 𝑓𝑛𝑒𝑤
+to 𝜓𝑖 (𝜉) variables representing the minimum flow into node 𝑖 ∈ 𝐷. On             17:      end if
+the same example, minimum flow into Node 2 is bounded by two as                   18: end while                  ⊳ Until no improving set of open depots is found
+the incoming flows are four and two. Constraints (31) ensure that for                 return 𝑋 ′
+each demand node 𝑖 ∈ 𝐷, the minimum flow outgoing from the node
+is less than or equal to the minimum flow incoming to it.                         4.2. Depot evaluation heuristic
+     We prohibit the 𝑏𝑖𝑗𝑙 (𝜉) variables from taking positive values unless
+the truck traverses these edges by constraints (32) and (33). Further-
+                                                                                     The second phase of the algorithm is given in Algorithm 2. For
+more, if edge (𝑗, 𝑙) ∈ 𝐸 is traversed and this traversal is not the
+                                                                                  a given open depot set, this phase constructs the truck tours and
+truck’s first departure from node 𝑗 ∈ 𝐷, constraints (34) ensure that
+                                                                                  drone schedules for each distinct scenario and calculates the expected
+𝑏𝑖𝑗𝑙 (𝜉) variables must take positive values. On the illustrative example,
+                                                                                  objective over all scenarios.
+since traversing the edge (2, 4) is not the first departure from Node 2,
+𝑤2,4,1 = 0 and 𝑏3,2,4 is forced to take value 1. Finally, constraints (35)
+to (38) guarantee that if 𝑏𝑖𝑗𝑙 (𝜉) variables take positive value, flow on         Algorithm 2 Depot evaluation heuristic
+edge (𝑖, 𝑗) ∈ 𝐸 is equal to the flow on the edge (𝑗, 𝑙) ∈ 𝐸. In the                  Function DepotEvaluation(𝑋, 𝛺, 𝑘𝑚𝑎𝑥 , 𝑙𝑚𝑎𝑥 , 𝑖𝑚𝑎𝑥 )
+example network, 𝑏3,2,4 = 1 shows the immediate tour marking the                  1: for all 𝜉 in 𝛺 do
+second departure from Node 2. Thus, the flow amounts on those edges               2:    𝑅(𝑋, 𝜉) ← 𝐼𝑛𝑖𝑡𝑖𝑎𝑙𝐶𝑜𝑛𝑠𝑡𝑟𝑢𝑐𝑡𝑖𝑜𝑛(𝑋, 𝜉)
+set equal 𝑓3,2 = 𝑓2,4 = 2.                                                        3:    𝑅(𝑋, 𝜉) ← 𝐼𝑚𝑝𝑟𝑜𝑣𝑒𝑚𝑒𝑛𝑡(𝑅(𝑋, 𝜉), 𝑘𝑚𝑎𝑥 , 𝑙𝑚𝑎𝑥 , 𝑖𝑚𝑎𝑥 )
+                                                                                  4: end for
+     Constraints (39)–(44) define the domains of the decision variables.
+                                                                                     return 𝑓 (𝑋) ← 𝐸𝜉|𝑋 [ℎ(𝑅(𝑋, 𝜉))]  ⊳ Expected summation of arrival times
+
+4. A variable neighbourhood search heuristic
+                                                                                      Under a specific scenario, the procedure involves two key stages:
+   The problem defined in Section 3 can be easily shown to be  -                initial construction and subsequent improvement. Initial construction
+hard, as the deterministic version with no drones and no location                 finds preliminary truck tours and drone schedules, which may not be
+decisions is equivalent to the  -hard multi-depot 𝑚-TSP (e.g., Oberlin          immediately feasible, with an anticipation of reaching feasible routes
+et al. 2009). Furthermore, it will become apparent in Section 5 that              during the improvement steps.
+
+                                                                              8
+H. Tureci-Isik et al.                                                                                                      European Journal of Operational Research xxx (xxxx) xxx
+
+
+                                   Table 2
+                                   Additional notation used for the heuristic.
+                                    Index Sets
+                                    𝑋                  Open depots
+                                    𝑈𝑘                 Unvisited demand nodes assigned to depot 𝑘 ∈ 𝑊
+                                    𝑇 𝑇𝑘               Demand nodes in order of truck visit starting from depot 𝑘 ∈ 𝑊
+                                    𝐷𝐿𝑘                Demand nodes assigned to a drone dispatched from depot 𝑘 ∈ 𝑊
+                                    𝐷𝑆𝑘                Demand nodes in order of drone visit starting from depot 𝑘 ∈ 𝑊
+                                    Algorithm Parameters
+                                    𝑘𝑚𝑎𝑥               Number of neighbourhoods defined for the shake step
+                                    𝑙𝑚𝑎𝑥               Number of neighbourhoods defined for the local search
+                                    𝑖𝑚𝑎𝑥               Maximum number of iterations
+                                    Evaluation Functions
+                                    ℎ(𝑅(𝑋, 𝜉))         Evaluation of routes under depot set 𝑋 and scenario 𝜉 ∈ 𝛺, i.e., sum of arrival times
+                                                       at all demand nodes given the scenario and open depots
+
+
+
+                                                                                           4.2.2. Route improvement by variable neighbourhood search
+                                                                                               When the initial truck tours and drone schedules are determined,
+                                                                                           we make use of a variable neighbourhood search (VNS) heuristic to
+                                                                                           improve the truck and drone routes. Algorithm 5 summarises our VNS
+                                                                                           procedure, which is run for a total of 𝑖𝑚𝑎𝑥 iterations. Throughout the
+                                                                                           VNS, we use the following neighbourhood structures, which refer to
+                                                                                           the set of all possible solutions that can be obtained by the given move
+                                                                                           applied on a current solution 𝑟:
+                                                                                               𝑁1 (𝑟): truck to truck reassignment. Move a demand node from a truck
+                                                                                           tour to a different truck tour.
+                                                                                               𝑁2 (𝑟): truck to drone reassignment — same depot. Remove a demand
+                                                                                           node from a truck tour and assign it to the drone dispatched from the
+                Fig. 2. Illustrative example for truck backtracking.                       same depot.
+                                                                                               𝑁3 (𝑟): truck to drone reassignment — different depot. Remove a de-
+                                                                                           mand node from a truck tour and assign it to a drone dispatched from
+4.2.1. Route construction by a greedy heuristic approach                                   a different depot.
+    Algorithm 3 provides the initial construction process. It starts by                        𝑁4 (𝑟): drone to truck reassignment — same depot. Reassign a drone-
+assigning demand nodes to the closest open depot based on direct                           visited demand node to a truck tour originating from the same depot.
+geodesic distance. For each open depot, we construct a truck tour by                           𝑁5 (𝑟): drone to truck reassignment — different depot. Reassign a
+modifying the nearest neighbour heuristic for the Travelling Salesman                      drone-visited demand node to a truck tour originating from a different
+Problem. The initial construction heuristic aims to construct a truck                      depot.
+tour to visit all allocated demand nodes with minimum backtracking,                            𝑁6 (𝑟): drone to drone reassignment. Reassign a drone-visited demand
+assuming no drone is available. It adds the nearest assigned unvisited                     node to a different drone.
+node to the truck tour according to the truck travel times of the scenario                     𝑁7 (𝑟): complete reconstruction of a truck tour. Randomly select a truck
+under consideration. The process involves continuously inserting the                       and reconstruct its route by changing its initially visited demand node.
+                                                                                           Any demand node on the previous truck tour are assigned to the closest
+closest unvisited nodes (lines 17 to 20).
+                                                                                           drone.
+    If there is no direct road link to an unvisited node (checked in
+                                                                                               Each iteration of the algorithm starts with a shake move, where
+lines 10 to 16), the truck backtracks to a previously visited node to
+                                                                                           we randomly select a neighbouring solution from the current solution
+explore alternative ways to visit the remaining nodes (in lines 21 to
+                                                                                           (in lines 5 to 6). Then, local search is performed from that solution
+44). However, a truck can face a dead-end and may not find a backtrack
+                                                                                           (in lines 8 to 19). If the local search results in a better solution, we
+node to return to in the initial tour construction step. In that case, we
+                                                                                           update the current solution and set the first neighbourhood for shaking.
+assign the remaining unvisited demand nodes to the drone of the same
+                                                                                           If however, local search does not provide a better solution, the next
+depot (in lines 38 to 41).
+                                                                                           neighbourhood is set for shaking (in lines 20 to 25). This process
+    After a backtrack node is found, instead of retracing the exact                        continues until all shake neighbourhoods are implemented.
+truck tour, the shortest backtracking route is used. We illustrate the                         In the local search, we use a best improvement approach. This pro-
+backtracking of a truck on a small network in Fig. 2. Consider the                         cess is repeated for each neighbourhood until no further improvements
+current truck tour 1 → 2 → 3 → 4 → 3 → 5 → 6, shown in solid arrows.                       can be achieved with the same neighbourhood structure (in lines 9 to
+The only unvisited node is 7, which does not share an edge with the                        12). If no improving solution is obtained from a particular neighbouring
+current node, 6. By progressively evaluating each node on the current                      structure, we move to the next neighbourhood. If, however, we obtain
+tour backward, node 2 is found as the point of backtrack because it                        an improving solution, we return to the first neighbourhood structure
+shares an edge with the unvisited node 7. Following Algorithm 4, we                        (in lines 13 to 18). Neighbouring solutions are explored in order of
+find the backtracking route. Step 1 extracts the partial tour as 2 → 3 →                   the above list as preliminary results suggest that no particular order
+4 → 3 → 5. Step 2 simplifies the partial tour by removing the redundant                    of neighbourhoods consistently outperforms others.
+visits, resulting in 2 → 3 → 5. Step 3 progressively seeks a shared edge                       We use the same neighbourhood structures for both steps, with
+between the current node and a node on the simplified tour. There is no                    the exception of 𝑁7 , which is only used in shaking. In the set of
+edge between node 2 and node 6, but there is one between node 3 and                        neighbouring solutions, we consider all feasible neighbouring routes
+node 6. Thus, from the current node 6 to node 3, the truck backtracks                      and infeasible ones violating the drone flight duration. Infeasible drone
+to node 2 and visits node 7. As a result, the final truck tour becomes                     assignments are included in the search with a large dummy flight
+1 → 2 → 3 → 4 → 3 → 5 → 6 → 3 → 2 → 7.                                                     duration to make them undesirable.
+
+                                                                                       9
+H. Tureci-Isik et al.                                                                                                            European Journal of Operational Research xxx (xxxx) xxx
+
+
+Algorithm 3 Initial truck tour and drone schedule construction                                     Algorithm 4 Process of finding the shortest backtracking route
+heuristic
+                                                                                                      Step 1. Extracting the partial tour
+    Function InitialConstruction(𝑋, 𝜉)
+                                                                                                   1: Extract the exact tour from the point of backtrack until the current node.
+ 1: 𝑈𝑘 , 𝑇 𝑇𝑘 , 𝐷𝐿𝑘 , 𝐷𝑆𝑘 ← {}
+ 2: for all 𝑖 ∈ 𝐷 do                                                                                  Step 2. Simplifying the partial tour
+ 3:      Set 𝑘 as the closest open depot to demand node 𝑖                                          2: if there are revisited nodes then
+ 4:      𝑈𝑘 ← 𝑈𝑘 ∪ {𝑖}                 ⊳ Assign node to unvisited nodes list of depot              3:     while there are revisited nodes do
+ 5: end for                                                                                        4:         Remove the tour segment between the first and the last visit to the
+ 6: for all 𝑘 ∈ 𝑋 do                                                                                  revisited node.
+ 7:      𝑐𝑢𝑟𝑟𝑒𝑛𝑡 ← 𝑘                                     ⊳ Assign depot as current node            5:     end while
+ 8:      𝑇 𝑇𝑘 ← 𝑇 𝑇𝑘 ∪ {𝑐𝑢𝑟𝑟𝑒𝑛𝑡}                                                                   6: end if
+ 9:      while |𝑈𝑘 | > 0 do
+10:          𝑖𝑚𝑚𝑒𝑑𝑖𝑎𝑡𝑒𝐶𝑜𝑛𝑛𝑒𝑐𝑡𝑖𝑜𝑛 ← 𝐹 𝑎𝑙𝑠𝑒                                                              Step 3. Finding the shortest route
+11:          for all 𝑗 ∈ 𝑈𝑘 do                                                                      7: for each node in the simplified tour do
+12:              if (𝑐𝑢𝑟𝑟𝑒𝑛𝑡, 𝑗) ∈ 𝐸 then                                                           8:    if there is direct connection between the node and current node then
+13:                   𝑖𝑚𝑚𝑒𝑑𝑖𝑎𝑡𝑒𝐶𝑜𝑛𝑛𝑒𝑐𝑡𝑖𝑜𝑛 ← 𝑇 𝑟𝑢𝑒                                                   9:        Truck continues to the node and follows the simplified tour
+14:                   Break         ⊳ There is at least one unvisited node truck can                   backwards until reaching the backtrack node.
+    immediately visit                                                                              10:         Break for
+15:              end if                                                                            11:     end if
+16:          end for                                                                               12: end for
+17:          if 𝑖𝑚𝑚𝑒𝑑𝑖𝑎𝑡𝑒𝐶𝑜𝑛𝑛𝑒𝑐𝑡𝑖𝑜𝑛 then                                                           13: Truck follows the simplified tour backwards from the current node until
+18:              𝑛𝑜𝑑𝑒 ← arg min𝑗∈𝑈𝑘 ,(𝑐𝑢𝑟𝑟𝑒𝑛𝑡,𝑗)∈𝐸 {𝑡𝑐𝑢𝑟𝑟𝑒𝑛𝑡,𝑗 (𝜉)}                                    reaching the point of backtrack.
+19:              Move 𝑛𝑜𝑑𝑒 from 𝑈𝑘 to 𝑇 𝑇𝑘
+20:              𝑐𝑢𝑟𝑟𝑒𝑛𝑡 ← 𝑛𝑜𝑑𝑒
+21:          else                                               ⊳ Find a node to backtrack
+                                                                                                   Algorithm 5 Truck tour and drone schedule improvement heuristic
+22:              𝑇 ← 𝑇 𝑇𝑘 ⧵ {last element in 𝑇 𝑇𝑘 }             ⊳ Copy truck tour until the
+    current node                                                                                       Function Improvement(𝑅, 𝑘𝑚𝑎𝑥 , 𝑙𝑚𝑎𝑥 , 𝑖𝑚𝑎𝑥 )
+23:              𝑆𝑡𝑜𝑝𝐹 𝑙𝑎𝑔 ← 0                                                                      1: 𝑖 ← 0
+24:              while |𝑇 | > 0 do                                                                  2: while 𝑖 ≤ 𝑖𝑚𝑎𝑥 do
+25:                   𝐵𝑎𝑐𝑘𝑁𝑜𝑑𝑒 ← last element in 𝑇                                                  3:    𝑘←1                                         ⊳ Initialise shake neighbourhood
+26:                   for all 𝑗 ∈ 𝑈𝑘 do                                                             4:    while 𝑘 < 𝑘𝑚𝑎𝑥 do
+27:                       if (𝐵𝑎𝑐𝑘𝑁𝑜𝑑𝑒, 𝑗) ∈ 𝐸 then                                                 5:       𝑤 ← ⌊1 + 𝑟𝑎𝑛𝑑(0, 1) × |𝑁𝑘 (𝑅)|⌋
+28:                           Apply Algorithm 4 and find the backtracking route 𝐵𝑘                  6:       𝑅′ ← 𝑁𝑘 (𝑅)[𝑤] ⊳ Updated to 𝑤𝑡ℎ element of the neighbourhood
+29:                           𝑇 𝑇𝑘 ← 𝑇 𝑇𝑘 ∪ 𝐵𝑘                                                      7:       𝑙←1                               ⊳ Initialise local search neighbourhood
+30:                           𝑛𝑜𝑑𝑒 ← arg min𝑗∈𝑈𝑘 ,(𝐵𝑎𝑐𝑘𝑁𝑜𝑑𝑒,𝑗)∈𝐸 {𝑡𝐵𝑎𝑐𝑘𝑁𝑜𝑑𝑒,𝑗 (𝜉)}                  8:       while 𝑙 ≤ 𝑙𝑚𝑎𝑥 do
+31:                           Move 𝑛𝑜𝑑𝑒 from 𝑈𝑘 to 𝑇 𝑇𝑘                                             9:           while ℎ(𝑅′ ) < ℎ(𝑅′′ ) do
+32:                           Set 𝑐𝑢𝑟𝑟𝑒𝑛𝑡 ← 𝑛𝑜𝑑𝑒 and 𝑆𝑡𝑜𝑝𝐹 𝑙𝑎𝑔 ← 1                                 10:                𝑅′′ ← 𝑅′
+33:                           Break              ⊳ Truck can visit unvisited node if it            11:                𝑅′ ← arg min𝑅∈𝑁𝑙 (𝑅′′ ) {ℎ(𝑅)}
+    backtracks to 𝐵𝑎𝑐𝑘𝑁𝑜𝑑𝑒                                                                         12:            end while
+34:                       end if                                                                   13:            if 𝑓 (𝑅′′ ) ≤ ℎ(𝑅′ ) then
+35:                   end for                                                                      14:                𝑅′ ← 𝑅′′
+36:                   if 𝑆𝑡𝑜𝑝𝐹 𝑙𝑎𝑔 = 0 then                                                        15:                𝑙←1
+37:                       𝑇 ← 𝑇 ⧵ {𝐵𝑎𝑐𝑘𝑁𝑜𝑑𝑒}                                                       16:            else
+38:                       if |𝑇 | = 1 then            ⊳ Truck faces a dead-end and no              17:                𝑙 ←𝑙+1
+    backtrack node is found                                                                        18:            end if
+39:                           𝐷𝐿𝑘 ← 𝑈𝑘 ⊳ Assign all unvisited nodes to drone list                  19:        end while            ⊳ Until all local search neighbourhoods are used
+40:                           𝑈𝑘 ← {}                                                              20:        if 𝑓 (𝑅′ ) ≤ ℎ(𝑅) then
+41:                       end if                                                                   21:            𝑅 ← 𝑅′
+42:                   end if                                                                       22:            𝑘←1
+43:              end while                                                                         23:        else
+44:          end if                                                                                24:            𝑘←𝑘+1
+45:      end while                                                                                 25:        end if
+46:      for all 𝑗 ∈ 𝐷𝑘 do                                                                         26:     end while                      ⊳ Until all shake neighbourhoods are used
+47:          if 𝑗 ∈ 𝐷𝐿𝑘 then                                                                       27:     𝑖←𝑖+1
+48:              𝐷𝑆𝑘 ← 𝐷𝑆𝑘 ∪ {𝑗}                                ⊳ Construct drone schedule         28: end while                                ⊳ Until maximum iteration is reached
+49:          end if                                                                                    return 𝑅
+50:      end for
+51:      for all 𝑗 ∈ 𝐷𝐿𝑘 do
+52:          if 𝑗 ∉ 𝐷𝑘 then
+53:              𝐷𝑆𝑘 ← 𝐷𝑆𝑘 ∪ {𝑗}          ⊳ Add infeasible drone assignments to the                from Gurobi on small-sized instances. We also apply the heuristic to a
+    drone schedule                                                                                 case study derived from the 2011 Van Earthquake in Turkiye to draw
+54:          end if                                                                                managerial insights, perform sensitivity analysis, and assess the value
+55:      end for                                                                                   of incorporating stochasticity into our approach. In the first part of this
+56: end for                                                                                        section, we explain the problem instances used in the computational
+    return 𝑅(𝑋, 𝜉)                                                                                 experiments. Then, we provide the results of our heuristic comparison
+                                                                                                   with Gurobi, and those of the case study based on the Van Earthquake.
+                                                                                                       The mathematical models in our experiments are solved using
+                                                                                                   Gurobi 11.0.3 through the Python API. The heuristic algorithm is
+5. Computational experiments
+                                                                                                   implemented in C++ using Visual Studio 2022. All computational
+   In this section, we evaluate the performance of our solution ap-                                experiments are performed on a Windows 10 PC equipped with an
+proach by comparing the results of our heuristic with those obtained                               Intel(R) Core(TM) i7-10510U CPU @ 2.30 GHz and 16 GB of RAM.
+
+                                                                                              10
+H. Tureci-Isik et al.                                                                                          European Journal of Operational Research xxx (xxxx) xxx
+
+
+
+
+                                                  Fig. 3. Damage intensity areas around disaster epicentre.
+
+
+5.1. Problem instances                                                                  We generate the road network as follows: The driving path between
+                                                                                    each pair of demand points are found by using Google Maps Directions
+    In the following sections, we explain how we generate the small-                API (Google, 2024b). If any of the intermediate points on the path
+sized instances and develop the case study.                                         between a pair of demand locations is within 0.01 units of latitude and
+                                                                                    longitude difference of any other demand location, we do not form an
+5.1.1. Small-sized instances                                                        immediate edge between the given pair. Otherwise, we create a direct
+    For our first set of experiments, we generate 10 instances consisting           edge between these two demand locations if their geodesic distance is
+of 15 demand nodes and 5 candidate depots. For these instances, we                  less than 10 km.
+locate two depots and consider 10 different disaster scenarios.                         We generate 10 case study instances with 15 candidate depot loca-
+    Demand nodes were randomly placed in a 5, 000×5, 000 unit square,               tions, selected as a subset of the demand nodes. The candidate locations
+with Euclidean distances and equal speeds for both vehicle types,                   are chosen such that none of them share an edge with each other. We
+ignoring drone travel time limits for simplicity. Each node is connected            aim to locate 5 depots, considering 50 disaster scenarios.
+to each of its two closest neighbours with a probability of 0.7 each. In                To generate representative earthquake scenarios, we select six loca-
+case no connection is formed in this way, the node is connected to its              tions along the Van and Yenikosk fault lines. These are the two active
+nearest neighbour. It is also connected to its third, fourth, and fifth             fault lines lying between Van Lake and Ercek Lake in the area (MTA,
+closest neighbours with a probability of 0.1 for each. Candidate depot              2024) (see Online Appendix for the map representation). For each
+nodes are selected randomly from the demand nodes.                                  scenario, we randomly choose a location and generate the epicentre
+    Disaster epicentres are randomly located, with two circular regions             coordinates within a 5 km radius. To account for disasters of different
+around them as described by Noyan et al. (2016). The radii of one-                  sizes, we define two radii as a basis, 5 km and 10 km, to represent
+tenth and one-fifth of the square’s side length around the epicentre,               the same areas and increment these radii using a multiplier from
+adjusted by a random multiplier U(0.8,1.6) to account for varying-                  a uniform distribution U(0.8,3). Additionally, we adjust truck travel
+sized disasters, define destructive and damaging regions, respectively.             times based on the edge classification. Edges within the highest de-
+The remaining area is considered to have strong intensity. Damage                   structive region based on their endpoints have travel times increased by
+intensity of each edge is determined by the highest intensity of its two            multipliers from U(3,5), while those in damaging and strong categories
+end nodes, depending on their location. Travel times are inflated by                see increases by multipliers from U(1.5,3) and U(1,1.5), respectively.
+random factors: U(1.6,2.5) for destructive, U(1.25,1.6) for damaging,
+and U(1.0,1.25) for strong intensities. An illustration for this is given in        5.2. Computational results for smaller instances
+Fig. 3. Here, the end nodes of edge AB are both in the damaging region,
+so it is marked as having damaging intensity. On the other hand, edges                  Our smaller instances serve the purpose of evaluating the quality
+BC and CD are classified under destructive intensity, as C is situated              of heuristic solutions by comparison to the commercial solver Gurobi,
+in the destructive zone. All small-sized instances used in this study               for which we impose a 3-hour computational time limit. However,
+are publicly available at https://github.com/hannantureciisik/parallel-             given the heavy computational burden to solve the two-stage stochastic
+truck-drone-small-instances.                                                        mixed integer programming model, Gurobi is unable to close the MIP
+                                                                                    gap within the time limit to find the optimal solutions. To obtain the
+5.1.2. Case study instances                                                         optimal solutions, we also run Gurobi by enumerating all possible sets
+    We use a case study based on the earthquake which occurred in                   of open depots and solving the resulting problem for each combination,
+Van, Turkiye on October 23, 2011, at a magnitude of 7.2, followed                   where the open depot set with the minimum expected objective value
+by an aftershock of magnitude 5.6 on November 9, 2011. These re-                    provides the optimal solution.
+sulted in more than 600 people losing their lives and 2500 injured or                   In Table 3, we report the results of our experiments on smaller
+hospitalised (IFRC, 2012).                                                          instances. These include the open depots, the integrality gap (denoted
+    We obtain the coordinates of the 94 demand locations from Noyan                 by % MIPGap), and the optimality gap (denoted by % Gap) of the
+et al. (2016) and the truck travel times from Google Maps (Google,                  Gurobi solutions after the 3-hour limit; the open depots and total CPU
+2024a). We create symmetric truck travel times by taking the maximum                times (in seconds) for the Gurobi runs for the routing problem that yield
+of the travel times between each pair of locations in both directions.              the optimal solutions; and open depots, % Gap values, and CPU times
+For drone travel times, we calculate the geodesic distances between                 for the heuristic with and without VNS improvement.
+locations first by using the ‘geodesic’ function in the ‘geopy’ library                 From Table 3, we observe that the heuristic consistently opens the
+in Python and divide the distances by drone speed. We double the                    optimal set of depots. Moreover, the average optimality gap of 0.3%
+resulting time to obtain the return flight time. Following (Murray &                indicates that the heuristic finds near-optimal truck routes and drone
+Chu, 2015), we use 25 mph (approximately 40 km/h) as drone speed                    schedules under all scenarios. In five out of ten problem instances, the
+and 30 min as drone endurance. We elaborate further on additional                   heuristic also finds the optimal truck–drone routes under all scenarios.
+values in the sensitivity analysis.                                                 The highest optimality gap among the remaining instances is 1.1%.
+
+                                                                               11
+H. Tureci-Isik et al.                                                                                                           European Journal of Operational Research xxx (xxxx) xxx
+
+
+Table 3
+Set of open depots, optimality gaps (where applicable), and CPU times (in seconds) of Gurobi results and those of the heuristic with and without VNS improvement.
+    Instance   Gurobi after 3-hour limit                   Gurobi for routing                  Heuristic - with improvement                  Heuristic - without improvement
+               Open Depots       % MIPGap       % Gap      Open Depots      CPU timea          Open Depots       % Gap    CPU time           Open Depots       % Gap        CPU time
+    1          {0,2}             32.0           < 0.1      {0,2}            475.2              {0,2}             0.9      7.4                {2,3}             43.3         0.1
+    2          {0,2}             35.9           8.8        {0,1}            409.2              {0,1}             1.1      8.5                {3,4}             36.8         0.2
+    3          {3,4}             38.8           3.6        {0,3}            135.9              {0,3}             0.5      4.6                {3,4}             27.3         0.1
+    4          {0,1}             35.2           6.3        {1,2}            1,058.2            {1,2}             0.0      10.2               {2,4}             71.1         0.1
+    5          {2,4}             27.4           < 0.1      {2,4}            231.2              {2,4}             0.0      7.9                {1,4}             25.5         0.1
+    6          {0,1}             43.5           0.5        {0,1}            1,303.4            {0,1}             0.3      6.7                {1,3}             205.3        0.1
+    7          {1,2}             39.2           9.3        {1,3}            1,050.1            {1,3}             0.0      7.5                {0,1}             70.3         0.1
+    8          {0,3}             35.7           6.5        {0,4}            828.4              {0,4}             0.0      9.8                {2,3}             51.6         0.1
+    9          {1,3}             29.9           5.0        {2,4}            322.9              {2,4}             0.5      5.2                {2,4}             15.5         0.1
+    10         {0,3}             44.1           11.4       {2,4}            2,093.2            {2,4}             0.0      7.9                {1,4}             39.3         0.1
+    Average                      36.2           5.1                         790.8                                0.3      7.6                                  58.6         0.1
+a
+    Total CPU time to enumerate all open depot combinations.
+
+
+Table 4
+Averages and 95% confidence intervals for percent increase in objective value and percent decrease in CPU time when each neighbourhood is excluded.
+                                        𝑁1                𝑁2                    𝑁3                     𝑁4                𝑁5                     𝑁6                     𝑁7
+    % increase in       Avg             0.66              0.62                  0.71                   3.24              1.03                   0.83                   5.66
+    objective value     95% CI          (0.19, 1.13)      (0.28, 0.96)          (0.08, 1.34)           (1.67, 4.81)      (0.36, 1.70)           (0.32, 1.34)           (3.17, 8.15)
+    % decrease in       Avg             0.26              −1.05                 4.87                   6.84              0.13                   −3.29                  5.66
+    CPU time            95% CI          (−14.45, 14.98)   (−16.30, 14.20)       (−6.86, 16.60)         (0.71, 12.97)     (−10.60, 10.86)        (−18.05, 11.48)        (−2.79, 14.11)
+
+
+
+The small interval of the optimality gap suggests the heuristic is robust                      our approach to various benchmarks, perform sensitivity analysis on
+in generating high-quality solutions. Furthermore, while the heuristic                         important parameters, and evaluate the value of using a stochastic
+solves the instances within an average CPU time of only 3.6 s, We also                         approach.
+observe that Gurobi cannot reduce the MIP Gap to less than 27.4%
+in any of the instances within 3-hour limit and takes an average of                            5.3.1. Analysis of heuristic results
+790.8 s to solve the routing problem for all possible sets of open depots.                         Table 5 displays the set of open depots, arrival times (in hours),
+In all, these underline the efficiency and effectiveness of the proposed                       and CPU times (in seconds) for the case study experiments. From
+heuristic, as it not only outperforms the commercial solver within the                         the CPU times, we observe that the heuristic can find solutions to
+time limit in terms of the solution quality and computational times, but                       these instances within an average and maximum of 40 and 65 min,
+it also obtains near-optimal solutions.                                                        respectively. Given that these models are run in the pre-disaster stage,
+    We also run the heuristic without the VNS improvement step, such                           these computing times are acceptable for this context. On average,
+that Algorithm 2 remains unchanged except for the exclusion of line                            beneficiaries receive aid within 1.5 h of the start of operations, while
+3. The results are presented under ‘Heuristic without improvement’ in                          the average makespan is 8 h over all instances. The table also provides
+Table 3. While the average computing time decreases substantially, an                          the expected average arrival time at demand nodes visited by trucks
+optimality gap of 58.6% is observed without the improvement step. In                           or drones. In all instances, demand nodes served by drones have better
+particular, for instance 6, optimality gap is observed as 205%. These                          expected average response times (1 h on average) compared to those
+highlight the importance of the VNS-based improvement heuristic in                             visited by trucks (an average of 1.8 h). However, drone endurance poses
+the construction of vehicle routes.                                                            a limitation to a better distribution of demand nodes between both
+    We also use our smaller instances to analyse the effect of including                       vehicles.
+each neighbourhood structure in the heuristic approach. Table 4 shows                              Fig. 4 illustrates the heuristic result for Instance 10, while the
+the averages and 95% confidence intervals for percent increase in                              road network and the candidate depot locations for this instance are
+objective value and percent decrease in CPU time when each of the                              shown in Fig. 5a. We note that the results for this instance are rep-
+7 neighbourhoods is excluded. Among these, 𝑁7 (complete reconstruc-                            resentative of those for other instances as well. The most frequently
+tion of a truck tour) is most influential, with a loss of 5.66% in the                         served demand nodes are indicated with the coverage area for each
+objective value in its absence. This underlines the importance of the                          open depot across all scenarios. Demand locations are marked by their
+shaking step of the VNS, as this neighbourhood is only used for shaking.                       most frequently serving vehicle, and the shading of the vehicle further
+𝑁4 (drone to truck reassignment for the same depot) is also quite                              indicates the frequency of the assignment across the scenarios. Demand
+effective as it improves the objective value by an average of 3.24%.                           nodes that are further away from their allocated depot tend to be
+As expected, all remaining neighbourhoods have a positive but small                            assigned to trucks. Conversely, the majority of the demand locations
+effect on solution quality. From the 95% confidence intervals on CPU                           closer to their assigned depot are assigned to drones. Allocating further
+time changes, we observe that for all but one of the neighbourhoods,                           locations to truck is expected because of endurance and single visit
+the change is statistically insignificant. The only exception is 𝑁4 , where                    constraints of drone. Furthermore, if we draw the smallest convex
+a positive CPU time decrease is almost certain in its absence. On the                          polygon encapsulating all open depots, demand locations within that
+other hand, given its significant improvement to the objective function,                       region are mostly assigned to drones as most of these locations are
+we retain this neighbourhood in the heuristic, as we do all other                              drone eligible. Note that the circle around one of the open depots shows
+neighbourhoods, for the remainder of our experiments.                                          the approximate range for drone visits based on the endurance limit.
+                                                                                               The results for Instance 10 in Table 5 indicate that the expected average
+5.3. Computational results with case study instances                                           arrival time for trucks is higher than that for drones. This imbalance
+                                                                                               highlights the impact of drone flight endurance on vehicle allocation
+   In this section, we implement the heuristic on 10 case study in-                            of demand nodes. Thus, increased endurance may result in more drone
+stances to analyse the structure of the heuristic solutions, compare                           assignments and reduced waiting times.
+
+                                                                                        12
+H. Tureci-Isik et al.                                                                                               European Journal of Operational Research xxx (xxxx) xxx
+
+
+                    Table 5
+                    Set of open depots, arrival times (in hours), and CPU times (in seconds) for the case study experiments.
+                        Instance    Open depots          Average           Maximum               Average arrival     Average arrival
+                                                         arrival time      arrival time          time - trucks       time - drones           CPU time
+                        1           {0,1,2,9,11}         1.37              7.19                  1.57                1.08                   2,364
+                        2           {0,1,2,11,13}        1.50              10.17                 1.80                1.05                   3,824
+                        3           {1,3,8,9,10}         1.60              8.17                  1.93                1.05                   2,062
+                        4           {0,3,8,9,13}         1.40              6.51                  1.66                1.08                   2,215
+                        5           {2,4,8,9,14}         1.52              7.9                   1.92                0.95                   2,111
+                        6           {0,1,2,5,7}          1.49              7.26                  1.87                0.89                   2,245
+                        7           {2,7,10,11,13}       1.45              6.79                  1.71                1.05                   1,718
+                        8           {6,9,10,11,12}       1.51              8.13                  1.82                0.93                   3,880
+                        9           {0,3,6,7,8}          1.62              9.14                  2.01                0.95                   1,787
+                        10          {1,4,6,9,14}         1.68              8.79                  2.13                0.91                   1,811
+                        Average                          1.51              8.01                  1.84                0.99                   2,402
+
+
+
+
+Fig. 4. Map demonstration of heuristic result for Instance 10: open depots, node–depot allocations and truck–drone assignment frequencies across all scenarios.
+Each colour indicates different depot and its assigned nodes.
+
+
+5.3.2. Comparison to benchmarks                                                           time across all instances, this translates approximately to the truck-
+   Table 6 features comparative results derived from three benchmarks                     only system requiring an average of 3.3 h per demand node, whereas
+that use (i) only trucks to perform the deliveries, (ii) the heuristic with               truck–drone delivery significantly reduces the average arrival time to
+pre-disaster travel times, and (iii) the K-means algorithm for facility                   1.5 h, as shown in Table 5. Fig. 5b demonstrates the corresponding
+location. These benchmark cases are implemented on the same 10                            heuristic results for Instance 10 on a map. In this particular instance,
+case study instances, and their performances are compared against the                     the locations of three open depots are the same as in the parallel
+baseline heuristic results (Table 5). For each benchmark, the set of open                 truck–drone case with different coverage areas. Despite this, the fact
+depots, the expected average arrival time (in hours), and the objective                   that all demand nodes are serviced by trucks, as opposed to closer
+function gap relative to the baseline are reported.                                       demand nodes being serviced by drones, results in more than double
+   Heuristic results for truck-only operations, as shown in Table 6,                      the expected latency.
+indicate an average gap of 116.8% across 10 instances compared to the                         To implement the second benchmark, we run the heuristic with
+baseline truck–drone results. This gap is calculated for each instance                    a single scenario that uses the pre-disaster travel times on the road
+                                𝑧 −𝑧
+using the formula: %Gap = 𝑏𝑧 ℎ × 100%, where 𝑧𝑏 is the objective                          network. The performance of the identified depots in the post-disaster
+                                   ℎ
+value of the benchmark (e.g., truck-only) case and 𝑧ℎ is that of the                      response is then evaluated using the DepotEvaluation algorithm across
+baseline heuristic. The average of these gap values across all instances                  all disaster scenarios. This approach allows us to analyse the signifi-
+gives the reported 116.8%. In terms of the expected average arrival                       cance of damage assessment. From Table 6, incorporating road damage
+
+                                                                                   13
+H. Tureci-Isik et al.                                                                                               European Journal of Operational Research xxx (xxxx) xxx
+
+
+
+
+                                   Fig. 5. Instance 10 map demonstrations. Each colour indicates different depot and its assigned nodes.
+
+
+
+                    Table 6
+                    Set of open depots, expected average arrival time (𝑧𝑏 ) and % objective gap (% Gap) against heuristic solutions for benchmark
+                    cases.
+                        Instance   Truck-only operations                   No road damage assessment                  K-means depot location
+                                   Open Depots       𝑧𝑏     % Gap          Open Depots     𝑧𝑏     % Gap               Open Depots       𝑧𝑏      % Gap
+                        1          {0,2,9,11,14}     3.1    125.0          {0,1,2,4,10}    1.6    14.6                {0,8,9,11,14}     1.8     30.4
+                        2          {1,3,6,8,14}      3.4    124.6          {1,2,3,5,6}     1.7    14.8                {0,1,2,11,13}     1.5     0.2
+                        3          {5,6,7,12,14}     3.3    105.9          {1,5,6,7,13}    1.7    5.9                 {1,3,8,10,14}     1.6     0.9
+                        4          {4,8,11,12,13}    3.5    149.8          {0,1,3,9,13}    1.4    < 0.1               {0,1,3,6,9}       1.8     30.2
+                        5          {1,3,8,11,14}     3.3    113.2          {2,3,4,5,9}     1.6    7.7                 {2,7,8,12,14}     2.0     29.2
+                        6          {0,4,10,11,12}    3.2    113.4          {0,2,5,7,14}    1.7    15.2                infeasible
+                        7          {2,6,7,10,13}     3.2    119.0          {2,6,7,11,13}   1.5    1.5                 infeasible
+                        8          {2,3,4,5,12}      3.3    115.0          {0,3,6,9,10}    1.5    < 0.1               {0,1,2,3,5}       1.6     5.2
+                        9          {0,3,7,12,13}     3.4    106.7          {0,2,3,6,12}    1.6    < 0.1               {0,1,2,5,13}      2.1     27.1
+                        10         {5,6,7,9,14}      3.3    95.2           {0,4,8,9,10}    1.9    15.0                {0,4,8,11,12}     2.2     29.3
+                        Average                      3.3    116.8                          1.6    7.4                                   1.8     19.1
+
+
+
+
+                                                                                     14
+H. Tureci-Isik et al.                                                                                          European Journal of Operational Research xxx (xxxx) xxx
+
+
+results in an average of 7.4% decrease in the expected objective, corre-           5.3.4. Value of stochastic solution and expected value of perfect informa-
+sponding to a total of 10.5 h of response time, emphasising the critical           tion
+role of damage assessment in disaster response. The demonstration of                    As our last analysis, we calculate the Value of Stochastic Solution
+results based on pre-disaster conditions for instance 10 is shown in               (VSS) and the Expected Value of Perfect Information (EVPI) to assess
+Fig. 5c with the corresponding truck–drone tours and open depots. The              the value of a stochastic modelling approach. We consider the same
+main difference from the baseline heuristic result given in Fig. 4 is              10 case study instances used in the heuristic analysis, as presented in
+the location of the open depot covering the northern part of the map.              Section 5.3 and Table 5. Let 𝑧ℎ denote the expected average arrival time
+Considering the baseline map and the coverage area on the northern                 across all instances, as obtained from the heuristic analysis in Table 5.
+part, demand nodes closer to the fault lines between Van and Ercek                      VSS indicates the expected gain obtained from incorporating un-
+Lake are assigned to drones. Conversely, in the no-assessment case, they           certainties into the model and using a stochastic modelling approach,
+are served by trucks, leading to the opening of a different depot.
+                                                                                   rather than solving its deterministic counterpart based on the expected
+    To evaluate the importance of integrating pre-disaster location and
+                                                                                   values of the uncertain parameters. In other words, it shows how much
+post-disaster routing decisions, we compare our results against a bench-
+                                                                                   worse the solution would be if average values were used instead of
+mark where depot locations are determined simply based on geograph-
+                                                                                   considering uncertainties in the decision making. The deterministic
+ical locations of the candidates, using a K-means clustering algorithm
+to locate the depots and assign demand nodes to open depots. We                    counterpart of our problem has travel times equal to the expected travel
+then use the DepotEvaluation algorithm for the identified depots and               times on the road network, which defines the Expected Value Problem
+obtain the expected sum of the arrival times. On average, we observe               (EVP). We solve the EVP with our heuristic as if there were a single
+a 19.1% increase in the expected objective when a K-Means approach                 scenario to find the depot locations. Then, the post-disaster truck–drone
+is used. Furthermore, K-Means results in infeasible truck–drone tours              routes under all scenarios are generated by DepotEvaluation algorithm
+for Instances 6 and 7 due to drone endurance constraints. We illustrate            for the resulting depot locations. Following this method, we obtain the
+the K-Means result for Instance 10 in Fig. 5d, where open depots and               expected average arrival times when EVP is solved, denoted by 𝑧𝐸𝑉𝑃 .
+the coverage areas are significantly different from those in the baseline          The difference in the expected objective values of the stochastic model,
+results. K-Means results in a more homogeneous distribution of open                𝑧ℎ , and the deterministic model where the uncertainties are replaced
+depots on the map, as expected. However, the demand nodes closer to                with average values, 𝑧𝐸𝑉𝑃 , gives the VSS. The relative VSS (%VSS) is
+                                                                                                                    𝑧    −𝑧
+fault lines are most frequently distributed among three open depots,               then calculated as: %𝑉𝑆𝑆 = 𝐸𝑉𝑃𝑧 ℎ × 100%. For our instances, the
+                                                                                                                        ℎ
+whereas they are served by four open depots in the baseline.                       average VSS across all instances (%VSS) is obtained as 3.4%. Although
+                                                                                   the average gain appears small, it corresponds to a total of 4.5 h of
+5.3.3. Sensitivity analysis                                                        improvement in the response time across all nodes. Furthermore, the
+    In this section, we evaluate the effects of varying drone endurance,           maximum %VSS across all instances is obtained as 17.4%, indicating
+drone speed, and number of open depots on the expected average
+                                                                                   a total improvement of 24.5 h. Considering the importance of timely
+response time, providing insights into their impact on operational
+                                                                                   delivery, using a stochastic modelling approach for preparedness stage
+efficiency.
+                                                                                   decisions can improve the performance of post-disaster operations.
+    First, Fig. 6a depicts the impact of varying the number of open
+                                                                                        Expected Value of Perfect Information (EVPI) shows the maximum
+depots on the expected average arrival time across 10 instances. The
+                                                                                   improvement one would obtain from having the perfect information.
+results show the average arrival time varies between 3.4 and 0.4 h for
+3 and 15 open depots, respectively. Each additional depot, equipped                It corresponds to the expected gain when decisions are made under
+with a truck and a drone, contributes to significantly better response             known future information. We treat each disaster scenario as a known
+times, albeit at a diminishing rate. This suggests a trade-off between             future scenario and give depot location decisions based solely on the
+the investment cost and the response time, providing insights for the              post-disaster routing for this scenario. To do so, we run the heuristic
+decision-making process regarding the optimal number of open depots                for only the scenario under consideration. The overall expectation
+to employ.                                                                         across all scenarios gives the expected value of decision-making with
+    Apart from the baseline flight endurance of 30 min, we also explore            perfect information, denoted by 𝑧𝑃 𝐼 . On the other hand, we have the
+the effect of longer flight endurance, specifically 1 h, 2 h, and unlimited        expected objective value from the stochastic model, 𝑧ℎ . Their difference
+time. Small delivery drones generally have shorter endurance than                  is denoted by EVPI, which states the maximum gain from having perfect
+1 h (JD, 2018; The Sun, 2022), but we consider higher endurance                    knowledge. The relative value is calculated as follows: %𝐸𝑉 𝑃 𝐼 =
+                                                                                    𝑧ℎ −𝑧𝑃 𝐼
+values considering future developments in drone technology. Fig. 6b                          × 100%. Across the 10 instances, we obtain a %EVPI of 7.6%,
+                                                                                      𝑧𝑃 𝐼
+shows the impact of the varying endurance on the expected average                  which corresponds to 10 h. The maximum %EVPI across all instances
+arrival time, illustrating the impact of extended battery life on reducing         results in a difference of 20 h in response time. These findings suggest
+response times. Extending the endurance from 30 min to 1 h decreases               that having better knowledge and a good identification of the disaster
+the average arrival time by 18 min, by 20%. However, an additional                 can significantly improve the response time in the post-disaster stage.
+hour increase beyond 1 h yields only marginal improvement in the
+objective, around 1%. Moreover, transitioning to an unlimited battery              6. Conclusions and further research directions
+life does not yield an improvement in the arrival time compared
+to the two-hour limit. In more densely located areas, the impact of
+                                                                                       Road networks are essential to achieve timely response in the post-
+improved battery life on response times might be even less pronounced.
+                                                                                   disaster and disasters can severely disrupt the road networks and
+These findings indicate that even the current drone technology can be
+                                                                                   hinder the humanitarian response activities. The uncertain nature of
+beneficial to achieve timely humanitarian aid delivery.
+                                                                                   the disasters makes it challenging to plan and execute timely response
+    Lastly, we explore varying drone speeds as considered by Murray
+and Chu (2015), specifically 24 km/h (15 mph) and 56 km/h (35 mph),                operations. In this paper, we consider parallel truck–drone deliveries
+as well as the maximum drone speeds reported by some big retailer                  from depots to deliver light-weight humanitarian aid bundles to ben-
+companies (JD, 2018; The Sun, 2022), which reach up to 100 km/h.                   eficiaries. We define a stochastic network design problem to locate
+We use 72, 88 and 104 km/h to represent these reported speeds. These               the depots in the pre-disaster while also considering the post-disaster
+are compared to the baseline drone speed of 40 km/h (25 mph). Fig.                 routing decisions. Road network vulnerability is specifically addressed
+6c illustrates the change in the expected average arrival time across 10           via inflated travel times to reflect disaster-related uncertainties. Drones,
+instances. Although subject to diminishing returns, an increase in drone           in addition to trucks, are involved to make aid delivery to overcome the
+speed significantly improves the response time. Specifically, drones op-           longer travel times and achieve better response times.
+erating at 56 km/h reduce the average arrival time by 24 min compared                  We model the stochastic location-routing problem with trucks and
+to our baseline drone speed, corresponding to a 26% improvement.                   drones as a two-stage stochastic programming model. The objective
+
+                                                                              15
+H. Tureci-Isik et al.                                                                                               European Journal of Operational Research xxx (xxxx) xxx
+
+
+
+
+           Fig. 6. Relationship between the average objective value and varying (a) number of open depots, (b) drone endurance, and (c) drone speed.
+
+
+is to minimise the expected average waiting times of the demand                    References
+locations. Our experiments show that Gurobi cannot solve the problem
+within a reasonable time limits even on small-sized problems. Thus, we             Agatz, N., Bouman, P., & Schmidt, M. (2018). Optimization approaches for the traveling
+                                                                                       salesman problem with drone. Transportation Science, 52(4), 965–981.
+develop a problem-tailored heuristic based on local search and VNS for
+                                                                                   Ahmadi, M., Seifi, A., & Tootooni, B. (2015). A humanitarian logistics model for disaster
+location and routing decisions, respectively. Optimality gaps are shown                relief operation considering network failure and standard relief time: A case study
+to be very small on small-sized problems, and the proposed heuristic                   on san francisco district. Transportation Research Part E: Logistics and Transportation
+can solve large instances within reasonable times. Our experiments on                  Review, 75, 145–163.
+                                                                                   Albareda-Sambola, M., & Rodríguez-Pereira, J. (2019). Location-routing and location-
+a case study indicate that drones can significantly reduce the response
+                                                                                       arc routing. In G. Laporte, S. Nickel, & F. S. da Gama (Eds.), Location science (pp.
+times compared to a truck-only system, with the expected average                       431–451). Cham: Springer International Publishing.
+arrival time decreasing from 3.3 h to 1.5 h, marking an improvement                Amazon (2023). Amazon is launching ultra-fast drone deliveries in Italy, the UK,
+of approximately 55%. The proposed approach can potentially help                       and a third location in the U.S. https://www.aboutamazon.com/news/operations/
+humanitarian agencies make strategic decisions such as location and                    amazon-prime-air-drone-delivery-updates. (Accessed 26 March 2024).
+                                                                                   Amiri, M., Amin, S. H., & Tavakkoli-Moghaddam, R. (2019). A Lagrangean decompo-
+pre-positioning of relief items, equipment, and vehicles, and evalu-                   sition approach for a novel two-echelon node-based location-routing problem in
+ate the effect of integrating drones into their fleet on disaster-prone                an offshore oil and gas supply chain. Transportation Research Part E: Logistics and
+regions.                                                                               Transportation Review, 128, 96–114.
+    In this paper, we consider parallel truck and drone deliveries from            Aslan, E., & Çelik, M. (2019). Pre-positioning of relief items under road/facility
+                                                                                       vulnerability with concurrent restoration and relief transportation. IISE Transactions,
+depots. This structure is mainly reasonable when most of the demand
+                                                                                       51(8), 847–868.
+locations are drone-eligible such that drones can provide rapid de-                Blazewicz, J., Ecker, K., Pesch, E., Schmidt, G., & Weglarz, J. (2019). Handbook on
+liveries from depots within the endurance limit. However, if most of                   scheduling. Springer.
+the demand locations are not eligible, the extension of the current                Bozorgi-Amiri, A., & Khorsi, M. (2016). A dynamic multi-objective location–routing
+                                                                                       model for relief logistic planning under uncertainty on demand, travel time, and
+stochastic location-routing problem with a synchronised truck–drone
+                                                                                       cost parameters. International Journal of Advanced Manufacturing Technology, 85,
+delivery model must be considered to expand the drone service area.                    1633–1648.
+This would allow drone utilisation in that scenario and provide more               Çalık, H., Oulamara, A., Prodhon, C., & Salhi, S. (2021). The electric location-
+flexibility even on the current considered problem environments and                    routing problem with heterogeneous fleet: Formulation and benders decomposition
+                                                                                       approach. Computers & Operations Research, 131, Article 105251.
+improve the response times further. Furthermore, comparison of differ-
+                                                                                   Canbilen Sütiçen, T., Batun, S., & Çelik, M. (2023). Integrated reinforcement and repair
+ent truck–drone structures on different problem instances can provide                  of interdependent infrastructure networks under disaster-related uncertainties.
+further managerial insights. Different uncertainties other than the road               European Journal of Operational Research, 308(1), 369–384.
+vulnerability can also be incorporated into the network design problem             Carlsson, J. G., & Song, S. (2018). Coordinated logistics with a truck and a drone.
+such as uncertain demand requests from demand locations or demand                      Management Science, 64(9), 4052–4069.
+                                                                                   Caunhye, A. M., Zhang, Y., Li, M., & Nie, X. (2016). A location-routing model for
+quantities. Another practical extension is the use of multiple vehicles                prepositioning and distributing emergency supplies. Transportation Research Part E:
+of the same type in each depot. Introduction of such properties would                  Logistics and Transportation Review, 90, 161–176.
+make the problem even more complex and necessitate efficient and                   Celik, M. (2016). Network restoration and recovery in humanitarian operations: Frame-
+effective solution approaches.                                                         work, literature review, and research directions. Surveys in Operations Research and
+                                                                                       Management Science, 21(2), 47–61.
+                                                                                   Chang, K., Zhou, H., Chen, G., & Chen, H. (2017). Multiobjective location routing
+CRediT authorship contribution statement                                               problem considering uncertain data after disasters. Discrete Dynamics in Nature and
+                                                                                       Society, 2017(1), Article 1703608.
+                                                                                   Chowdhury, S., Emelogu, A., Marufuzzaman, M., Nurre, S. G., & Bian, L. (2017). Drones
+   Hannan Tureci-Isik: Writing – original draft, Visualization, Val-
+                                                                                       for disaster response and relief operations: A continuous approximation model.
+idation, Software, Methodology, Investigation, Formal analysis, Con-                   International Journal of Production Economics, 188, 167–184.
+ceptualization. Melih Çelik: Writing – review & editing, Validation,               Chung, S. H., Sah, B., & Lee, J. (2020). Optimization for drone and drone-truck
+Supervision, Project administration, Methodology, Investigation, Con-                  combined operations: A review of the state of the art and future directions.
+ceptualization. Ece Sanci: Writing – review & editing, Supervision,                    Computers & Operations Research, 123, Article 105004.
+                                                                                   Cokyasar, T., Dong, W., Jin, M., & Verbas, İ. Ö. (2021). Designing a drone delivery
+Project administration, Methodology, Conceptualization.                                network with automated battery swapping machines. Computers & Operations
+                                                                                       Research, 129, Article 105177.
+Appendix A. Supplementary data                                                     Dayarian, I., Savelsbergh, M., & Clarke, J. P. (2020). Same-day delivery with drone
+                                                                                       resupply. Transportation Science, 54(1), 229–249.
+                                                                                   De Maio, A., Musmanno, R., & Vocaturo, F. (2023). Unbiased decision making in
+    Supplementary material related to this article can be found online                 location-routing problems with uncertain customer demands. Soft Computing, 27(1),
+at https://doi.org/10.1016/j.ejor.2025.08.057.                                         12883–12893.
+
+
+                                                                              16
+H. Tureci-Isik et al.                                                                                                                European Journal of Operational Research xxx (xxxx) xxx
+
+
+Dell’Amico, M., Montemanni, R., & Novellani, S. (2020). Matheuristic algorithms for the             Morim, A., Campuzano, G., Amorim, P., Mes, M., & Lalla-Ruiz, E. (2024). The
+    parallel drone scheduling traveling salesman problem. Annals of Operations Research,                drone-assisted vehicle routing problem with robot stations. Expert Systems with
+    289(2), 211–226.                                                                                    Applications, 238, Article 121741.
+Drexl, M., & Schneider, M. (2015). A survey of variants and extensions of                           Moshref-Javadi, M., Hemmati, A., & Winkenbach, M. (2021). A comparative analysis of
+    the location-routing problem. European Journal of Operational Research, 241(2),                     synchronized truck-and-drone delivery models. Computers & Industrial Engineering,
+    283–308.                                                                                            162, Article 107648.
+Dukkanci, O., Campbell, J. F., & Kara, B. Y. (2023). Facility location decisions for drone          Moshref-Javadi, M., & Lee, S. (2017). Using drones to minimize latency in distribution
+    delivery: A literature review. European Journal of Operational Research, 316(2),                    systems. In IIE annual conference. proceedings (pp. 235–240). Institute of Industrial
+    397–418.                                                                                            and Systems Engineers (IISE).
+Dukkanci, O., Campbell, J. F., & Kara, B. Y. (2024). Facility location decisions for                Moshref-Javadi, M., & Winkenbach, M. (2021). Applications and research avenues for
+    drone delivery with riding: A literature review. Computers & Operations Research,                   drone-based models in logistics: A classification and review. Expert Systems with
+    167, Article 106672.                                                                                Applications, 177, Article 114854.
+FAA (2023a). The FAA authorizes UPS flight forward and uavionix to operate drones                   MTA (2024). Active fault line maps. https://www.mta.gov.tr/v3.0/hizmetler/diri-fay-
+    beyond visual line of sight. https://www.faa.gov/newsroom/faa-authorizes-ups-                       haritalari. (Accessed 10 January 2024).
+    uavionix. (Accessed 26 March 2024).
+                                                                                                    Murray, C. C., & Chu, A. G. (2015). The flying sidekick traveling salesman problem:
+FAA (2023b). FAA authorizes zipline international, inc. to deliver commercial packages
+                                                                                                        Optimization of drone-assisted parcel delivery. Transportation Research Part C:
+    using drones that fly beyond operator’s line of sight. https://www.faa.gov/
+                                                                                                        Emerging Technologies, 54, 86–109.
+    newsroom/faa-authorizes-zipline-deliver-commercial-packages-beyond-line-sight.
+                                                                                                    Nagy, G., & Salhi, S. (2007). Location-routing: Issues, models and methods. European
+    (Accessed 26 March 2024).
+                                                                                                        Journal of Operational Research, 177(2), 649–672.
+FEMA (2022). HAZUS. https://www.fema.gov/flood-maps/products-tools/hazus. (Ac-
+                                                                                                    Nguyen, M. A., Dang, G. T. H., Hà, M. H., & Pham, M. T. (2022). The min-cost parallel
+    cessed 23 April 2024).
+                                                                                                        drone scheduling vehicle routing problem. European Journal of Operational Research,
+Ferrandez, S. M., Harbison, T., Weber, T., Sturges, R., & Rich, R. (2016). Optimization
+                                                                                                        299(3), 910–930.
+    of a truck-drone in tandem delivery network using K-means and genetic algorithm.
+    Journal of Industrial Engineering and Management (JIEM), 9(2), 374–388.                         Noyan, N., Balcik, B., & Atakan, S. (2016). A stochastic optimization model for
+                                                                                                        designing last mile relief networks. Transportation Science, 50(3), 1092–1113.
+Gómez-Lagos, J., Candia-Véjar, A., & Encina, F. (2021). A new truck-drone routing
+    problem for parcel delivery services aided by parking lots. IEEE Access, 9,                     Oberlin, P., Rathinam, S., & Darbha, S. (2009). A transformation for a heterogeneous,
+    11091–11108.                                                                                        multiple depot, multiple traveling salesman problem. In 2009 American control
+Google (2024a). Google maps. https://www.google.com/maps. (Accessed 3 May 2024).                        conference (pp. 1292–1297). IEEE.
+Google (2024b). Google maps directions API. https://developers.google.com/maps/                     Otto, A., Agatz, N., Campbell, J., Golden, B., & Pesch, E. (2018). Optimization
+    documentation/directions. (Accessed 15 May 2024).                                                   approaches for civil applications of unmanned aerial vehicles (UAVs) or aerial
+Mirzapour Al-e Hashem, S. M. J., Hejazi, T. H., Haghverdizadeh, G., & Shidpour, M.                      drones: A survey. Networks, 72(4), 411–458.
+    (2024). Optimizing last-mile delivery services: a robust truck-drone cooperation                Ozyavas, P., Buijs, P., Ursavas, E., & Teunter, R. (2025). Designing a sustainable
+    model and hybrid metaheuristic algorithm. Annals of Operations Research, 1–31.                      delivery network with parcel locker systems as collection and transfer points.
+Hsueh, C. F., Chen, H. K., & Chou, H. W. (2008). Dynamic vehicle routing for relief                     Omega, 131, Article 103199.
+    logistics in natural disasters. In T. Caric, & H. Gold (Eds.), Vehicle routing problem          Prodhon, C., & Prins, C. (2014). A survey of recent research on location-routing
+    (pp. 71–84). Vienna, Austria: InTech.                                                               problems. European Journal of Operational Research, 238(1), 1–17.
+IFRC (2012). Emergency Appeal Operation Update Turkey: Van Earthquake: Technical                    Rezaei Kallaj, M., Hasannia Kolaee, M., & Mirzapour Al-e Hashem, S. (2023). Integrating
+    Report, IFRC, URL: https://adore.ifrc.org/Download.aspx?FileId=23186. (Accessed                     bloodmobiles and drones in a post-disaster blood collection problem considering
+    9 January 2024).                                                                                    blood groups. Annals of Operations Research, 321(1-2), 783–811.
+International Federation of Red Cross and Red Crescent Societies (2018). Emer-                      Rojas Viloria, D., Solano-Charris, E. L., Muñoz-Villamizar, A., & Montoya-Torres, J. R.
+    gency items catalogue. URL: https://sheltercluster.org/working-group-nfi-practices/                 (2021). Unmanned aerial vehicles/drones in vehicle routing problems: a literature
+    documents/ifrcicrc-emergency-items-catalogue. (Accessed 9 June 2025).                               review. International Transactions in Operational Research, 28(4), 1626–1657.
+JD (2018). JD drone factsheet. URL: https://jdcorporateblog.com/wp-content/uploads/                 Sabouhi, F., Bozorgi-Amiri, A., & Vaez, P. (2021). Stochastic optimization for trans-
+    2018/05/JD-Drone-factsheet.pdf. (Accessed 17 June 2024).                                            portation planning in disaster relief under disruption and uncertainty. Kybernetes,
+Kang, M., & Lee, C. (2021). An exact algorithm for heterogeneous drone-truck routing                    50(9), 2632–2650.
+    problem. Transportation Science, 55(5), 1088–1112.                                              Salman, F. S., & Yücel, E. (2015). Emergency facility location under random network
+Kim, S., & Moon, I. (2018). Traveling salesman problem with a drone station. IEEE                       damage: Insights from the Istanbul case. Computers & Operations Research, 62,
+    Transactions on Systems, Man, and Cybernetics: Systems, 49(1), 42–52.                               266–281.
+Klibi, W., Lasalle, F., Martel, A., & Ichoua, S. (2010). The stochastic multiperiod location        Schermer, D., Moeini, M., & Wendt, O. (2019). The traveling salesman drone sta-
+    transportation problem. Transportation Science, 44(2), 221–237.                                     tion location problem. In World congress on global optimization (pp. 1129–1138).
+Kloster, K., Moeini, M., Vigo, D., & Wendt, O. (2023). The multiple traveling salesman                  Springer.
+    problem in presence of drone-and robot-supported packet stations. European Journal
+                                                                                                    Schneider, M., & Drexl, M. (2017). A survey of the standard location-routing problem.
+    of Operational Research, 305(2), 630–643.
+                                                                                                        Annals of Operations Research, 259, 389–414.
+Koç, Ç., Bektaş, T., Jabali, O., & Laporte, G. (2016). The fleet size and mix location-
+                                                                                                    Scott, J. E., & Scott, C. H. (2019). Models for drone delivery of medications and other
+    routing problem with time windows: Formulations and a heuristic algorithm.
+                                                                                                        healthcare items. Unmanned Aerial Vehicles: Breakthroughs in Research and Practice,
+    European Journal of Operational Research, 248(1), 33–51.
+                                                                                                        376–392.
+Kovács, G., & Spens, K. M. (2007). Humanitarian logistics in disaster relief operations.
+                                                                                                    Snoeck, A., Winkenbach, M., & Mascarino, E. E. (2018). Establishing a robust urban
+    International Journal of Physical Distribution & Logistics Management, 37(2), 99–114.
+                                                                                                        logistics network at FEMSA through stochastic multi-echelon location routing. In
+Letchford, A. N., Nasiri, S. D., & Theis, D. O. (2013). Compact formulations of the
+                                                                                                        E. Taniguchi, & R. G. Thompson (Eds.), City logistics 2 (pp. 59–78). John Wiley &
+    steiner traveling salesman problem and related problems. European Journal of
+                                                                                                        Sons, Ltd.
+    Operational Research, 228(1), 83–92.
+                                                                                                    Temiz, S., Kazanç, H. C., Soysal, M., & Çimen, M. (2025). A probabilistic bi-objective
+Macrina, G., Pugliese, L. D., Guerriero, F., & Laporte, G. (2020). Drone-aided routing: A
+                                                                                                        model for a humanitarian location-routing problem under uncertain demand and
+    literature review. Transportation Research Part C: Emerging Technologies, 120, Article
+                                                                                                        road closure. International Transactions in Operational Research, 32(2), 590–625.
+    102762.
+Mara, S. T. W., Kuo, R., & Asih, A. M. S. (2021). Location-routing problem: a                       The Guardian (2021). ‘Gamechanger’: Uganda launches drone delivering HIV drugs
+    classification of recent research. International Transactions in Operational Research,              to remote islands. https://www.theguardian.com/global-development/2021/
+    28(6), 2941–2983.                                                                                   may/04/gamechanger-uganda-launches-drone-delivering-hiv-drugs-to-remote-
+Matternet (2024). Matternet. https://www.mttr.net/. (Accessed 22 February 2024).                        islands?CMP=Share_iOSApp_Other. (Accessed 22 May 2021).
+Mbiadou Saleu, R. G., Deroussi, L., Feillet, D., Grangeon, N., & Quilliot, A. (2018).               The Guardian (2024). Drones could deliver medical supplies under UK travel watch-
+    An iterative two-step heuristic for the parallel drone scheduling traveling salesman                dog plans. https://amp.theguardian.com/technology/2024/feb/20/drones-could-
+    problem. Networks, 72(4), 459–474.                                                                  deliver-medical-supplies-under-uk-travel-watchdog-plans. (Accessed 22 February
+McCunney, B., & Cauwenberghe, K. (2019). Simulation test bed for drone-supported                        2024).
+    logistics systems. (Master’s thesis), Massachusetts Institute of Technology.                    The Sun (2022). Amazon’s giant new super drone delivers packages to your door
+Mete, H. O., & Zabinsky, Z. B. (2010). Stochastic optimization of medical supply                        shockingly fast - but has a frustrating catch. URL: https://www.thesun.co.uk/tech/
+    location and distribution in disaster management. International Journal of Production               20404011/amazons-giant-new-super-drone-mk30/. (Accessed 17 June 2024).
+    Economics, 126(1), 76–84.                                                                       Ukkusuri, S. V., & Yushimito, W. F. (2008). Location routing approach for the
+Montaña, L. C., Malagon-Alvarado, L., Miranda, P. A., Arboleda, M. M., Solano-                          humanitarian prepositioning problem. Transportation Research Record, 2089(1),
+    Charris, E. L., & Vega-Mejía, C. A. (2022). A novel mathematical approach                           18–25.
+    for the truck-and-drone location-routing problem. Procedia Computer Science, 200,               UNICEF (2025). Interagency emergency health kit (IEHK). URL: https://www.unicef.
+    1378–1391.                                                                                          org/supply/interagency-emergency-health-kit. (Accessed 9 June 2025).
+
+
+                                                                                               17
+H. Tureci-Isik et al.                                                                                                           European Journal of Operational Research xxx (xxxx) xxx
+
+
+Van Steenbergen, R., Mes, M., & Van Heeswijk, W. (2023). Reinforcement learning                Young, L. (2024). Delivery drones are gaining a clearer commercial flight
+    for humanitarian relief distribution with trucks and UAVs under travel time                    path. Wall Street Journal (Online), Access may be restricted, URL: https:
+    uncertainty. Transportation Research Part C: Emerging Technologies, 157, Article               //www.wsj.com/articles/delivery-drones-are-gaining-a-clearer-commercial-flight-
+    104401.                                                                                        path-dec702be?mod=Searchresults_pos1&page=1.
+Walmart (2024). Sky high ambitions: Walmart to make largest drone delivery expansion           Yucesoy, E., Balcik, B., & Coban, E. (2024). The role of drones in disaster response:
+    of any U.S. retailer. https://corporate.walmart.com/news/2024/01/09/sky-high-                  A literature review of operations research applications. International Transactions in
+    ambitions-walmart-to-make-largest-drone-delivery-expansion-of-any-us-retailer. (Ac-            Operational Research, 32(2), 1–45.
+    cessed 26 March 2024).                                                                     Zhao, Q., Wang, W., & De Souza, R. (2018). A heterogeneous fleet two-echelon
+Wang, S., Sun, W., Baldacci, R., & Elomri, A. (2025). Exact solution of location–                  capacitated location-routing model for joint delivery arising in city logistics.
+    routing problems with heterogeneous fleet and weight-based carbon emissions.                   International Journal of Production Research, 56(15), 5062–5080.
+    Transportation Research Part E: Logistics and Transportation Review, 193, Article          Zhong, S., Cheng, R., Jiang, Y., Wang, Z., Larsen, A., & Nielsen, O. A. (2020).
+    103862.                                                                                        Risk-averse optimization of disaster relief facility location and vehicle routing
+Wang, J., Yuan, L., Zhang, Z., Gao, S., Sun, Y., & Zhou, Y. (2019). Multiobjective                 under stochastic demand. Transportation Research Part E: Logistics and Transportation
+    multiple neighborhood search algorithms for multiobjective fleet size and mix                  Review, 141, Article 102015.
+    location-routing problem with time windows. IEEE Transactions on Systems, Man,             Zhou, L., Lin, Y., Wang, X., & Zhou, F. (2019). Model and algorithm for bilevel
+    and Cybernetics: Systems, 51(4), 2284–2298.                                                    multisized terminal location-routing problem for the last mile delivery. International
+Wingcopter GmbH (2022). Wingcopter 198 drone specifications. https://wingcopter.                   Transactions in Operational Research, 26(1), 131–156.
+    com. (Accessed 5 June 2025).                                                               Zhou, L., Silva, D. F., & Smith, A. E. (2023). Locating drone stations for a truck-drone
+World Food Programme (2023). WFP drones. https://drones.wfp.org/. (Accessed 22                     delivery system in continuous space. IEEE Transactions on Evolutionary Computation,
+    February 2024).                                                                                29(1), 158–171.
+Yin, Y., Yang, Y., Yu, Y., Wang, D., & Cheng, T. (2023). Robust vehicle routing with           Zipline (2023). Technical capabilities. https://www.flyzipline.com. (Accessed 5 June
+    drones under uncertain demands and truck travel times in humanitarian logistics.               2025).
+    Transportation Research Part B: Methodological, 174, Article 102781.
+
+
+
+
+                                                                                          18
+

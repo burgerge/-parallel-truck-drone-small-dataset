@@ -1,5 +1,14 @@
 
 # main.py
+# ============================================================
+# 该文件提供两类能力：
+# 1) 数据入口：load_instance_data 负责读取实例并构建 DataInstance
+# 2) 轻量演示入口：main() 默认演示 A3（可手动切换到 A1）
+#
+# 说明：
+# - 论文算法主体实现在 alg.py（A1~A5）
+# - 本文件主要承担“把 txt 数据转为算法可用内存结构”的角色
+# ============================================================
 import os
 import sys
 from typing import List, Tuple
@@ -23,7 +32,17 @@ DEFAULT_INSTANCE_NAME = "Instance3"
 # =========================
 class DataInstance:
     """
-    Stores one instance (one scenario): adjacency, truck/drone times, candidate depots, etc.
+    单场景实例数据结构。
+
+    字段说明：
+    - num_nodes: 图中总节点数（需求点+可能的扩展depot节点）
+    - demand_nodes: 需求点集合
+    - adj: 邻接表（道路直接连接关系）
+    - truck_times: 卡车行驶时间矩阵（不可达为 inf）
+    - drone_times: 无人机飞行时间矩阵（通常为往返时间）
+    - candidate_depots: 候选仓库节点（算法A1在此集合上选址）
+    - drone_reachability: 每个depot可由无人机服务的需求点列表
+    - depot_base_map: 内部depot节点ID -> W.txt原始ID 映射
     """
     def __init__(self,
                  num_nodes,
@@ -47,7 +66,14 @@ class DataInstance:
 
 def load_instance_data(folder_path: str) -> Tuple[DataInstance, List[DataInstance]]:
     """
-    Reads: complete.txt, t.txt, v.txt, W.txt, D_k.txt from one instance folder.
+    从实例目录读取 complete/t/v/W/D_k 并构建场景数据。
+
+    文件角色：
+    - complete.txt: 路网邻接矩阵（是否有直接边）
+    - t.txt: 卡车时间（多个场景横向拼接）
+    - v.txt: 无人机时间矩阵
+    - W.txt: 候选仓库（原始ID）
+    - D_k.txt: 每个候选仓库的无人机可达需求点（与W顺序对齐）
 
     Returns:
     - base_instance: uses scenario 0 truck times
@@ -93,6 +119,9 @@ def load_instance_data(folder_path: str) -> Tuple[DataInstance, List[DataInstanc
                     dk_lines.append(parts)
 
     # ---- demand node detection (README: 15 demand nodes, depots subset)
+    # 这里兼容两种数据格式：
+    # - depot 是 demand 的子集（同一ID空间）
+    # - depot 被扩展成新节点（ID在 demand_count 之后）
     max_w = max(candidates) if candidates else -1
     max_dk = max((max(line) for line in dk_lines if line), default=-1)
     demand_count = max(max_w, max_dk) + 1
@@ -103,6 +132,7 @@ def load_instance_data(folder_path: str) -> Tuple[DataInstance, List[DataInstanc
     demand_nodes = list(range(demand_count))
 
     # ---- depot node mapping
+    # 将内部depot节点ID映射回 W.txt 原始ID，便于汇报时与论文表格对齐。
     if num_nodes == demand_count + len(candidates):
         depot_nodes = [demand_count + idx for idx in range(len(candidates))]
     else:
@@ -130,6 +160,8 @@ def load_instance_data(folder_path: str) -> Tuple[DataInstance, List[DataInstanc
                 adj_list[i].add(j)
 
     # ---- build scenarios from t.txt
+    # t.txt 每行长度 = num_nodes * num_scenarios
+    # 通过切片 [scen_idx*num_nodes : (scen_idx+1)*num_nodes] 还原每个场景的时间矩阵。
     if not raw_truck_times:
         raise ValueError("t.txt is empty")
     row_len = len(raw_truck_times[0])
@@ -172,6 +204,11 @@ def load_instance_data(folder_path: str) -> Tuple[DataInstance, List[DataInstanc
 
 
 def main():
+    """
+    轻量调试入口：
+    - 默认读取一个实例并演示 Algorithm 3 的构造输出；
+    - 注释区可切换为 Algorithm 1 全流程。
+    """
     # -------- instance selection
     instance_name = sys.argv[1] if len(sys.argv) > 1 else DEFAULT_INSTANCE_NAME
     folder = os.path.join(INSTANCES_ROOT, instance_name)

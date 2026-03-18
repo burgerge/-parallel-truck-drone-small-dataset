@@ -1,0 +1,3751 @@
+{
+  "method": "gurobi_paper_exact_enumeration_best_combo",
+  "instance": "Instance5",
+  "selection_metric": "paper_objective",
+  "from_enumeration_json": "outputs/gurobi_enum_paper_exact_100s_20260318_195048/per_instance\\Instance5.json",
+  "open_depots_internal": [
+    17,
+    19
+  ],
+  "open_depots_idx": [
+    2,
+    4
+  ],
+  "open_depots_base": [
+    5,
+    10
+  ],
+  "result": {
+    "open_depots": [
+      17,
+      19
+    ],
+    "open_depots_base": [
+      5,
+      10
+    ],
+    "open_depots_idx": [
+      2,
+      4
+    ],
+    "is_best": 1,
+    "rank_by_objective": 1,
+    "error": "",
+    "status": 9,
+    "status_name": "TIME_LIMIT",
+    "objective": 9.876666401027084,
+    "best_bound": 7.024227255745725,
+    "achieved_mip_gap": 0.2888058611541979,
+    "achieved_mip_gap_pct": 28.88058611541979,
+    "runtime_sec": 100.31900000572205,
+    "model_stats": {
+      "big_m_time": 704.0,
+      "truck_horizon": 330.0,
+      "drone_horizon": 660.0,
+      "truck_model": "paper_exact",
+      "var_counts": {
+        "c": 300,
+        "z": 300,
+        "y": 820,
+        "w": 750,
+        "a_last": 750,
+        "b": 1270,
+        "f": 650,
+        "p": 150,
+        "phi": 150,
+        "psi": 150,
+        "sigma": 150,
+        "u_vis": 300,
+        "h": 300
+      }
+    },
+    "objective_components_incumbent": {
+      "truck_flow_component": 1624.999954795398,
+      "truck_arc_component": 730.999994641336,
+      "drone_component": 587.5,
+      "flow_minus_arc_plus_drone": 1481.4999601540621,
+      "normalization_coeff": 0.006666666666666667,
+      "normalized_objective_from_components": 9.876666401027082
+    },
+    "solution_details": {
+      "scenario_routes": [
+        {
+          "scenario_index": 0,
+          "depots": [
+            {
+              "depot_internal": 17,
+              "truck_assigned_demands": [
+                4,
+                5,
+                6,
+                8,
+                11
+              ],
+              "drone_assigned_demands": [
+                9,
+                13
+              ],
+              "truck_active_arcs": [
+                [
+                  4,
+                  5
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  5,
+                  4
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  5,
+                  8
+                ],
+                [
+                  6,
+                  4
+                ],
+                [
+                  6,
+                  11
+                ],
+                [
+                  6,
+                  17
+                ],
+                [
+                  8,
+                  5
+                ],
+                [
+                  8,
+                  11
+                ],
+                [
+                  11,
+                  6
+                ],
+                [
+                  11,
+                  8
+                ],
+                [
+                  17,
+                  5
+                ]
+              ],
+              "truck_walk": [
+                17,
+                5,
+                4,
+                5,
+                6,
+                4,
+                6,
+                11,
+                8,
+                5,
+                8,
+                11,
+                6,
+                17
+              ],
+              "truck_walk_euler": [
+                17,
+                5,
+                4,
+                5,
+                6,
+                4,
+                6,
+                11,
+                8,
+                5,
+                8,
+                11,
+                6,
+                17
+              ],
+              "truck_unused_arcs_after_walk": [],
+              "truck_walk_model_order": [
+                17,
+                5,
+                4,
+                6,
+                11,
+                8,
+                11,
+                6,
+                17
+              ],
+              "truck_unused_arcs_after_model_order": [
+                [
+                  4,
+                  5
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  5,
+                  8
+                ],
+                [
+                  6,
+                  4
+                ],
+                [
+                  8,
+                  5
+                ]
+              ],
+              "truck_walk_eval_preferred": [
+                17,
+                5,
+                4,
+                5,
+                6,
+                4,
+                6,
+                11,
+                8,
+                5,
+                8,
+                11,
+                6,
+                17
+              ],
+              "truck_first_departure_arcs_w": [
+                [
+                  4,
+                  6
+                ],
+                [
+                  5,
+                  4
+                ],
+                [
+                  6,
+                  11
+                ],
+                [
+                  8,
+                  11
+                ],
+                [
+                  11,
+                  8
+                ]
+              ],
+              "truck_last_departure_arcs_a": [
+                [
+                  4,
+                  5
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  6,
+                  17
+                ],
+                [
+                  8,
+                  11
+                ],
+                [
+                  11,
+                  6
+                ]
+              ],
+              "truck_successor_links_b": [
+                [
+                  6,
+                  4,
+                  5
+                ],
+                [
+                  8,
+                  5,
+                  6
+                ],
+                [
+                  8,
+                  5,
+                  8
+                ],
+                [
+                  11,
+                  6,
+                  4
+                ],
+                [
+                  11,
+                  6,
+                  17
+                ],
+                [
+                  5,
+                  8,
+                  5
+                ],
+                [
+                  8,
+                  11,
+                  6
+                ]
+              ],
+              "drone_sequence_spt": [
+                9,
+                13
+              ],
+              "drone_arrival_time": {
+                "9": 5.0,
+                "13": 22.5
+              }
+            },
+            {
+              "depot_internal": 19,
+              "truck_assigned_demands": [
+                0,
+                1,
+                2,
+                7,
+                10,
+                12
+              ],
+              "drone_assigned_demands": [
+                3,
+                14
+              ],
+              "truck_active_arcs": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  12
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  2,
+                  19
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  0
+                ],
+                [
+                  12,
+                  2
+                ],
+                [
+                  12,
+                  7
+                ],
+                [
+                  19,
+                  10
+                ]
+              ],
+              "truck_walk": [
+                19,
+                10,
+                2,
+                12,
+                0,
+                1,
+                0,
+                12,
+                7,
+                12,
+                2,
+                19
+              ],
+              "truck_walk_euler": [
+                19,
+                10,
+                2,
+                12,
+                0,
+                1,
+                0,
+                12,
+                7,
+                12,
+                2,
+                19
+              ],
+              "truck_unused_arcs_after_walk": [],
+              "truck_walk_model_order": [
+                19,
+                10,
+                2,
+                12,
+                7,
+                12,
+                0,
+                1,
+                0,
+                12,
+                2,
+                19
+              ],
+              "truck_unused_arcs_after_model_order": [],
+              "truck_walk_eval_preferred": [
+                19,
+                10,
+                2,
+                12,
+                7,
+                12,
+                0,
+                1,
+                0,
+                12,
+                2,
+                19
+              ],
+              "truck_first_departure_arcs_w": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  7
+                ]
+              ],
+              "truck_last_departure_arcs_a": [
+                [
+                  0,
+                  12
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  19
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  2
+                ]
+              ],
+              "truck_successor_links_b": [
+                [
+                  1,
+                  0,
+                  12
+                ],
+                [
+                  12,
+                  2,
+                  19
+                ],
+                [
+                  0,
+                  12,
+                  2
+                ],
+                [
+                  7,
+                  12,
+                  0
+                ]
+              ],
+              "drone_sequence_spt": [
+                14,
+                3
+              ],
+              "drone_arrival_time": {
+                "14": 3.5,
+                "3": 14.0
+              }
+            }
+          ]
+        },
+        {
+          "scenario_index": 1,
+          "depots": [
+            {
+              "depot_internal": 17,
+              "truck_assigned_demands": [
+                4,
+                5,
+                6,
+                8,
+                11
+              ],
+              "drone_assigned_demands": [
+                1,
+                9
+              ],
+              "truck_active_arcs": [
+                [
+                  4,
+                  5
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  5,
+                  4
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  5,
+                  8
+                ],
+                [
+                  6,
+                  4
+                ],
+                [
+                  6,
+                  11
+                ],
+                [
+                  8,
+                  5
+                ],
+                [
+                  8,
+                  17
+                ],
+                [
+                  11,
+                  8
+                ],
+                [
+                  17,
+                  5
+                ]
+              ],
+              "truck_walk": [
+                17,
+                5,
+                4,
+                5,
+                6,
+                4,
+                6,
+                11,
+                8,
+                5,
+                8,
+                17
+              ],
+              "truck_walk_euler": [
+                17,
+                5,
+                4,
+                5,
+                6,
+                4,
+                6,
+                11,
+                8,
+                5,
+                8,
+                17
+              ],
+              "truck_unused_arcs_after_walk": [],
+              "truck_walk_model_order": [
+                17,
+                5,
+                4,
+                6,
+                11,
+                8,
+                5,
+                6,
+                4,
+                5,
+                8,
+                17
+              ],
+              "truck_unused_arcs_after_model_order": [],
+              "truck_walk_eval_preferred": [
+                17,
+                5,
+                4,
+                6,
+                11,
+                8,
+                5,
+                6,
+                4,
+                5,
+                8,
+                17
+              ],
+              "truck_first_departure_arcs_w": [
+                [
+                  4,
+                  6
+                ],
+                [
+                  5,
+                  4
+                ],
+                [
+                  6,
+                  11
+                ],
+                [
+                  8,
+                  5
+                ],
+                [
+                  11,
+                  8
+                ]
+              ],
+              "truck_last_departure_arcs_a": [
+                [
+                  4,
+                  5
+                ],
+                [
+                  5,
+                  8
+                ],
+                [
+                  6,
+                  4
+                ],
+                [
+                  8,
+                  17
+                ],
+                [
+                  11,
+                  8
+                ]
+              ],
+              "truck_successor_links_b": [
+                [
+                  6,
+                  4,
+                  5
+                ],
+                [
+                  4,
+                  5,
+                  6
+                ],
+                [
+                  4,
+                  5,
+                  8
+                ],
+                [
+                  5,
+                  6,
+                  4
+                ],
+                [
+                  5,
+                  8,
+                  17
+                ]
+              ],
+              "drone_sequence_spt": [
+                9,
+                1
+              ],
+              "drone_arrival_time": {
+                "9": 5.0,
+                "1": 18.0
+              }
+            },
+            {
+              "depot_internal": 19,
+              "truck_assigned_demands": [
+                0,
+                2,
+                7,
+                10,
+                12
+              ],
+              "drone_assigned_demands": [
+                3,
+                13,
+                14
+              ],
+              "truck_active_arcs": [
+                [
+                  0,
+                  12
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  2,
+                  19
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  0
+                ],
+                [
+                  12,
+                  2
+                ],
+                [
+                  12,
+                  7
+                ],
+                [
+                  19,
+                  10
+                ]
+              ],
+              "truck_walk": [
+                19,
+                10,
+                2,
+                12,
+                0,
+                12,
+                7,
+                12,
+                2,
+                19
+              ],
+              "truck_walk_euler": [
+                19,
+                10,
+                2,
+                12,
+                0,
+                12,
+                7,
+                12,
+                2,
+                19
+              ],
+              "truck_unused_arcs_after_walk": [],
+              "truck_walk_model_order": [
+                19,
+                10,
+                2,
+                12,
+                7,
+                12,
+                0,
+                12,
+                2,
+                19
+              ],
+              "truck_unused_arcs_after_model_order": [],
+              "truck_walk_eval_preferred": [
+                19,
+                10,
+                2,
+                12,
+                7,
+                12,
+                0,
+                12,
+                2,
+                19
+              ],
+              "truck_first_departure_arcs_w": [
+                [
+                  0,
+                  12
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  7
+                ]
+              ],
+              "truck_last_departure_arcs_a": [
+                [
+                  0,
+                  12
+                ],
+                [
+                  2,
+                  19
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  2
+                ]
+              ],
+              "truck_successor_links_b": [
+                [
+                  12,
+                  2,
+                  19
+                ],
+                [
+                  0,
+                  12,
+                  2
+                ],
+                [
+                  7,
+                  12,
+                  0
+                ]
+              ],
+              "drone_sequence_spt": [
+                14,
+                13,
+                3
+              ],
+              "drone_arrival_time": {
+                "14": 3.5,
+                "13": 13.5,
+                "3": 27.0
+              }
+            }
+          ]
+        },
+        {
+          "scenario_index": 2,
+          "depots": [
+            {
+              "depot_internal": 17,
+              "truck_assigned_demands": [
+                4,
+                6,
+                8,
+                11
+              ],
+              "drone_assigned_demands": [
+                5,
+                9,
+                13
+              ],
+              "truck_active_arcs": [
+                [
+                  4,
+                  6
+                ],
+                [
+                  6,
+                  11
+                ],
+                [
+                  8,
+                  17
+                ],
+                [
+                  11,
+                  8
+                ],
+                [
+                  17,
+                  4
+                ]
+              ],
+              "truck_walk": [
+                17,
+                4,
+                6,
+                11,
+                8,
+                17
+              ],
+              "truck_walk_euler": [
+                17,
+                4,
+                6,
+                11,
+                8,
+                17
+              ],
+              "truck_unused_arcs_after_walk": [],
+              "truck_walk_model_order": [
+                17,
+                4,
+                6,
+                11,
+                8,
+                17
+              ],
+              "truck_unused_arcs_after_model_order": [],
+              "truck_walk_eval_preferred": [
+                17,
+                4,
+                6,
+                11,
+                8,
+                17
+              ],
+              "truck_first_departure_arcs_w": [
+                [
+                  4,
+                  6
+                ],
+                [
+                  6,
+                  11
+                ],
+                [
+                  8,
+                  17
+                ],
+                [
+                  11,
+                  8
+                ]
+              ],
+              "truck_last_departure_arcs_a": [
+                [
+                  4,
+                  6
+                ],
+                [
+                  6,
+                  11
+                ],
+                [
+                  8,
+                  17
+                ],
+                [
+                  11,
+                  8
+                ]
+              ],
+              "truck_successor_links_b": [],
+              "drone_sequence_spt": [
+                5,
+                9,
+                13
+              ],
+              "drone_arrival_time": {
+                "5": 0.0,
+                "9": 5.0,
+                "13": 22.5
+              }
+            },
+            {
+              "depot_internal": 19,
+              "truck_assigned_demands": [
+                0,
+                1,
+                2,
+                7,
+                10,
+                12
+              ],
+              "drone_assigned_demands": [
+                3,
+                14
+              ],
+              "truck_active_arcs": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  12
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  2,
+                  19
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  0
+                ],
+                [
+                  12,
+                  2
+                ],
+                [
+                  12,
+                  7
+                ],
+                [
+                  19,
+                  10
+                ]
+              ],
+              "truck_walk": [
+                19,
+                10,
+                2,
+                12,
+                0,
+                1,
+                0,
+                12,
+                7,
+                12,
+                2,
+                19
+              ],
+              "truck_walk_euler": [
+                19,
+                10,
+                2,
+                12,
+                0,
+                1,
+                0,
+                12,
+                7,
+                12,
+                2,
+                19
+              ],
+              "truck_unused_arcs_after_walk": [],
+              "truck_walk_model_order": [
+                19,
+                10,
+                2,
+                12,
+                7,
+                12,
+                0,
+                1,
+                0,
+                12,
+                2,
+                19
+              ],
+              "truck_unused_arcs_after_model_order": [],
+              "truck_walk_eval_preferred": [
+                19,
+                10,
+                2,
+                12,
+                7,
+                12,
+                0,
+                1,
+                0,
+                12,
+                2,
+                19
+              ],
+              "truck_first_departure_arcs_w": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  7
+                ]
+              ],
+              "truck_last_departure_arcs_a": [
+                [
+                  0,
+                  12
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  19
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  2
+                ]
+              ],
+              "truck_successor_links_b": [
+                [
+                  1,
+                  0,
+                  12
+                ],
+                [
+                  12,
+                  2,
+                  19
+                ],
+                [
+                  0,
+                  12,
+                  2
+                ],
+                [
+                  7,
+                  12,
+                  0
+                ]
+              ],
+              "drone_sequence_spt": [
+                14,
+                3
+              ],
+              "drone_arrival_time": {
+                "14": 3.5,
+                "3": 14.0
+              }
+            }
+          ]
+        },
+        {
+          "scenario_index": 3,
+          "depots": [
+            {
+              "depot_internal": 17,
+              "truck_assigned_demands": [
+                1,
+                4,
+                5,
+                6,
+                11
+              ],
+              "drone_assigned_demands": [
+                8,
+                9
+              ],
+              "truck_active_arcs": [
+                [
+                  1,
+                  11
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  6,
+                  4
+                ],
+                [
+                  6,
+                  11
+                ],
+                [
+                  6,
+                  17
+                ],
+                [
+                  11,
+                  1
+                ],
+                [
+                  11,
+                  6
+                ],
+                [
+                  17,
+                  5
+                ]
+              ],
+              "truck_walk": [
+                17,
+                5,
+                6,
+                4,
+                6,
+                11,
+                1,
+                11,
+                6,
+                17
+              ],
+              "truck_walk_euler": [
+                17,
+                5,
+                6,
+                4,
+                6,
+                11,
+                1,
+                11,
+                6,
+                17
+              ],
+              "truck_unused_arcs_after_walk": [],
+              "truck_walk_model_order": [
+                17,
+                5,
+                6,
+                4,
+                6,
+                11,
+                1,
+                11,
+                6,
+                17
+              ],
+              "truck_unused_arcs_after_model_order": [],
+              "truck_walk_eval_preferred": [
+                17,
+                5,
+                6,
+                4,
+                6,
+                11,
+                1,
+                11,
+                6,
+                17
+              ],
+              "truck_first_departure_arcs_w": [
+                [
+                  1,
+                  11
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  6,
+                  4
+                ],
+                [
+                  11,
+                  1
+                ]
+              ],
+              "truck_last_departure_arcs_a": [
+                [
+                  1,
+                  11
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  6,
+                  17
+                ],
+                [
+                  11,
+                  6
+                ]
+              ],
+              "truck_successor_links_b": [
+                [
+                  4,
+                  6,
+                  11
+                ],
+                [
+                  11,
+                  6,
+                  17
+                ],
+                [
+                  1,
+                  11,
+                  6
+                ]
+              ],
+              "drone_sequence_spt": [
+                9,
+                8
+              ],
+              "drone_arrival_time": {
+                "9": 5.0,
+                "8": 21.5
+              }
+            },
+            {
+              "depot_internal": 19,
+              "truck_assigned_demands": [
+                0,
+                2,
+                7,
+                12
+              ],
+              "drone_assigned_demands": [
+                3,
+                10,
+                13,
+                14
+              ],
+              "truck_active_arcs": [
+                [
+                  0,
+                  12
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  2,
+                  19
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  12,
+                  0
+                ],
+                [
+                  12,
+                  2
+                ],
+                [
+                  12,
+                  7
+                ],
+                [
+                  19,
+                  2
+                ]
+              ],
+              "truck_walk": [
+                19,
+                2,
+                12,
+                0,
+                12,
+                7,
+                12,
+                2,
+                19
+              ],
+              "truck_walk_euler": [
+                19,
+                2,
+                12,
+                0,
+                12,
+                7,
+                12,
+                2,
+                19
+              ],
+              "truck_unused_arcs_after_walk": [],
+              "truck_walk_model_order": [
+                19,
+                2,
+                12,
+                7,
+                12,
+                0,
+                12,
+                2,
+                19
+              ],
+              "truck_unused_arcs_after_model_order": [],
+              "truck_walk_eval_preferred": [
+                19,
+                2,
+                12,
+                7,
+                12,
+                0,
+                12,
+                2,
+                19
+              ],
+              "truck_first_departure_arcs_w": [
+                [
+                  0,
+                  12
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  12,
+                  7
+                ]
+              ],
+              "truck_last_departure_arcs_a": [
+                [
+                  0,
+                  12
+                ],
+                [
+                  2,
+                  19
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  12,
+                  2
+                ]
+              ],
+              "truck_successor_links_b": [
+                [
+                  12,
+                  2,
+                  19
+                ],
+                [
+                  0,
+                  12,
+                  2
+                ],
+                [
+                  7,
+                  12,
+                  0
+                ]
+              ],
+              "drone_sequence_spt": [
+                10,
+                14,
+                13,
+                3
+              ],
+              "drone_arrival_time": {
+                "10": 0.0,
+                "14": 3.5,
+                "13": 13.5,
+                "3": 27.0
+              }
+            }
+          ]
+        },
+        {
+          "scenario_index": 4,
+          "depots": [
+            {
+              "depot_internal": 17,
+              "truck_assigned_demands": [
+                4,
+                5,
+                6,
+                8
+              ],
+              "drone_assigned_demands": [
+                9,
+                11
+              ],
+              "truck_active_arcs": [
+                [
+                  4,
+                  5
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  5,
+                  8
+                ],
+                [
+                  5,
+                  17
+                ],
+                [
+                  6,
+                  4
+                ],
+                [
+                  8,
+                  5
+                ],
+                [
+                  17,
+                  5
+                ]
+              ],
+              "truck_walk": [
+                17,
+                5,
+                6,
+                4,
+                5,
+                8,
+                5,
+                17
+              ],
+              "truck_walk_euler": [
+                17,
+                5,
+                6,
+                4,
+                5,
+                8,
+                5,
+                17
+              ],
+              "truck_unused_arcs_after_walk": [],
+              "truck_walk_model_order": [
+                17,
+                5,
+                6,
+                4,
+                5,
+                8,
+                5,
+                17
+              ],
+              "truck_unused_arcs_after_model_order": [],
+              "truck_walk_eval_preferred": [
+                17,
+                5,
+                6,
+                4,
+                5,
+                8,
+                5,
+                17
+              ],
+              "truck_first_departure_arcs_w": [
+                [
+                  4,
+                  5
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  6,
+                  4
+                ],
+                [
+                  8,
+                  5
+                ]
+              ],
+              "truck_last_departure_arcs_a": [
+                [
+                  4,
+                  5
+                ],
+                [
+                  5,
+                  17
+                ],
+                [
+                  6,
+                  4
+                ],
+                [
+                  8,
+                  5
+                ]
+              ],
+              "truck_successor_links_b": [
+                [
+                  4,
+                  5,
+                  8
+                ],
+                [
+                  8,
+                  5,
+                  17
+                ]
+              ],
+              "drone_sequence_spt": [
+                9,
+                11
+              ],
+              "drone_arrival_time": {
+                "9": 5.0,
+                "11": 15.5
+              }
+            },
+            {
+              "depot_internal": 19,
+              "truck_assigned_demands": [
+                0,
+                1,
+                2,
+                7,
+                10,
+                12
+              ],
+              "drone_assigned_demands": [
+                3,
+                13,
+                14
+              ],
+              "truck_active_arcs": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  12
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  2,
+                  19
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  0
+                ],
+                [
+                  12,
+                  2
+                ],
+                [
+                  12,
+                  7
+                ],
+                [
+                  19,
+                  10
+                ]
+              ],
+              "truck_walk": [
+                19,
+                10,
+                2,
+                12,
+                0,
+                1,
+                0,
+                12,
+                7,
+                12,
+                2,
+                19
+              ],
+              "truck_walk_euler": [
+                19,
+                10,
+                2,
+                12,
+                0,
+                1,
+                0,
+                12,
+                7,
+                12,
+                2,
+                19
+              ],
+              "truck_unused_arcs_after_walk": [],
+              "truck_walk_model_order": [
+                19,
+                10,
+                2,
+                12,
+                7,
+                12,
+                0,
+                1,
+                0,
+                12,
+                2,
+                19
+              ],
+              "truck_unused_arcs_after_model_order": [],
+              "truck_walk_eval_preferred": [
+                19,
+                10,
+                2,
+                12,
+                7,
+                12,
+                0,
+                1,
+                0,
+                12,
+                2,
+                19
+              ],
+              "truck_first_departure_arcs_w": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  7
+                ]
+              ],
+              "truck_last_departure_arcs_a": [
+                [
+                  0,
+                  12
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  19
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  2
+                ]
+              ],
+              "truck_successor_links_b": [
+                [
+                  1,
+                  0,
+                  12
+                ],
+                [
+                  12,
+                  2,
+                  19
+                ],
+                [
+                  0,
+                  12,
+                  2
+                ],
+                [
+                  7,
+                  12,
+                  0
+                ]
+              ],
+              "drone_sequence_spt": [
+                14,
+                13,
+                3
+              ],
+              "drone_arrival_time": {
+                "14": 3.5,
+                "13": 13.5,
+                "3": 27.0
+              }
+            }
+          ]
+        },
+        {
+          "scenario_index": 5,
+          "depots": [
+            {
+              "depot_internal": 17,
+              "truck_assigned_demands": [
+                4,
+                5,
+                6,
+                8
+              ],
+              "drone_assigned_demands": [
+                9,
+                11
+              ],
+              "truck_active_arcs": [
+                [
+                  4,
+                  6
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  5,
+                  8
+                ],
+                [
+                  6,
+                  4
+                ],
+                [
+                  6,
+                  5
+                ],
+                [
+                  8,
+                  17
+                ],
+                [
+                  17,
+                  5
+                ]
+              ],
+              "truck_walk": [
+                17,
+                5,
+                6,
+                4,
+                6,
+                5,
+                8,
+                17
+              ],
+              "truck_walk_euler": [
+                17,
+                5,
+                6,
+                4,
+                6,
+                5,
+                8,
+                17
+              ],
+              "truck_unused_arcs_after_walk": [],
+              "truck_walk_model_order": [
+                17,
+                5,
+                6,
+                4,
+                6,
+                5,
+                8,
+                17
+              ],
+              "truck_unused_arcs_after_model_order": [],
+              "truck_walk_eval_preferred": [
+                17,
+                5,
+                6,
+                4,
+                6,
+                5,
+                8,
+                17
+              ],
+              "truck_first_departure_arcs_w": [
+                [
+                  4,
+                  6
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  6,
+                  4
+                ],
+                [
+                  8,
+                  17
+                ]
+              ],
+              "truck_last_departure_arcs_a": [
+                [
+                  4,
+                  6
+                ],
+                [
+                  5,
+                  8
+                ],
+                [
+                  6,
+                  5
+                ],
+                [
+                  8,
+                  17
+                ]
+              ],
+              "truck_successor_links_b": [
+                [
+                  6,
+                  5,
+                  8
+                ],
+                [
+                  4,
+                  6,
+                  5
+                ]
+              ],
+              "drone_sequence_spt": [
+                9,
+                11
+              ],
+              "drone_arrival_time": {
+                "9": 5.0,
+                "11": 15.5
+              }
+            },
+            {
+              "depot_internal": 19,
+              "truck_assigned_demands": [
+                0,
+                1,
+                2,
+                7,
+                12
+              ],
+              "drone_assigned_demands": [
+                3,
+                10,
+                13,
+                14
+              ],
+              "truck_active_arcs": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  12
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  2,
+                  19
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  12,
+                  0
+                ],
+                [
+                  12,
+                  2
+                ],
+                [
+                  12,
+                  7
+                ],
+                [
+                  19,
+                  2
+                ]
+              ],
+              "truck_walk": [
+                19,
+                2,
+                12,
+                0,
+                1,
+                0,
+                12,
+                7,
+                12,
+                2,
+                19
+              ],
+              "truck_walk_euler": [
+                19,
+                2,
+                12,
+                0,
+                1,
+                0,
+                12,
+                7,
+                12,
+                2,
+                19
+              ],
+              "truck_unused_arcs_after_walk": [],
+              "truck_walk_model_order": [
+                19,
+                2,
+                12,
+                7,
+                12,
+                0,
+                1,
+                0,
+                12,
+                2,
+                19
+              ],
+              "truck_unused_arcs_after_model_order": [],
+              "truck_walk_eval_preferred": [
+                19,
+                2,
+                12,
+                7,
+                12,
+                0,
+                1,
+                0,
+                12,
+                2,
+                19
+              ],
+              "truck_first_departure_arcs_w": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  12,
+                  7
+                ]
+              ],
+              "truck_last_departure_arcs_a": [
+                [
+                  0,
+                  12
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  19
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  12,
+                  2
+                ]
+              ],
+              "truck_successor_links_b": [
+                [
+                  1,
+                  0,
+                  12
+                ],
+                [
+                  12,
+                  2,
+                  19
+                ],
+                [
+                  0,
+                  12,
+                  2
+                ],
+                [
+                  7,
+                  12,
+                  0
+                ]
+              ],
+              "drone_sequence_spt": [
+                10,
+                14,
+                13,
+                3
+              ],
+              "drone_arrival_time": {
+                "10": 0.0,
+                "14": 3.5,
+                "13": 13.5,
+                "3": 27.0
+              }
+            }
+          ]
+        },
+        {
+          "scenario_index": 6,
+          "depots": [
+            {
+              "depot_internal": 17,
+              "truck_assigned_demands": [
+                4,
+                6,
+                11
+              ],
+              "drone_assigned_demands": [
+                5,
+                8,
+                9
+              ],
+              "truck_active_arcs": [
+                [
+                  4,
+                  6
+                ],
+                [
+                  6,
+                  4
+                ],
+                [
+                  6,
+                  11
+                ],
+                [
+                  6,
+                  17
+                ],
+                [
+                  11,
+                  6
+                ],
+                [
+                  17,
+                  6
+                ]
+              ],
+              "truck_walk": [
+                17,
+                6,
+                4,
+                6,
+                11,
+                6,
+                17
+              ],
+              "truck_walk_euler": [
+                17,
+                6,
+                4,
+                6,
+                11,
+                6,
+                17
+              ],
+              "truck_unused_arcs_after_walk": [],
+              "truck_walk_model_order": [
+                17,
+                6,
+                4,
+                6,
+                11,
+                6,
+                17
+              ],
+              "truck_unused_arcs_after_model_order": [],
+              "truck_walk_eval_preferred": [
+                17,
+                6,
+                4,
+                6,
+                11,
+                6,
+                17
+              ],
+              "truck_first_departure_arcs_w": [
+                [
+                  4,
+                  6
+                ],
+                [
+                  6,
+                  4
+                ],
+                [
+                  11,
+                  6
+                ]
+              ],
+              "truck_last_departure_arcs_a": [
+                [
+                  4,
+                  6
+                ],
+                [
+                  6,
+                  17
+                ],
+                [
+                  11,
+                  6
+                ]
+              ],
+              "truck_successor_links_b": [
+                [
+                  4,
+                  6,
+                  11
+                ],
+                [
+                  11,
+                  6,
+                  17
+                ]
+              ],
+              "drone_sequence_spt": [
+                5,
+                9,
+                8
+              ],
+              "drone_arrival_time": {
+                "5": 0.0,
+                "9": 5.0,
+                "8": 21.5
+              }
+            },
+            {
+              "depot_internal": 19,
+              "truck_assigned_demands": [
+                0,
+                1,
+                2,
+                7,
+                10,
+                12
+              ],
+              "drone_assigned_demands": [
+                3,
+                13,
+                14
+              ],
+              "truck_active_arcs": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  12
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  10
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  10,
+                  19
+                ],
+                [
+                  12,
+                  0
+                ],
+                [
+                  12,
+                  2
+                ],
+                [
+                  12,
+                  7
+                ],
+                [
+                  19,
+                  10
+                ]
+              ],
+              "truck_walk": [
+                19,
+                10,
+                2,
+                12,
+                0,
+                1,
+                0,
+                12,
+                7,
+                12,
+                2,
+                10,
+                19
+              ],
+              "truck_walk_euler": [
+                19,
+                10,
+                2,
+                12,
+                0,
+                1,
+                0,
+                12,
+                7,
+                12,
+                2,
+                10,
+                19
+              ],
+              "truck_unused_arcs_after_walk": [],
+              "truck_walk_model_order": [
+                19,
+                10,
+                2,
+                12,
+                7,
+                12,
+                0,
+                1,
+                0,
+                12,
+                2,
+                10,
+                19
+              ],
+              "truck_unused_arcs_after_model_order": [],
+              "truck_walk_eval_preferred": [
+                19,
+                10,
+                2,
+                12,
+                7,
+                12,
+                0,
+                1,
+                0,
+                12,
+                2,
+                10,
+                19
+              ],
+              "truck_first_departure_arcs_w": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  7
+                ]
+              ],
+              "truck_last_departure_arcs_a": [
+                [
+                  0,
+                  12
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  10
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  19
+                ],
+                [
+                  12,
+                  2
+                ]
+              ],
+              "truck_successor_links_b": [
+                [
+                  1,
+                  0,
+                  12
+                ],
+                [
+                  12,
+                  2,
+                  10
+                ],
+                [
+                  2,
+                  10,
+                  19
+                ],
+                [
+                  0,
+                  12,
+                  2
+                ],
+                [
+                  7,
+                  12,
+                  0
+                ]
+              ],
+              "drone_sequence_spt": [
+                14,
+                13,
+                3
+              ],
+              "drone_arrival_time": {
+                "14": 3.5,
+                "13": 13.5,
+                "3": 27.0
+              }
+            }
+          ]
+        },
+        {
+          "scenario_index": 7,
+          "depots": [
+            {
+              "depot_internal": 17,
+              "truck_assigned_demands": [
+                4,
+                5,
+                6,
+                8,
+                11
+              ],
+              "drone_assigned_demands": [
+                9,
+                13
+              ],
+              "truck_active_arcs": [
+                [
+                  4,
+                  6
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  5,
+                  8
+                ],
+                [
+                  5,
+                  17
+                ],
+                [
+                  6,
+                  4
+                ],
+                [
+                  6,
+                  5
+                ],
+                [
+                  6,
+                  11
+                ],
+                [
+                  8,
+                  5
+                ],
+                [
+                  8,
+                  11
+                ],
+                [
+                  11,
+                  6
+                ],
+                [
+                  11,
+                  8
+                ],
+                [
+                  17,
+                  5
+                ]
+              ],
+              "truck_walk": [
+                17,
+                5,
+                6,
+                4,
+                6,
+                5,
+                8,
+                11,
+                6,
+                11,
+                8,
+                5,
+                17
+              ],
+              "truck_walk_euler": [
+                17,
+                5,
+                6,
+                4,
+                6,
+                5,
+                8,
+                11,
+                6,
+                11,
+                8,
+                5,
+                17
+              ],
+              "truck_unused_arcs_after_walk": [],
+              "truck_walk_model_order": [
+                17,
+                5,
+                6,
+                4,
+                6,
+                11,
+                8,
+                11,
+                6,
+                5,
+                8,
+                5,
+                17
+              ],
+              "truck_unused_arcs_after_model_order": [],
+              "truck_walk_eval_preferred": [
+                17,
+                5,
+                6,
+                4,
+                6,
+                11,
+                8,
+                11,
+                6,
+                5,
+                8,
+                5,
+                17
+              ],
+              "truck_first_departure_arcs_w": [
+                [
+                  4,
+                  6
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  6,
+                  4
+                ],
+                [
+                  8,
+                  11
+                ],
+                [
+                  11,
+                  8
+                ]
+              ],
+              "truck_last_departure_arcs_a": [
+                [
+                  4,
+                  6
+                ],
+                [
+                  5,
+                  17
+                ],
+                [
+                  6,
+                  5
+                ],
+                [
+                  8,
+                  5
+                ],
+                [
+                  11,
+                  6
+                ]
+              ],
+              "truck_successor_links_b": [
+                [
+                  6,
+                  5,
+                  8
+                ],
+                [
+                  8,
+                  5,
+                  17
+                ],
+                [
+                  4,
+                  6,
+                  11
+                ],
+                [
+                  11,
+                  6,
+                  5
+                ],
+                [
+                  5,
+                  8,
+                  5
+                ],
+                [
+                  8,
+                  11,
+                  6
+                ]
+              ],
+              "drone_sequence_spt": [
+                9,
+                13
+              ],
+              "drone_arrival_time": {
+                "9": 5.0,
+                "13": 22.5
+              }
+            },
+            {
+              "depot_internal": 19,
+              "truck_assigned_demands": [
+                0,
+                1,
+                2,
+                7,
+                10,
+                12
+              ],
+              "drone_assigned_demands": [
+                3,
+                14
+              ],
+              "truck_active_arcs": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  12
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  2,
+                  19
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  0
+                ],
+                [
+                  12,
+                  2
+                ],
+                [
+                  12,
+                  7
+                ],
+                [
+                  19,
+                  10
+                ]
+              ],
+              "truck_walk": [
+                19,
+                10,
+                2,
+                12,
+                0,
+                1,
+                0,
+                12,
+                7,
+                12,
+                2,
+                19
+              ],
+              "truck_walk_euler": [
+                19,
+                10,
+                2,
+                12,
+                0,
+                1,
+                0,
+                12,
+                7,
+                12,
+                2,
+                19
+              ],
+              "truck_unused_arcs_after_walk": [],
+              "truck_walk_model_order": [
+                19,
+                10,
+                2,
+                12,
+                7,
+                12,
+                0,
+                1,
+                0,
+                12,
+                2,
+                19
+              ],
+              "truck_unused_arcs_after_model_order": [],
+              "truck_walk_eval_preferred": [
+                19,
+                10,
+                2,
+                12,
+                7,
+                12,
+                0,
+                1,
+                0,
+                12,
+                2,
+                19
+              ],
+              "truck_first_departure_arcs_w": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  7
+                ]
+              ],
+              "truck_last_departure_arcs_a": [
+                [
+                  0,
+                  12
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  19
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  2
+                ]
+              ],
+              "truck_successor_links_b": [
+                [
+                  1,
+                  0,
+                  12
+                ],
+                [
+                  12,
+                  2,
+                  19
+                ],
+                [
+                  0,
+                  12,
+                  2
+                ],
+                [
+                  7,
+                  12,
+                  0
+                ]
+              ],
+              "drone_sequence_spt": [
+                14,
+                3
+              ],
+              "drone_arrival_time": {
+                "14": 3.5,
+                "3": 14.0
+              }
+            }
+          ]
+        },
+        {
+          "scenario_index": 8,
+          "depots": [
+            {
+              "depot_internal": 17,
+              "truck_assigned_demands": [
+                4,
+                5,
+                6,
+                8,
+                11
+              ],
+              "drone_assigned_demands": [
+                9,
+                13
+              ],
+              "truck_active_arcs": [
+                [
+                  4,
+                  6
+                ],
+                [
+                  5,
+                  4
+                ],
+                [
+                  6,
+                  11
+                ],
+                [
+                  8,
+                  17
+                ],
+                [
+                  11,
+                  8
+                ],
+                [
+                  17,
+                  5
+                ]
+              ],
+              "truck_walk": [
+                17,
+                5,
+                4,
+                6,
+                11,
+                8,
+                17
+              ],
+              "truck_walk_euler": [
+                17,
+                5,
+                4,
+                6,
+                11,
+                8,
+                17
+              ],
+              "truck_unused_arcs_after_walk": [],
+              "truck_walk_model_order": [
+                17,
+                5,
+                4,
+                6,
+                11,
+                8,
+                17
+              ],
+              "truck_unused_arcs_after_model_order": [],
+              "truck_walk_eval_preferred": [
+                17,
+                5,
+                4,
+                6,
+                11,
+                8,
+                17
+              ],
+              "truck_first_departure_arcs_w": [
+                [
+                  4,
+                  6
+                ],
+                [
+                  5,
+                  4
+                ],
+                [
+                  6,
+                  11
+                ],
+                [
+                  8,
+                  17
+                ],
+                [
+                  11,
+                  8
+                ]
+              ],
+              "truck_last_departure_arcs_a": [
+                [
+                  4,
+                  6
+                ],
+                [
+                  5,
+                  4
+                ],
+                [
+                  6,
+                  11
+                ],
+                [
+                  8,
+                  17
+                ],
+                [
+                  11,
+                  8
+                ]
+              ],
+              "truck_successor_links_b": [],
+              "drone_sequence_spt": [
+                9,
+                13
+              ],
+              "drone_arrival_time": {
+                "9": 5.0,
+                "13": 22.5
+              }
+            },
+            {
+              "depot_internal": 19,
+              "truck_assigned_demands": [
+                0,
+                1,
+                2,
+                7,
+                10,
+                12
+              ],
+              "drone_assigned_demands": [
+                3,
+                14
+              ],
+              "truck_active_arcs": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  12
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  2,
+                  19
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  0
+                ],
+                [
+                  12,
+                  2
+                ],
+                [
+                  12,
+                  7
+                ],
+                [
+                  19,
+                  10
+                ]
+              ],
+              "truck_walk": [
+                19,
+                10,
+                2,
+                12,
+                0,
+                1,
+                0,
+                12,
+                7,
+                12,
+                2,
+                19
+              ],
+              "truck_walk_euler": [
+                19,
+                10,
+                2,
+                12,
+                0,
+                1,
+                0,
+                12,
+                7,
+                12,
+                2,
+                19
+              ],
+              "truck_unused_arcs_after_walk": [],
+              "truck_walk_model_order": [
+                19,
+                10,
+                2,
+                12,
+                7,
+                12,
+                0,
+                1,
+                0,
+                12,
+                2,
+                19
+              ],
+              "truck_unused_arcs_after_model_order": [],
+              "truck_walk_eval_preferred": [
+                19,
+                10,
+                2,
+                12,
+                7,
+                12,
+                0,
+                1,
+                0,
+                12,
+                2,
+                19
+              ],
+              "truck_first_departure_arcs_w": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  7
+                ]
+              ],
+              "truck_last_departure_arcs_a": [
+                [
+                  0,
+                  12
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  19
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  2
+                ]
+              ],
+              "truck_successor_links_b": [
+                [
+                  1,
+                  0,
+                  12
+                ],
+                [
+                  12,
+                  2,
+                  19
+                ],
+                [
+                  0,
+                  12,
+                  2
+                ],
+                [
+                  7,
+                  12,
+                  0
+                ]
+              ],
+              "drone_sequence_spt": [
+                14,
+                3
+              ],
+              "drone_arrival_time": {
+                "14": 3.5,
+                "3": 14.0
+              }
+            }
+          ]
+        },
+        {
+          "scenario_index": 9,
+          "depots": [
+            {
+              "depot_internal": 17,
+              "truck_assigned_demands": [
+                4,
+                5,
+                6,
+                11
+              ],
+              "drone_assigned_demands": [
+                8,
+                9
+              ],
+              "truck_active_arcs": [
+                [
+                  4,
+                  5
+                ],
+                [
+                  4,
+                  6
+                ],
+                [
+                  5,
+                  4
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  6,
+                  4
+                ],
+                [
+                  6,
+                  11
+                ],
+                [
+                  6,
+                  17
+                ],
+                [
+                  11,
+                  6
+                ],
+                [
+                  17,
+                  5
+                ]
+              ],
+              "truck_walk": [
+                17,
+                5,
+                4,
+                5,
+                6,
+                4,
+                6,
+                11,
+                6,
+                17
+              ],
+              "truck_walk_euler": [
+                17,
+                5,
+                4,
+                5,
+                6,
+                4,
+                6,
+                11,
+                6,
+                17
+              ],
+              "truck_unused_arcs_after_walk": [],
+              "truck_walk_model_order": [
+                17,
+                5,
+                6,
+                4,
+                6,
+                11,
+                6,
+                17
+              ],
+              "truck_unused_arcs_after_model_order": [
+                [
+                  4,
+                  5
+                ],
+                [
+                  5,
+                  4
+                ]
+              ],
+              "truck_walk_eval_preferred": [
+                17,
+                5,
+                4,
+                5,
+                6,
+                4,
+                6,
+                11,
+                6,
+                17
+              ],
+              "truck_first_departure_arcs_w": [
+                [
+                  4,
+                  6
+                ],
+                [
+                  5,
+                  6
+                ],
+                [
+                  6,
+                  4
+                ],
+                [
+                  11,
+                  6
+                ]
+              ],
+              "truck_last_departure_arcs_a": [
+                [
+                  4,
+                  5
+                ],
+                [
+                  5,
+                  4
+                ],
+                [
+                  6,
+                  17
+                ],
+                [
+                  11,
+                  6
+                ]
+              ],
+              "truck_successor_links_b": [
+                [
+                  5,
+                  4,
+                  5
+                ],
+                [
+                  4,
+                  5,
+                  4
+                ],
+                [
+                  4,
+                  6,
+                  11
+                ],
+                [
+                  11,
+                  6,
+                  17
+                ]
+              ],
+              "drone_sequence_spt": [
+                9,
+                8
+              ],
+              "drone_arrival_time": {
+                "9": 5.0,
+                "8": 21.5
+              }
+            },
+            {
+              "depot_internal": 19,
+              "truck_assigned_demands": [
+                0,
+                1,
+                2,
+                7,
+                10,
+                12
+              ],
+              "drone_assigned_demands": [
+                3,
+                13,
+                14
+              ],
+              "truck_active_arcs": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  12
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  2,
+                  19
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  0
+                ],
+                [
+                  12,
+                  2
+                ],
+                [
+                  12,
+                  7
+                ],
+                [
+                  19,
+                  10
+                ]
+              ],
+              "truck_walk": [
+                19,
+                10,
+                2,
+                12,
+                0,
+                1,
+                0,
+                12,
+                7,
+                12,
+                2,
+                19
+              ],
+              "truck_walk_euler": [
+                19,
+                10,
+                2,
+                12,
+                0,
+                1,
+                0,
+                12,
+                7,
+                12,
+                2,
+                19
+              ],
+              "truck_unused_arcs_after_walk": [],
+              "truck_walk_model_order": [
+                19,
+                10,
+                2,
+                12,
+                7,
+                12,
+                0,
+                1,
+                0,
+                12,
+                2,
+                19
+              ],
+              "truck_unused_arcs_after_model_order": [],
+              "truck_walk_eval_preferred": [
+                19,
+                10,
+                2,
+                12,
+                7,
+                12,
+                0,
+                1,
+                0,
+                12,
+                2,
+                19
+              ],
+              "truck_first_departure_arcs_w": [
+                [
+                  0,
+                  1
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  12
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  7
+                ]
+              ],
+              "truck_last_departure_arcs_a": [
+                [
+                  0,
+                  12
+                ],
+                [
+                  1,
+                  0
+                ],
+                [
+                  2,
+                  19
+                ],
+                [
+                  7,
+                  12
+                ],
+                [
+                  10,
+                  2
+                ],
+                [
+                  12,
+                  2
+                ]
+              ],
+              "truck_successor_links_b": [
+                [
+                  1,
+                  0,
+                  12
+                ],
+                [
+                  12,
+                  2,
+                  19
+                ],
+                [
+                  0,
+                  12,
+                  2
+                ],
+                [
+                  7,
+                  12,
+                  0
+                ]
+              ],
+              "drone_sequence_spt": [
+                14,
+                13,
+                3
+              ],
+              "drone_arrival_time": {
+                "14": 3.5,
+                "13": 13.5,
+                "3": 27.0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "rank_by_arrival_rescore": 9
+  },
+  "instance_summary": {
+    "instance": "Instance5",
+    "num_combinations": 10,
+    "feasible_count": 10,
+    "optimal_count": 6,
+    "time_limit_count": 4,
+    "error_count": 0,
+    "avg_runtime_sec": 56.33549997806549,
+    "selection_metric": "paper_objective",
+    "best_objective": 9.876666401027084,
+    "best_arrival_rescore_objective": null,
+    "best_open_depots": [
+      17,
+      19
+    ],
+    "best_open_depots_base": [
+      5,
+      10
+    ],
+    "best_open_depots_idx": [
+      2,
+      4
+    ]
+  }
+}

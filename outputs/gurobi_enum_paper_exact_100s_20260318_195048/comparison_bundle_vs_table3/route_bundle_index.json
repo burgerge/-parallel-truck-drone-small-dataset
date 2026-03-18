@@ -1,0 +1,145 @@
+{
+  "rows": [
+    {
+      "instance": "Instance1",
+      "table3_combo_internal": [
+        16,
+        17
+      ],
+      "gurobi_best_combo_internal": [
+        15,
+        17
+      ],
+      "table3_paths_json": "outputs/routes_bundle_10instances\\Instance1_table3_fixedx_combo_16_17.json",
+      "table3_repaired_paths_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance1_table3_fixedx_combo_16_17_paper_exact_repaired.json",
+      "gurobi_best_paths_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance1_gurobi_best_combo_15_17.json"
+    },
+    {
+      "instance": "Instance2",
+      "table3_combo_internal": [
+        15,
+        16
+      ],
+      "gurobi_best_combo_internal": [
+        15,
+        16
+      ],
+      "table3_paths_json": "outputs/routes_bundle_10instances\\Instance2_table3_fixedx_combo_15_16.json",
+      "table3_repaired_paths_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance2_table3_fixedx_combo_15_16_paper_exact_repaired.json",
+      "gurobi_best_paths_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance2_gurobi_best_combo_15_16.json"
+    },
+    {
+      "instance": "Instance3",
+      "table3_combo_internal": [
+        15,
+        18
+      ],
+      "gurobi_best_combo_internal": [
+        15,
+        18
+      ],
+      "table3_paths_json": "outputs/routes_bundle_10instances\\Instance3_table3_fixedx_combo_15_18.json",
+      "table3_repaired_paths_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance3_table3_fixedx_combo_15_18_paper_exact_repaired.json",
+      "gurobi_best_paths_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance3_gurobi_best_combo_15_18.json"
+    },
+    {
+      "instance": "Instance4",
+      "table3_combo_internal": [
+        16,
+        17
+      ],
+      "gurobi_best_combo_internal": [
+        16,
+        17
+      ],
+      "table3_paths_json": "outputs/routes_bundle_10instances\\Instance4_table3_fixedx_combo_16_17.json",
+      "table3_repaired_paths_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance4_table3_fixedx_combo_16_17_paper_exact_repaired.json",
+      "gurobi_best_paths_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance4_gurobi_best_combo_16_17.json"
+    },
+    {
+      "instance": "Instance5",
+      "table3_combo_internal": [
+        17,
+        19
+      ],
+      "gurobi_best_combo_internal": [
+        17,
+        19
+      ],
+      "table3_paths_json": "outputs/routes_bundle_10instances\\Instance5_table3_fixedx_combo_17_19.json",
+      "table3_repaired_paths_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance5_table3_fixedx_combo_17_19_paper_exact_repaired.json",
+      "gurobi_best_paths_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance5_gurobi_best_combo_17_19.json"
+    },
+    {
+      "instance": "Instance6",
+      "table3_combo_internal": [
+        15,
+        16
+      ],
+      "gurobi_best_combo_internal": [
+        15,
+        16
+      ],
+      "table3_paths_json": "outputs/routes_bundle_10instances\\Instance6_table3_fixedx_combo_15_16.json",
+      "table3_repaired_paths_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance6_table3_fixedx_combo_15_16_paper_exact_repaired.json",
+      "gurobi_best_paths_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance6_gurobi_best_combo_15_16.json"
+    },
+    {
+      "instance": "Instance7",
+      "table3_combo_internal": [
+        16,
+        18
+      ],
+      "gurobi_best_combo_internal": [
+        16,
+        18
+      ],
+      "table3_paths_json": "outputs/routes_bundle_10instances\\Instance7_table3_fixedx_combo_16_18.json",
+      "table3_repaired_paths_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance7_table3_fixedx_combo_16_18_paper_exact_repaired.json",
+      "gurobi_best_paths_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance7_gurobi_best_combo_16_18.json"
+    },
+    {
+      "instance": "Instance8",
+      "table3_combo_internal": [
+        15,
+        19
+      ],
+      "gurobi_best_combo_internal": [
+        15,
+        19
+      ],
+      "table3_paths_json": "outputs/routes_bundle_10instances\\Instance8_table3_fixedx_combo_15_19.json",
+      "table3_repaired_paths_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance8_table3_fixedx_combo_15_19_paper_exact_repaired.json",
+      "gurobi_best_paths_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance8_gurobi_best_combo_15_19.json"
+    },
+    {
+      "instance": "Instance9",
+      "table3_combo_internal": [
+        17,
+        19
+      ],
+      "gurobi_best_combo_internal": [
+        17,
+        19
+      ],
+      "table3_paths_json": "outputs/routes_bundle_10instances\\Instance9_table3_fixedx_combo_17_19.json",
+      "table3_repaired_paths_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance9_table3_fixedx_combo_17_19_paper_exact_repaired.json",
+      "gurobi_best_paths_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance9_gurobi_best_combo_17_19.json"
+    },
+    {
+      "instance": "Instance10",
+      "table3_combo_internal": [
+        17,
+        19
+      ],
+      "gurobi_best_combo_internal": [
+        17,
+        19
+      ],
+      "table3_paths_json": "outputs/routes_bundle_10instances\\Instance10_table3_fixedx_combo_17_19.json",
+      "table3_repaired_paths_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance10_table3_fixedx_combo_17_19_paper_exact_repaired.json",
+      "gurobi_best_paths_json": "outputs\\gurobi_enum_paper_exact_100s_20260318_195048\\comparison_bundle_vs_table3\\Instance10_gurobi_best_combo_17_19.json"
+    }
+  ],
+  "count": 10
+}

@@ -1,0 +1,935 @@
+{
+  "mode": "fixed-x",
+  "instance": "Instance6",
+  "config": {
+    "num_depots_to_open": 2,
+    "num_scenarios": 10,
+    "seed": 123,
+    "k_max": 7,
+    "l_max": 8,
+    "i_max": 7,
+    "drone_time_is_roundtrip": true,
+    "normalize_by_num_demands": true,
+    "infeasible_penalty": 1000000000.0
+  },
+  "scenario_count": 10,
+  "scenario_weights": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+  ],
+  "x_open": [
+    0,
+    1
+  ],
+  "x_open_base": [
+    3,
+    7
+  ],
+  "depot_base_map": {
+    "15": 3,
+    "16": 7,
+    "17": 8,
+    "18": 10,
+    "19": 12
+  },
+  "expected_obj_a3": 93.06000000000002,
+  "expected_obj_a5": 18.093333333333334,
+  "improved": true,
+  "scenarios": [
+    {
+      "scenario_index": 0,
+      "weight": 0.1,
+      "obj_a3": 15.2,
+      "obj_a5": 9.433333333333334,
+      "improved": true,
+      "valid": true,
+      "errors": [],
+      "tt": {
+        "15": [
+          15,
+          3,
+          1,
+          12,
+          8,
+          4,
+          15
+        ],
+        "16": [
+          16,
+          7,
+          2,
+          0,
+          5,
+          6,
+          10,
+          9,
+          10,
+          6,
+          16
+        ]
+      },
+      "ds": {
+        "15": [
+          14,
+          11
+        ],
+        "16": [
+          13
+        ]
+      }
+    },
+    {
+      "scenario_index": 1,
+      "weight": 0.1,
+      "obj_a3": 158.53333333333333,
+      "obj_a5": 26.966666666666665,
+      "improved": true,
+      "valid": true,
+      "errors": [],
+      "tt": {
+        "15": [
+          15,
+          3,
+          15
+        ],
+        "16": [
+          16,
+          7,
+          2,
+          16
+        ]
+      },
+      "ds": {
+        "15": [
+          14,
+          1,
+          4,
+          11,
+          8,
+          12
+        ],
+        "16": [
+          0,
+          5,
+          6,
+          10,
+          9,
+          13
+        ]
+      }
+    },
+    {
+      "scenario_index": 2,
+      "weight": 0.1,
+      "obj_a3": 14.333333333333334,
+      "obj_a5": 8.8,
+      "improved": true,
+      "valid": true,
+      "errors": [],
+      "tt": {
+        "15": [
+          15,
+          1,
+          12,
+          8,
+          4,
+          15
+        ],
+        "16": [
+          16,
+          7,
+          2,
+          5,
+          6,
+          10,
+          9,
+          10,
+          6,
+          16
+        ]
+      },
+      "ds": {
+        "15": [
+          3,
+          14,
+          11
+        ],
+        "16": [
+          0,
+          13
+        ]
+      }
+    },
+    {
+      "scenario_index": 3,
+      "weight": 0.1,
+      "obj_a3": 14.133333333333333,
+      "obj_a5": 8.9,
+      "improved": true,
+      "valid": true,
+      "errors": [],
+      "tt": {
+        "15": [
+          15,
+          3,
+          1,
+          12,
+          8,
+          4,
+          15
+        ],
+        "16": [
+          16,
+          7,
+          2,
+          0,
+          5,
+          6,
+          10,
+          9,
+          10,
+          6,
+          16
+        ]
+      },
+      "ds": {
+        "15": [
+          14,
+          11
+        ],
+        "16": [
+          13
+        ]
+      }
+    },
+    {
+      "scenario_index": 4,
+      "weight": 0.1,
+      "obj_a3": 169.86666666666667,
+      "obj_a5": 27.166666666666668,
+      "improved": true,
+      "valid": true,
+      "errors": [],
+      "tt": {
+        "15": [
+          15,
+          3,
+          15
+        ],
+        "16": [
+          16,
+          7,
+          16
+        ]
+      },
+      "ds": {
+        "15": [
+          14,
+          1,
+          4,
+          11,
+          8,
+          12
+        ],
+        "16": [
+          2,
+          0,
+          5,
+          6,
+          10,
+          9,
+          13
+        ]
+      }
+    },
+    {
+      "scenario_index": 5,
+      "weight": 0.1,
+      "obj_a3": 17.333333333333332,
+      "obj_a5": 9.566666666666666,
+      "improved": true,
+      "valid": true,
+      "errors": [],
+      "tt": {
+        "15": [
+          15,
+          1,
+          12,
+          8,
+          4,
+          15
+        ],
+        "16": [
+          16,
+          7,
+          2,
+          0,
+          5,
+          6,
+          13,
+          6,
+          16
+        ]
+      },
+      "ds": {
+        "15": [
+          3,
+          14,
+          11
+        ],
+        "16": [
+          10,
+          9
+        ]
+      }
+    },
+    {
+      "scenario_index": 6,
+      "weight": 0.1,
+      "obj_a3": 199.6,
+      "obj_a5": 27.033333333333335,
+      "improved": true,
+      "valid": true,
+      "errors": [],
+      "tt": {
+        "15": [
+          15,
+          3,
+          15
+        ],
+        "16": [
+          16,
+          7,
+          2,
+          16
+        ]
+      },
+      "ds": {
+        "15": [
+          14,
+          1,
+          4,
+          11,
+          8,
+          12
+        ],
+        "16": [
+          0,
+          5,
+          6,
+          10,
+          9,
+          13
+        ]
+      }
+    },
+    {
+      "scenario_index": 7,
+      "weight": 0.1,
+      "obj_a3": 165.93333333333334,
+      "obj_a5": 26.566666666666666,
+      "improved": true,
+      "valid": true,
+      "errors": [],
+      "tt": {
+        "15": [
+          15,
+          3,
+          15
+        ],
+        "16": [
+          16,
+          7,
+          2,
+          16
+        ]
+      },
+      "ds": {
+        "15": [
+          14,
+          1,
+          4,
+          11,
+          8,
+          12
+        ],
+        "16": [
+          0,
+          5,
+          6,
+          10,
+          9,
+          13
+        ]
+      }
+    },
+    {
+      "scenario_index": 8,
+      "weight": 0.1,
+      "obj_a3": 159.93333333333334,
+      "obj_a5": 27.033333333333335,
+      "improved": true,
+      "valid": true,
+      "errors": [],
+      "tt": {
+        "15": [
+          15,
+          3,
+          15
+        ],
+        "16": [
+          16,
+          2,
+          16
+        ]
+      },
+      "ds": {
+        "15": [
+          14,
+          1,
+          4,
+          11,
+          8,
+          12
+        ],
+        "16": [
+          7,
+          0,
+          5,
+          6,
+          10,
+          9,
+          13
+        ]
+      }
+    },
+    {
+      "scenario_index": 9,
+      "weight": 0.1,
+      "obj_a3": 15.733333333333333,
+      "obj_a5": 9.466666666666667,
+      "improved": true,
+      "valid": true,
+      "errors": [],
+      "tt": {
+        "15": [
+          15,
+          1,
+          12,
+          8,
+          1,
+          15
+        ],
+        "16": [
+          16,
+          7,
+          2,
+          0,
+          5,
+          6,
+          10,
+          9,
+          10,
+          16
+        ]
+      },
+      "ds": {
+        "15": [
+          3,
+          14,
+          4,
+          11
+        ],
+        "16": [
+          13
+        ]
+      }
+    }
+  ],
+  "x_open_internal": [
+    15,
+    16
+  ],
+  "x_open_idx": [
+    0,
+    1
+  ],
+  "depot_indexing": "candidate_depot_idx_0_to_4",
+  "depot_idx_to_internal": {
+    "0": 15,
+    "1": 16,
+    "2": 17,
+    "3": 18,
+    "4": 19
+  },
+  "depot_internal_to_idx": {
+    "15": 0,
+    "16": 1,
+    "17": 2,
+    "18": 3,
+    "19": 4
+  },
+  "paper_exact_repaired": true,
+  "paper_exact_fixed_obj": 18.093333333333334,
+  "paper_exact_fixed_status": "OPTIMAL",
+  "paper_exact_repair_diagnostics": [
+    {
+      "scenario_index": 0,
+      "depots": [
+        {
+          "depot_internal": 15,
+          "truck_walk_repaired": [
+            15,
+            3,
+            1,
+            12,
+            8,
+            4,
+            15
+          ],
+          "drone_seq_repaired": [
+            14,
+            11
+          ],
+          "repair_notes": [
+            "closed_on_route_nodes"
+          ]
+        },
+        {
+          "depot_internal": 16,
+          "truck_walk_repaired": [
+            16,
+            7,
+            2,
+            0,
+            5,
+            6,
+            10,
+            9,
+            10,
+            6,
+            16
+          ],
+          "drone_seq_repaired": [
+            13
+          ],
+          "repair_notes": [
+            "closed_on_route_nodes"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_index": 1,
+      "depots": [
+        {
+          "depot_internal": 15,
+          "truck_walk_repaired": [
+            15,
+            3,
+            15
+          ],
+          "drone_seq_repaired": [
+            14,
+            1,
+            4,
+            11,
+            8,
+            12
+          ],
+          "repair_notes": [
+            "closed_on_route_nodes"
+          ]
+        },
+        {
+          "depot_internal": 16,
+          "truck_walk_repaired": [
+            16,
+            7,
+            2,
+            16
+          ],
+          "drone_seq_repaired": [
+            0,
+            5,
+            6,
+            10,
+            9,
+            13
+          ],
+          "repair_notes": [
+            "closed_on_route_nodes"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_index": 2,
+      "depots": [
+        {
+          "depot_internal": 15,
+          "truck_walk_repaired": [
+            15,
+            1,
+            12,
+            8,
+            4,
+            15
+          ],
+          "drone_seq_repaired": [
+            3,
+            14,
+            11
+          ],
+          "repair_notes": [
+            "closed_on_route_nodes"
+          ]
+        },
+        {
+          "depot_internal": 16,
+          "truck_walk_repaired": [
+            16,
+            7,
+            2,
+            5,
+            6,
+            10,
+            9,
+            10,
+            6,
+            16
+          ],
+          "drone_seq_repaired": [
+            0,
+            13
+          ],
+          "repair_notes": [
+            "closed_on_route_nodes"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_index": 3,
+      "depots": [
+        {
+          "depot_internal": 15,
+          "truck_walk_repaired": [
+            15,
+            3,
+            1,
+            12,
+            8,
+            4,
+            15
+          ],
+          "drone_seq_repaired": [
+            14,
+            11
+          ],
+          "repair_notes": [
+            "closed_on_route_nodes"
+          ]
+        },
+        {
+          "depot_internal": 16,
+          "truck_walk_repaired": [
+            16,
+            7,
+            2,
+            0,
+            5,
+            6,
+            10,
+            9,
+            10,
+            6,
+            16
+          ],
+          "drone_seq_repaired": [
+            13
+          ],
+          "repair_notes": [
+            "closed_on_route_nodes"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_index": 4,
+      "depots": [
+        {
+          "depot_internal": 15,
+          "truck_walk_repaired": [
+            15,
+            3,
+            15
+          ],
+          "drone_seq_repaired": [
+            14,
+            1,
+            4,
+            11,
+            8,
+            12
+          ],
+          "repair_notes": [
+            "closed_on_route_nodes"
+          ]
+        },
+        {
+          "depot_internal": 16,
+          "truck_walk_repaired": [
+            16,
+            7,
+            16
+          ],
+          "drone_seq_repaired": [
+            2,
+            0,
+            5,
+            6,
+            10,
+            9,
+            13
+          ],
+          "repair_notes": [
+            "promoted_drone_to_truck:7",
+            "closed_on_route_nodes"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_index": 5,
+      "depots": [
+        {
+          "depot_internal": 15,
+          "truck_walk_repaired": [
+            15,
+            1,
+            12,
+            8,
+            4,
+            15
+          ],
+          "drone_seq_repaired": [
+            3,
+            14,
+            11
+          ],
+          "repair_notes": [
+            "closed_on_route_nodes"
+          ]
+        },
+        {
+          "depot_internal": 16,
+          "truck_walk_repaired": [
+            16,
+            7,
+            2,
+            0,
+            5,
+            6,
+            13,
+            6,
+            16
+          ],
+          "drone_seq_repaired": [
+            10,
+            9
+          ],
+          "repair_notes": [
+            "closed_on_route_nodes"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_index": 6,
+      "depots": [
+        {
+          "depot_internal": 15,
+          "truck_walk_repaired": [
+            15,
+            3,
+            15
+          ],
+          "drone_seq_repaired": [
+            14,
+            1,
+            4,
+            11,
+            8,
+            12
+          ],
+          "repair_notes": [
+            "closed_on_route_nodes"
+          ]
+        },
+        {
+          "depot_internal": 16,
+          "truck_walk_repaired": [
+            16,
+            7,
+            2,
+            16
+          ],
+          "drone_seq_repaired": [
+            0,
+            5,
+            6,
+            10,
+            9,
+            13
+          ],
+          "repair_notes": [
+            "closed_on_route_nodes"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_index": 7,
+      "depots": [
+        {
+          "depot_internal": 15,
+          "truck_walk_repaired": [
+            15,
+            3,
+            15
+          ],
+          "drone_seq_repaired": [
+            14,
+            1,
+            4,
+            11,
+            8,
+            12
+          ],
+          "repair_notes": [
+            "closed_on_route_nodes"
+          ]
+        },
+        {
+          "depot_internal": 16,
+          "truck_walk_repaired": [
+            16,
+            7,
+            2,
+            16
+          ],
+          "drone_seq_repaired": [
+            0,
+            5,
+            6,
+            10,
+            9,
+            13
+          ],
+          "repair_notes": [
+            "closed_on_route_nodes"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_index": 8,
+      "depots": [
+        {
+          "depot_internal": 15,
+          "truck_walk_repaired": [
+            15,
+            3,
+            15
+          ],
+          "drone_seq_repaired": [
+            14,
+            1,
+            4,
+            11,
+            8,
+            12
+          ],
+          "repair_notes": [
+            "closed_on_route_nodes"
+          ]
+        },
+        {
+          "depot_internal": 16,
+          "truck_walk_repaired": [
+            16,
+            2,
+            16
+          ],
+          "drone_seq_repaired": [
+            7,
+            0,
+            5,
+            6,
+            10,
+            9,
+            13
+          ],
+          "repair_notes": [
+            "closed_on_route_nodes"
+          ]
+        }
+      ]
+    },
+    {
+      "scenario_index": 9,
+      "depots": [
+        {
+          "depot_internal": 15,
+          "truck_walk_repaired": [
+            15,
+            1,
+            12,
+            8,
+            1,
+            15
+          ],
+          "drone_seq_repaired": [
+            3,
+            14,
+            4,
+            11
+          ],
+          "repair_notes": [
+            "closed_on_route_nodes"
+          ]
+        },
+        {
+          "depot_internal": 16,
+          "truck_walk_repaired": [
+            16,
+            7,
+            2,
+            0,
+            5,
+            6,
+            10,
+            9,
+            10,
+            16
+          ],
+          "drone_seq_repaired": [
+            13
+          ],
+          "repair_notes": [
+            "closed_on_route_nodes"
+          ]
+        }
+      ]
+    }
+  ]
+}

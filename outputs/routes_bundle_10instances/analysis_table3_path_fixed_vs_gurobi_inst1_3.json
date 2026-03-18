@@ -1,0 +1,71 @@
+[
+  {
+    "instance": "Instance1",
+    "table3_combo_internal": [
+      16,
+      17
+    ],
+    "table3_combo_idx": [
+      1,
+      2
+    ],
+    "gurobi_best_combo_idx": [
+      0,
+      2
+    ],
+    "paper_obj_table3_path_fixed": 107.13666666666666,
+    "paper_status_table3_path_fixed": "OPTIMAL",
+    "paper_obj_gurobi_same_combo_opt": 107.08333333333333,
+    "paper_obj_gurobi_best_combo_opt": 103.47333333333334,
+    "gap_table3_path_minus_gurobi_same_combo_opt": 0.05333333333332746,
+    "gap_table3_path_minus_gurobi_best_combo_opt": 3.6633333333333127,
+    "arrival_obj_table3_reference": 107.13666666666668,
+    "paper_fixing_mode": "strict_y_c_z_w_a_b"
+  },
+  {
+    "instance": "Instance2",
+    "table3_combo_internal": [
+      15,
+      16
+    ],
+    "table3_combo_idx": [
+      0,
+      1
+    ],
+    "gurobi_best_combo_idx": [
+      0,
+      1
+    ],
+    "paper_obj_table3_path_fixed": 10.313333333333334,
+    "paper_status_table3_path_fixed": "OPTIMAL",
+    "paper_obj_gurobi_same_combo_opt": 10.266666601333318,
+    "paper_obj_gurobi_best_combo_opt": 10.266666601333318,
+    "gap_table3_path_minus_gurobi_same_combo_opt": 0.04666673200001625,
+    "gap_table3_path_minus_gurobi_best_combo_opt": 0.04666673200001625,
+    "arrival_obj_table3_reference": 10.313333333333334,
+    "paper_fixing_mode": "strict_y_c_z_w_a_b"
+  },
+  {
+    "instance": "Instance3",
+    "table3_combo_internal": [
+      15,
+      18
+    ],
+    "table3_combo_idx": [
+      0,
+      3
+    ],
+    "gurobi_best_combo_idx": [
+      0,
+      3
+    ],
+    "paper_obj_table3_path_fixed": 10.92,
+    "paper_status_table3_path_fixed": "OPTIMAL",
+    "paper_obj_gurobi_same_combo_opt": 10.506666666666666,
+    "paper_obj_gurobi_best_combo_opt": 10.506666666666666,
+    "gap_table3_path_minus_gurobi_same_combo_opt": 0.413333333333334,
+    "gap_table3_path_minus_gurobi_best_combo_opt": 0.413333333333334,
+    "arrival_obj_table3_reference": 10.919999999999998,
+    "paper_fixing_mode": "strict_y_c_z_w_a_b"
+  }
+]

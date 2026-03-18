@@ -1,0 +1,4 @@
+instance,table3_combo_internal,gurobi_best_combo_internal,table3_paths_json,gurobi_best_paths_json,gurobi_same_as_table3_paths_json
+Instance8,"[15, 19]","[15, 19]",outputs/routes_bundle_10instances\Instance8_table3_fixedx_combo_15_19.json,outputs/routes_bundle_10instances\Instance8_gurobi_best_combo_15_19.json,outputs/routes_bundle_10instances\Instance8_gurobi_same_as_table3_combo_15_19.json
+Instance9,"[17, 19]","[15, 18]",outputs/routes_bundle_10instances\Instance9_table3_fixedx_combo_17_19.json,outputs/routes_bundle_10instances\Instance9_gurobi_best_combo_15_18.json,outputs/routes_bundle_10instances\Instance9_gurobi_same_as_table3_combo_17_19.json
+Instance10,"[17, 19]","[17, 19]",outputs/routes_bundle_10instances\Instance10_table3_fixedx_combo_17_19.json,outputs/routes_bundle_10instances\Instance10_gurobi_best_combo_17_19.json,outputs/routes_bundle_10instances\Instance10_gurobi_same_as_table3_combo_17_19.json

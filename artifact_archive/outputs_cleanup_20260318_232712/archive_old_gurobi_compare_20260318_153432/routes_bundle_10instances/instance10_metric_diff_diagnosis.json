@@ -1,0 +1,344 @@
+{
+  "instance": "Instance10",
+  "open_depots_internal": [
+    17,
+    19
+  ],
+  "paper_fixed_objective_full": 129.77666666666667,
+  "paper_fixed_status": "OPTIMAL",
+  "per_scenario": [
+    {
+      "scenario": 0,
+      "A0_original_arrival": 134.13333333333333,
+      "A1_closed_arrival": 134.13333333333333,
+      "Afix_projected_arrival": 214.66666666666666,
+      "C_paper_exact_fixed": 203.33333333333331,
+      "delta_A0_to_Afix": 80.53333333333333,
+      "delta_A0_to_C": 69.19999999999999,
+      "arc_changes": {},
+      "owner_changes": [
+        {
+          "demand": 0,
+          "from": {
+            "mode": "drone",
+            "depot": 17
+          },
+          "to": {
+            "mode": "truck",
+            "depot": 19
+          }
+        },
+        {
+          "demand": 1,
+          "from": {
+            "mode": "drone",
+            "depot": 19
+          },
+          "to": {
+            "mode": "truck",
+            "depot": 19
+          }
+        },
+        {
+          "demand": 10,
+          "from": {
+            "mode": "drone",
+            "depot": 17
+          },
+          "to": {
+            "mode": "truck",
+            "depot": 17
+          }
+        },
+        {
+          "demand": 11,
+          "from": {
+            "mode": "drone",
+            "depot": 19
+          },
+          "to": {
+            "mode": "truck",
+            "depot": 19
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 1,
+      "A0_original_arrival": 22.0,
+      "A1_closed_arrival": 22.0,
+      "Afix_projected_arrival": 22.533333333333335,
+      "C_paper_exact_fixed": 21.73333333333333,
+      "delta_A0_to_Afix": 0.533333333333335,
+      "delta_A0_to_C": -0.26666666666666927,
+      "arc_changes": {
+        "17": {
+          "removed_unique_arcs": [
+            [
+              10,
+              13
+            ]
+          ],
+          "added_unique_arcs": [],
+          "repeated_arcs_in_closed_tour": [
+            [
+              13,
+              10
+            ]
+          ],
+          "raw_closed_tour": [
+            17,
+            4,
+            6,
+            13,
+            10,
+            13,
+            3,
+            13,
+            10,
+            17
+          ]
+        }
+      },
+      "owner_changes": []
+    },
+    {
+      "scenario": 2,
+      "A0_original_arrival": 115.86666666666666,
+      "A1_closed_arrival": 115.86666666666666,
+      "Afix_projected_arrival": 144.73333333333332,
+      "C_paper_exact_fixed": 136.26666666666665,
+      "delta_A0_to_Afix": 28.86666666666666,
+      "delta_A0_to_C": 20.39999999999999,
+      "arc_changes": {},
+      "owner_changes": [
+        {
+          "demand": 0,
+          "from": {
+            "mode": "drone",
+            "depot": 17
+          },
+          "to": {
+            "mode": "truck",
+            "depot": 19
+          }
+        },
+        {
+          "demand": 11,
+          "from": {
+            "mode": "drone",
+            "depot": 19
+          },
+          "to": {
+            "mode": "truck",
+            "depot": 19
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 3,
+      "A0_original_arrival": 126.46666666666667,
+      "A1_closed_arrival": 126.46666666666667,
+      "Afix_projected_arrival": 147.93333333333334,
+      "C_paper_exact_fixed": 139.6,
+      "delta_A0_to_Afix": 21.46666666666667,
+      "delta_A0_to_C": 13.133333333333326,
+      "arc_changes": {},
+      "owner_changes": [
+        {
+          "demand": 0,
+          "from": {
+            "mode": "drone",
+            "depot": 17
+          },
+          "to": {
+            "mode": "truck",
+            "depot": 19
+          }
+        },
+        {
+          "demand": 11,
+          "from": {
+            "mode": "drone",
+            "depot": 19
+          },
+          "to": {
+            "mode": "truck",
+            "depot": 19
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 4,
+      "A0_original_arrival": 125.06666666666666,
+      "A1_closed_arrival": 125.06666666666666,
+      "Afix_projected_arrival": 125.06666666666666,
+      "C_paper_exact_fixed": 120.33333333333333,
+      "delta_A0_to_Afix": 0.0,
+      "delta_A0_to_C": -4.733333333333334,
+      "arc_changes": {},
+      "owner_changes": []
+    },
+    {
+      "scenario": 5,
+      "A0_original_arrival": 128.6,
+      "A1_closed_arrival": 128.6,
+      "Afix_projected_arrival": 158.0,
+      "C_paper_exact_fixed": 150.33333333333334,
+      "delta_A0_to_Afix": 29.400000000000006,
+      "delta_A0_to_C": 21.73333333333335,
+      "arc_changes": {},
+      "owner_changes": [
+        {
+          "demand": 0,
+          "from": {
+            "mode": "drone",
+            "depot": 17
+          },
+          "to": {
+            "mode": "truck",
+            "depot": 19
+          }
+        },
+        {
+          "demand": 11,
+          "from": {
+            "mode": "drone",
+            "depot": 19
+          },
+          "to": {
+            "mode": "truck",
+            "depot": 19
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 6,
+      "A0_original_arrival": 119.06666666666666,
+      "A1_closed_arrival": 119.06666666666666,
+      "Afix_projected_arrival": 128.7,
+      "C_paper_exact_fixed": 123.30000000000001,
+      "delta_A0_to_Afix": 9.633333333333326,
+      "delta_A0_to_C": 4.2333333333333485,
+      "arc_changes": {},
+      "owner_changes": [
+        {
+          "demand": 10,
+          "from": {
+            "mode": "drone",
+            "depot": 17
+          },
+          "to": {
+            "mode": "truck",
+            "depot": 17
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 7,
+      "A0_original_arrival": 117.93333333333334,
+      "A1_closed_arrival": 117.93333333333334,
+      "Afix_projected_arrival": 140.53333333333333,
+      "C_paper_exact_fixed": 133.06666666666666,
+      "delta_A0_to_Afix": 22.599999999999994,
+      "delta_A0_to_C": 15.133333333333326,
+      "arc_changes": {},
+      "owner_changes": [
+        {
+          "demand": 0,
+          "from": {
+            "mode": "drone",
+            "depot": 17
+          },
+          "to": {
+            "mode": "truck",
+            "depot": 19
+          }
+        },
+        {
+          "demand": 11,
+          "from": {
+            "mode": "drone",
+            "depot": 19
+          },
+          "to": {
+            "mode": "truck",
+            "depot": 19
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 8,
+      "A0_original_arrival": 118.33333333333333,
+      "A1_closed_arrival": 118.33333333333333,
+      "Afix_projected_arrival": 143.93333333333334,
+      "C_paper_exact_fixed": 135.26666666666665,
+      "delta_A0_to_Afix": 25.60000000000001,
+      "delta_A0_to_C": 16.933333333333323,
+      "arc_changes": {},
+      "owner_changes": [
+        {
+          "demand": 0,
+          "from": {
+            "mode": "drone",
+            "depot": 17
+          },
+          "to": {
+            "mode": "truck",
+            "depot": 19
+          }
+        },
+        {
+          "demand": 11,
+          "from": {
+            "mode": "drone",
+            "depot": 19
+          },
+          "to": {
+            "mode": "truck",
+            "depot": 19
+          }
+        }
+      ]
+    },
+    {
+      "scenario": 9,
+      "A0_original_arrival": 118.8,
+      "A1_closed_arrival": 118.8,
+      "Afix_projected_arrival": 144.06666666666666,
+      "C_paper_exact_fixed": 134.53333333333336,
+      "delta_A0_to_Afix": 25.266666666666666,
+      "delta_A0_to_C": 15.733333333333363,
+      "arc_changes": {},
+      "owner_changes": [
+        {
+          "demand": 0,
+          "from": {
+            "mode": "drone",
+            "depot": 17
+          },
+          "to": {
+            "mode": "truck",
+            "depot": 19
+          }
+        },
+        {
+          "demand": 11,
+          "from": {
+            "mode": "drone",
+            "depot": 19
+          },
+          "to": {
+            "mode": "truck",
+            "depot": 19
+          }
+        }
+      ]
+    }
+  ]
+}

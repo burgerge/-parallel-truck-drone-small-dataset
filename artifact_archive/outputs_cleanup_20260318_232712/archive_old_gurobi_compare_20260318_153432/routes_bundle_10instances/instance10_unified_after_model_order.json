@@ -1,0 +1,73 @@
+{
+  "instance": "Instance10",
+  "open_depots_internal": [
+    17,
+    19
+  ],
+  "weights": [
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1,
+    0.1
+  ],
+  "table3_path": {
+    "paper_exact_score": {
+      "status": "OPTIMAL",
+      "objective": 129.77666666666667,
+      "best_bound": 129.77666666666667,
+      "iis_count": null,
+      "iis_top": []
+    },
+    "arrival_sim_score": {
+      "scenario_values": [
+        134.13333333333333,
+        22.0,
+        115.86666666666666,
+        126.46666666666667,
+        125.06666666666666,
+        128.6,
+        119.06666666666666,
+        117.93333333333334,
+        118.33333333333333,
+        118.8
+      ],
+      "weighted_avg": 112.62666666666667,
+      "simple_avg": 112.62666666666667
+    }
+  },
+  "gurobi_path": {
+    "paper_exact_score": {
+      "status": "OPTIMAL",
+      "objective": 105.42333333333333,
+      "best_bound": 105.42333333333333
+    },
+    "arrival_sim_score": {
+      "scenario_values": [
+        240.53333333333333,
+        25.966666666666665,
+        141.53333333333333,
+        139.86666666666667,
+        184.33333333333334,
+        121.46666666666667,
+        117.53333333333333,
+        119.33333333333333,
+        212.06666666666666,
+        161.8
+      ],
+      "weighted_avg": 146.44333333333336,
+      "simple_avg": 146.44333333333333
+    },
+    "original_gurobi_objective_from_file": 105.423327143131
+  },
+  "notes": [
+    "paper_exact_score uses Eq.(4)-style objective in solve_fixed_combo_commodity with fixed y/z/c binaries.",
+    "arrival_sim_score uses alg.calculate_arrival_times on explicit TT/DS paths.",
+    "If table3 path is INFEASIBLE under paper_exact_score, path semantics differ from exact-model-feasible route structure."
+  ]
+}

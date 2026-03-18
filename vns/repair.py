@@ -12,6 +12,7 @@ from vns.validate import validate_solution
 
 
 def _copy_solution(sol: Solution) -> Solution:
+    """深拷贝解对象，避免修复过程修改原始解。"""
     return Solution(
         tt={k: list(v) for k, v in sol.tt.items()},
         ds={k: list(v) for k, v in sol.ds.items()},
@@ -19,6 +20,7 @@ def _copy_solution(sol: Solution) -> Solution:
 
 
 def _ordered_unique(values: List[int]) -> List[int]:
+    """按出现顺序去重。"""
     out = []
     seen = set()
     for v in values:
@@ -30,6 +32,7 @@ def _ordered_unique(values: List[int]) -> List[int]:
 
 
 def _active_depots(sol: Solution, instance) -> List[int]:
+    """获取当前解中活跃的 depot 列表；若为空则回退到候选仓库。"""
     keys = list(sol.tt.keys()) + list(sol.ds.keys())
     if not keys:
         keys = list(instance.candidate_depots)
@@ -39,6 +42,22 @@ def _active_depots(sol: Solution, instance) -> List[int]:
 
 
 def repair_solution(sol: Solution, instance, cfg) -> RepairResult:
+    """
+    对候选解执行“可行性修复”。
+
+    修复目标：
+    1) 保证 TT/DS 结构完整（每个 depot 至少有空序列/起点）；
+    2) 清除不合法无人机分配；
+    3) 去重并确保每个需求点最多/至少被服务一次；
+    4) 优先用卡车插入补齐缺失点，失败再尝试无人机；
+    5) 修复卡车断边（最短路拼接）；
+    6) 最后调用 validate 再次校验。
+
+    返回：
+    - solution=None 表示修复失败；
+    - changed 指示是否发生了结构改动；
+    - notes 给出失败/修复说明，便于调试。
+    """
     work = _copy_solution(sol)
     demand_set = set(instance.demand_nodes)
     notes: List[str] = []
@@ -60,7 +79,7 @@ def repair_solution(sol: Solution, instance, cfg) -> RepairResult:
             work.tt[k] = [k] + list(work.tt[k])
             changed = True
 
-    # A) clear infeasible drone demands
+    # A) 清理无人机不可行任务与非法节点。
     for k in depots:
         cleaned = []
         for d in work.ds.get(k, []):
@@ -74,7 +93,9 @@ def repair_solution(sol: Solution, instance, cfg) -> RepairResult:
             cleaned.append(d)
         work.ds[k] = cleaned
 
-    # B) deduplicate demand services (truck repeated visits are treated as pass-through)
+    # B) 去重需求服务：
+    #    - 同一路径重复访问视为“经过”，不重复计服务；
+    #    - 跨 depot 抢占同一需求时，保留先占用者。
     owner = {}
     for k in depots:
         tour = work.tt[k]
@@ -128,7 +149,7 @@ def repair_solution(sol: Solution, instance, cfg) -> RepairResult:
             rebuilt.append(d)
         work.ds[k] = rebuilt
 
-    # C) fill missing demands by truck insertion first, then drone fallback
+    # C) 补齐未覆盖需求：先尝试卡车最优插入，失败再尝试无人机分配。
     missing = [d for d in instance.demand_nodes if d not in seen_demands]
     to_assign = _ordered_unique(unassigned + missing)
     for d in to_assign:
@@ -163,7 +184,7 @@ def repair_solution(sol: Solution, instance, cfg) -> RepairResult:
         notes.append(f"Cannot assign demand {d} to truck or drone.")
         return RepairResult(solution=None, changed=changed, notes=notes)
 
-    # D) repair truck discontinuities by shortest-path splicing
+    # D) 对卡车断边做最短路拼接修复。
     for k in depots:
         tour = work.tt[k]
         if len(tour) <= 1:

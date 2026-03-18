@@ -1,0 +1,159 @@
+{
+  "config": {
+    "instances": [
+      "Instance1"
+    ],
+    "p": 2,
+    "seed": 42,
+    "k_max": 7,
+    "l_max": 6,
+    "i_max": 5,
+    "strict_feasibility": true,
+    "final_metric": "paper_exact",
+    "paper_eval": {
+      "time_limit_sec": 300.0,
+      "mip_gap": 0.0,
+      "threads": 0,
+      "mip_focus": 1,
+      "presolve": 2,
+      "cuts": 2,
+      "symmetry": 2
+    },
+    "open_depots_indexing": "0-based index in candidate_depots (W-order)"
+  },
+  "table3_like": {
+    "rows": [
+      {
+        "instance": "Instance1",
+        "with_improvement": {
+          "instance": "Instance1",
+          "best_x_open": [
+            16,
+            17
+          ],
+          "best_x_open_idx": [
+            1,
+            2
+          ],
+          "best_x_open_base": [
+            2,
+            5
+          ],
+          "expected_obj": 107.23333333333332,
+          "runtime_sec": 25.961802899999384,
+          "candidate_depots": [
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "depot_base_map": {
+            "15": 0,
+            "16": 2,
+            "17": 5,
+            "18": 11,
+            "19": 13
+          },
+          "arrival_sim_obj": 107.23333333333332,
+          "paper_exact": {
+            "status": 2,
+            "status_name": "OPTIMAL",
+            "objective": 97.28,
+            "best_bound": 97.28,
+            "runtime_sec": 158.17300009727478,
+            "achieved_mip_gap_pct": 0.0,
+            "open_depots_internal": [
+              16,
+              17
+            ],
+            "open_depots_idx": [
+              1,
+              2
+            ],
+            "open_depots_base": [
+              2,
+              5
+            ],
+            "is_feasible": true
+          }
+        },
+        "without_improvement": {
+          "instance": "Instance1",
+          "best_x_open": [
+            15,
+            19
+          ],
+          "best_x_open_idx": [
+            0,
+            4
+          ],
+          "best_x_open_base": [
+            0,
+            13
+          ],
+          "expected_obj": 202.68,
+          "runtime_sec": 0.005406000000220956,
+          "candidate_depots": [
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "depot_base_map": {
+            "15": 0,
+            "16": 2,
+            "17": 5,
+            "18": 11,
+            "19": 13
+          },
+          "arrival_sim_obj": 202.68,
+          "paper_exact": {
+            "status": 2,
+            "status_name": "OPTIMAL",
+            "objective": 105.60000000000001,
+            "best_bound": 105.60000000000001,
+            "runtime_sec": 181.7300000190735,
+            "achieved_mip_gap_pct": 0.0,
+            "open_depots_internal": [
+              15,
+              19
+            ],
+            "open_depots_idx": [
+              0,
+              4
+            ],
+            "open_depots_base": [
+              0,
+              13
+            ],
+            "is_feasible": true
+          }
+        },
+        "with_final_obj": 97.28,
+        "without_final_obj": 105.60000000000001,
+        "final_metric": "paper_exact",
+        "selected_variant_by_final_metric": "with_improvement",
+        "selected_open_depots_internal_by_final_metric": [
+          16,
+          17
+        ],
+        "selected_final_obj": 97.28,
+        "pct_gap_wo_vs_with": 8.552631578947375,
+        "pct_cpu_decrease_wo_vs_with": 99.97917710098547
+      }
+    ],
+    "average": {
+      "with_improvement_arrival_sim_obj": 107.23333333333332,
+      "with_improvement_final_obj": 97.28,
+      "with_improvement_runtime_sec": 25.961802899999384,
+      "without_improvement_arrival_sim_obj": 202.68,
+      "without_improvement_final_obj": 105.60000000000001,
+      "without_improvement_runtime_sec": 0.005406000000220956,
+      "avg_pct_gap_wo_vs_with": 8.552631578947375,
+      "avg_pct_cpu_decrease_wo_vs_with": 99.97917710098547,
+      "final_metric": "paper_exact"
+    }
+  }
+}

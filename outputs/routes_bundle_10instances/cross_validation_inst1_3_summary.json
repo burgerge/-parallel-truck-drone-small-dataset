@@ -1,0 +1,77 @@
+[
+  {
+    "instance": "Instance1",
+    "table3_combo_internal": [
+      16,
+      17
+    ],
+    "gurobi_best_combo_idx": [
+      0,
+      2
+    ],
+    "paper_obj_table3_path_fixed": 107.13666666666666,
+    "paper_obj_gurobi_same_combo_opt": 107.08333333333333,
+    "paper_obj_gurobi_best_combo_opt": 103.47333333333334,
+    "paper_gap_t3_minus_same": 0.05333333333332746,
+    "paper_gap_t3_minus_best": 3.6633333333333127,
+    "arrival_obj_table3": 107.13666666666667,
+    "arrival_obj_gurobi_same": 108.75,
+    "arrival_obj_gurobi_best": 105.06,
+    "arrival_gap_t3_minus_same": -1.6133333333333297,
+    "arrival_gap_t3_minus_best": 2.076666666666668,
+    "same_combo_pair_count": 20,
+    "same_combo_exact_walk_match_count": 0,
+    "same_combo_first_visit_match_count": 14,
+    "same_combo_exact_drone_seq_match_count": 14
+  },
+  {
+    "instance": "Instance2",
+    "table3_combo_internal": [
+      15,
+      16
+    ],
+    "gurobi_best_combo_idx": [
+      0,
+      1
+    ],
+    "paper_obj_table3_path_fixed": 10.313333333333334,
+    "paper_obj_gurobi_same_combo_opt": 10.266666601333318,
+    "paper_obj_gurobi_best_combo_opt": 10.266666601333318,
+    "paper_gap_t3_minus_same": 0.04666673200001625,
+    "paper_gap_t3_minus_best": 0.04666673200001625,
+    "arrival_obj_table3": 10.313333333333334,
+    "arrival_obj_gurobi_same": 10.266666666666667,
+    "arrival_obj_gurobi_best": 10.266666666666667,
+    "arrival_gap_t3_minus_same": 0.046666666666666856,
+    "arrival_gap_t3_minus_best": 0.046666666666666856,
+    "same_combo_pair_count": 20,
+    "same_combo_exact_walk_match_count": 0,
+    "same_combo_first_visit_match_count": 8,
+    "same_combo_exact_drone_seq_match_count": 8
+  },
+  {
+    "instance": "Instance3",
+    "table3_combo_internal": [
+      15,
+      18
+    ],
+    "gurobi_best_combo_idx": [
+      0,
+      3
+    ],
+    "paper_obj_table3_path_fixed": 10.92,
+    "paper_obj_gurobi_same_combo_opt": 10.506666666666666,
+    "paper_obj_gurobi_best_combo_opt": 10.506666666666666,
+    "paper_gap_t3_minus_same": 0.413333333333334,
+    "paper_gap_t3_minus_best": 0.413333333333334,
+    "arrival_obj_table3": 10.92,
+    "arrival_obj_gurobi_same": 10.506666666666668,
+    "arrival_obj_gurobi_best": 10.506666666666668,
+    "arrival_gap_t3_minus_same": 0.4133333333333322,
+    "arrival_gap_t3_minus_best": 0.4133333333333322,
+    "same_combo_pair_count": 20,
+    "same_combo_exact_walk_match_count": 0,
+    "same_combo_first_visit_match_count": 6,
+    "same_combo_exact_drone_seq_match_count": 6
+  }
+]

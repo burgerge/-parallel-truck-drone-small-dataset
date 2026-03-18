@@ -1,0 +1,342 @@
+[
+  {
+    "instance": "Instance1",
+    "final_metric": "paper_exact",
+    "table3_with_internal": [
+      16,
+      17
+    ],
+    "table3_with_idx": [
+      1,
+      2
+    ],
+    "table3_with_arrival_obj": 107.13666666666666,
+    "table3_with_paper_obj": 97.2799959899222,
+    "table3_with_paper_status": "TIME_LIMIT",
+    "table3_with_paper_feasible": "True",
+    "gurobi_same_combo_obj": 97.28,
+    "diff_same_combo_t3paper_minus_g": -4.010077802263368e-06,
+    "gurobi_best_internal": [
+      15,
+      17
+    ],
+    "gurobi_best_idx": [
+      0,
+      2
+    ],
+    "gurobi_best_obj": 94.63333333333333,
+    "diff_best_t3paper_minus_gbest": 2.646662656588873,
+    "match_table3_with_vs_gurobi_best_combo": false,
+    "table3_without_internal": [
+      17,
+      18
+    ],
+    "table3_without_paper_obj": 106.80999999999999
+  },
+  {
+    "instance": "Instance2",
+    "final_metric": "paper_exact",
+    "table3_with_internal": [
+      15,
+      16
+    ],
+    "table3_with_idx": [
+      0,
+      1
+    ],
+    "table3_with_arrival_obj": 10.313333333333333,
+    "table3_with_paper_obj": 9.656666442696965,
+    "table3_with_paper_status": "TIME_LIMIT",
+    "table3_with_paper_feasible": "True",
+    "gurobi_same_combo_obj": 9.62,
+    "diff_same_combo_t3paper_minus_g": 0.03666644269696562,
+    "gurobi_best_internal": [
+      15,
+      16
+    ],
+    "gurobi_best_idx": [
+      0,
+      1
+    ],
+    "gurobi_best_obj": 9.62,
+    "diff_best_t3paper_minus_gbest": 0.03666644269696562,
+    "match_table3_with_vs_gurobi_best_combo": true,
+    "table3_without_internal": [
+      15,
+      19
+    ],
+    "table3_without_paper_obj": 9.769999894222208
+  },
+  {
+    "instance": "Instance3",
+    "final_metric": "paper_exact",
+    "table3_with_internal": [
+      15,
+      18
+    ],
+    "table3_with_idx": [
+      0,
+      3
+    ],
+    "table3_with_arrival_obj": 10.92,
+    "table3_with_paper_obj": 10.036666666666667,
+    "table3_with_paper_status": "OPTIMAL",
+    "table3_with_paper_feasible": "True",
+    "gurobi_same_combo_obj": 10.036666666666669,
+    "diff_same_combo_t3paper_minus_g": -1.7763568394002505e-15,
+    "gurobi_best_internal": [
+      15,
+      18
+    ],
+    "gurobi_best_idx": [
+      0,
+      3
+    ],
+    "gurobi_best_obj": 10.036666666666669,
+    "diff_best_t3paper_minus_gbest": -1.7763568394002505e-15,
+    "match_table3_with_vs_gurobi_best_combo": true,
+    "table3_without_internal": [
+      15,
+      19
+    ],
+    "table3_without_paper_obj": 10.490000000000002
+  },
+  {
+    "instance": "Instance4",
+    "final_metric": "paper_exact",
+    "table3_with_internal": [
+      16,
+      17
+    ],
+    "table3_with_idx": [
+      1,
+      2
+    ],
+    "table3_with_arrival_obj": 9.386666666666667,
+    "table3_with_paper_obj": 7.3799998949488685,
+    "table3_with_paper_status": "TIME_LIMIT",
+    "table3_with_paper_feasible": "True",
+    "gurobi_same_combo_obj": 7.37,
+    "diff_same_combo_t3paper_minus_g": 0.009999894948868437,
+    "gurobi_best_internal": [
+      16,
+      17
+    ],
+    "gurobi_best_idx": [
+      1,
+      2
+    ],
+    "gurobi_best_obj": 7.37,
+    "diff_best_t3paper_minus_gbest": 0.009999894948868437,
+    "match_table3_with_vs_gurobi_best_combo": true,
+    "table3_without_internal": [
+      17,
+      19
+    ],
+    "table3_without_paper_obj": 7.966666605251746
+  },
+  {
+    "instance": "Instance5",
+    "final_metric": "paper_exact",
+    "table3_with_internal": [
+      17,
+      19
+    ],
+    "table3_with_idx": [
+      2,
+      4
+    ],
+    "table3_with_arrival_obj": 10.383333333333335,
+    "table3_with_paper_obj": 8.843333111700044,
+    "table3_with_paper_status": "TIME_LIMIT",
+    "table3_with_paper_feasible": "True",
+    "gurobi_same_combo_obj": 8.843333333333335,
+    "diff_same_combo_t3paper_minus_g": -2.2163329127522502e-07,
+    "gurobi_best_internal": [
+      17,
+      19
+    ],
+    "gurobi_best_idx": [
+      2,
+      4
+    ],
+    "gurobi_best_obj": 8.843333333333335,
+    "diff_best_t3paper_minus_gbest": -2.2163329127522502e-07,
+    "match_table3_with_vs_gurobi_best_combo": true,
+    "table3_without_internal": [
+      15,
+      16
+    ],
+    "table3_without_paper_obj": 11.826666666666668
+  },
+  {
+    "instance": "Instance6",
+    "final_metric": "paper_exact",
+    "table3_with_internal": [
+      15,
+      16
+    ],
+    "table3_with_idx": [
+      0,
+      1
+    ],
+    "table3_with_arrival_obj": 18.093333333333334,
+    "table3_with_paper_obj": 13.579998992490939,
+    "table3_with_paper_status": "TIME_LIMIT",
+    "table3_with_paper_feasible": "True",
+    "gurobi_same_combo_obj": 13.526666666666669,
+    "diff_same_combo_t3paper_minus_g": 0.053332325824269944,
+    "gurobi_best_internal": [
+      15,
+      16
+    ],
+    "gurobi_best_idx": [
+      0,
+      1
+    ],
+    "gurobi_best_obj": 13.526666666666669,
+    "diff_best_t3paper_minus_gbest": 0.053332325824269944,
+    "match_table3_with_vs_gurobi_best_combo": true,
+    "table3_without_internal": [
+      15,
+      17
+    ],
+    "table3_without_paper_obj": 25.896666666666672
+  },
+  {
+    "instance": "Instance7",
+    "final_metric": "paper_exact",
+    "table3_with_internal": [
+      16,
+      18
+    ],
+    "table3_with_idx": [
+      1,
+      3
+    ],
+    "table3_with_arrival_obj": 88.95333333333335,
+    "table3_with_paper_obj": 81.25333092706617,
+    "table3_with_paper_status": "TIME_LIMIT",
+    "table3_with_paper_feasible": "True",
+    "gurobi_same_combo_obj": 81.23333333333333,
+    "diff_same_combo_t3paper_minus_g": 0.019997593732838936,
+    "gurobi_best_internal": [
+      16,
+      18
+    ],
+    "gurobi_best_idx": [
+      1,
+      3
+    ],
+    "gurobi_best_obj": 81.23333333333333,
+    "diff_best_t3paper_minus_gbest": 0.019997593732838936,
+    "match_table3_with_vs_gurobi_best_combo": true,
+    "table3_without_internal": [
+      15,
+      16
+    ],
+    "table3_without_paper_obj": 84.69999682833982
+  },
+  {
+    "instance": "Instance8",
+    "final_metric": "paper_exact",
+    "table3_with_internal": [
+      15,
+      19
+    ],
+    "table3_with_idx": [
+      0,
+      4
+    ],
+    "table3_with_arrival_obj": 7.460000000000001,
+    "table3_with_paper_obj": 6.543333172239091,
+    "table3_with_paper_status": "TIME_LIMIT",
+    "table3_with_paper_feasible": "True",
+    "gurobi_same_combo_obj": 6.543333333333334,
+    "diff_same_combo_t3paper_minus_g": -1.6109424283428098e-07,
+    "gurobi_best_internal": [
+      15,
+      19
+    ],
+    "gurobi_best_idx": [
+      0,
+      4
+    ],
+    "gurobi_best_obj": 6.543333333333334,
+    "diff_best_t3paper_minus_gbest": -1.6109424283428098e-07,
+    "match_table3_with_vs_gurobi_best_combo": true,
+    "table3_without_internal": [
+      17,
+      18
+    ],
+    "table3_without_paper_obj": 8.003333129659262
+  },
+  {
+    "instance": "Instance9",
+    "final_metric": "paper_exact",
+    "table3_with_internal": [
+      17,
+      19
+    ],
+    "table3_with_idx": [
+      2,
+      4
+    ],
+    "table3_with_arrival_obj": 101.69666666666666,
+    "table3_with_paper_obj": 92.4333312555978,
+    "table3_with_paper_status": "TIME_LIMIT",
+    "table3_with_paper_feasible": "True",
+    "gurobi_same_combo_obj": 92.43333333333334,
+    "diff_same_combo_t3paper_minus_g": -2.077735530292557e-06,
+    "gurobi_best_internal": [
+      15,
+      18
+    ],
+    "gurobi_best_idx": [
+      0,
+      3
+    ],
+    "gurobi_best_obj": 90.63333333333334,
+    "diff_best_t3paper_minus_gbest": 1.7999979222644669,
+    "match_table3_with_vs_gurobi_best_combo": false,
+    "table3_without_internal": [
+      17,
+      18
+    ],
+    "table3_without_paper_obj": 92.47
+  },
+  {
+    "instance": "Instance10",
+    "final_metric": "paper_exact",
+    "table3_with_internal": [
+      17,
+      19
+    ],
+    "table3_with_idx": [
+      2,
+      4
+    ],
+    "table3_with_arrival_obj": 112.6266666666667,
+    "table3_with_paper_obj": 107.73666038409348,
+    "table3_with_paper_status": "TIME_LIMIT",
+    "table3_with_paper_feasible": "True",
+    "gurobi_same_combo_obj": 105.17666666666668,
+    "diff_same_combo_t3paper_minus_g": 2.5599937174268064,
+    "gurobi_best_internal": [
+      17,
+      19
+    ],
+    "gurobi_best_idx": [
+      2,
+      4
+    ],
+    "gurobi_best_obj": 105.17666666666668,
+    "diff_best_t3paper_minus_gbest": 2.5599937174268064,
+    "match_table3_with_vs_gurobi_best_combo": true,
+    "table3_without_internal": [
+      18,
+      19
+    ],
+    "table3_without_paper_obj": 106.29998987627555
+  }
+]

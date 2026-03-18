@@ -1,0 +1,4 @@
+instance,table3_combo_internal,table3_combo_idx,gurobi_best_combo_idx,paper_obj_table3_path_fixed,paper_status_table3_path_fixed,paper_obj_gurobi_same_combo_opt,paper_obj_gurobi_best_combo_opt,gap_table3_path_minus_gurobi_same_combo_opt,gap_table3_path_minus_gurobi_best_combo_opt,arrival_obj_table3_reference
+Instance1,"[16, 17]","[1, 2]","[0, 2]",99.68333333333334,OPTIMAL,97.28,94.63333333333334,2.403333333333336,5.049999999999997,107.13666666666668
+Instance2,"[15, 16]","[0, 1]","[0, 1]",9.673333333333334,OPTIMAL,9.619999776292168,9.619999776292168,0.05333355704116549,0.05333355704116549,10.313333333333334
+Instance3,"[15, 18]","[0, 3]","[0, 3]",10.726666666666668,OPTIMAL,10.036666666666665,10.036666666666665,0.690000000000003,0.690000000000003,10.919999999999998
